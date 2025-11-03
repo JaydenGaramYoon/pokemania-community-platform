@@ -6,7 +6,7 @@ const createFavourite = async (req, res) => {
         await favourite.save();
         res.status(201).json(favourite);
     } catch (err) {
-        return res.status(400).json({
+        return res.status(401).json({
             error: errorHandler.getErrorMessage(err)
         })
     }

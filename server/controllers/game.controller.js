@@ -10,7 +10,7 @@ const create = async (req, res) => {
             playedAt: new Date()
         });
         await game.save();
-        return res.status(200).json({ message: "Game record saved!", game });
+        return res.status(201).json({ message: "New record created!", game });
     } catch (err) {
         return res.status(400).json({
             error: errorHandler.getErrorMessage(err)
