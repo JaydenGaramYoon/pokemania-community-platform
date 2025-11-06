@@ -7,15 +7,17 @@
     background-color: var(--card-bg, #ffffff);
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    padding: 25px;
+    padding: 20px;
     text-align: center;
     transition: all 0.3s ease;
     border: 2px solid rgba(0, 0, 0, 0.03);
-    width: 370px;
-    min-height: 520px;
+    width: 320px;
+    max-width: calc(100% - 40px);
+    min-height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .pokemon-card h2{
@@ -36,19 +38,27 @@
     gap: 30px;
     justify-content: center;
     align-items: flex-start;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .favourites-page {
-    padding: 20px;
+    padding: 80px 20px 80px 20px;
     width: 100vw;
     max-width: 100vw;
-    margin: 0 auto;
     min-height: 100vh;
+    height: auto;
+    margin: 0;
     background-image: url('/images/fav_background.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+    outline: none;
+    overflow-x: hidden;
 }
 
 .favourites-title {
@@ -257,4 +267,203 @@
     font-style: italic;
     border-left: 3px solid #ffd700;
     color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .favourites-page {
+        padding: 15px 10px;
+    }
+
+    .favourites-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+    }
+
+    .card-container {
+        gap: 15px;
+    }
+
+    .favourites-page .pokemon-card {
+        width: 100%;
+        max-width: 400px;
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .pokemon-card h2 {
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+        margin: 8px 0;
+    }
+
+    .pokemon-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .pokemon-card p {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .edit-form {
+        padding: 12px;
+    }
+
+    .edit-form input,
+    .edit-form textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .edit-buttons {
+        flex-direction: row;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .save-button,
+    .cancel-button {
+        width: 50%;
+        padding: 8px 10px;
+        height: 38px;
+        font-size: 12px;
+    }
+
+    .action-buttons {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .action-buttons button {
+        width: 50%;
+        padding: 8px 10px;
+        height: 38px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .favourites-page {
+        padding: 10px 5px;
+    }
+
+    .favourites-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .card-container {
+        gap: 12px;
+    }
+
+    .favourites-page .pokemon-card {
+        width: 100%;
+        max-width: 350px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .pokemon-card h2 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        margin: 6px 0;
+    }
+
+    .pokemon-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .pokemon-card p {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .edit-form {
+        padding: 10px;
+    }
+
+    .edit-form input,
+    .edit-form textarea {
+        font-size: 13px;
+        padding: 7px;
+        margin-bottom: 6px;
+    }
+
+    .save-button,
+    .cancel-button {
+        padding: 7px 9px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .action-buttons {
+        gap: 8px;
+    }
+
+    .action-buttons button {
+        padding: 7px 9px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .memo {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .no-favourites-message {
+        font-size: 0.95rem;
+        margin-top: 30px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .favourites-title {
+        font-size: 1.4rem;
+    }
+
+    .favourites-page .pokemon-card {
+        width: 100%;
+        max-width: 320px;
+        padding: 12px;
+    }
+
+    .pokemon-card h2 {
+        font-size: 1.2rem;
+        margin: 5px 0;
+    }
+
+    .pokemon-card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .pokemon-card p {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .action-buttons button {
+        font-size: 10px;
+        height: 34px;
+        padding: 6px 8px;
+    }
+
+    .save-button,
+    .cancel-button {
+        font-size: 10px;
+        height: 34px;
+        padding: 6px 8px;
+    }
+
+    .memo {
+        font-size: 11px;
+        padding: 5px;
+    }
 }

@@ -62,7 +62,6 @@ html, body {
   align-items: center;
   gap: 1.5rem;
   flex: 1;
-  order: 1; /* 确保在左侧 */
 }
 
 .avatarContainer {
@@ -126,7 +125,14 @@ html, body {
   margin: 0.5rem 0.25rem;
   flex-shrink: 0;
   white-space: nowrap;
-  order: 2; /* 确保按钮在右侧 */
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
 }
 
 .editButton{
@@ -146,10 +152,377 @@ html, body {
     align-items: stretch;
     padding: 1rem;
   }
+
+  .avatarInfoWrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    order: 2;
+  }
   
   .editButton, .myAccountButton {
+    width: 48%;
+    margin: 0;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    height: 38px;
+  }
+
+  .profilePage {
+    padding: 20px 15px;
+    font-size: 15px;
+  }
+
+  .profileHeader {
+    max-width: 95%;
+  }
+
+  .profileBanner {
+    height: 300px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profileInfo {
+    text-align: center;
+    align-items: center;
+  }
+
+  .profileName {
+    font-size: 1.3rem;
+  }
+
+  .profileTitle {
+    font-size: 0.9rem;
+  }
+
+  .socialIcons {
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .profileBody {
+    max-width: 95%;
+    padding: 0 0.5rem;
+    gap: 1rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .tabs button {
+    padding: 0.4rem 0.8rem;
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 0.75rem 1rem;
+  }
+
+  .modal {
+    width: 95%;
+    max-width: 95%;
+    padding: 1rem;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .modalContent {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .modalLeft,
+  .modalRight {
+    min-width: 100%;
+  }
+
+  .modalActions {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .modalActions button {
+    width: 48%;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    height: 38px;
+  }
+
+  .modal input,
+  .modal textarea {
+    font-size: 0.85rem;
+    padding: 0.45rem;
+  }
+
+  .modal h3 {
+    font-size: 1.1rem;
+  }
+
+  .modal h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal label {
+    font-size: 0.9rem;
+  }
+
+  .badgeImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .userInfoBox {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .userInfoBox ul {
+    padding: 0;
+  }
+
+  .userInfoBox li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+
+  .button {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+
+  .userInfoBox li {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+  }
+
+  .badgeImage {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profilePage {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
+  .profileBanner {
+    height: 200px;
+  }
+
+  .profileHeaderContent {
+    padding: 0.75rem;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profileName {
+    font-size: 1.1rem;
+  }
+
+  .profileTitle {
+    font-size: 0.85rem;
+  }
+
+  .profileLocation {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .socialIcons {
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+
+  .editButton, .myAccountButton {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+    height: 34px;
+    width: 48%;
+  }
+
+  .modalActions button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+    height: 34px;
+  }
+
+  .tabs {
+    padding: 0.5rem;
+  }
+
+  .tabs button {
+    padding: 0.35rem 0.7rem;
+    font-size: 13px;
+  }
+
+  .card {
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+  }
+
+  .cardHeader h3 {
+    font-size: 0.95rem;
+  }
+
+  .tag {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .modal {
+    padding: 0.75rem 1rem;
+    max-height: 80vh;
+  }
+
+  .modal input,
+  .modal textarea {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  .modal h3 {
+    font-size: 1rem;
+  }
+
+  .modal h2 {
+    font-size: 1.1rem;
+  }
+
+  .modal label {
+    font-size: 0.85rem;
+  }
+
+  .modalActions button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+    height: 34px;
+  }
+
+  .button {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
     width: 100%;
     margin: 0.25rem 0;
+  }
+
+  .badgeImage {
+    width: 60px;
+    height: 60px;
+  }
+
+  .userInfoBox {
+    padding: 0.75rem;
+  }
+
+  .userInfoBox li {
+    font-size: 0.85rem;
+  }
+
+  .userInfoBox li {
+    font-size: 0.85rem;
+  }
+
+  .badgeImage {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .profileName {
+    font-size: 1rem;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .editButton, .myAccountButton {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+    height: 32px;
+  }
+
+  .modal {
+    padding: 0.5rem 0.75rem;
+    max-height: 75vh;
+  }
+
+  .modal h2 {
+    font-size: 1rem;
+  }
+
+  .modal h3 {
+    font-size: 0.95rem;
+  }
+
+  .modal label {
+    font-size: 0.8rem;
+  }
+
+  .modal input,
+  .modal textarea {
+    font-size: 0.75rem;
+    padding: 0.35rem;
+  }
+
+  .modalActions button {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+    height: 32px;
+  }
+
+  .button {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.75rem;
+    margin: 0.2rem 0;
+  }
+
+  .badgeImage {
+    width: 50px;
+    height: 50px;
+  }
+
+  .userInfoBox {
+    padding: 0.6rem;
+  }
+
+  .userInfoBox li {
+    font-size: 0.8rem;
+    padding: 0.3rem 0;
+  }
+
+  .tabs button {
+    font-size: 12px;
+    padding: 0.3rem 0.6rem;
   }
 }
 

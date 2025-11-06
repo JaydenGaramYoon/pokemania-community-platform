@@ -1,5 +1,6 @@
 :root {
-  font-family: "Montserrat", sans-serif;  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -8,6 +9,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
@@ -21,8 +26,10 @@ a:hover {
 }
 
 body {
-  margin: auto;
-  width: 980px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 980px;
+  padding: 0 20px;
 }
 
 h1 {
@@ -69,4 +76,45 @@ button:focus-visible {
 nav {
   float: right;
   font-size: x-large;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.95em;
+  }
+
+  nav {
+    font-size: large;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  button {
+    padding: 0.45em 0.9em;
+    font-size: 0.9em;
+    border-radius: 6px;
+  }
+
+  nav {
+    font-size: medium;
+  }
 }

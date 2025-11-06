@@ -1191,11 +1191,6 @@ const TalkTalk = () => {
       </div>
       <div className="chat-body">
         <div className="chat-window">
-          {/* Real-time update indicator */}
-          <div className="live-indicator">
-            <div className="live-dot"></div>
-            LIVE
-          </div>
           <div className="chat-messages">
             {(messages[activeCategory] || []).map((msg, idx) => (
               <div key={idx} className="message-card">
@@ -1233,28 +1228,32 @@ const TalkTalk = () => {
                 ) : (
                   // Display mode
                   <>
-                    <strong className="username">{msg.sender}</strong>: {msg.message}
-                    <div className="timestamp">{formatTimestamp(msg.timestamp)}</div>
-                    {/* Edit button - positioned left of delete button */}
-                    {canEditMessage(msg) && (
-                      <button
-                        className="edit-button"
-                        onClick={() => startEditMessage(msg)}
-                        title={userRole === 'admin' ? "Edit message (Admin)" : "Edit message (within 1 minute)"}
-                      >
-                        ✏️
-                      </button>
-                    )}
-                    {/* Delete button - maintains original position */}
-                    {canDeleteMessage(msg) && (
-                      <button
-                        className="delete-button"
-                        onClick={() => handleDeleteMessage(msg._id)}
-                        title={userRole === 'admin' ? "Delete message (Admin)" : "Delete message (within 1 minute)"}
-                      >
-                        &#10006;
-                      </button>
-                    )}
+                    <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                      <span><strong className="username">{msg.sender}</strong>: {msg.message}</span>
+                      <div className="timestamp">{formatTimestamp(msg.timestamp)}</div>
+                    </div>
+                    <div className="message-actions">
+                      {/* Edit button - positioned left of delete button */}
+                      {canEditMessage(msg) && (
+                        <button
+                          className="edit-button"
+                          onClick={() => startEditMessage(msg)}
+                          title={userRole === 'admin' ? "Edit message (Admin)" : "Edit message (within 1 minute)"}
+                        >
+                          ✏️
+                        </button>
+                      )}
+                      {/* Delete button - maintains original position */}
+                      {canDeleteMessage(msg) && (
+                        <button
+                          className="delete-button"
+                          onClick={() => handleDeleteMessage(msg._id)}
+                          title={userRole === 'admin' ? "Delete message (Admin)" : "Delete message (within 1 minute)"}
+                        >
+                          &#10006;
+                        </button>
+                      )}
+                    </div>
                   </>
                 )}
               </div>

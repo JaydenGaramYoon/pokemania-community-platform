@@ -693,7 +693,6 @@ const Game = () => {
                             src={pokemonImage}
                             alt={pokemonName}
                             className="pokemon-image actual"
-                            style={{ width: '500px', height: '500px', objectFit: 'contain' }}
                         />
                     </div>
                     <button id="scoreButton" onClick={displayScores}>
@@ -770,7 +769,7 @@ const Game = () => {
                         Score: <strong id="score">{score}</strong>
                     </div>
                     {pokemon ? (
-                        <div style={{ position: 'relative', width: 500, height: 500, margin: '0 auto 32px auto' }}>
+                        <div className="pokemon-container" style={{ position: 'relative', margin: '0 auto 32px auto' }}>
                             <img
                                 src={pokemonImage}
                                 alt="Pokemon"

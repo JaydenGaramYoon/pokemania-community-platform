@@ -9,6 +9,7 @@ const Home = () => {
     const [modalContent, setModalContent] = useState(null);
     const [favourites, setFavourites] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
+    const [backgroundPokemons, setBackgroundPokemons] = useState([]);
 
     useEffect(() => {
         // pokemon_으로 시작하는 키만 파싱
@@ -24,7 +25,26 @@ const Home = () => {
             .filter(Boolean);
         setFavourites(storedFavourites);
 
+        // Load background pokemons
+        loadBackgroundPokemons();
     }, []);
+
+    const loadBackgroundPokemons = async () => {
+        try {
+            // 랜덤하게 20개의 포케몬 가져오기 (1-898 범위)
+            const randomIds = Array.from({ length: 20 }, () => Math.floor(Math.random() * 898) + 1);
+            const promises = randomIds.map(id => 
+                fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+                    .then(res => res.json())
+                    .then(data => data.sprites.front_default)
+                    .catch(() => null)
+            );
+            const images = await Promise.all(promises);
+            setBackgroundPokemons(images.filter(Boolean));
+        } catch (error) {
+            console.error('Failed to load background pokemons:', error);
+        }
+    };
 
     const handleSearch = async () => {
         if (!searchInput) return;
@@ -128,11 +148,23 @@ const Home = () => {
         setShowModal(false);
     };
 
+    const handleClickOutside = (e) => {
+        // Check if click is outside pokemon-card
+        if (e.target.id === 'pokemon-details') {
+            setPokemonInfos([]);
+        }
+    };
+
 
 
 
     return (
         <>
+            <div className="pokemon-background">
+                {backgroundPokemons.map((imgUrl, idx) => (
+                    <img key={idx} src={imgUrl} alt="" className="background-pokemon" />
+                ))}
+            </div>
             <div className="search-area">
                 <input
                     type="text"
@@ -174,9 +206,9 @@ const Home = () => {
 
             {/* Display Pokémon card if found */}
             {!isLoading && pokemonInfos.length > 0 && (
-                <div id="pokemon-details">
+                <div id="pokemon-details" onClick={handleClickOutside}>
                     {pokemonInfos.map(pokemon => (
-                        <div key={pokemon.id} className="pokemon-card">
+                        <div key={pokemon.id} className="pokemon-card" onClick={(e) => e.stopPropagation()}>
                             <h2>{pokemon.name}</h2>
                             <img src={pokemon.image} alt={pokemon.name} />
                             <p>ID: {pokemon.id}</p>
@@ -184,8 +216,10 @@ const Home = () => {
                             <p>Abilities: {pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
                             <p>Height: {pokemon.height}</p>
                             <p>Weight: {pokemon.weight}</p>
-                            <button onClick={() => handleModalOpen(pokemon)}>More Info</button>
-                            <button onClick={() => handleAddToFavourites(pokemon)}>⭐ Add to Favourites</button>
+                            <div className="pokemon-card-buttons">
+                                <button onClick={() => handleModalOpen(pokemon)}>More Info</button>
+                                <button onClick={() => handleAddToFavourites(pokemon)}>⭐ Add to Favourites</button>
+                            </div>
                         </div>
                     ))}
                 </div>

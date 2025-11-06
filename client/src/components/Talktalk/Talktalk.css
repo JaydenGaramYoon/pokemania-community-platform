@@ -18,7 +18,8 @@ html, body {
 .chat-container {
   width: 90%;
   max-width: 1400px;
-  margin: 40px auto;
+  margin: 0 auto 80px auto;
+  margin-top: 80px;
   padding: 30px;
   background: url('/images/forum_background.jpg') no-repeat center center;
   background-size: cover;
@@ -121,6 +122,10 @@ html, body {
   line-height: 1.6;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .message-card:hover {
@@ -128,10 +133,14 @@ html, body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
+.message-actions {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+
 .delete-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  position: static;
   background: #ff4444;
   color: white;
   border: none;
@@ -145,7 +154,6 @@ html, body {
   justify-content: center;
   opacity: 0.7;
   transition: all 0.2s ease;
-  z-index: 10;
 }
 
 .delete-button:hover {
@@ -160,9 +168,7 @@ html, body {
 
 
 .edit-button {
-  position: absolute;
-  top: 8px;
-  right: 54px;
+  position: static;
   background: #ffc107;
   color: #333;
   border: none;
@@ -176,7 +182,6 @@ html, body {
   justify-content: center;
   opacity: 0.7;
   transition: all 0.2s ease;
-  z-index: 10;
 }
 
 .edit-button:hover {
@@ -256,7 +261,16 @@ html, body {
   font-size: 11px;
   color: #999;
   text-align: right;
-  margin-top: 4px;
+  margin-left: auto;
+  padding-left: 10px;
+}
+
+.message-actions {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .chat-input-area {
@@ -325,4 +339,287 @@ html, body {
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 95%;
+    padding: 20px 15px;
+    margin: 20px auto;
+    min-height: calc(100vh - 100px);
+  }
+
+  .chat-title {
+    font-size: 1.5rem;
+    padding: 8px 18px;
+    letter-spacing: 2px;
+    flex-wrap: wrap;
+  }
+
+  .chat-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .category-tabs {
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .category-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+    min-width: 70px;
+    max-width: 85px;
+    flex: 0 1 auto;
+  }
+
+  .chat-window {
+    height: 500px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .message-card {
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .delete-button,
+  .edit-button {
+    width: 28px;
+    height: 18px;
+    font-size: 9px;
+  }
+
+  .edit-button {
+    right: 46px;
+  }
+
+  .save-edit-button,
+  .cancel-edit-button {
+    width: 28px;
+    height: 18px;
+    font-size: 9px;
+  }
+
+  .save-edit-button {
+    right: 46px;
+  }
+
+  .inline-edit-input {
+    font-size: 13px;
+    padding: 3px 6px;
+    min-width: 150px;
+  }
+
+  .username {
+    font-size: 13px;
+  }
+
+  .timestamp {
+    font-size: 10px;
+  }
+
+  .chat-input-area {
+    gap: 10px;
+    padding: 10px 0;
+    flex-wrap: wrap;
+  }
+
+  .chat-input {
+    padding: 10px;
+    font-size: 13px;
+    min-width: 180px;
+    flex: 1;
+  }
+
+  .send-button {
+    padding: 10px 14px;
+    font-size: 13px;
+    min-width: 70px;
+    max-width: 90px;
+  }
+
+  .category-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  .live-indicator {
+    font-size: 9px;
+    padding: 3px 6px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .live-dot {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-container {
+    width: 98%;
+    padding: 15px 10px;
+    margin: 15px auto;
+    border-radius: 15px;
+    border: 3px solid #cc0000;
+  }
+
+  .chat-title {
+    font-size: 1.3rem;
+    padding: 6px 14px;
+    letter-spacing: 1px;
+    gap: 6px;
+  }
+
+  .chat-logo {
+    width: 26px;
+    height: 26px;
+  }
+
+  .category-tabs {
+    gap: 6px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .category-btn {
+    padding: 7px 10px;
+    font-size: 12px;
+    border-radius: 10px;
+    min-width: 60px;
+    max-width: 75px;
+    flex: 0 1 auto;
+  }
+
+  .chat-window {
+    height: 450px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    border: 3px solid #ffeaa7;
+  }
+
+  .message-card {
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+  }
+
+  .delete-button,
+  .edit-button {
+    width: 26px;
+    height: 16px;
+    font-size: 8px;
+    border-radius: 5px;
+  }
+
+  .edit-button {
+    right: 42px;
+  }
+
+  .save-edit-button,
+  .cancel-edit-button {
+    width: 26px;
+    height: 16px;
+    font-size: 8px;
+    border-radius: 5px;
+  }
+
+  .save-edit-button {
+    right: 42px;
+  }
+
+  .inline-edit-input {
+    font-size: 12px;
+    padding: 2px 5px;
+    min-width: 120px;
+    border-radius: 5px;
+  }
+
+  .username {
+    font-size: 12px;
+  }
+
+  .timestamp {
+    font-size: 9px;
+  }
+
+  .chat-input-area {
+    gap: 8px;
+    padding: 8px 0;
+    flex-direction: column;
+  }
+
+  .chat-input {
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .send-button {
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .category-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+  }
+
+  .live-indicator {
+    font-size: 8px;
+    padding: 2px 5px;
+    border-radius: 8px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .live-dot {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .chat-title {
+    font-size: 1.1rem;
+    padding: 5px 12px;
+  }
+
+  .chat-logo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .category-btn {
+    padding: 6px 8px;
+    font-size: 11px;
+    min-width: 55px;
+    max-width: 70px;
+  }
+
+  .chat-window {
+    height: 400px;
+  }
+
+  .message-card {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
 }

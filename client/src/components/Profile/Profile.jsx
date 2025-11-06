@@ -485,8 +485,10 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <button className={styles.myAccountButton} onClick={() => setIsAccountModalOpen(true)}>My Account</button>
-          <button className={styles.editButton} onClick={openEditModal}>✏️ Edit Profile</button>
+          <div className={styles.buttonContainer}>
+            <button className={styles.myAccountButton} onClick={() => setIsAccountModalOpen(true)}>My Account</button>
+            <button className={styles.editButton} onClick={openEditModal}>✏️ Edit Profile</button>
+          </div>
         </div>
       </div>
 
