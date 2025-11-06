@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: url('/images/login-bg.png') no-repeat center center/cover;
   font-family: 'Montserrat', sans-serif;
+  padding: 20px 10px;
 }
 
 .login-form {
@@ -128,132 +129,166 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .login-form {
-    padding: 1.75rem;
-    max-width: 90%;
-  }
-
-  .login-form h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .login-form input {
-    padding: 0.75rem;
-    font-size: 0.95rem;
-  }
-
-  .login-form button {
-    padding: 0.75rem;
-    font-size: 0.95rem;
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .signup-box {
-    width: 95%;
-    max-width: 90%;
-    padding: 1.75rem;
-  }
-
-  .signup-box input {
-    padding: 0.55rem;
-    font-size: 0.95rem;
-  }
-
-  .signup-submit,
-  .signup-cancel {
-    padding: 0.65rem 0.9rem;
-    font-size: 0.95rem;
-    min-width: 80px;
-    max-width: 150px;
-  }
-}
-
-@media (max-width: 480px) {
   .login-page {
-    padding: 20px 10px;
+    min-height: calc(100vh - 60px);
+    padding: 40px 20px;
   }
 
   .login-form {
     padding: 1.5rem;
-    max-width: 95%;
-    border-radius: 16px;
+    max-width: 340px;
   }
 
   .login-form h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
   }
 
   .login-form input {
     padding: 0.7rem;
-    margin-bottom: 0.85rem;
     font-size: 0.9rem;
-    border-radius: 10px;
+    margin-bottom: 0.9rem;
   }
 
   .login-form button {
     padding: 0.7rem;
     font-size: 0.9rem;
-    border-radius: 10px;
     width: 85%;
-    max-width: 250px;
-  }
-
-  .error-message {
-    font-size: 0.85rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .signup-link {
-    font-size: 0.85rem;
-    margin-bottom: 0.85rem;
+    max-width: 280px;
   }
 
   .signup-box {
-    width: 98%;
+    width: 90%;
+    max-width: 340px;
     padding: 1.5rem;
-    border-radius: 10px;
-  }
-
-  .signup-box h2 {
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
   }
 
   .signup-box input {
     padding: 0.5rem;
-    margin: 0.4rem 0;
     font-size: 0.9rem;
+  }
+
+  .signup-submit,
+  .signup-cancel {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+    min-width: 75px;
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 30px 15px;
+    min-height: calc(100vh - 60px);
+  }
+
+  .login-form {
+    padding: 1.25rem;
+    max-width: 300px;
+    border-radius: 16px;
+  }
+
+  .login-form h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .login-form input {
+    padding: 0.65rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .login-form button {
+    padding: 0.65rem;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 230px;
+  }
+
+  .error-message {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .signup-link {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .signup-box {
+    width: 92%;
+    max-width: 300px;
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .signup-box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .signup-box input {
+    padding: 0.45rem;
+    margin: 0.35rem 0;
+    font-size: 0.85rem;
     border-radius: 6px;
   }
 
   .signup-submit,
   .signup-cancel {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.9rem;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.85rem;
     border-radius: 6px;
-    margin: 0.25rem;
-    min-width: 70px;
-    max-width: 130px;
+    margin: 0.2rem;
+    min-width: 65px;
+    max-width: 120px;
   }
 }
 
 @media (max-width: 360px) {
   .login-form {
-    padding: 1.25rem;
+    padding: 1rem;
+    max-width: 280px;
   }
 
   .login-form h2 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+  }
+
+  .login-form input {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .login-form button {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    max-width: 210px;
   }
 
   .signup-box {
-    padding: 1.25rem;
+    padding: 1rem;
+    max-width: 280px;
   }
 
   .signup-box h2 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+  }
+
+  .signup-box input {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .signup-submit,
+  .signup-cancel {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+    min-width: 60px;
+    max-width: 110px;
   }
 }
