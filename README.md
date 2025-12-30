@@ -1,4 +1,5 @@
 # PokeMania – API Automation & Quality Analysis Portfolio
+➡️ **Detailed API automation documentation:** [api/README.md](api/README.md)
 
 PokeMania is a full-stack web application project accompanied by a comprehensive **API automation and quality analysis suite**.  
 This repository demonstrates practical QA automation using **Postman and Newman**, as well as structured analysis of test results to assess system quality and release readiness.
@@ -21,8 +22,7 @@ The automation covers **49 API test cases across 8 Postman collections**, target
 - CLI-based automated execution using Newman
 - CI-ready structure with secure environment variable management
 
-➡️ **Detailed API automation documentation:**  
-[api/README.md](api/README.md)
+➡️ **Detailed API automation documentation:** [api/README.md](api/README.md)
 
 > Note: All environment variables are committed with empty values.  
 > Tokens and sensitive data are generated and injected only at runtime.
