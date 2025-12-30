@@ -1,4 +1,4 @@
-# PokeMania – API Automation & Quality Analysis Portfolio
+# API Automation & Quality Analysis | PokeMania
 ➡️ **Detailed API automation documentation:** [api/README.md](api/README.md)
 
 PokeMania is a full-stack web application project accompanied by a comprehensive **API automation and quality analysis suite**.  
