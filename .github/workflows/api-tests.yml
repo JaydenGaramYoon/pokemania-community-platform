@@ -240,4 +240,14 @@ jobs:
         run: sleep 3
 
       - name: Run API Tests
-        run: npx newman run "api/postman/Public API (Search).postman_collection.json" -e "api/postman/environments/ci.postman_environment.json"
+        run: npx newman run "api/postman/Public API (Search).postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" -r html,json --reporter-html-export=newman-report.html --reporter-json-export=newman-report.json
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-reports
+          path: |
+            newman-report.html
+            newman-report.json
+          retention-days: 30
