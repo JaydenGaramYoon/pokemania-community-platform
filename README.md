@@ -1,5 +1,6 @@
 # API Automation & Quality Analysis | PokeMania
 ➡️ **Detailed API automation documentation:** [api/README.md](api/README.md)
+
 ➡️ **Project Overview & Development Log:** [Blog](https://glimmer-opal-0ad.notion.site/PokeMania-MERN-Stack-Project-Dev-Log-Troubleshooting-24397141ccc3805295aefadeddb2ec68?pvs=74 
 )
 
