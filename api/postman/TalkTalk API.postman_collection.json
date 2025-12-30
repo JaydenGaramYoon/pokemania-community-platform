@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+		"name": "Pokemania - TalkTalk API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43737297"
+	},
+	"item": [
+		{
+			"name": "TC-MSG-POST-001-Send Message (Guest)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"section\": \"General\",\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"message\": \"hello world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/messages",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+							"    pm.expect([200, 201]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		},
+		{
+			"name": "TC-MSG-POST-002-Send Message (Logged-in)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U001}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"section\":\"Guides\",\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"use thunder shock\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/messages",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+							"    pm.expect([200, 201]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		},
+		{
+			"name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/messages/{{MESSAGE_ID_EDIT_001}}",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"messages",
+						"{{MESSAGE_ID_EDIT_001}}"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		},
+		{
+			"name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/messages/{{MESSAGE_ID_EDIT_001}}",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"messages",
+						"{{MESSAGE_ID_EDIT_001}}"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
+							"    pm.expect([200, 400]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		},
+		{
+			"name": "TC-MSG-DEL-001-Delete Message (Author)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/messages/{{MESSAGE_ID_DEL_001}}",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"messages",
+						"{{MESSAGE_ID_DEL_001}}"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
+							"    pm.expect([200, 204]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		},
+		{
+			"name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"section\": \"General\",\r\n    \"message\": \"<script>bad</script>\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/messages",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
+							"    pm.expect([200, 201]).to.include(pm.response.code);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		}
+	]
+}
+

@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+		"name": "Pokemania - Profile API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43737297"
+	},
+	"item": [
+		{
+			"name": "TC-PROF-POST-001-Create Profile(U001)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U001}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/profile",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 Created\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		},
+		{
+			"name": "TC-PROF-UPD-001-Update Profile (U001)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U001}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/profile/users/{{USER_ID_U001}}",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"profile",
+						"users",
+						"{{USER_ID_U001}}"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		},
+		{
+			"name": "TC-PROF-DEL-001-Delete Account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/profile/users/{{USER_ID_U001}}",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"profile",
+						"users",
+						"{{USER_ID_U001}}"
+					]
+				}
+			},
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204 No Content\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"response": []
+		}
+	]
+}
+

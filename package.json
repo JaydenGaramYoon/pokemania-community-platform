@@ -3,6 +3,7 @@
         "@babel/core": "^7.27.1",
         "@babel/preset-env": "^7.27.2",
         "babel-loader": "^10.0.0",
+        "newman": "^6.2.1",
         "nodemon": "^3.1.10"
     },
     "name": "week-3-mern_skeleton",
@@ -16,7 +17,16 @@
         "dev": "concurrently 'vite' \"nodemon server.js\"",
         "build": "vite build",
         "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "api:test:auth": "newman run \"api/postman/Auth API.postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:user": "newman run \"api/postman/User API.postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:favourites": "newman run \"api/postman/Favourites API.postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:game": "newman run \"api/postman/Game API.postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:talktalk": "newman run \"api/postman/TalkTalk API.postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:admin": "newman run \"api/postman/Admin API.postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:profile": "newman run \"api/postman/Profile API.postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:public": "newman run \"api/postman/Public API (Search).postman_collection.json\" -e \"api/postman/environments/dev.postman_environment.json\"",
+        "api:test:all": "npm run api:test:auth & npm run api:test:user & npm run api:test:favourites & npm run api:test:game & npm run api:test:talktalk & npm run api:test:admin & npm run api:test:profile & npm run api:test:public"
     },
     "dependencies": {
         "body-parser": "^2.2.0",

@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+		"name": "Pokemania - Favourites API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43737297"
+	},
+	"item": [
+		{
+			"name": "TC-FAV-ADD-001(U001)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 201 Created\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U001}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/favourites",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC-FAV-ADD-002(U002)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 201 Created\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U002}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/favourites",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC-FAV-ADD-003(Duplicate)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 409 Conflict\", () => {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});\r"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U001}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/favourites",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC-FAV-EDIT-001(Owner)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200 OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U001}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/favourites/{{USER_ID_U001}}/25",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"favourites",
+						"{{USER_ID_U001}}",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC-FAV-DEL-001(Owner)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 204 No Content\", () => {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN_U002}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/favourites/{{USER_ID_U002}}/{{FAV-DEL-001}}",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"favourites",
+						"{{USER_ID_U002}}",
+						"{{FAV-DEL-001}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 401 Unauthorized\", () => {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"\r"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/favourites",
+					"protocol": "http",
+					"host": ["localhost:3000"],
+					"path": [
+						"api",
+						"favourites"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+
