@@ -12,7 +12,7 @@ Pokemania is a full-stack web application that enables users to:
 - View personal profiles
 - Search Pokemon via integrated PokeAPI
 
-**Key Feature**: 51 comprehensive Postman test cases covering Auth, User, Game, Profile, Favorites, Messaging, Admin, and Public APIs.
+**Key Feature**: 49 comprehensive Postman test cases covering Auth, User, Game, Profile, Favorites, Messaging, Admin, and Public APIs.
 
 ## Tech Stack
 
@@ -244,7 +244,7 @@ Test results are generated at runtime via Newman and are not stored in the repos
 
 ## Testing Coverage
 
-51 test cases covering:
+49 test cases covering:
 - Happy path scenarios
 - Error handling (400, 401, 403, 404)
 - Authorization checks
