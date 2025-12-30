@@ -1,4 +1,4 @@
-# Pokemania - Full Stack Application
+# Pokemania - MERN Stack Community Web Platform
 
 A comprehensive Pokemon game platform with full QA testing coverage using Postman collections.
 
