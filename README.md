@@ -29,6 +29,28 @@ The automation covers **49 API test cases across 8 Postman collections**, target
 
 ---
 
+## Project Structure
+
+This repository is organised to clearly separate application code from QA automation artifacts.
+
+```text
+.
+├── client/            # Frontend application
+├── server/            # Backend application
+├── api/               # API automation and QA artifacts
+│   ├── postman/       # Postman collections and environments
+│   └── README.md      # Detailed API testing documentation
+└── README.md          # Project overview and quality analysis
+
+### API Automation Directory (/api)
+
+The /api directory contains all resources related to API automated testing and quality validation.
+It is intentionally separated from the application source code to clearly distinguish test definitions from implementation logic.
+
+This directory serves as the primary entry point for reviewing the QA scope of this project.
+
+---
+
 ## API Test & Quality Analysis Report (v1.0)
 
 In addition to automated execution, this project includes a **formal API test and quality analysis report** that evaluates the effectiveness and reliability of the test suite beyond simple pass or fail results.
