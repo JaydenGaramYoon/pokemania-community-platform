@@ -37,13 +37,28 @@ The analysis focuses on identifying defect patterns, assessing test depth, and e
 
 ### Test Metrics Summary
 
-<img width="958" height="555" alt="image" src="https://github.com/user-attachments/assets/55dd23b8-0c0f-4655-93e2-1cf97ae15a6a" />
+<p align="center">
+  <img width="958" height="555" alt="API Test Metrics Summary"
+       src="https://github.com/user-attachments/assets/55dd23b8-0c0f-4655-93e2-1cf97ae15a6a" />
+</p>
+<p align="center">
+  <em>Figure 1. API test execution results based on 49 automated test cases</em>
+</p>
+
 These results indicate full requirement and execution coverage, with failures concentrated in specific high-risk areas rather than widespread functional gaps.
 
 ---
 
 ### Defect Workflow and Severity Overview
-<img width="648" height="530" alt="image" src="https://github.com/user-attachments/assets/407fd813-d45f-4ef7-9529-17226668f2b8" />
+
+<p align="center">
+  <img width="648" height="530" alt="Defect Workflow and Severity Distribution"
+       src="https://github.com/user-attachments/assets/407fd813-d45f-4ef7-9529-17226668f2b8" />
+</p>
+<p align="center">
+  <em>Figure 2. Defect workflow status and severity distribution</em>
+</p>
+
 High-severity defects were primarily related to authentication failures, token validation, and backend synchronization issues that directly impacted session stability and core functionality.
 
 ---
