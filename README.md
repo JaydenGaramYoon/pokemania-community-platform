@@ -1,4 +1,4 @@
-"# Pokemania - Full Stack Application
+# Pokemania - Full Stack Application
 
 A comprehensive Pokemon game platform with full QA testing coverage using Postman collections.
 
