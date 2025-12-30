@@ -32,6 +32,205 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Create CI Postman Environment
+        run: |
+          cat > api/postman/environments/ci.postman_environment.json << 'EOF'
+          {
+            "id": "pokemania-ci-env",
+            "name": "CI",
+            "values": [
+              {
+                "key": "___BASE_CONFIG___",
+                "value": "",
+                "enabled": false
+              },
+              {
+                "key": "BASE_URL",
+                "value": "http://localhost:3000",
+                "enabled": true
+              },
+              {
+                "key": "TOKEN_PUBLIC",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "TOKEN_U001",
+                "value": "${{ secrets.TOKEN_U001 }}",
+                "enabled": true
+              },
+              {
+                "key": "TOKEN_U002",
+                "value": "${{ secrets.TOKEN_U002 }}",
+                "enabled": true
+              },
+              {
+                "key": "TOKEN_U003",
+                "value": "${{ secrets.TOKEN_U003 }}",
+                "enabled": true
+              },
+              {
+                "key": "TOKEN_U004",
+                "value": "${{ secrets.TOKEN_U004 }}",
+                "enabled": true
+              },
+              {
+                "key": "TOKEN_U005",
+                "value": "${{ secrets.TOKEN_U005 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_U001",
+                "value": "${{ secrets.PASSWORD_U001 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_U002",
+                "value": "${{ secrets.PASSWORD_U002 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_U003",
+                "value": "${{ secrets.PASSWORD_U003 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_TEST_SHORT",
+                "value": "${{ secrets.PASSWORD_TEST_SHORT }}",
+                "enabled": true
+              },
+              {
+                "key": "EMAIL_U001",
+                "value": "${{ secrets.EMAIL_U001 }}",
+                "enabled": true
+              },
+              {
+                "key": "EMAIL_U002",
+                "value": "${{ secrets.EMAIL_U002 }}",
+                "enabled": true
+              },
+              {
+                "key": "EMAIL_U003",
+                "value": "${{ secrets.EMAIL_U003 }}",
+                "enabled": true
+              },
+              {
+                "key": "EMAIL_TEST_DUPLICATE",
+                "value": "${{ secrets.EMAIL_TEST_DUPLICATE }}",
+                "enabled": true
+              },
+              {
+                "key": "EMAIL_TEST_NOTFOUND",
+                "value": "${{ secrets.EMAIL_TEST_NOTFOUND }}",
+                "enabled": true
+              },
+              {
+                "key": "EMAIL_TEST_SHORT",
+                "value": "${{ secrets.EMAIL_TEST_SHORT }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_AUTH001",
+                "value": "${{ secrets.PASSWORD_AUTH001 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_AUTH002_INVALID",
+                "value": "${{ secrets.PASSWORD_AUTH002_INVALID }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_AUTH004",
+                "value": "${{ secrets.PASSWORD_AUTH004 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_AUTH_SIGNUP001",
+                "value": "${{ secrets.PASSWORD_AUTH_SIGNUP001 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_AUTH_SIGNUP002",
+                "value": "${{ secrets.PASSWORD_AUTH_SIGNUP002 }}",
+                "enabled": true
+              },
+              {
+                "key": "PASSWORD_AUTH_SIGNUP003_SHORT",
+                "value": "${{ secrets.PASSWORD_AUTH_SIGNUP003_SHORT }}",
+                "enabled": true
+              },
+              {
+                "key": "USER_ID_U001",
+                "value": "${{ secrets.USER_ID_U001 }}",
+                "enabled": true
+              },
+              {
+                "key": "USER_ID_U002",
+                "value": "${{ secrets.USER_ID_U002 }}",
+                "enabled": true
+              },
+              {
+                "key": "USER_ID_U003",
+                "value": "${{ secrets.USER_ID_U003 }}",
+                "enabled": true
+              },
+              {
+                "key": "USER_ID_SET_TARGET",
+                "value": "${{ secrets.USER_ID_SET_TARGET }}",
+                "enabled": true
+              },
+              {
+                "key": "GAME_ID_PUT_001",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "GAME_ID_PUT_002",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "GAME_ID_DEL_001",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "GAME_ID_DEL_002",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "MESSAGE_ID_EDIT_001",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "MESSAGE_ID_DEL_001",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "SENDER_U001",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "SENDER_GUEST",
+                "value": "",
+                "enabled": true
+              },
+              {
+                "key": "FAV-DEL-001",
+                "value": "",
+                "enabled": true
+              }
+            ],
+            "_postman_variable_scope": "environment",
+            "._postman_exported_at": "2025-12-30T00:00:00.000Z",
+            "_postman_exported_using": "Postman/latest"
+          }
+          EOF
+
       - name: Start server
         run: npm run dev &
         env:
@@ -41,4 +240,4 @@ jobs:
         run: sleep 3
 
       - name: Run API Tests
-        run: npm run api:test:all
+        run: npx newman run "api/postman/Auth API.postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" && npx newman run "api/postman/User API.postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" && npx newman run "api/postman/Favourites API.postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" && npx newman run "api/postman/Game API.postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" && npx newman run "api/postman/TalkTalk API.postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" && npx newman run "api/postman/Admin API.postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" && npx newman run "api/postman/Profile API.postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" && npx newman run "api/postman/Public API (Search).postman_collection.json" -e "api/postman/environments/ci.postman_environment.json"
