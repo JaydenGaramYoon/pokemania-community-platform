@@ -59,6 +59,27 @@ npx newman run "api/postman/Auth API.postman_collection.json" \
   -e "api/postman/environments/dev.postman_environment.json"
 ```
 
+### Newman CLI with Custom Scope
+
+Run specific collections or subset of tests:
+
+```bash
+# Public API only (no auth required)
+npx newman run "api/postman/Public API (Search).postman_collection.json" \
+  -e "api/postman/environments/dev.postman_environment.json"
+
+# Multiple specific collections
+npx newman run "api/postman/Auth API.postman_collection.json" \
+  -e "api/postman/environments/dev.postman_environment.json" && \
+npx newman run "api/postman/User API.postman_collection.json" \
+  -e "api/postman/environments/dev.postman_environment.json"
+
+# All collections (after configuring Secrets)
+for collection in api/postman/*.postman_collection.json; do
+  npx newman run "$collection" -e "api/postman/environments/dev.postman_environment.json"
+done
+```
+
 ## Available Collections
 
 - **Auth API.postman_collection.json**: User authentication & signup

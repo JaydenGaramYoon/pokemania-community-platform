@@ -2,155 +2,222 @@
 
 This document explains how to configure GitHub Secrets for the API testing CI/CD pipeline.
 
-## Setup Instructions
+## Overview
 
-1. Go to your GitHub repository
-2. Navigate to **Settings → Secrets and variables → Actions**
-3. Click **New repository secret**
-4. Add each secret with the exact name and value shown below
+Minimal credentials required for test execution are stored as GitHub Secrets and injected into the CI environment at runtime. Test data and authentication tokens are generated dynamically during test execution via API endpoints.
 
-## Required Secrets
+## Security Philosophy
 
-### Authentication Tokens
+**Tokens are NOT stored as secrets.** They are generated at runtime via authentication APIs and exist only in memory during test execution. This approach:
 
-| Secret Name | Example Value | Description |
-|------------|---------------|-------------|
-| `TOKEN_U001` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` | JWT token for User 001 |
-| `TOKEN_U002` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` | JWT token for User 002 |
-| `TOKEN_U003` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` | JWT token for User 003 (regular user) |
-| `TOKEN_U004` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` | JWT token for User 004 (admin) |
-| `TOKEN_U005` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` | JWT token for User 005 |
+- ✅ Aligns with industry best practices
+- ✅ Prevents token leakage across environments
+- ✅ Ensures tokens are never persisted
+- ✅ Simplifies credential rotation (happens automatically)
 
-### User IDs
+## Required Secrets (Minimal Set)
 
-| Secret Name | Example Value | Description |
-|------------|---------------|-------------|
-| `USER_ID_U001` | `6906c52492a658a3df9fd06e` | MongoDB ObjectID for User 001 |
-| `USER_ID_U002` | `` | MongoDB ObjectID for User 002 |
-| `USER_ID_U003` | `690952b7af0f23206bad2252` | MongoDB ObjectID for User 003 |
-| `USER_ID_SET_TARGET` | `6906c52492a658a3df9fd06e` | Target user ID for admin role assignment |
+Only these secrets are required for CI/CD:
 
-### Passwords
+| Secret Name | Type | Description | Purpose |
+|------------|------|-------------|---------|
+| `TEST_ADMIN_EMAIL` | String | Email for test admin account | Pre-seed test data / admin operations |
+| `TEST_ADMIN_PASSWORD` | String | Password for test admin account | Generate tokens via login API |
+| `TEST_USER_EMAIL` | String | Email for test regular user | Generate tokens via login API |
+| `TEST_USER_PASSWORD` | String | Password for test regular user | Generate tokens via login API |
 
-| Secret Name | Example Value | Description |
-|------------|---------------|-------------|
-| `PASSWORD_U001` | `password123` | Password for User 001 |
-| `PASSWORD_U002` | `password456` | Password for User 002 |
-| `PASSWORD_U003` | `password789` | Password for User 003 |
-| `PASSWORD_TEST_SHORT` | `abc` | Short password for validation testing |
-| `PASSWORD_AUTH001` | `password123` | Password for AUTH test case 001 |
-| `PASSWORD_AUTH002_INVALID` | `wrongpassword` | Invalid password for AUTH test case 002 |
-| `PASSWORD_AUTH004` | `password789` | Password for AUTH test case 004 |
-| `PASSWORD_AUTH_SIGNUP001` | `newpass123` | Password for signup test case 001 |
-| `PASSWORD_AUTH_SIGNUP002` | `newpass456` | Password for signup test case 002 |
-| `PASSWORD_AUTH_SIGNUP003_SHORT` | `ab` | Short password for signup validation |
+That's it. **No TOKEN_*, PASSWORD_*, USER_ID_* arrays.** Everything else is generated at runtime.
 
-### Email Addresses
+## How Tokens Are Generated (Runtime)
 
-| Secret Name | Example Value | Description |
-|------------|---------------|-------------|
-| `EMAIL_U001` | `misty@example.com` | Email for User 001 |
-| `EMAIL_U002` | `user2@example.com` | Email for User 002 |
-| `EMAIL_U003` | `garam@example.com` | Email for User 003 |
-| `EMAIL_TEST_DUPLICATE` | `misty@example.com` | Duplicate email for testing |
-| `EMAIL_TEST_NOTFOUND` | `notfound@example.com` | Non-existent email for testing |
-| `EMAIL_TEST_SHORT` | `a@b` | Short email for validation testing |
+### Workflow Execution Flow
 
-## How to Get Token Values
+```
+1. GitHub Actions runner starts
+2. MongoDB service starts
+3. Node.js server starts
+4. Postman collection runs
+5. Pre-request script calls login API with TEST_ADMIN_EMAIL + TEST_ADMIN_PASSWORD
+6. Token received in response
+7. Token stored in Postman environment (memory only)
+8. Tests execute with token
+9. Token discarded after workflow completes
+```
 
-### Option 1: From Postman (if you have test data locally)
-
-1. Run a signup or login test in Postman
-2. The response will contain the JWT token
-3. Copy the full token value
-
-### Option 2: From Server Logs
-
-1. Start the backend server locally
-2. Create test users via API
-3. Capture the tokens from response headers
-
-### Option 3: Manual JWT Creation (Node.js)
+### Postman Pre-request Script (Example)
 
 ```javascript
-const jwt = require('jsonwebtoken');
+// Pre-request script in Postman collection
+// This runs before each test that needs authentication
 
-const token = jwt.sign(
-  {
-    _id: "USER_ID_HERE",
-    name: "User Name",
-    email: "user@example.com",
-    role: "user"
-  },
-  "your-secret-key",
-  { expiresIn: "7d" }
-);
+const email = pm.environment.get('TEST_ADMIN_EMAIL');
+const password = pm.environment.get('TEST_ADMIN_PASSWORD');
 
-console.log(token);
-```
-
-## Testing Secrets Locally
-
-Before deploying secrets, test them locally:
-
-```bash
-# Create test environment with secrets
-cat > api/postman/environments/test.postman_environment.json << EOF
-{
-  "id": "test-env",
-  "name": "Test",
-  "values": [
-    {
-      "key": "BASE_URL",
-      "value": "http://localhost:3000"
+// Only generate if not already set
+if (!pm.environment.get('TOKEN_ADMIN')) {
+  pm.sendRequest({
+    url: pm.environment.get('BASE_URL') + '/auth/signin',
+    method: 'POST',
+    header: {
+      'Content-Type': 'application/json'
     },
-    {
-      "key": "TOKEN_U001",
-      "value": "YOUR_TOKEN_HERE"
+    body: {
+      mode: 'raw',
+      raw: JSON.stringify({
+        email: email,
+        password: password
+      })
     }
-  ]
+  }, function(err, response) {
+    if (!err && response.code === 200) {
+      const token = response.json().token;
+      pm.environment.set('TOKEN_ADMIN', token);
+    }
+  });
 }
-EOF
-
-# Run tests
-npm run api:test:auth -- -e api/postman/environments/test.postman_environment.json
 ```
 
-## Security Notes
+This ensures tokens are **generated fresh** on each workflow run.
 
-- **Never commit secrets** to the repository
-- Secrets are **encrypted** by GitHub
-- Secrets are **masked** in workflow logs
-- Only use secrets that are **absolutely necessary**
-- Rotate tokens periodically for security
-- Use **environment-specific secrets** if possible (dev, staging, prod)
+## Setup Instructions
+
+### Step 1: Create Test Accounts (Local)
+
+1. Start your backend server locally
+2. Create test user accounts via signup API
+   ```bash
+   curl -X POST http://localhost:3000/api/users \
+     -H "Content-Type: application/json" \
+     -d '{
+       "email": "testadmin@example.com",
+       "password": "testadmin123"
+     }'
+   ```
+3. Note the email and password
+
+### Step 2: Add Secrets to GitHub
+
+1. Go to repository **Settings → Secrets and variables → Actions**
+2. Click **New repository secret**
+3. Add these 4 secrets:
+
+```
+TEST_ADMIN_EMAIL = testadmin@example.com
+TEST_ADMIN_PASSWORD = testadmin123
+TEST_USER_EMAIL = testuser@example.com
+TEST_USER_PASSWORD = testuser123
+```
+
+### Step 3: Verify Secrets
+
+Run workflow manually to verify secrets are working:
+
+1. Go to **Actions** tab
+2. Select **API Tests** workflow
+3. Click **Run workflow**
+4. Check if tests execute successfully
+
+## Environment Variables Auto-Generated at Runtime
+
+These are captured from API responses during test execution:
+
+| Variable | Generated By | Used In |
+|----------|--------------|---------|
+| `TOKEN_ADMIN` | Login API (pre-request script) | Admin operations |
+| `TOKEN_USER` | Login API (pre-request script) | User operations |
+| `USER_ID_ADMIN` | Login response | Admin endpoints |
+| `USER_ID_USER` | Login response | User endpoints |
+| `GAME_ID_*` | Game API response | Game operations |
+| `MESSAGE_ID_*` | Message API response | Message operations |
+| `FAVORITE_ID_*` | Favorites API response | Favorites operations |
+
+**No setup needed** - these are auto-populated by collection scripts.
+
+## Token Rotation Policy
+
+**Automatic** - Tokens are generated on every workflow run, so rotation happens automatically.
+
+If you need to rotate test credentials:
+
+1. Update password in test database
+2. Update corresponding secret in GitHub
+3. Next workflow run uses new credentials
+
+No token refresh needed.
+
+## What NOT to Add as Secrets
+
+❌ Authentication tokens (TOKEN_*)
+❌ User IDs (USER_ID_*)
+❌ Test data IDs (GAME_ID_*, MESSAGE_ID_*)
+❌ Multiple password variants (PASSWORD_AUTH001, PASSWORD_AUTH002_INVALID, etc.)
+
+These are handled by:
+- Pre-request scripts (token generation)
+- Response body extraction (ID capture)
+- Collection variables (test data)
 
 ## Troubleshooting
 
-### Secrets not appearing in workflow
+### Tests fail with 401 Unauthorized
 
-1. Check that secret names **match exactly** (case-sensitive)
-2. Verify secrets are set in the correct repository, not organization level
-3. Try re-running the workflow after adding new secrets
+**Check:**
+- ✓ TEST_ADMIN_EMAIL and TEST_ADMIN_PASSWORD are correct
+- ✓ Test accounts exist in database
+- ✓ Pre-request scripts are present in Postman collection
+- ✓ Secrets are set for correct repository
 
-### API tests failing with 401 errors
+**Debug:**
+Add debug logging to pre-request script:
+```javascript
+console.log("Login response status:", response.code);
+console.log("Login response body:", response.text());
+```
 
-1. Verify token values are current and not expired
-2. Ensure tokens are for the correct user accounts
-3. Check that user accounts exist in the database
+### Tests fail with 404 Not Found
 
-### API tests failing with 404 errors on user endpoints
+Check:
+- ✓ MongoDB is running in CI
+- ✓ Database has proper indexes
+- ✓ API endpoints exist
 
-1. Verify `USER_ID_*` values match actual users in database
-2. Check that user IDs are valid MongoDB ObjectIDs
-3. Ensure users exist before running tests
+### Secret value not recognized
 
-## Environment Variables Not Used as Secrets
+- ✓ Check secret name matches **exactly** (case-sensitive)
+- ✓ Verify secrets are in correct repository (not organization level)
+- ✓ Try re-running workflow (GitHub may need moment to sync)
 
-Some variables are left empty in CI environment and will be populated during test execution:
+## Local Testing
 
-- `GAME_ID_*` - Auto-populated by test responses
-- `MESSAGE_ID_*` - Auto-populated by test responses
-- `FAV-DEL-001` - Auto-populated by test responses
-- `SENDER_U001`, `SENDER_GUEST` - Can be left empty
+Test secrets locally before CI:
+
+```bash
+# Export secrets to local environment
+export TEST_ADMIN_EMAIL="testadmin@example.com"
+export TEST_ADMIN_PASSWORD="testadmin123"
+
+# Run tests locally
+npm run api:test:all
+```
+
+Or create local `.env` and load via collection setup script.
+
+## Security Checklist
+
+Before committing:
+
+- ✅ No real tokens in code
+- ✅ No credentials in collection JSON
+- ✅ Test accounts are non-production only
+- ✅ Secrets are encrypted on GitHub
+- ✅ Only essential credentials stored
+
+## References
+
+- [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
+- [Postman Pre-request Scripts](https://learning.postman.com/docs/writing-scripts/pre-request-scripts/)
+- [JWT Best Practices](https://tools.ietf.org/html/rfc8725)
+- [API Security](https://owasp.org/www-project-api-security/)
+
+
 
