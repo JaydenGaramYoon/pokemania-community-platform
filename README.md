@@ -269,4 +269,4 @@ This project is part of COMP229 coursework and has been extended as a personal p
 - **Email**: garam.yoon.tech@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/garam-yoon/
 
-For questions or issues, please reach out via the contact information above." 
+For questions or issues, please reach out via the contact information above.
