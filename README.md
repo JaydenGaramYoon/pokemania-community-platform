@@ -20,7 +20,7 @@ The contribution distribution below reflects the agreed scope documented in the 
 
 | Name | Responsibilities |
 |---|---|
-| **Garam Yoon** | **Project Manager**, Front-End Developer, Back-End Developer, Database Design, Home / Favourites / Game / Profile pages, Debugging, CI/CD testing, Deployment, **API Automation & Quality Assurance** → *see* **`[qa-testing` branch](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing)** for individual QA work |
+| **Garam Yoon** | **Project Manager**, Front-End Developer, Back-End Developer, Database Design, Home / Favourites / Game / Profile pages, Debugging, CI/CD testing, Deployment, **API Automation & Quality Assurance** → see [qa-testing branch](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing) for individual QA work |
 | Chun Wai Chung | Front-End Developer, Back-End Developer, Database Design, Profile page implementation, Slides preparation, External Design Document (EDD) |
 | Fengyuan Yang | Front-End Developer, Back-End Developer, Database Design, TalkTalk (forum/chat) feature, Jira management, Debugging |
 | Tak Sum Li | Front-End & Back-End Developer, Database Design, Sign Up / Login functionality, YouTube demo video, End-to-End (E2E) testing |
