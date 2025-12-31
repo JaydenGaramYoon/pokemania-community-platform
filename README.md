@@ -1,4 +1,4 @@
-# PokeMania | Team-Based MERN Application with Extended API Automation Testing
+# PokeMania | Team-Based MERN Application
 ---
 
 ## Project Overview
@@ -25,11 +25,6 @@ The contribution distribution below reflects the agreed scope documented in the 
 | Chun Wai Chung | Front-End Developer, Back-End Developer, Database Design, Profile page implementation, Slides preparation, External Design Document (EDD) |
 | Fengyuan Yang | Front-End Developer, Back-End Developer, Database Design, TalkTalk (forum/chat) feature, Jira management, Debugging |
 | Tak Sum Li | Front-End & Back-End Developer, Database Design, Sign Up / Login functionality, YouTube demo video, End-to-End (E2E) testing |
-
-🔗 **QA Branch (Individual Contribution):**  
-https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing
-
-This structure highlights both **collaborative development ownership** and **clearly defined individual responsibility areas**, with QA artifacts intentionally isolated to ensure traceability and accountability.
 
 ---
 
