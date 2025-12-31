@@ -1,21 +1,12 @@
 # API Automation & Quality Analysis | PokeMania
 
-## 🔗 Important Links
+##🔗 Important Links
 
 - **Main Branch:** [GitHub Repository](https://github.com/JaydenGaramYoon/pokemania-community-platform)
 - **QA Testing Branch:** [qa-testing branch](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing)
 - **API Testing Guide:** [API README](./api/README.md)
 - **GitHub Secrets Setup:** [SECRETS Guide](./.github/SECRETS.md)
 - **PokéAPI Documentation:** [PokéAPI Docs](https://pokeapi.co/docs/v2)
-
-PokeMania is a full-stack MERN web application project.
-
-The underlying system was developed collaboratively as part of a team-based project, to which I contributed during system development.  
-**All QA activities and API automation were then independently designed, executed, and analysed by me as an extension of the project.**
-
-This repository demonstrates practical QA automation using Postman and Newman, as well as structured analysis of test results to assess system quality and release readiness.
-
-The focus of this work is not only automated execution, but also how test results are interpreted and used to reason about software quality within the context of a real, evolving system.
 
 ---
 
