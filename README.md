@@ -1,5 +1,5 @@
 # PokeMania | Team-Based MERN Application
----
+
 
 ## Project Overview
 
@@ -10,7 +10,6 @@ In addition to the shared development work, the project was **extended with a de
 
 This extension emphasises not only automated test execution, but also **how API test results are analysed and translated into quality- and risk-informed decisions**, reflecting real-world QA practices applied on top of a collaboratively developed system.
 
----
 
 ## 👥 Team Contributions & Role Distribution
 
@@ -26,27 +25,7 @@ The contribution distribution below reflects the agreed scope documented in the 
 | Fengyuan Yang | Front-End Developer, Back-End Developer, Database Design, TalkTalk (forum/chat) feature, Jira management, Debugging |
 | Tak Sum Li | Front-End & Back-End Developer, Database Design, Sign Up / Login functionality, YouTube demo video, End-to-End (E2E) testing |
 
----
 
-## API Automation Overview
-
-The project includes a structured **API automation suite** implemented using **Postman and Newman**, designed to validate backend functionality independently from the UI.
-
-The automation covers **49 API test cases across 8 Postman collections**, targeting realistic QA scenarios such as functional validation, authorization control, negative testing, and edge-case handling.
-
-### Coverage Highlights
-- JWT-based authentication and token lifecycle validation  
-- Role-based authorization (user vs admin)  
-- Core business logic validation (games, profiles, favourites, messaging)  
-- Negative scenarios and boundary condition testing  
-- CLI-based automated execution using Newman  
-- CI-ready structure with secure environment variable handling  
-
-> **Note:**  
-> All environment variables are committed with empty values.  
-> Tokens and sensitive data are generated and injected only at runtime.
-
----
 
 ## Project Structure
 
