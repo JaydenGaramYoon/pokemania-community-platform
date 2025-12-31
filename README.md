@@ -1,4 +1,4 @@
-# PokeMania | Team-Based MERN Application
+ # PokeMania | Team-Based MERN Application
 
 ## Project Overview
 
@@ -91,12 +91,6 @@ The contribution distribution below reflects the agreed scope documented in the 
 - MongoDB
 - Mongoose ODM
 - Collections: users, profiles, favorites, games, messages
-
-**Testing & QA:**
-- Postman Collections (8 API suites)
-- Newman CLI for automated testing
-- GitHub Actions CI/CD pipeline
-- 49 comprehensive test cases
 
 **Deployment:**
 - Render.com (Backend hosting)
@@ -319,9 +313,6 @@ cd client && npm run dev
 ## 🔗 Important Links
 
 - **Repository:** [GitHub Repository](https://github.com/JaydenGaramYoon/pokemania-community-platform)
-- **QA Testing Branch:** [qa-testing branch](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing)
-- **API Testing Guide:** [API README](./api/README.md)
-- **GitHub Secrets Setup:** [SECRETS Guide](./.github/SECRETS.md)
 - **PokéAPI Documentation:** [PokéAPI Docs](https://pokeapi.co/docs/v2)
 
 
