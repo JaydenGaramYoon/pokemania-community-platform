@@ -56,6 +56,7 @@ The automation covers **49 API test cases across 8 Postman collections**, target
 
 The repository is organised to clearly separate application code from QA automation artifacts.
 
+```
 .
 ├── client/ # Frontend application
 ├── server/ # Backend application
@@ -63,9 +64,8 @@ The repository is organised to clearly separate application code from QA automat
 │ ├── postman/ # Postman collections and environments
 │ └── README.md # Detailed API testing documentation
 └── README.md # Project overview and QA summary
+```
 
-yaml
-Copy code
 
 ### API Automation Directory (`/api`)
 
