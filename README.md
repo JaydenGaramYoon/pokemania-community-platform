@@ -1,5 +1,12 @@
 # API Automation & Quality Analysis | PokeMania
-➡️ **Detailed API automation documentation:** [api/README.md](api/README.md)
+
+## 🔗 Important Links
+
+- **Main Branch:** [GitHub Repository](https://github.com/JaydenGaramYoon/pokemania-community-platform)
+- **QA Testing Branch:** [qa-testing branch](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing)
+- **API Testing Guide:** [API README](./api/README.md)
+- **GitHub Secrets Setup:** [SECRETS Guide](./.github/SECRETS.md)
+- **PokéAPI Documentation:** [PokéAPI Docs](https://pokeapi.co/docs/v2)
 
 PokeMania is a full-stack MERN web application project.
 
