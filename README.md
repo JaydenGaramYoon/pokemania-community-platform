@@ -71,8 +71,6 @@ These cases were selected to demonstrate coverage across **negative scenarios, e
 
 The samples reflect how test cases were designed at both unit and integration levels, with clear traceability to requirements and explicit validation of expected system behaviour.
 
-A complete test case matrix containing all 49 API test cases is available separately for detailed review.
-
 
 
 ### Test Metrics Summary
