@@ -1,9 +1,6 @@
 # API Automation & Quality Analysis | PokeMania
 ➡️ **Detailed API automation documentation:** [api/README.md](api/README.md)
 
-➡️ **Project overview & development log:** [Blog](https://glimmer-opal-0ad.notion.site/PokeMania-MERN-Stack-Project-Dev-Log-Troubleshooting-24397141ccc3805295aefadeddb2ec68?pvs=74 
-)
-
 PokeMania is a full-stack web application project accompanied by a comprehensive **API automation and quality analysis suite**.  
 This repository demonstrates practical QA automation using **Postman and Newman**, as well as structured analysis of test results to assess system quality and release readiness.
 
