@@ -1,5 +1,4 @@
 # PokeMania | Team-Based MERN Application with Extended API Automation Testing
----
 
 ## Project Overview
 
