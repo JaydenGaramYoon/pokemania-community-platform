@@ -1,5 +1,4 @@
-# PokeMania | Team-Based MERN Application with [Extended API Automation Testing
-](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing)
+# PokeMania | Team-Based MERN Application with Extended API Automation Testing
 ---
 
 ## Project Overview
