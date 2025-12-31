@@ -3,12 +3,9 @@
 
 ## Project Overview
 
-**PokeMania** is a collaborative full-stack **MERN web application** developed by the **Bright Bridge (BB)** team as part of the COMP229 – Web Application Development course.
+**PokeMania** is a collaborative full-stack MERN web application developed by the Bright Bridge (BB) team as part of the COMP229 – Web Application Development course.
 
 The core application was built through team-based development, covering frontend, backend, database design, and feature implementation.  
-In addition to the shared development work, the project was **extended with a dedicated API automation and quality analysis initiative**, focusing on backend validation, defect discovery, and release-readiness assessment.
-
-This extension emphasises not only automated test execution, but also **how API test results are analysed and translated into quality- and risk-informed decisions**, reflecting real-world QA practices applied on top of a collaboratively developed system.
 
 
 ## 👥 Team Contributions & Role Distribution
