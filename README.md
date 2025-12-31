@@ -25,8 +25,6 @@ The automation covers **49 API test cases across 8 Postman collections**, target
 - CLI-based automated execution using Newman
 - CI-ready structure with secure environment variable management
 
-➡️ **Detailed API automation documentation:** [api/README.md](api/README.md)
-
 > Note: All environment variables are committed with empty values.  
 > Tokens and sensitive data are generated and injected only at runtime.
 
@@ -60,6 +58,22 @@ This directory serves as the primary entry point for reviewing the QA scope of t
 In addition to automated execution, this project includes a **formal API test and quality analysis report** that evaluates the effectiveness and reliability of the test suite beyond simple pass or fail results.
 
 The analysis focuses on identifying defect patterns, assessing test depth, and evaluating overall release readiness based on observed test outcomes.
+
+
+
+### Sample API Test Cases
+
+The following table presents a curated subset of representative API test cases from the full test suite.  
+
+<img width="1373" height="747" alt="image" src="https://github.com/user-attachments/assets/3769b3df-9192-422e-bc8a-22c491d6d71a" />
+
+These cases were selected to demonstrate coverage across **negative scenarios, edge conditions, authorization control, and core business rules**.
+
+The samples reflect how test cases were designed at both unit and integration levels, with clear traceability to requirements and explicit validation of expected system behaviour.
+
+A complete test case matrix containing all 49 API test cases is available separately for detailed review.
+
+
 
 ### Test Metrics Summary
 
