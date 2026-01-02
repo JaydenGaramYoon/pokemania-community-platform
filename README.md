@@ -153,6 +153,131 @@ The contribution distribution below reflects the agreed scope documented in the 
 - **Environment Variables:** Sensitive data in .env files
 - **Token Management:** Secure token storage and expiration
 
+## �️ Database Design
+
+PokeMania uses **MongoDB** with Mongoose ODM for flexible document-based data storage. The database consists of 5 main collections with relationships optimized for the application's core features.
+
+### Database Collections & Schema
+
+#### 1. **Users Collection**
+Stores user account information and authentication data.
+
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| `_id` | ObjectId | Unique user identifier | Primary key (auto-generated) |
+| `name` | String | User's display name | Required, trimmed |
+| `email` | String | User email address | Required, unique, must be valid email format |
+| `role` | String | User role | Enum: `'user'` or `'admin'`, default: `'user'` |
+| `hashed_password` | String | Encrypted password | Required, min 6 characters |
+| `salt` | String | Password salt for encryption | Auto-generated per user |
+| `created` | Date | Account creation timestamp | Default: current date |
+| `updated` | Date | Last update timestamp | Default: current date |
+
+**Relationships:**
+- One-to-One with Profile (userId reference)
+- One-to-Many with Favorites (user reference)
+- One-to-Many with Game scores (user reference)
+
+---
+
+#### 2. **Profiles Collection**
+Stores detailed user profile information.
+
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| `_id` | ObjectId | Unique profile identifier | Primary key (auto-generated) |
+| `userId` | ObjectId | Reference to User | Required, foreign key |
+| `name` | String | User's profile name | Required |
+| `bannerUrl` | String | Profile banner image URL | Default: empty string |
+| `iconUrl` | String | Profile picture/icon URL | Default: empty string |
+| `title` | String | User's title/tagline | Default: empty string |
+| `location` | String | User's location | Default: empty string |
+| `summary` | String | User's bio/summary | Default: empty string |
+| `types` | [String] | Array of favorite Pokémon types | Array of strings |
+| `details` | [String] | Additional profile details | Array of strings |
+| `timestamps` | Object | Created/updated times | Auto-managed |
+
+**Relationships:**
+- Many-to-One with User (userId reference)
+
+---
+
+#### 3. **Favorites Collection**
+Stores user's favorite Pokémon with personal notes.
+
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| `_id` | ObjectId | Unique favorite record identifier | Primary key (auto-generated) |
+| `user` | ObjectId | Reference to User | Required, foreign key |
+| `pokemonId` | Number | PokéAPI Pokémon ID | Required |
+| `memo` | String | User's custom note/memo | Default: empty string |
+
+**Relationships:**
+- Many-to-One with User (user reference)
+
+---
+
+#### 4. **Games Collection**
+Stores game session scores and performance data.
+
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| `_id` | ObjectId | Unique game record identifier | Primary key (auto-generated) |
+| `user` | ObjectId | Reference to User | Required, foreign key |
+| `score` | Number | Game score earned | Required |
+| `playedAt` | Date | Timestamp of game session | Default: current date |
+
+**Relationships:**
+- Many-to-One with User (user reference)
+
+---
+
+#### 5. **Messages Collection**
+Stores TalkTalk forum/chat messages.
+
+| Field | Type | Description | Constraints |
+|-------|------|-------------|-------------|
+| `_id` | ObjectId | Unique message identifier | Primary key (auto-generated) |
+| `section` | String | Forum section category | e.g., "General", "Guides", "Fanart" |
+| `sender` | String | Username or guest identifier | Required |
+| `message` | String | Message content | Required, sanitized |
+| `timestamp` | Date | Message creation time | Default: current date |
+
+---
+
+### Database Relationships (ER Model)
+
+```
+┌─────────────┐         One-to-One        ┌──────────────┐
+│    Users    │◄─────────────────────────►│  Profiles    │
+│  (_id, email)                           │ (userId)     │
+└─────────────┘                           └──────────────┘
+      │
+      │ One-to-Many
+      ├─────────────────────┬──────────────────────┬─────────────────────┐
+      │                     │                      │                     │
+      ▼                     ▼                      ▼                     ▼
+┌──────────────┐      ┌──────────────┐    ┌──────────────┐      ┌──────────────┐
+│  Favorites   │      │    Games     │    │  Messages    │      │   (Future)   │
+│ (user, pkmId)       │  (user)      │    │  (section)   │      │              │
+└──────────────┘      └──────────────┘    └──────────────┘      └──────────────┘
+```
+
+### Key Design Decisions
+
+1. **Document-Based NoSQL:** MongoDB allows flexible schema for scalability and nested data structures
+2. **Foreign Key References:** ObjectId references maintain relational integrity
+3. **Timestamps:** Automatic tracking of created/updated times for audit trails
+4. **Password Security:** Bcrypt hashing with unique salts per user
+5. **Denormalization Options:** Arrays in Profile (types, details) for frequently accessed data
+6. **Collection Naming:** Singular/plural conventions for consistency (Users, Favorites, Games, Messages)
+
+### Indexing Strategy
+
+- **Users.email:** Unique index for fast login queries
+- **Favorites.user:** Index for quick favorite retrieval per user
+- **Games.user:** Index for score history queries
+- **Messages.timestamp:** Index for message ordering and pagination
 
 ## 📁 Project Structure
 
