@@ -153,7 +153,7 @@ The contribution distribution below reflects the agreed scope documented in the 
 - **Environment Variables:** Sensitive data in .env files
 - **Token Management:** Secure token storage and expiration
 
-## �️ Database Design
+## Database Design
 
 PokeMania uses **MongoDB** with Mongoose ODM for flexible document-based data storage. The database consists of 5 main collections with relationships optimized for the application's core features.
 
