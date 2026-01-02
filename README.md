@@ -1,8 +1,8 @@
 # API Automation & Quality Analysis | PokeMania
 
-##🔗 Important Links
+## Important Links 🔗
 
-- **Repository:** [GitHub Repository](https://github.com/JaydenGaramYoon/pokemania-community-platform)
+- **System & DB Design:** [GitHub Repository](https://github.com/JaydenGaramYoon/pokemania-community-platform)
 - **QA Testing Branch:** [qa-testing branch](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing)
 - **API Testing Guide:** [API README](./api/README.md)
 - **GitHub Secrets Setup:** [SECRETS Guide](./.github/SECRETS.md)
