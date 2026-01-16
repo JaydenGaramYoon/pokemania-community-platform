@@ -84,11 +84,10 @@ const remove = async (req, res) => {
 }
 
 export const changePassword = async (req, res) => {
-  const { new_password, currentPassword } = req.body;
+  const { new_password } = req.body;
   
   console.log('changePassword called:', {
     newPasswordLength: new_password?.length,
-    hasCurrentPassword: !!currentPassword,
     hasProfile: !!req.profile,
     profileId: req.profile?._id?.toString(),
     authId: req.auth?._id?.toString()
@@ -103,11 +102,6 @@ export const changePassword = async (req, res) => {
   if (!new_password || new_password.length < 6) {
     console.error('changePassword: password too short', { length: new_password?.length });
     return res.status(400).json({ error: 'Password too short' });
-  }
-  
-  if (currentPassword && !req.profile.authenticate(currentPassword)) {
-    console.error('changePassword: current password incorrect');
-    return res.status(403).json({ error: 'Current password is incorrect' });
   }
   
   try {

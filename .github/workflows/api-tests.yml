@@ -86,10 +86,24 @@ jobs:
             -d "{\"name\": \"Admin User\", \"email\": \"${{ secrets.TEST_ADMIN_EMAIL }}\", \"password\": \"${{ secrets.TEST_ADMIN_PASSWORD }}\"}" \
             > /dev/null 2>&1 || true
           
-          # Create user account
+          # Create user account (U001)
           curl -s -X POST http://localhost:3000/api/users \
             -H "Content-Type: application/json" \
-            -d "{\"name\": \"Test User\", \"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
+            -d "{\"name\": \"Test User 001\", \"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
+            > /dev/null 2>&1 || true
+          
+          # Create user account (U002) - for password change and delete tests
+          USER2_EMAIL="testuser002-$(date +%s)@example.com"
+          curl -s -X POST http://localhost:3000/api/users \
+            -H "Content-Type: application/json" \
+            -d "{\"name\": \"Test User 002\", \"email\": \"$USER2_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
+            > /dev/null 2>&1 || true
+          
+          # Create user account (U003) - for additional tests
+          USER3_EMAIL="testuser003-$(date +%s)@example.com"
+          curl -s -X POST http://localhost:3000/api/users \
+            -H "Content-Type: application/json" \
+            -d "{\"name\": \"Test User 003\", \"email\": \"$USER3_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
             > /dev/null 2>&1 || true
           
           echo "✅ Test accounts created (or already exist)"
@@ -113,15 +127,33 @@ jobs:
           TOKEN_ADMIN=$(echo "$ADMIN_RESPONSE" | jq -r '.token // empty')
           ADMIN_ID=$(echo "$ADMIN_RESPONSE" | jq -r '.user._id // empty')
           
-          # User login  
-          USER_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
+          # User U001 login  
+          USER1_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
             -H "Content-Type: application/json" \
             -d "{\"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
           
-          TOKEN_USER=$(echo "$USER_RESPONSE" | jq -r '.token // empty')
-          USER_ID=$(echo "$USER_RESPONSE" | jq -r '.user._id // empty')
+          TOKEN_U001=$(echo "$USER1_RESPONSE" | jq -r '.token // empty')
+          USER_ID_U001=$(echo "$USER1_RESPONSE" | jq -r '.user._id // empty')
           
-          if [ -z "$TOKEN_ADMIN" ] || [ -z "$TOKEN_USER" ]; then
+          # User U002 login (for password/delete tests)
+          USER2_EMAIL="testuser002-$(date +%s -d '1 second ago')@example.com"
+          USER2_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
+            -H "Content-Type: application/json" \
+            -d "{\"email\": \"$USER2_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
+          
+          TOKEN_U002=$(echo "$USER2_RESPONSE" | jq -r '.token // empty')
+          USER_ID_U002=$(echo "$USER2_RESPONSE" | jq -r '.user._id // empty')
+          
+          # User U003 login
+          USER3_EMAIL="testuser003-$(date +%s -d '2 seconds ago')@example.com"
+          USER3_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
+            -H "Content-Type: application/json" \
+            -d "{\"email\": \"$USER3_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
+          
+          TOKEN_U003=$(echo "$USER3_RESPONSE" | jq -r '.token // empty')
+          USER_ID_U003=$(echo "$USER3_RESPONSE" | jq -r '.user._id // empty')
+          
+          if [ -z "$TOKEN_ADMIN" ] || [ -z "$TOKEN_U001" ]; then
             echo "Error: Failed to authenticate test accounts"
             exit 1
           fi
@@ -150,8 +182,12 @@ jobs:
           echo "Admin role in token: $ADMIN_ROLE"
           echo "TOKEN_ADMIN=$TOKEN_ADMIN" >> $GITHUB_ENV
           echo "ADMIN_ID=$ADMIN_ID" >> $GITHUB_ENV
-          echo "TOKEN_USER=$TOKEN_USER" >> $GITHUB_ENV
-          echo "USER_ID=$USER_ID" >> $GITHUB_ENV
+          echo "TOKEN_U001=$TOKEN_U001" >> $GITHUB_ENV
+          echo "USER_ID_U001=$USER_ID_U001" >> $GITHUB_ENV
+          echo "TOKEN_U002=$TOKEN_U002" >> $GITHUB_ENV
+          echo "USER_ID_U002=$USER_ID_U002" >> $GITHUB_ENV
+          echo "TOKEN_U003=$TOKEN_U003" >> $GITHUB_ENV
+          echo "USER_ID_U003=$USER_ID_U003" >> $GITHUB_ENV
           echo "SIGNUP_EMAIL=$SIGNUP_EMAIL" >> $GITHUB_ENV
 
       - name: Update Postman Environment with Tokens
@@ -163,17 +199,15 @@ jobs:
             "values": [
               {"key": "BASE_URL", "value": "http://localhost:3000", "enabled": true},
               {"key": "TOKEN_ADMIN", "value": "${{ env.TOKEN_ADMIN }}", "enabled": true},
-              {"key": "TOKEN_USER", "value": "${{ env.TOKEN_USER }}", "enabled": true},
-              {"key": "USER_ID_ADMIN", "value": "${{ env.ADMIN_ID }}", "enabled": true},
-              {"key": "USER_ID_USER", "value": "${{ env.USER_ID }}", "enabled": true},
-              {"key": "TOKEN_U001", "value": "${{ env.TOKEN_USER }}", "enabled": true},
-              {"key": "TOKEN_U002", "value": "${{ env.TOKEN_USER }}", "enabled": true},
-              {"key": "TOKEN_U003", "value": "${{ env.TOKEN_USER }}", "enabled": true},
+              {"key": "TOKEN_U001", "value": "${{ env.TOKEN_U001 }}", "enabled": true},
+              {"key": "TOKEN_U002", "value": "${{ env.TOKEN_U002 }}", "enabled": true},
+              {"key": "TOKEN_U003", "value": "${{ env.TOKEN_U003 }}", "enabled": true},
               {"key": "TOKEN_U004", "value": "${{ env.TOKEN_ADMIN }}", "enabled": true},
-              {"key": "USER_ID_U001", "value": "${{ env.USER_ID }}", "enabled": true},
-              {"key": "USER_ID_U002", "value": "${{ env.USER_ID }}", "enabled": true},
-              {"key": "USER_ID_U003", "value": "${{ env.USER_ID }}", "enabled": true},
-              {"key": "USER_ID_SET_TARGET", "value": "${{ env.USER_ID }}", "enabled": true},
+              {"key": "USER_ID_ADMIN", "value": "${{ env.ADMIN_ID }}", "enabled": true},
+              {"key": "USER_ID_U001", "value": "${{ env.USER_ID_U001 }}", "enabled": true},
+              {"key": "USER_ID_U002", "value": "${{ env.USER_ID_U002 }}", "enabled": true},
+              {"key": "USER_ID_U003", "value": "${{ env.USER_ID_U003 }}", "enabled": true},
+              {"key": "USER_ID_SET_TARGET", "value": "${{ env.USER_ID_U001 }}", "enabled": true},
               {"key": "EMAIL_U001", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
               {"key": "EMAIL_U002", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
               {"key": "EMAIL_U003", "value": "${{ env.SIGNUP_EMAIL }}", "enabled": true},
@@ -188,7 +222,7 @@ jobs:
               {"key": "PASSWORD_U002", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
               {"key": "PASSWORD_U003", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
               {"key": "SENDER_GUEST", "value": "Guest", "enabled": true},
-              {"key": "SENDER_U001", "value": "Test User", "enabled": true},
+              {"key": "SENDER_U001", "value": "Test User 001", "enabled": true},
               {"key": "MESSAGE_ID_EDIT_001", "value": "", "enabled": true},
               {"key": "MESSAGE_ID_DEL_001", "value": "", "enabled": true},
               {"key": "EMAIL_TEST_SHORT", "value": "shortpw.test@pokemania.local", "enabled": true}
