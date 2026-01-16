@@ -170,6 +170,13 @@ jobs:
               {"key": "PASSWORD_AUTH_SIGNUP001", "value": "TestPassword123!", "enabled": true},
               {"key": "PASSWORD_AUTH_SIGNUP003_SHORT", "value": "123", "enabled": true},
               {"key": "PASSWORD_TEST_SHORT", "value": "123", "enabled": true},
+              {"key": "PASSWORD_U001", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
+              {"key": "PASSWORD_U002", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
+              {"key": "PASSWORD_U003", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
+              {"key": "SENDER_GUEST", "value": "Guest", "enabled": true},
+              {"key": "SENDER_U001", "value": "Test User", "enabled": true},
+              {"key": "MESSAGE_ID_EDIT_001", "value": "", "enabled": true},
+              {"key": "MESSAGE_ID_DEL_001", "value": "", "enabled": true},
               {"key": "EMAIL_TEST_SHORT", "value": "shortpw.test@pokemania.local", "enabled": true}
             ],
             "_postman_variable_scope": "environment",
