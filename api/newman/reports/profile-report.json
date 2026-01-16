@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "d2daed36-7784-470f-a280-9a8242663096",
+        "id": "cba9802c-a7d8-43f8-8031-b06076442196",
         "name": "TC-PROF-POST-001-Create Profile(U001)",
         "request": {
           "url": {
@@ -47,20 +47,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+              "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 201 Created\", function () {",
                 "    pm.response.to.have.status(201);",
                 "});"
               ],
-              "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+              "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
             }
           }
         ]
       },
       {
-        "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+        "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
         "name": "TC-PROF-UPD-001-Update Profile (U001)",
         "request": {
           "url": {
@@ -103,20 +103,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+              "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK\", function () {",
                 "    pm.response.to.have.status(200);",
                 "});"
               ],
-              "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+              "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
             }
           }
         ]
       },
       {
-        "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+        "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
         "name": "TC-PROF-DEL-001-Delete Account",
         "request": {
           "url": {
@@ -140,14 +140,14 @@
           {
             "listen": "test",
             "script": {
-              "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+              "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 204 No Content\", function () {",
                 "    pm.response.to.have.status(204);",
                 "});"
               ],
-              "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+              "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
             }
           }
         ]
@@ -177,26 +177,6 @@
       },
       {
         "type": "any",
-        "value": "manager@pokemania.com",
-        "key": "TEST_ADMIN_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "manager",
-        "key": "TEST_ADMIN_PASSWORD"
-      },
-      {
-        "type": "any",
-        "value": "jayden98@gmail.com",
-        "key": "TEST_USER_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "jayden123!",
-        "key": "TEST_USER_PASSWORD"
-      },
-      {
-        "type": "any",
         "value": "",
         "key": "TOKEN_ADMIN"
       },
@@ -214,11 +194,86 @@
         "type": "any",
         "value": "",
         "key": "USER_ID_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U004"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_SET_TARGET"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U001"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U002"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U003"
+      },
+      {
+        "type": "any",
+        "value": "testmanager",
+        "key": "PASSWORD_AUTH001"
+      },
+      {
+        "type": "any",
+        "value": "invalid_password_12345",
+        "key": "PASSWORD_AUTH002_INVALID"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH003"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH004"
       }
     ]
   },
   "globals": {
-    "id": "a4a91195-737c-4a0a-b88a-f7f02a26d503",
+    "id": "5a92b452-4170-4be2-b5ae-be60b0eaa0aa",
     "values": []
   },
   "run": {
@@ -270,10 +325,10 @@
       }
     },
     "timings": {
-      "responseAverage": 22.666666666666668,
+      "responseAverage": 21,
       "responseMin": 4,
-      "responseMax": 54,
-      "responseSd": 22.29100466306732,
+      "responseMax": 52,
+      "responseSd": 21.95449840010015,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -282,8 +337,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768538308119,
-      "completed": 1768538308261
+      "started": 1768539803141,
+      "completed": 1768539803282
     },
     "executions": [
       {
@@ -296,11 +351,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "b404e856-9843-42b5-8af1-fe14fbe094a4",
-          "httpRequestId": "63b6e45f-d586-49e5-bc36-b82b3359482e"
+          "ref": "cabb8b30-7045-40b5-93a8-903e3fbd0207",
+          "httpRequestId": "ee19a853-d1f3-4b77-89ff-73eb27d67d82"
         },
         "item": {
-          "id": "d2daed36-7784-470f-a280-9a8242663096",
+          "id": "cba9802c-a7d8-43f8-8031-b06076442196",
           "name": "TC-PROF-POST-001-Create Profile(U001)",
           "request": {
             "url": {
@@ -341,14 +396,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
               }
             }
           ]
@@ -374,11 +429,6 @@
               "system": true
             },
             {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U001}}",
-              "system": true
-            },
-            {
               "key": "User-Agent",
               "value": "PostmanRuntime/7.39.1",
               "system": true
@@ -395,7 +445,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "00303d83-f36e-44a8-9efb-281424cfea88",
+              "value": "45f2b9ca-8ca2-414c-82a0-9d169b301a6e",
               "system": true
             },
             {
@@ -415,14 +465,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "550",
+              "value": "534",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+            "raw": "{\r\n  \"userId\": \"\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
             "options": {
               "raw": {
                 "language": "json"
@@ -434,14 +484,14 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U001}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "58cc760b-47ec-4603-ad4e-c864cf5d5e39",
+          "id": "80fa6d22-51c0-4dfc-b47a-9d381cd10de8",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -515,7 +565,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:28 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:23 GMT"
             },
             {
               "key": "Connection",
@@ -534,10 +584,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 54,
+          "responseTime": 52,
           "responseSize": 2
         },
-        "id": "d2daed36-7784-470f-a280-9a8242663096",
+        "id": "cba9802c-a7d8-43f8-8031-b06076442196",
         "assertions": [
           {
             "assertion": "Status code is 201 Created",
@@ -554,15 +604,15 @@
       },
       {
         "cursor": {
-          "ref": "8491c709-e614-45ab-b5c5-0a8850db10b8",
+          "ref": "7f36059f-1322-4764-ad48-bfa77f942785",
           "length": 3,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "961ab4d0-478f-46fb-8b51-edc7ff6c69cd"
+          "httpRequestId": "dcd4b8e9-0dce-4475-9927-fc029d3f8b78"
         },
         "item": {
-          "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+          "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
           "name": "TC-PROF-UPD-001-Update Profile (U001)",
           "request": {
             "url": {
@@ -605,14 +655,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
               }
             }
           ]
@@ -625,7 +675,7 @@
               "api",
               "profile",
               "users",
-              "%7B%7BUSER_ID_U001%7D%7D"
+              ""
             ],
             "host": [
               "localhost"
@@ -637,11 +687,6 @@
             {
               "key": "Content-Type",
               "value": "application/json",
-              "system": true
-            },
-            {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U001}}",
               "system": true
             },
             {
@@ -661,7 +706,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "f1c2f1ee-a9aa-4520-9a6c-c3f20337b82d",
+              "value": "cccedc0d-7541-40b1-8f7a-2454ee6fda7d",
               "system": true
             },
             {
@@ -681,14 +726,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "552",
+              "value": "536",
               "system": true
             }
           ],
           "method": "PUT",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+            "raw": "{\r\n  \"userId\": \"\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
             "options": {
               "raw": {
                 "language": "json"
@@ -700,16 +745,16 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U001}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "d5f4bbb1-4360-46af-a8a7-46338b68fd5b",
-          "status": "Bad Request",
-          "code": 400,
+          "id": "569fcea1-e0af-4535-be8f-df0ca3daa1c3",
+          "status": "Not Found",
+          "code": 404,
           "header": [
             {
               "key": "Vary",
@@ -721,7 +766,7 @@
             },
             {
               "key": "Content-Security-Policy",
-              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+              "value": "default-src 'none'"
             },
             {
               "key": "Cross-Origin-Opener-Policy",
@@ -769,19 +814,15 @@
             },
             {
               "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
+              "value": "text/html; charset=utf-8"
             },
             {
               "key": "Content-Length",
-              "value": "2"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+              "value": "157"
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:28 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:23 GMT"
             },
             {
               "key": "Connection",
@@ -795,15 +836,170 @@
           "stream": {
             "type": "Buffer",
             "data": [
-              123,
-              125
+              60,
+              33,
+              68,
+              79,
+              67,
+              84,
+              89,
+              80,
+              69,
+              32,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10,
+              60,
+              104,
+              116,
+              109,
+              108,
+              32,
+              108,
+              97,
+              110,
+              103,
+              61,
+              34,
+              101,
+              110,
+              34,
+              62,
+              10,
+              60,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              109,
+              101,
+              116,
+              97,
+              32,
+              99,
+              104,
+              97,
+              114,
+              115,
+              101,
+              116,
+              61,
+              34,
+              117,
+              116,
+              102,
+              45,
+              56,
+              34,
+              62,
+              10,
+              60,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              69,
+              114,
+              114,
+              111,
+              114,
+              60,
+              47,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              10,
+              60,
+              47,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              112,
+              114,
+              101,
+              62,
+              67,
+              97,
+              110,
+              110,
+              111,
+              116,
+              32,
+              80,
+              85,
+              84,
+              32,
+              47,
+              97,
+              112,
+              105,
+              47,
+              112,
+              114,
+              111,
+              102,
+              105,
+              108,
+              101,
+              47,
+              117,
+              115,
+              101,
+              114,
+              115,
+              47,
+              60,
+              47,
+              112,
+              114,
+              101,
+              62,
+              10,
+              60,
+              47,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              47,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10
             ]
           },
           "cookie": [],
-          "responseTime": 10,
-          "responseSize": 2
+          "responseTime": 7,
+          "responseSize": 157
         },
-        "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+        "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
         "assertions": [
           {
             "assertion": "Status code is 200 OK",
@@ -812,23 +1008,23 @@
               "name": "AssertionError",
               "index": 0,
               "test": "Status code is 200 OK",
-              "message": "expected response to have status code 200 but got 400",
-              "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:2)"
+              "message": "expected response to have status code 200 but got 404",
+              "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:2)"
             }
           }
         ]
       },
       {
         "cursor": {
-          "ref": "c3c31cc2-8c3b-4067-9e29-f971679eec97",
+          "ref": "43ac8dbc-93f0-472f-a77d-a220b7392b57",
           "length": 3,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "0601dc0b-de49-47c7-8e49-5a795a4adfa2"
+          "httpRequestId": "68321806-1c6f-4ed1-8472-73b8abe0d34f"
         },
         "item": {
-          "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+          "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
           "name": "TC-PROF-DEL-001-Delete Account",
           "request": {
             "url": {
@@ -852,14 +1048,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 204 No Content\", function () {",
                   "    pm.response.to.have.status(204);",
                   "});"
                 ],
-                "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
               }
             }
           ]
@@ -872,7 +1068,7 @@
               "api",
               "profile",
               "users",
-              "%7B%7BUSER_ID_U001%7D%7D"
+              ""
             ],
             "host": [
               "localhost"
@@ -898,7 +1094,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "99cf0bc8-cbbf-4999-be49-bfca8f9b7b98",
+              "value": "d7cdbf33-a203-490e-b442-798e49183277",
               "system": true
             },
             {
@@ -920,9 +1116,9 @@
           "method": "DELETE"
         },
         "response": {
-          "id": "56d4f83f-5e57-4a06-8be4-7201a65a91c2",
-          "status": "Bad Request",
-          "code": 400,
+          "id": "acf64218-919e-48cb-b4c2-6f3203d47df8",
+          "status": "Not Found",
+          "code": 404,
           "header": [
             {
               "key": "Vary",
@@ -934,7 +1130,7 @@
             },
             {
               "key": "Content-Security-Policy",
-              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+              "value": "default-src 'none'"
             },
             {
               "key": "Cross-Origin-Opener-Policy",
@@ -982,19 +1178,15 @@
             },
             {
               "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
+              "value": "text/html; charset=utf-8"
             },
             {
               "key": "Content-Length",
-              "value": "2"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+              "value": "160"
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:28 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:23 GMT"
             },
             {
               "key": "Connection",
@@ -1008,15 +1200,173 @@
           "stream": {
             "type": "Buffer",
             "data": [
-              123,
-              125
+              60,
+              33,
+              68,
+              79,
+              67,
+              84,
+              89,
+              80,
+              69,
+              32,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10,
+              60,
+              104,
+              116,
+              109,
+              108,
+              32,
+              108,
+              97,
+              110,
+              103,
+              61,
+              34,
+              101,
+              110,
+              34,
+              62,
+              10,
+              60,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              109,
+              101,
+              116,
+              97,
+              32,
+              99,
+              104,
+              97,
+              114,
+              115,
+              101,
+              116,
+              61,
+              34,
+              117,
+              116,
+              102,
+              45,
+              56,
+              34,
+              62,
+              10,
+              60,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              69,
+              114,
+              114,
+              111,
+              114,
+              60,
+              47,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              10,
+              60,
+              47,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              112,
+              114,
+              101,
+              62,
+              67,
+              97,
+              110,
+              110,
+              111,
+              116,
+              32,
+              68,
+              69,
+              76,
+              69,
+              84,
+              69,
+              32,
+              47,
+              97,
+              112,
+              105,
+              47,
+              112,
+              114,
+              111,
+              102,
+              105,
+              108,
+              101,
+              47,
+              117,
+              115,
+              101,
+              114,
+              115,
+              47,
+              60,
+              47,
+              112,
+              114,
+              101,
+              62,
+              10,
+              60,
+              47,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              47,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10
             ]
           },
           "cookie": [],
           "responseTime": 4,
-          "responseSize": 2
+          "responseSize": 160
         },
-        "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+        "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
         "assertions": [
           {
             "assertion": "Status code is 204 No Content",
@@ -1025,15 +1375,15 @@
               "name": "AssertionError",
               "index": 0,
               "test": "Status code is 204 No Content",
-              "message": "expected response to have status code 204 but got 400",
-              "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:3)"
+              "message": "expected response to have status code 204 but got 404",
+              "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:1:3)"
             }
           }
         ]
       }
     ],
     "transfers": {
-      "responseTotal": 6
+      "responseTotal": 319
     },
     "failures": [
       {
@@ -1044,8 +1394,8 @@
           "message": "expected response to have status code 201 but got 400",
           "stack": "AssertionError: expected response to have status code 201 but got 400\n   at Object.eval sandbox-script.js:1:1)",
           "checksum": "9b9e638975d2be642466fe45eb02a208",
-          "id": "725b2336-711b-468c-90a0-4b802b8042b1",
-          "timestamp": 1768538308208,
+          "id": "947df826-7f89-47ff-a1ed-337e72b1c394",
+          "timestamp": 1768539803228,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1060,7 +1410,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "d2daed36-7784-470f-a280-9a8242663096",
+          "id": "cba9802c-a7d8-43f8-8031-b06076442196",
           "name": "TC-PROF-POST-001-Create Profile(U001)",
           "request": {
             "url": {
@@ -1101,14 +1451,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
               }
             }
           ]
@@ -1120,7 +1470,7 @@
           },
           "item": [
             {
-              "id": "d2daed36-7784-470f-a280-9a8242663096",
+              "id": "cba9802c-a7d8-43f8-8031-b06076442196",
               "name": "TC-PROF-POST-001-Create Profile(U001)",
               "request": {
                 "url": {
@@ -1161,20 +1511,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                    "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                    "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
                   }
                 }
               ]
             },
             {
-              "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+              "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
               "name": "TC-PROF-UPD-001-Update Profile (U001)",
               "request": {
                 "url": {
@@ -1217,20 +1567,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                    "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                    "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
                   }
                 }
               ]
             },
             {
-              "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+              "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
               "name": "TC-PROF-DEL-001-Delete Account",
               "request": {
                 "url": {
@@ -1254,14 +1604,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                    "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                    "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
                   }
                 }
               ]
@@ -1284,10 +1634,10 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "b404e856-9843-42b5-8af1-fe14fbe094a4",
-          "httpRequestId": "63b6e45f-d586-49e5-bc36-b82b3359482e",
-          "scriptId": "a296d236-ab85-41f9-9307-50ceaa0805a2",
-          "execution": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+          "ref": "cabb8b30-7045-40b5-93a8-903e3fbd0207",
+          "httpRequestId": "ee19a853-d1f3-4b77-89ff-73eb27d67d82",
+          "scriptId": "71d76d09-e7f3-47b0-94d6-4080150533f6",
+          "execution": "f33a0cb0-251b-4763-807f-92e9457187c2"
         }
       },
       {
@@ -1295,11 +1645,11 @@
           "name": "AssertionError",
           "index": 0,
           "test": "Status code is 200 OK",
-          "message": "expected response to have status code 200 but got 400",
-          "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:2)",
-          "checksum": "57f08ad5a8a49993623f54fca4bc04d9",
-          "id": "266b4e6c-7456-4124-ab7e-6d281b1c5388",
-          "timestamp": 1768538308238,
+          "message": "expected response to have status code 200 but got 404",
+          "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:2)",
+          "checksum": "e4a71791d200de7065fbd76aa6379122",
+          "id": "999e1214-b78b-4a2e-84f8-8783c12591b6",
+          "timestamp": 1768539803258,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1314,7 +1664,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+          "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
           "name": "TC-PROF-UPD-001-Update Profile (U001)",
           "request": {
             "url": {
@@ -1357,14 +1707,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
               }
             }
           ]
@@ -1376,7 +1726,7 @@
           },
           "item": [
             {
-              "id": "d2daed36-7784-470f-a280-9a8242663096",
+              "id": "cba9802c-a7d8-43f8-8031-b06076442196",
               "name": "TC-PROF-POST-001-Create Profile(U001)",
               "request": {
                 "url": {
@@ -1417,20 +1767,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                    "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                    "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
                   }
                 }
               ]
             },
             {
-              "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+              "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
               "name": "TC-PROF-UPD-001-Update Profile (U001)",
               "request": {
                 "url": {
@@ -1473,20 +1823,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                    "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                    "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
                   }
                 }
               ]
             },
             {
-              "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+              "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
               "name": "TC-PROF-DEL-001-Delete Account",
               "request": {
                 "url": {
@@ -1510,14 +1860,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                    "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                    "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
                   }
                 }
               ]
@@ -1532,14 +1882,14 @@
           }
         },
         "cursor": {
-          "ref": "8491c709-e614-45ab-b5c5-0a8850db10b8",
+          "ref": "7f36059f-1322-4764-ad48-bfa77f942785",
           "length": 3,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "961ab4d0-478f-46fb-8b51-edc7ff6c69cd",
-          "scriptId": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
-          "execution": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+          "httpRequestId": "dcd4b8e9-0dce-4475-9927-fc029d3f8b78",
+          "scriptId": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
+          "execution": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
         }
       },
       {
@@ -1547,11 +1897,11 @@
           "name": "AssertionError",
           "index": 0,
           "test": "Status code is 204 No Content",
-          "message": "expected response to have status code 204 but got 400",
-          "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:3)",
-          "checksum": "220b1be3e79de7845c4bff55961e9aa8",
-          "id": "f75ebd09-1840-4ce5-a80c-d682ed4d704a",
-          "timestamp": 1768538308256,
+          "message": "expected response to have status code 204 but got 404",
+          "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:1:3)",
+          "checksum": "c4b471d3984b57cc04481a61d83d29c0",
+          "id": "79631173-5173-4a72-bb1a-9b329ea970e6",
+          "timestamp": 1768539803278,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1566,7 +1916,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+          "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
           "name": "TC-PROF-DEL-001-Delete Account",
           "request": {
             "url": {
@@ -1590,14 +1940,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 204 No Content\", function () {",
                   "    pm.response.to.have.status(204);",
                   "});"
                 ],
-                "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
               }
             }
           ]
@@ -1609,7 +1959,7 @@
           },
           "item": [
             {
-              "id": "d2daed36-7784-470f-a280-9a8242663096",
+              "id": "cba9802c-a7d8-43f8-8031-b06076442196",
               "name": "TC-PROF-POST-001-Create Profile(U001)",
               "request": {
                 "url": {
@@ -1650,20 +2000,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                    "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                    "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
                   }
                 }
               ]
             },
             {
-              "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+              "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
               "name": "TC-PROF-UPD-001-Update Profile (U001)",
               "request": {
                 "url": {
@@ -1706,20 +2056,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                    "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                    "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
                   }
                 }
               ]
             },
             {
-              "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+              "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
               "name": "TC-PROF-DEL-001-Delete Account",
               "request": {
                 "url": {
@@ -1743,14 +2093,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                    "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                    "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
                   }
                 }
               ]
@@ -1765,14 +2115,14 @@
           }
         },
         "cursor": {
-          "ref": "c3c31cc2-8c3b-4067-9e29-f971679eec97",
+          "ref": "43ac8dbc-93f0-472f-a77d-a220b7392b57",
           "length": 3,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "0601dc0b-de49-47c7-8e49-5a795a4adfa2",
-          "scriptId": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
-          "execution": "68665967-a229-4163-9363-c6d3c591fbc4"
+          "httpRequestId": "68321806-1c6f-4ed1-8472-73b8abe0d34f",
+          "scriptId": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
+          "execution": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
         }
       }
     ],

@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "03371c01-307e-48c3-a532-623cc1fac484",
+        "id": "1b7c3bba-0860-4a6a-abc0-d11e6d48aebc",
         "name": "TC-AUTH-LOGIN-001-JWT",
         "request": {
           "url": {
@@ -37,7 +37,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
+              "id": "6ef4a2f1-cbf4-4f00-9dad-0ea923c418a9",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 200 OK\", () => {\r",
@@ -49,13 +49,13 @@
                 "    pm.expect(jsonData.token).to.exist;\r",
                 "});"
               ],
-              "_lastExecutionId": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
+              "_lastExecutionId": "f84de37c-1e75-49de-beb8-ee519413ec49"
             }
           }
         ]
       },
       {
-        "id": "b0d1c419-bc30-4961-8721-2801f20403a8",
+        "id": "f28cc4c5-b65c-43a6-b7bd-8f54a60673a3",
         "name": "TC-AUTH-LOGIN-002-Wrong Password",
         "request": {
           "url": {
@@ -86,7 +86,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "73077cbb-99f3-49cd-a7b1-3c873cb08042",
+              "id": "df39a72e-2156-45fe-8476-9636c2fc9424",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -98,13 +98,13 @@
                 "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
                 "});"
               ],
-              "_lastExecutionId": "0a3815e9-11b4-4f9b-8bd3-bf6682d74f85"
+              "_lastExecutionId": "debbdaff-a3fc-4993-b5a2-4d5f0978ac5f"
             }
           }
         ]
       },
       {
-        "id": "c2d99fa7-2406-41af-aa17-398dca5417c4",
+        "id": "bacd5de1-1f27-4a27-ad63-816bad6f44b0",
         "name": "TC-AUTH-LOGIN-004-Unknown User",
         "request": {
           "url": {
@@ -135,7 +135,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "c6725ad1-f03d-4f84-ac63-9886b51a83ed",
+              "id": "151cdb90-3022-483e-86e5-49f220606425",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -147,13 +147,13 @@
                 "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
                 "});"
               ],
-              "_lastExecutionId": "58078595-4f28-4215-8bb5-c46070bd20e1"
+              "_lastExecutionId": "2d2fda26-268b-4279-ae84-e54c56032731"
             }
           }
         ]
       },
       {
-        "id": "d85807a5-01c8-437e-af11-4cbe359f7d60",
+        "id": "ce19b47d-5a08-4c3f-8371-61e2f2049c17",
         "name": "TC-AUTH-SIGNOUT-001-Clear Cookie",
         "request": {
           "url": {
@@ -181,20 +181,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "2eb2ed6a-f3df-4570-a500-1fd913dc7f9c",
+              "id": "31ab1fbe-2b29-48f2-8d4d-710b721a0ad5",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 200 OK\", () => {\r",
                 "    pm.response.to.have.status(200);\r",
                 "});"
               ],
-              "_lastExecutionId": "d66531c0-4886-40e5-99f4-4a9f166ed402"
+              "_lastExecutionId": "74c058f4-6000-4a40-88d3-eb2e3d3799a3"
             }
           }
         ]
       },
       {
-        "id": "025e859e-2207-4b99-98df-a85df0bf7a1a",
+        "id": "8cc4ec22-f5d9-4d72-a2ce-c22caa1ea830",
         "name": "TC-AUTH-SIGNUP-001-SIgnUp",
         "request": {
           "url": {
@@ -225,20 +225,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "8b079f3e-9074-49c4-983b-45de27ed10d3",
+              "id": "0070f12c-4252-43f0-ae59-a06c887a5175",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 200 OK\", () => {\r",
                 "    pm.response.to.have.status(200);\r",
                 "});"
               ],
-              "_lastExecutionId": "d8fee9ab-fb35-47a9-80c8-0bb104047a93"
+              "_lastExecutionId": "a9979c24-a677-4d89-9532-384f74bb2f6f"
             }
           }
         ]
       },
       {
-        "id": "594df836-5008-465d-8322-5a28b225b3af",
+        "id": "1d5dbf1b-332e-4d13-94c5-039720418d53",
         "name": "TC-AUTH-SIGNUP-002-Duplicate",
         "request": {
           "url": {
@@ -269,7 +269,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "e1cfc51f-c5a8-418f-8b48-1c202a088e8f",
+              "id": "1c7c5a05-7b96-41c0-bc3a-417ca3bba475",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -277,13 +277,13 @@
                 "});\r",
                 "\r"
               ],
-              "_lastExecutionId": "34d66d50-a83c-4fc4-8224-dc6c30e98627"
+              "_lastExecutionId": "05986539-afa2-455b-b27f-ef23c942d204"
             }
           }
         ]
       },
       {
-        "id": "b90346dd-e01e-4fbb-beee-a04d31ad7153",
+        "id": "34efddd4-6084-41c9-bc5b-5a858bb53ee2",
         "name": "TC-AUTH-SIGNUP-003-ShortPW",
         "request": {
           "url": {
@@ -314,14 +314,14 @@
           {
             "listen": "test",
             "script": {
-              "id": "8dd2d5cc-e792-4e6d-9ef0-a9886b52a206",
+              "id": "ae83a961-81bd-40e6-8449-df38692fb03e",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 400 Bad Request\", () => {\r",
                 "    pm.response.to.have.status(400);\r",
                 "});"
               ],
-              "_lastExecutionId": "2e095465-73b8-4024-a82d-7d9948349220"
+              "_lastExecutionId": "52110c37-62ff-465f-8665-a36236c31053"
             }
           }
         ]
@@ -351,26 +351,6 @@
       },
       {
         "type": "any",
-        "value": "manager@pokemania.com",
-        "key": "TEST_ADMIN_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "manager",
-        "key": "TEST_ADMIN_PASSWORD"
-      },
-      {
-        "type": "any",
-        "value": "jayden98@gmail.com",
-        "key": "TEST_USER_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "jayden123!",
-        "key": "TEST_USER_PASSWORD"
-      },
-      {
-        "type": "any",
         "value": "",
         "key": "TOKEN_ADMIN"
       },
@@ -388,11 +368,86 @@
         "type": "any",
         "value": "",
         "key": "USER_ID_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U004"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_SET_TARGET"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U001"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U002"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U003"
+      },
+      {
+        "type": "any",
+        "value": "testmanager",
+        "key": "PASSWORD_AUTH001"
+      },
+      {
+        "type": "any",
+        "value": "invalid_password_12345",
+        "key": "PASSWORD_AUTH002_INVALID"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH003"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH004"
       }
     ]
   },
   "globals": {
-    "id": "82e4facc-c60d-4174-a63d-f8ff1f683583",
+    "id": "674b5882-91e3-40b0-97b3-8cb874c244a5",
     "values": []
   },
   "run": {
@@ -430,7 +485,7 @@
       "assertions": {
         "total": 10,
         "pending": 0,
-        "failed": 3
+        "failed": 1
       },
       "testScripts": {
         "total": 7,
@@ -444,10 +499,10 @@
       }
     },
     "timings": {
-      "responseAverage": 11.857142857142858,
-      "responseMin": 4,
-      "responseMax": 50,
-      "responseSd": 15.751903027240605,
+      "responseAverage": 12.857142857142858,
+      "responseMin": 3,
+      "responseMax": 53,
+      "responseSd": 16.66843528030983,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -456,8 +511,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768538302589,
-      "completed": 1768538302794
+      "started": 1768539797516,
+      "completed": 1768539797733
     },
     "executions": [
       {
@@ -470,11 +525,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "9d20cce5-3326-40b6-af92-6d0debf0c1be",
-          "httpRequestId": "f2dbb494-a238-4115-8b01-b3ce6b7c1769"
+          "ref": "43434177-c2a3-488b-bc43-b0f50ac5e804",
+          "httpRequestId": "4fdbdabb-717c-467e-8dfa-7af0a51eb52e"
         },
         "item": {
-          "id": "03371c01-307e-48c3-a532-623cc1fac484",
+          "id": "1b7c3bba-0860-4a6a-abc0-d11e6d48aebc",
           "name": "TC-AUTH-LOGIN-001-JWT",
           "request": {
             "url": {
@@ -505,7 +560,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
+                "id": "6ef4a2f1-cbf4-4f00-9dad-0ea923c418a9",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
@@ -517,7 +572,7 @@
                   "    pm.expect(jsonData.token).to.exist;\r",
                   "});"
                 ],
-                "_lastExecutionId": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
+                "_lastExecutionId": "f84de37c-1e75-49de-beb8-ee519413ec49"
               }
             }
           ]
@@ -559,7 +614,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "1633ba93-f747-4239-8c67-c8fecd34f4e1",
+              "value": "f865091c-05b7-45ef-b191-807a1e97e8cf",
               "system": true
             },
             {
@@ -579,14 +634,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "76",
+              "value": "70",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\": \"{{PASSWORD_AUTH003}}\"\r\n}",
+            "raw": "{\r\n    \"email\": \"testuser@example.com\",\r\n    \"password\": \"testuser\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -595,9 +650,9 @@
           }
         },
         "response": {
-          "id": "6cb46be7-8a5a-4caa-adaa-34e87a5fb872",
-          "status": "Unauthorized",
-          "code": 401,
+          "id": "71d02db6-62d2-4768-94d7-db9f833a238f",
+          "status": "OK",
+          "code": 200,
           "header": [
             {
               "key": "Vary",
@@ -656,20 +711,24 @@
               "value": "0"
             },
             {
+              "key": "Set-Cookie",
+              "value": "t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTY5YzY5MjUyY2NiNGMwODRlYThiNTQiLCJuYW1lIjoiVGVzdCBVc2VyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY4NTM5Nzk3fQ.EKoDGdN-g2WrcazOIpRy0FIxfblpm8SK_1JvFY__Bvg; Path=/"
+            },
+            {
               "key": "Content-Type",
               "value": "application/json; charset=utf-8"
             },
             {
               "key": "Content-Length",
-              "value": "26"
+              "value": "353"
             },
             {
               "key": "ETag",
-              "value": "W/\"1a-hq/hT0ORGTkTfyRpVCZ/JB/r8Eg\""
+              "value": "W/\"161-a37XlKrGQhwJYqdEt/XwJ2WdWSE\""
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:22 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:17 GMT"
             },
             {
               "key": "Connection",
@@ -685,73 +744,386 @@
             "data": [
               123,
               34,
-              101,
-              114,
-              114,
+              116,
               111,
-              114,
+              107,
+              101,
+              110,
               34,
               58,
               34,
+              101,
+              121,
+              74,
+              104,
+              98,
+              71,
+              99,
+              105,
+              79,
+              105,
+              74,
+              73,
+              85,
+              122,
+              73,
+              49,
+              78,
+              105,
+              73,
+              115,
+              73,
+              110,
+              82,
+              53,
+              99,
+              67,
+              73,
+              54,
+              73,
+              107,
+              112,
+              88,
+              86,
+              67,
+              74,
+              57,
+              46,
+              101,
+              121,
+              74,
+              102,
+              97,
+              87,
+              81,
+              105,
+              79,
+              105,
+              73,
+              50,
+              79,
+              84,
+              89,
+              53,
+              89,
+              122,
+              89,
+              53,
+              77,
+              106,
+              85,
+              121,
+              89,
+              50,
+              78,
+              105,
+              78,
+              71,
+              77,
+              119,
+              79,
+              68,
+              82,
+              108,
+              89,
+              84,
+              104,
+              105,
+              78,
+              84,
+              81,
+              105,
+              76,
+              67,
+              74,
+              117,
+              89,
+              87,
+              49,
+              108,
+              73,
+              106,
+              111,
+              105,
+              86,
+              71,
+              86,
+              122,
+              100,
+              67,
+              66,
+              86,
+              99,
+              50,
+              86,
+              121,
+              73,
+              105,
+              119,
+              105,
+              90,
+              87,
+              49,
+              104,
+              97,
+              87,
+              119,
+              105,
+              79,
+              105,
+              74,
+              48,
+              90,
+              88,
+              78,
+              48,
+              100,
+              88,
+              78,
+              108,
+              99,
+              107,
+              66,
+              108,
+              101,
+              71,
+              70,
+              116,
+              99,
+              71,
+              120,
+              108,
+              76,
+              109,
+              78,
+              118,
+              98,
+              83,
+              73,
+              115,
+              73,
+              110,
+              74,
+              118,
+              98,
+              71,
+              85,
+              105,
+              79,
+              105,
+              74,
+              49,
+              99,
+              50,
+              86,
+              121,
+              73,
+              105,
+              119,
+              105,
+              97,
+              87,
+              70,
+              48,
+              73,
+              106,
+              111,
+              120,
+              78,
+              122,
+              89,
+              52,
+              78,
+              84,
+              77,
+              53,
+              78,
+              122,
+              107,
+              51,
+              102,
+              81,
+              46,
+              69,
+              75,
+              111,
+              68,
+              71,
+              100,
+              78,
+              45,
+              103,
+              50,
+              87,
+              114,
+              99,
+              97,
+              122,
+              79,
+              73,
+              112,
+              82,
+              121,
+              48,
+              70,
+              73,
+              120,
+              102,
+              98,
+              108,
+              112,
+              109,
+              56,
+              83,
+              75,
+              95,
+              49,
+              74,
+              118,
+              70,
+              89,
+              95,
+              95,
+              66,
+              118,
+              103,
+              34,
+              44,
+              34,
+              117,
+              115,
+              101,
+              114,
+              34,
+              58,
+              123,
+              34,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              54,
+              57,
+              54,
+              57,
+              99,
+              54,
+              57,
+              50,
+              53,
+              50,
+              99,
+              99,
+              98,
+              52,
+              99,
+              48,
+              56,
+              52,
+              101,
+              97,
+              56,
+              98,
+              53,
+              52,
+              34,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              84,
+              101,
+              115,
+              116,
+              32,
               85,
               115,
               101,
               114,
-              32,
-              110,
-              111,
-              116,
-              32,
-              102,
-              111,
-              117,
-              110,
-              100,
               34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              116,
+              101,
+              115,
+              116,
+              117,
+              115,
+              101,
+              114,
+              64,
+              101,
+              120,
+              97,
+              109,
+              112,
+              108,
+              101,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              114,
+              111,
+              108,
+              101,
+              34,
+              58,
+              34,
+              117,
+              115,
+              101,
+              114,
+              34,
+              125,
               125
             ]
           },
           "cookie": [],
-          "responseTime": 50,
-          "responseSize": 26
+          "responseTime": 53,
+          "responseSize": 353
         },
-        "id": "03371c01-307e-48c3-a532-623cc1fac484",
+        "id": "1b7c3bba-0860-4a6a-abc0-d11e6d48aebc",
         "assertions": [
           {
             "assertion": "Status is 200 OK",
-            "skipped": false,
-            "error": {
-              "name": "AssertionError",
-              "index": 0,
-              "test": "Status is 200 OK",
-              "message": "expected response to have status code 200 but got 401",
-              "stack": "AssertionError: expected response to have status code 200 but got 401\n   at Object.eval sandbox-script.js:1:1)"
-            }
+            "skipped": false
           },
           {
             "assertion": "Response contains token",
-            "skipped": false,
-            "error": {
-              "name": "AssertionError",
-              "index": 1,
-              "test": "Response contains token",
-              "message": "expected undefined to exist",
-              "stack": "AssertionError: expected undefined to exist\n   at Object.eval sandbox-script.js:2:1)"
-            }
+            "skipped": false
           }
         ]
       },
       {
         "cursor": {
-          "ref": "024334e4-0aa0-4ef6-a78e-631ab348a6c5",
+          "ref": "56b518c4-c9fc-40a8-a981-b4eaff5e7bc3",
           "length": 7,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "dcfee587-c96b-45d3-b9aa-ac14e7d1a6cb"
+          "httpRequestId": "e1f9145c-3787-483e-ab5f-a1fb63a041ef"
         },
         "item": {
-          "id": "b0d1c419-bc30-4961-8721-2801f20403a8",
+          "id": "f28cc4c5-b65c-43a6-b7bd-8f54a60673a3",
           "name": "TC-AUTH-LOGIN-002-Wrong Password",
           "request": {
             "url": {
@@ -782,7 +1154,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "73077cbb-99f3-49cd-a7b1-3c873cb08042",
+                "id": "df39a72e-2156-45fe-8476-9636c2fc9424",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -794,7 +1166,7 @@
                   "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
                   "});"
                 ],
-                "_lastExecutionId": "0a3815e9-11b4-4f9b-8bd3-bf6682d74f85"
+                "_lastExecutionId": "debbdaff-a3fc-4993-b5a2-4d5f0978ac5f"
               }
             }
           ]
@@ -836,7 +1208,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b70a7637-dbcf-400d-9643-63d5d5b4d7f8",
+              "value": "687b8b07-2c05-4edb-adb4-fc9c5ad74f60",
               "system": true
             },
             {
@@ -858,12 +1230,17 @@
               "key": "Content-Length",
               "value": "84",
               "system": true
+            },
+            {
+              "key": "Cookie",
+              "value": "t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTY5YzY5MjUyY2NiNGMwODRlYThiNTQiLCJuYW1lIjoiVGVzdCBVc2VyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY4NTM5Nzk3fQ.EKoDGdN-g2WrcazOIpRy0FIxfblpm8SK_1JvFY__Bvg",
+              "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n    \"email\": \"{{EMAIL_U002}}\",\r\n    \"password\": \"{{PASSWORD_AUTH002_INVALID}}\"\r\n}",
+            "raw": "{\r\n    \"email\": \"testuser@example.com\",\r\n    \"password\": \"invalid_password_12345\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -872,7 +1249,7 @@
           }
         },
         "response": {
-          "id": "20f754de-46da-41c1-8dc4-21928349a30c",
+          "id": "0d8f91e9-43c2-4673-9a8b-0789fd0d17ab",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -938,15 +1315,15 @@
             },
             {
               "key": "Content-Length",
-              "value": "26"
+              "value": "43"
             },
             {
               "key": "ETag",
-              "value": "W/\"1a-hq/hT0ORGTkTfyRpVCZ/JB/r8Eg\""
+              "value": "W/\"2b-lKIp6FuXuNU+YZlzvcRy4B6dH7c\""
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:22 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:17 GMT"
             },
             {
               "key": "Connection",
@@ -970,29 +1347,46 @@
               34,
               58,
               34,
-              85,
-              115,
-              101,
-              114,
+              69,
+              109,
+              97,
+              105,
+              108,
               32,
-              110,
-              111,
-              116,
-              32,
-              102,
-              111,
-              117,
+              97,
               110,
               100,
+              32,
+              112,
+              97,
+              115,
+              115,
+              119,
+              111,
+              114,
+              100,
+              32,
+              100,
+              111,
+              110,
+              39,
+              116,
+              32,
+              109,
+              97,
+              116,
+              99,
+              104,
+              46,
               34,
               125
             ]
           },
           "cookie": [],
-          "responseTime": 6,
-          "responseSize": 26
+          "responseTime": 7,
+          "responseSize": 43
         },
-        "id": "b0d1c419-bc30-4961-8721-2801f20403a8",
+        "id": "f28cc4c5-b65c-43a6-b7bd-8f54a60673a3",
         "assertions": [
           {
             "assertion": "Status is 401 Unauthorized",
@@ -1006,15 +1400,15 @@
       },
       {
         "cursor": {
-          "ref": "e8e8e997-e873-45bc-86f3-cabb92d6d631",
+          "ref": "4d656cf2-e6df-496e-b5db-9cb2c566fce4",
           "length": 7,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "ec67a4fc-d9fb-4e14-a564-e7873bba04c8"
+          "httpRequestId": "e04781ea-7a13-44c5-beec-e8de4a2cd1af"
         },
         "item": {
-          "id": "c2d99fa7-2406-41af-aa17-398dca5417c4",
+          "id": "bacd5de1-1f27-4a27-ad63-816bad6f44b0",
           "name": "TC-AUTH-LOGIN-004-Unknown User",
           "request": {
             "url": {
@@ -1045,7 +1439,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "c6725ad1-f03d-4f84-ac63-9886b51a83ed",
+                "id": "151cdb90-3022-483e-86e5-49f220606425",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -1057,7 +1451,7 @@
                   "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
                   "});"
                 ],
-                "_lastExecutionId": "58078595-4f28-4215-8bb5-c46070bd20e1"
+                "_lastExecutionId": "2d2fda26-268b-4279-ae84-e54c56032731"
               }
             }
           ]
@@ -1099,7 +1493,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5840fd17-b364-4638-886b-d5d719032b12",
+              "value": "354816d5-193f-4bc6-b127-96fb0ec9e23d",
               "system": true
             },
             {
@@ -1119,14 +1513,19 @@
             },
             {
               "key": "Content-Length",
-              "value": "85",
+              "value": "73",
+              "system": true
+            },
+            {
+              "key": "Cookie",
+              "value": "t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTY5YzY5MjUyY2NiNGMwODRlYThiNTQiLCJuYW1lIjoiVGVzdCBVc2VyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY4NTM5Nzk3fQ.EKoDGdN-g2WrcazOIpRy0FIxfblpm8SK_1JvFY__Bvg",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n    \"email\": \"{{EMAIL_TEST_NOTFOUND}}\",\r\n    \"password\": \"{{PASSWORD_AUTH004}}\"\r\n}",
+            "raw": "{\r\n    \"email\": \"{{EMAIL_TEST_NOTFOUND}}\",\r\n    \"password\": \"testuser\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -1135,7 +1534,7 @@
           }
         },
         "response": {
-          "id": "323ad996-b90d-4b71-84d8-0c7c26682ee2",
+          "id": "b7466122-8c66-48c9-b357-34ce7f420c71",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -1209,7 +1608,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:22 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:17 GMT"
             },
             {
               "key": "Connection",
@@ -1255,7 +1654,7 @@
           "responseTime": 4,
           "responseSize": 26
         },
-        "id": "c2d99fa7-2406-41af-aa17-398dca5417c4",
+        "id": "bacd5de1-1f27-4a27-ad63-816bad6f44b0",
         "assertions": [
           {
             "assertion": "Status is 401 Unauthorized",
@@ -1269,15 +1668,15 @@
       },
       {
         "cursor": {
-          "ref": "d9f66016-baaf-4802-9dbe-f13c4679bee5",
+          "ref": "87d7b043-b1d5-4d24-9834-d8838cf56bff",
           "length": 7,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "a1535aa9-8c37-486c-b591-52c7eb92880d"
+          "httpRequestId": "5e1f4f6c-bd6d-4c42-84de-18ff91b70fb9"
         },
         "item": {
-          "id": "d85807a5-01c8-437e-af11-4cbe359f7d60",
+          "id": "ce19b47d-5a08-4c3f-8371-61e2f2049c17",
           "name": "TC-AUTH-SIGNOUT-001-Clear Cookie",
           "request": {
             "url": {
@@ -1305,14 +1704,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "2eb2ed6a-f3df-4570-a500-1fd913dc7f9c",
+                "id": "31ab1fbe-2b29-48f2-8d4d-710b721a0ad5",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "d66531c0-4886-40e5-99f4-4a9f166ed402"
+                "_lastExecutionId": "74c058f4-6000-4a40-88d3-eb2e3d3799a3"
               }
             }
           ]
@@ -1334,7 +1733,7 @@
           "header": [
             {
               "key": "Authorization",
-              "value": "Bearer {{TOKEN_U001}}"
+              "value": "Bearer "
             },
             {
               "key": "User-Agent",
@@ -1353,7 +1752,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b08ccdf7-e6f3-4848-af99-bff3b5caf00f",
+              "value": "c5e6ddd8-86c7-4c8a-933c-76295596ce0a",
               "system": true
             },
             {
@@ -1370,12 +1769,17 @@
               "key": "Connection",
               "value": "keep-alive",
               "system": true
+            },
+            {
+              "key": "Cookie",
+              "value": "t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTY5YzY5MjUyY2NiNGMwODRlYThiNTQiLCJuYW1lIjoiVGVzdCBVc2VyIiwiZW1haWwiOiJ0ZXN0dXNlckBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY4NTM5Nzk3fQ.EKoDGdN-g2WrcazOIpRy0FIxfblpm8SK_1JvFY__Bvg",
+              "system": true
             }
           ],
           "method": "GET"
         },
         "response": {
-          "id": "694e3e7d-47e4-43f4-8dc9-0ccff5c10e4f",
+          "id": "0cc5d2c5-ea38-4bfb-a86d-ac8ffd717528",
           "status": "OK",
           "code": 200,
           "header": [
@@ -1453,7 +1857,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:22 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:17 GMT"
             },
             {
               "key": "Connection",
@@ -1494,10 +1898,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 5,
           "responseSize": 24
         },
-        "id": "d85807a5-01c8-437e-af11-4cbe359f7d60",
+        "id": "ce19b47d-5a08-4c3f-8371-61e2f2049c17",
         "assertions": [
           {
             "assertion": "Status is 200 OK",
@@ -1507,15 +1911,15 @@
       },
       {
         "cursor": {
-          "ref": "37ce3895-e5b4-4ceb-ba54-cd586573e0bf",
+          "ref": "bf5519d6-cac0-4f7c-ac48-876d458e1d9f",
           "length": 7,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "8ffc1aae-23ff-4acb-805b-430480453833"
+          "httpRequestId": "6d9d5759-6604-4634-ba2c-16b7e628b95c"
         },
         "item": {
-          "id": "025e859e-2207-4b99-98df-a85df0bf7a1a",
+          "id": "8cc4ec22-f5d9-4d72-a2ce-c22caa1ea830",
           "name": "TC-AUTH-SIGNUP-001-SIgnUp",
           "request": {
             "url": {
@@ -1546,14 +1950,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "8b079f3e-9074-49c4-983b-45de27ed10d3",
+                "id": "0070f12c-4252-43f0-ae59-a06c887a5175",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "d8fee9ab-fb35-47a9-80c8-0bb104047a93"
+                "_lastExecutionId": "a9979c24-a677-4d89-9532-384f74bb2f6f"
               }
             }
           ]
@@ -1595,7 +1999,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "d8bf1054-580e-4b18-974f-52a227de19e8",
+              "value": "fd8ee261-d8b6-4914-a6eb-468688e885fd",
               "system": true
             },
             {
@@ -1615,14 +2019,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "104",
+              "value": "110",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n    \"name\":\"Garam\",\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\":\t\"{{PASSWORD_AUTH_SIGNUP001}}\"\r\n}",
+            "raw": "{\r\n    \"name\":\"Garam\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"password\":\t\"{{PASSWORD_AUTH_SIGNUP001}}\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -1631,7 +2035,7 @@
           }
         },
         "response": {
-          "id": "3999fb9c-2b94-4016-8498-1391f5985d53",
+          "id": "50369791-fd5b-44da-82c9-ab27c0b0ab0e",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -1705,7 +2109,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:22 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:17 GMT"
             },
             {
               "key": "Connection",
@@ -1724,10 +2128,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 11,
+          "responseTime": 13,
           "responseSize": 2
         },
-        "id": "025e859e-2207-4b99-98df-a85df0bf7a1a",
+        "id": "8cc4ec22-f5d9-4d72-a2ce-c22caa1ea830",
         "assertions": [
           {
             "assertion": "Status is 200 OK",
@@ -1744,15 +2148,15 @@
       },
       {
         "cursor": {
-          "ref": "bdfd08ef-9a74-425a-a6fa-068928bf02ec",
+          "ref": "5c9b80eb-b802-4f6f-9cdd-9a3ec21f8d1a",
           "length": 7,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "65f9c830-6569-4f9a-a6e4-df53c4c791ae"
+          "httpRequestId": "ca22cb02-bc19-4422-95b2-473f2da0dc97"
         },
         "item": {
-          "id": "594df836-5008-465d-8322-5a28b225b3af",
+          "id": "1d5dbf1b-332e-4d13-94c5-039720418d53",
           "name": "TC-AUTH-SIGNUP-002-Duplicate",
           "request": {
             "url": {
@@ -1783,7 +2187,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "e1cfc51f-c5a8-418f-8b48-1c202a088e8f",
+                "id": "1c7c5a05-7b96-41c0-bc3a-417ca3bba475",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -1791,7 +2195,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "34d66d50-a83c-4fc4-8224-dc6c30e98627"
+                "_lastExecutionId": "05986539-afa2-455b-b27f-ef23c942d204"
               }
             }
           ]
@@ -1833,7 +2237,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "939cdc04-1137-41cc-8e48-f4172173bb41",
+              "value": "4b5d5d22-eba9-4689-9d48-7156aace722b",
               "system": true
             },
             {
@@ -1869,7 +2273,7 @@
           }
         },
         "response": {
-          "id": "31e1eee7-a9d7-43a1-9961-97db1a0df92c",
+          "id": "d3fc448e-b852-497f-bd71-090bc423bb32",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -1943,7 +2347,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:22 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:17 GMT"
             },
             {
               "key": "Connection",
@@ -1962,10 +2366,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 5,
           "responseSize": 2
         },
-        "id": "594df836-5008-465d-8322-5a28b225b3af",
+        "id": "1d5dbf1b-332e-4d13-94c5-039720418d53",
         "assertions": [
           {
             "assertion": "Status is 400 Bad Request",
@@ -1975,15 +2379,15 @@
       },
       {
         "cursor": {
-          "ref": "c51448ee-d375-481a-96d0-19ab4da4a283",
+          "ref": "5bd05270-a798-44d2-a4cd-76e5b3e72fc9",
           "length": 7,
           "cycles": 1,
           "position": 6,
           "iteration": 0,
-          "httpRequestId": "138eecc9-33cc-4c6a-91ee-db84071ebcbc"
+          "httpRequestId": "5562837c-6d58-4148-9d0a-a723f421fc52"
         },
         "item": {
-          "id": "b90346dd-e01e-4fbb-beee-a04d31ad7153",
+          "id": "34efddd4-6084-41c9-bc5b-5a858bb53ee2",
           "name": "TC-AUTH-SIGNUP-003-ShortPW",
           "request": {
             "url": {
@@ -2014,14 +2418,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "8dd2d5cc-e792-4e6d-9ef0-a9886b52a206",
+                "id": "ae83a961-81bd-40e6-8449-df38692fb03e",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 400 Bad Request\", () => {\r",
                   "    pm.response.to.have.status(400);\r",
                   "});"
                 ],
-                "_lastExecutionId": "2e095465-73b8-4024-a82d-7d9948349220"
+                "_lastExecutionId": "52110c37-62ff-465f-8665-a36236c31053"
               }
             }
           ]
@@ -2063,7 +2467,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "57647cc8-c39a-43f0-884f-93b461507cc9",
+              "value": "9f626c12-f82b-4967-a81a-2d8eed9d9bf7",
               "system": true
             },
             {
@@ -2099,7 +2503,7 @@
           }
         },
         "response": {
-          "id": "448755a3-8d2f-4821-9224-585910a0487f",
+          "id": "ca29c16c-7d68-43d9-8bfe-b35dc11ee046",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -2173,7 +2577,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:22 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:17 GMT"
             },
             {
               "key": "Connection",
@@ -2192,10 +2596,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 3,
           "responseSize": 2
         },
-        "id": "b90346dd-e01e-4fbb-beee-a04d31ad7153",
+        "id": "34efddd4-6084-41c9-bc5b-5a858bb53ee2",
         "assertions": [
           {
             "assertion": "Status is 400 Bad Request",
@@ -2205,855 +2609,9 @@
       }
     ],
     "transfers": {
-      "responseTotal": 108
+      "responseTotal": 452
     },
     "failures": [
-      {
-        "error": {
-          "name": "AssertionError",
-          "index": 0,
-          "test": "Status is 200 OK",
-          "message": "expected response to have status code 200 but got 401",
-          "stack": "AssertionError: expected response to have status code 200 but got 401\n   at Object.eval sandbox-script.js:1:1)",
-          "checksum": "3da5de9e2aca715b2f5b5b256a5a2535",
-          "id": "57cb8e9b-18d6-4f61-ab0f-7f8ed8e604c9",
-          "timestamp": 1768538302670,
-          "stacktrace": [
-            {
-              "fileName": "sandbox-script.js",
-              "lineNumber": 1,
-              "functionName": "Object.eval",
-              "typeName": "Object",
-              "methodName": "eval",
-              "columnNumber": 1,
-              "native": false
-            }
-          ]
-        },
-        "at": "assertion:0 in test-script",
-        "source": {
-          "id": "03371c01-307e-48c3-a532-623cc1fac484",
-          "name": "TC-AUTH-LOGIN-001-JWT",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "path": [
-                "auth",
-                "signin"
-              ],
-              "host": [
-                "localhost:3000"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\": \"{{PASSWORD_AUTH003}}\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [],
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test(\"Status is 200 OK\", () => {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response contains token\", () => {\r",
-                  "    const jsonData = pm.response.json();\r",
-                  "    pm.expect(jsonData.token).to.exist;\r",
-                  "});"
-                ],
-                "_lastExecutionId": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
-              }
-            }
-          ]
-        },
-        "parent": {
-          "_": {
-            "postman_id": "f7a0f700-5d36-431a-aa5d-10487064f284",
-            "exporter_id": "43737297"
-          },
-          "item": [
-            {
-              "id": "03371c01-307e-48c3-a532-623cc1fac484",
-              "name": "TC-AUTH-LOGIN-001-JWT",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signin"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\": \"{{PASSWORD_AUTH003}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 200 OK\", () => {\r",
-                      "    pm.response.to.have.status(200);\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Response contains token\", () => {\r",
-                      "    const jsonData = pm.response.json();\r",
-                      "    pm.expect(jsonData.token).to.exist;\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "b0d1c419-bc30-4961-8721-2801f20403a8",
-              "name": "TC-AUTH-LOGIN-002-Wrong Password",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signin"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"{{EMAIL_U002}}\",\r\n    \"password\": \"{{PASSWORD_AUTH002_INVALID}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "73077cbb-99f3-49cd-a7b1-3c873cb08042",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
-                      "    pm.response.to.have.status(401);\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Response contains error message\", () => {\r",
-                      "    const jsonData = pm.response.json();\r",
-                      "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "0a3815e9-11b4-4f9b-8bd3-bf6682d74f85"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "c2d99fa7-2406-41af-aa17-398dca5417c4",
-              "name": "TC-AUTH-LOGIN-004-Unknown User",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signin"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"{{EMAIL_TEST_NOTFOUND}}\",\r\n    \"password\": \"{{PASSWORD_AUTH004}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "c6725ad1-f03d-4f84-ac63-9886b51a83ed",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
-                      "    pm.response.to.have.status(401);\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Response contains error message\", () => {\r",
-                      "    const jsonData = pm.response.json();\r",
-                      "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "58078595-4f28-4215-8bb5-c46070bd20e1"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "d85807a5-01c8-437e-af11-4cbe359f7d60",
-              "name": "TC-AUTH-SIGNOUT-001-Clear Cookie",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signout"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{TOKEN_U001}}"
-                  }
-                ],
-                "method": "GET"
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "2eb2ed6a-f3df-4570-a500-1fd913dc7f9c",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 200 OK\", () => {\r",
-                      "    pm.response.to.have.status(200);\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "d66531c0-4886-40e5-99f4-4a9f166ed402"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "025e859e-2207-4b99-98df-a85df0bf7a1a",
-              "name": "TC-AUTH-SIGNUP-001-SIgnUp",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "api",
-                    "users"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\":\"Garam\",\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\":\t\"{{PASSWORD_AUTH_SIGNUP001}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "8b079f3e-9074-49c4-983b-45de27ed10d3",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 200 OK\", () => {\r",
-                      "    pm.response.to.have.status(200);\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "d8fee9ab-fb35-47a9-80c8-0bb104047a93"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "594df836-5008-465d-8322-5a28b225b3af",
-              "name": "TC-AUTH-SIGNUP-002-Duplicate",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "api",
-                    "users"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\": \"Duplicate\",\r\n    \"email\": \"{{EMAIL_TEST_DUPLICATE}}\",\r\n    \"password\": \"{{PASSWORD_AUTH_SIGNUP002}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "e1cfc51f-c5a8-418f-8b48-1c202a088e8f",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 400 Bad Request\", () => {\r",
-                      "    pm.response.to.have.status(400);\r",
-                      "});\r",
-                      "\r"
-                    ],
-                    "_lastExecutionId": "34d66d50-a83c-4fc4-8224-dc6c30e98627"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "b90346dd-e01e-4fbb-beee-a04d31ad7153",
-              "name": "TC-AUTH-SIGNUP-003-ShortPW",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "api",
-                    "users"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\":\"ShortPW\",\r\n    \"email\": \"{{EMAIL_TEST_SHORT}}\",\r\n    \"password\":\t\"{{PASSWORD_AUTH_SIGNUP003_SHORT}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "8dd2d5cc-e792-4e6d-9ef0-a9886b52a206",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 400 Bad Request\", () => {\r",
-                      "    pm.response.to.have.status(400);\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "2e095465-73b8-4024-a82d-7d9948349220"
-                  }
-                }
-              ]
-            }
-          ],
-          "event": [],
-          "variable": [],
-          "info": {
-            "_postman_id": "f7a0f700-5d36-431a-aa5d-10487064f284",
-            "name": "Pokemania - Auth API",
-            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-          }
-        },
-        "cursor": {
-          "position": 0,
-          "iteration": 0,
-          "length": 7,
-          "cycles": 1,
-          "empty": false,
-          "eof": false,
-          "bof": true,
-          "cr": false,
-          "ref": "9d20cce5-3326-40b6-af92-6d0debf0c1be",
-          "httpRequestId": "f2dbb494-a238-4115-8b01-b3ce6b7c1769",
-          "scriptId": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
-          "execution": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
-        }
-      },
-      {
-        "error": {
-          "name": "AssertionError",
-          "index": 1,
-          "test": "Response contains token",
-          "message": "expected undefined to exist",
-          "stack": "AssertionError: expected undefined to exist\n   at Object.eval sandbox-script.js:2:1)",
-          "checksum": "ec6950e37b2b488ed7ea0f1f15950f59",
-          "id": "0d0b167a-0fd5-48f7-930b-038af1193ad1",
-          "timestamp": 1768538302673,
-          "stacktrace": [
-            {
-              "fileName": "sandbox-script.js",
-              "lineNumber": 2,
-              "functionName": "Object.eval",
-              "typeName": "Object",
-              "methodName": "eval",
-              "columnNumber": 1,
-              "native": false
-            }
-          ]
-        },
-        "at": "assertion:1 in test-script",
-        "source": {
-          "id": "03371c01-307e-48c3-a532-623cc1fac484",
-          "name": "TC-AUTH-LOGIN-001-JWT",
-          "request": {
-            "url": {
-              "protocol": "http",
-              "path": [
-                "auth",
-                "signin"
-              ],
-              "host": [
-                "localhost:3000"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "method": "POST",
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\": \"{{PASSWORD_AUTH003}}\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [],
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test(\"Status is 200 OK\", () => {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Response contains token\", () => {\r",
-                  "    const jsonData = pm.response.json();\r",
-                  "    pm.expect(jsonData.token).to.exist;\r",
-                  "});"
-                ],
-                "_lastExecutionId": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
-              }
-            }
-          ]
-        },
-        "parent": {
-          "_": {
-            "postman_id": "f7a0f700-5d36-431a-aa5d-10487064f284",
-            "exporter_id": "43737297"
-          },
-          "item": [
-            {
-              "id": "03371c01-307e-48c3-a532-623cc1fac484",
-              "name": "TC-AUTH-LOGIN-001-JWT",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signin"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\": \"{{PASSWORD_AUTH003}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 200 OK\", () => {\r",
-                      "    pm.response.to.have.status(200);\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Response contains token\", () => {\r",
-                      "    const jsonData = pm.response.json();\r",
-                      "    pm.expect(jsonData.token).to.exist;\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "b0d1c419-bc30-4961-8721-2801f20403a8",
-              "name": "TC-AUTH-LOGIN-002-Wrong Password",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signin"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"{{EMAIL_U002}}\",\r\n    \"password\": \"{{PASSWORD_AUTH002_INVALID}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "73077cbb-99f3-49cd-a7b1-3c873cb08042",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
-                      "    pm.response.to.have.status(401);\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Response contains error message\", () => {\r",
-                      "    const jsonData = pm.response.json();\r",
-                      "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "0a3815e9-11b4-4f9b-8bd3-bf6682d74f85"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "c2d99fa7-2406-41af-aa17-398dca5417c4",
-              "name": "TC-AUTH-LOGIN-004-Unknown User",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signin"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"email\": \"{{EMAIL_TEST_NOTFOUND}}\",\r\n    \"password\": \"{{PASSWORD_AUTH004}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "c6725ad1-f03d-4f84-ac63-9886b51a83ed",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
-                      "    pm.response.to.have.status(401);\r",
-                      "});\r",
-                      "\r",
-                      "pm.test(\"Response contains error message\", () => {\r",
-                      "    const jsonData = pm.response.json();\r",
-                      "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "58078595-4f28-4215-8bb5-c46070bd20e1"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "d85807a5-01c8-437e-af11-4cbe359f7d60",
-              "name": "TC-AUTH-SIGNOUT-001-Clear Cookie",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "auth",
-                    "signout"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer {{TOKEN_U001}}"
-                  }
-                ],
-                "method": "GET"
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "2eb2ed6a-f3df-4570-a500-1fd913dc7f9c",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 200 OK\", () => {\r",
-                      "    pm.response.to.have.status(200);\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "d66531c0-4886-40e5-99f4-4a9f166ed402"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "025e859e-2207-4b99-98df-a85df0bf7a1a",
-              "name": "TC-AUTH-SIGNUP-001-SIgnUp",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "api",
-                    "users"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\":\"Garam\",\r\n    \"email\": \"{{EMAIL_U003}}\",\r\n    \"password\":\t\"{{PASSWORD_AUTH_SIGNUP001}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "8b079f3e-9074-49c4-983b-45de27ed10d3",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 200 OK\", () => {\r",
-                      "    pm.response.to.have.status(200);\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "d8fee9ab-fb35-47a9-80c8-0bb104047a93"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "594df836-5008-465d-8322-5a28b225b3af",
-              "name": "TC-AUTH-SIGNUP-002-Duplicate",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "api",
-                    "users"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\": \"Duplicate\",\r\n    \"email\": \"{{EMAIL_TEST_DUPLICATE}}\",\r\n    \"password\": \"{{PASSWORD_AUTH_SIGNUP002}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "e1cfc51f-c5a8-418f-8b48-1c202a088e8f",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 400 Bad Request\", () => {\r",
-                      "    pm.response.to.have.status(400);\r",
-                      "});\r",
-                      "\r"
-                    ],
-                    "_lastExecutionId": "34d66d50-a83c-4fc4-8224-dc6c30e98627"
-                  }
-                }
-              ]
-            },
-            {
-              "id": "b90346dd-e01e-4fbb-beee-a04d31ad7153",
-              "name": "TC-AUTH-SIGNUP-003-ShortPW",
-              "request": {
-                "url": {
-                  "protocol": "http",
-                  "path": [
-                    "api",
-                    "users"
-                  ],
-                  "host": [
-                    "localhost:3000"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\":\"ShortPW\",\r\n    \"email\": \"{{EMAIL_TEST_SHORT}}\",\r\n    \"password\":\t\"{{PASSWORD_AUTH_SIGNUP003_SHORT}}\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "response": [],
-              "event": [
-                {
-                  "listen": "test",
-                  "script": {
-                    "id": "8dd2d5cc-e792-4e6d-9ef0-a9886b52a206",
-                    "type": "text/javascript",
-                    "exec": [
-                      "pm.test(\"Status is 400 Bad Request\", () => {\r",
-                      "    pm.response.to.have.status(400);\r",
-                      "});"
-                    ],
-                    "_lastExecutionId": "2e095465-73b8-4024-a82d-7d9948349220"
-                  }
-                }
-              ]
-            }
-          ],
-          "event": [],
-          "variable": [],
-          "info": {
-            "_postman_id": "f7a0f700-5d36-431a-aa5d-10487064f284",
-            "name": "Pokemania - Auth API",
-            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-          }
-        },
-        "cursor": {
-          "position": 0,
-          "iteration": 0,
-          "length": 7,
-          "cycles": 1,
-          "empty": false,
-          "eof": false,
-          "bof": true,
-          "cr": false,
-          "ref": "9d20cce5-3326-40b6-af92-6d0debf0c1be",
-          "httpRequestId": "f2dbb494-a238-4115-8b01-b3ce6b7c1769",
-          "scriptId": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
-          "execution": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
-        }
-      },
       {
         "error": {
           "name": "AssertionError",
@@ -3062,8 +2620,8 @@
           "message": "expected response to have status code 200 but got 400",
           "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:5)",
           "checksum": "5fb588635cf7de3a1c3a3d05056d69b7",
-          "id": "1071213a-2fd7-46c3-a22a-50520af90e5e",
-          "timestamp": 1768538302755,
+          "id": "352b596a-ba58-4225-a988-33a24eb78cb0",
+          "timestamp": 1768539797690,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3078,7 +2636,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "025e859e-2207-4b99-98df-a85df0bf7a1a",
+          "id": "8cc4ec22-f5d9-4d72-a2ce-c22caa1ea830",
           "name": "TC-AUTH-SIGNUP-001-SIgnUp",
           "request": {
             "url": {
@@ -3109,14 +2667,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "8b079f3e-9074-49c4-983b-45de27ed10d3",
+                "id": "0070f12c-4252-43f0-ae59-a06c887a5175",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "d8fee9ab-fb35-47a9-80c8-0bb104047a93"
+                "_lastExecutionId": "a9979c24-a677-4d89-9532-384f74bb2f6f"
               }
             }
           ]
@@ -3128,7 +2686,7 @@
           },
           "item": [
             {
-              "id": "03371c01-307e-48c3-a532-623cc1fac484",
+              "id": "1b7c3bba-0860-4a6a-abc0-d11e6d48aebc",
               "name": "TC-AUTH-LOGIN-001-JWT",
               "request": {
                 "url": {
@@ -3159,7 +2717,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "b4d2be3a-3366-44b8-8583-e2108ea56d3b",
+                    "id": "6ef4a2f1-cbf4-4f00-9dad-0ea923c418a9",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
@@ -3171,13 +2729,13 @@
                       "    pm.expect(jsonData.token).to.exist;\r",
                       "});"
                     ],
-                    "_lastExecutionId": "128fa006-910a-43a5-b2f9-a0e75dfea9fe"
+                    "_lastExecutionId": "f84de37c-1e75-49de-beb8-ee519413ec49"
                   }
                 }
               ]
             },
             {
-              "id": "b0d1c419-bc30-4961-8721-2801f20403a8",
+              "id": "f28cc4c5-b65c-43a6-b7bd-8f54a60673a3",
               "name": "TC-AUTH-LOGIN-002-Wrong Password",
               "request": {
                 "url": {
@@ -3208,7 +2766,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "73077cbb-99f3-49cd-a7b1-3c873cb08042",
+                    "id": "df39a72e-2156-45fe-8476-9636c2fc9424",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -3220,13 +2778,13 @@
                       "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
                       "});"
                     ],
-                    "_lastExecutionId": "0a3815e9-11b4-4f9b-8bd3-bf6682d74f85"
+                    "_lastExecutionId": "debbdaff-a3fc-4993-b5a2-4d5f0978ac5f"
                   }
                 }
               ]
             },
             {
-              "id": "c2d99fa7-2406-41af-aa17-398dca5417c4",
+              "id": "bacd5de1-1f27-4a27-ad63-816bad6f44b0",
               "name": "TC-AUTH-LOGIN-004-Unknown User",
               "request": {
                 "url": {
@@ -3257,7 +2815,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c6725ad1-f03d-4f84-ac63-9886b51a83ed",
+                    "id": "151cdb90-3022-483e-86e5-49f220606425",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -3269,13 +2827,13 @@
                       "    pm.expect(jsonData.error || jsonData.message).to.exist;\r",
                       "});"
                     ],
-                    "_lastExecutionId": "58078595-4f28-4215-8bb5-c46070bd20e1"
+                    "_lastExecutionId": "2d2fda26-268b-4279-ae84-e54c56032731"
                   }
                 }
               ]
             },
             {
-              "id": "d85807a5-01c8-437e-af11-4cbe359f7d60",
+              "id": "ce19b47d-5a08-4c3f-8371-61e2f2049c17",
               "name": "TC-AUTH-SIGNOUT-001-Clear Cookie",
               "request": {
                 "url": {
@@ -3303,20 +2861,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "2eb2ed6a-f3df-4570-a500-1fd913dc7f9c",
+                    "id": "31ab1fbe-2b29-48f2-8d4d-710b721a0ad5",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "d66531c0-4886-40e5-99f4-4a9f166ed402"
+                    "_lastExecutionId": "74c058f4-6000-4a40-88d3-eb2e3d3799a3"
                   }
                 }
               ]
             },
             {
-              "id": "025e859e-2207-4b99-98df-a85df0bf7a1a",
+              "id": "8cc4ec22-f5d9-4d72-a2ce-c22caa1ea830",
               "name": "TC-AUTH-SIGNUP-001-SIgnUp",
               "request": {
                 "url": {
@@ -3347,20 +2905,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8b079f3e-9074-49c4-983b-45de27ed10d3",
+                    "id": "0070f12c-4252-43f0-ae59-a06c887a5175",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "d8fee9ab-fb35-47a9-80c8-0bb104047a93"
+                    "_lastExecutionId": "a9979c24-a677-4d89-9532-384f74bb2f6f"
                   }
                 }
               ]
             },
             {
-              "id": "594df836-5008-465d-8322-5a28b225b3af",
+              "id": "1d5dbf1b-332e-4d13-94c5-039720418d53",
               "name": "TC-AUTH-SIGNUP-002-Duplicate",
               "request": {
                 "url": {
@@ -3391,7 +2949,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "e1cfc51f-c5a8-418f-8b48-1c202a088e8f",
+                    "id": "1c7c5a05-7b96-41c0-bc3a-417ca3bba475",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -3399,13 +2957,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "34d66d50-a83c-4fc4-8224-dc6c30e98627"
+                    "_lastExecutionId": "05986539-afa2-455b-b27f-ef23c942d204"
                   }
                 }
               ]
             },
             {
-              "id": "b90346dd-e01e-4fbb-beee-a04d31ad7153",
+              "id": "34efddd4-6084-41c9-bc5b-5a858bb53ee2",
               "name": "TC-AUTH-SIGNUP-003-ShortPW",
               "request": {
                 "url": {
@@ -3436,14 +2994,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8dd2d5cc-e792-4e6d-9ef0-a9886b52a206",
+                    "id": "ae83a961-81bd-40e6-8449-df38692fb03e",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 400 Bad Request\", () => {\r",
                       "    pm.response.to.have.status(400);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "2e095465-73b8-4024-a82d-7d9948349220"
+                    "_lastExecutionId": "52110c37-62ff-465f-8665-a36236c31053"
                   }
                 }
               ]
@@ -3458,14 +3016,14 @@
           }
         },
         "cursor": {
-          "ref": "37ce3895-e5b4-4ceb-ba54-cd586573e0bf",
+          "ref": "bf5519d6-cac0-4f7c-ac48-876d458e1d9f",
           "length": 7,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "8ffc1aae-23ff-4acb-805b-430480453833",
-          "scriptId": "8b079f3e-9074-49c4-983b-45de27ed10d3",
-          "execution": "d8fee9ab-fb35-47a9-80c8-0bb104047a93"
+          "httpRequestId": "6d9d5759-6604-4634-ba2c-16b7e628b95c",
+          "scriptId": "0070f12c-4252-43f0-ae59-a06c887a5175",
+          "execution": "a9979c24-a677-4d89-9532-384f74bb2f6f"
         }
       }
     ],

@@ -182,9 +182,13 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status is 200 OK\", () => {\r",
-							"    pm.response.to.have.status(200);\r",
-
+							"pm.test(\"Status is 201 Created\", () => {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains user data\", () => {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.user._id).to.exist;\r",
 							"});"
 						],
 						"type": "text/javascript"

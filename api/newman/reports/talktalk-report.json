@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+        "id": "60959566-66ed-40ea-aef6-73cb87f24bd3",
         "name": "TC-MSG-POST-001-Send Message (Guest)",
         "request": {
           "url": {
@@ -36,20 +36,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+              "id": "b10fcba1-6ba2-4875-9ea3-c33a6fc543f5",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                 "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                 "});"
               ],
-              "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+              "_lastExecutionId": "3bf6a36c-2512-4c9b-b163-7204c41f568f"
             }
           }
         ]
       },
       {
-        "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+        "id": "c0b188e1-85c1-4481-bc60-0c6ea42c2c8f",
         "name": "TC-MSG-POST-002-Send Message (Logged-in)",
         "request": {
           "url": {
@@ -89,20 +89,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+              "id": "ed1aad3f-cfa4-41c8-90d1-68faba3d13db",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                 "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                 "});"
               ],
-              "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+              "_lastExecutionId": "fa1abb15-f4e5-44be-ac5a-9447bdbbc4c1"
             }
           }
         ]
       },
       {
-        "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+        "id": "87b55c4d-3a4b-45c0-acd3-8ab1403cd8dc",
         "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
         "request": {
           "url": {
@@ -133,20 +133,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+              "id": "8c438b01-e237-4e08-8093-2a61f2dedee7",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK\", function () {\r",
                 "    pm.response.to.have.status(200);\r",
                 "});"
               ],
-              "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+              "_lastExecutionId": "850de0f4-4ff3-4483-8ee7-3e3864d44ab1"
             }
           }
         ]
       },
       {
-        "id": "623b173e-286f-4273-8926-21992971a489",
+        "id": "40b0df41-21d0-4285-b677-51797fefaec8",
         "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
         "request": {
           "url": {
@@ -177,20 +177,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+              "id": "4a797bf6-fc37-40c0-9789-82dc9c70cf87",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
                 "    pm.expect([200, 400]).to.include(pm.response.code);\r",
                 "});"
               ],
-              "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+              "_lastExecutionId": "79cfba83-35bd-4aa6-bef3-11f438fd3457"
             }
           }
         ]
       },
       {
-        "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+        "id": "c13fdcae-29b8-4583-950c-401c37bdaa9a",
         "name": "TC-MSG-DEL-001-Delete Message (Author)",
         "request": {
           "url": {
@@ -221,20 +221,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+              "id": "26c838df-4086-4345-b8ee-03cac0d7b1d4",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
                 "    pm.expect([200, 204]).to.include(pm.response.code);\r",
                 "});"
               ],
-              "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+              "_lastExecutionId": "e3839ef6-083c-4a29-ab1e-1dcab902f01e"
             }
           }
         ]
       },
       {
-        "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+        "id": "803542da-e322-4f14-84f2-3826d715a8d9",
         "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
         "request": {
           "url": {
@@ -268,14 +268,14 @@
           {
             "listen": "test",
             "script": {
-              "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+              "id": "af1e3e9f-c06d-44fc-9c73-9f20f00f2569",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
                 "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                 "});"
               ],
-              "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+              "_lastExecutionId": "4539d36f-b576-4dc8-8ffe-f959862e977f"
             }
           }
         ]
@@ -305,26 +305,6 @@
       },
       {
         "type": "any",
-        "value": "manager@pokemania.com",
-        "key": "TEST_ADMIN_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "manager",
-        "key": "TEST_ADMIN_PASSWORD"
-      },
-      {
-        "type": "any",
-        "value": "jayden98@gmail.com",
-        "key": "TEST_USER_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "jayden123!",
-        "key": "TEST_USER_PASSWORD"
-      },
-      {
-        "type": "any",
         "value": "",
         "key": "TOKEN_ADMIN"
       },
@@ -342,11 +322,86 @@
         "type": "any",
         "value": "",
         "key": "USER_ID_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U004"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_SET_TARGET"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U001"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U002"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U003"
+      },
+      {
+        "type": "any",
+        "value": "testmanager",
+        "key": "PASSWORD_AUTH001"
+      },
+      {
+        "type": "any",
+        "value": "invalid_password_12345",
+        "key": "PASSWORD_AUTH002_INVALID"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH003"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH004"
       }
     ]
   },
   "globals": {
-    "id": "083be291-c49c-4fd3-891f-01d776fabbda",
+    "id": "a90dc365-21f0-4755-8f82-6d83e8f0985c",
     "values": []
   },
   "run": {
@@ -398,10 +453,10 @@
       }
     },
     "timings": {
-      "responseAverage": 14,
+      "responseAverage": 12.166666666666666,
       "responseMin": 4,
-      "responseMax": 53,
-      "responseSd": 17.54042948923049,
+      "responseMax": 43,
+      "responseSd": 13.897441810955314,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -410,8 +465,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768538309424,
-      "completed": 1768538309629
+      "started": 1768539804402,
+      "completed": 1768539804602
     },
     "executions": [
       {
@@ -424,11 +479,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "ae61c003-0064-4feb-bace-c81970759005",
-          "httpRequestId": "993fe5bc-f41f-46c9-8a2d-b221844c02e2"
+          "ref": "4365fd87-4909-4f76-9468-22c23bdad5ee",
+          "httpRequestId": "8b3cd1d0-58dc-437a-8ec3-b7d61c8a5dea"
         },
         "item": {
-          "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+          "id": "60959566-66ed-40ea-aef6-73cb87f24bd3",
           "name": "TC-MSG-POST-001-Send Message (Guest)",
           "request": {
             "url": {
@@ -458,14 +513,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                "id": "b10fcba1-6ba2-4875-9ea3-c33a6fc543f5",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                   "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                   "});"
                 ],
-                "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+                "_lastExecutionId": "3bf6a36c-2512-4c9b-b163-7204c41f568f"
               }
             }
           ]
@@ -506,7 +561,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "f458ea54-6f34-4aaf-bb3f-a88c6764bf37",
+              "value": "afd0ca55-af1e-4878-8638-7870c931d806",
               "system": true
             },
             {
@@ -542,7 +597,7 @@
           }
         },
         "response": {
-          "id": "75a0c120-0a83-49df-b9f1-55844d12aab0",
+          "id": "b67a2d1b-cde7-4146-857d-c73f2bc84227",
           "status": "OK",
           "code": 200,
           "header": [
@@ -612,11 +667,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"99-rUAQ3bJdfLaKYHfs9SSAw2ivo3o\""
+              "value": "W/\"99-IRfnwDEeh6lU8JP9LyEG2YARhi4\""
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:24 GMT"
             },
             {
               "key": "Connection",
@@ -715,25 +770,25 @@
               54,
               57,
               99,
-              48,
+              54,
+              57,
               99,
+              100,
+              98,
+              51,
+              99,
+              50,
+              52,
               53,
               97,
-              101,
-              56,
-              98,
-              48,
-              49,
-              98,
-              55,
-              50,
-              54,
-              51,
-              55,
+              53,
+              52,
               100,
-              57,
-              97,
-              50,
+              51,
+              98,
+              100,
+              52,
+              48,
               34,
               44,
               34,
@@ -761,17 +816,17 @@
               54,
               84,
               48,
-              52,
+              53,
               58,
+              48,
               51,
-              56,
               58,
               50,
-              57,
+              52,
               46,
               52,
-              55,
-              50,
+              52,
+              49,
               90,
               34,
               44,
@@ -786,10 +841,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 53,
+          "responseTime": 43,
           "responseSize": 153
         },
-        "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+        "id": "60959566-66ed-40ea-aef6-73cb87f24bd3",
         "assertions": [
           {
             "assertion": "Status code is 201 Created or 200 OK",
@@ -799,15 +854,15 @@
       },
       {
         "cursor": {
-          "ref": "1ead9281-4bee-436e-8e78-903d3184a2f5",
+          "ref": "da0f0e33-9f86-48b6-948d-87f57f48951d",
           "length": 6,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "58b19666-e7c6-4121-ba4a-aeab127d84fb"
+          "httpRequestId": "c5330e80-37b6-4acc-8cf4-7de120f881f9"
         },
         "item": {
-          "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+          "id": "c0b188e1-85c1-4481-bc60-0c6ea42c2c8f",
           "name": "TC-MSG-POST-002-Send Message (Logged-in)",
           "request": {
             "url": {
@@ -847,14 +902,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                "id": "ed1aad3f-cfa4-41c8-90d1-68faba3d13db",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                   "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                   "});"
                 ],
-                "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+                "_lastExecutionId": "fa1abb15-f4e5-44be-ac5a-9447bdbbc4c1"
               }
             }
           ]
@@ -879,11 +934,6 @@
               "system": true
             },
             {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U001}}",
-              "system": true
-            },
-            {
               "key": "User-Agent",
               "value": "PostmanRuntime/7.39.1",
               "system": true
@@ -900,7 +950,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5e84cfd8-9bb9-425d-8d35-09e2ac354f42",
+              "value": "cb80153e-ace2-4c69-afd1-49e7f477cafd",
               "system": true
             },
             {
@@ -939,14 +989,14 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U001}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "5abaf5c0-f545-4a6b-a8d3-43a3e21af0be",
+          "id": "ddda56f7-a9e9-4849-9d8b-9cd532f35e85",
           "status": "OK",
           "code": 200,
           "header": [
@@ -1016,11 +1066,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"9d-ir6T3b38G21rVxQNahBM1Zhzf8k\""
+              "value": "W/\"9d-yGkYOodbCxoTZJrCFFeyDYX17jY\""
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:24 GMT"
             },
             {
               "key": "Connection",
@@ -1123,25 +1173,25 @@
               54,
               57,
               99,
-              48,
+              54,
+              57,
               99,
+              100,
+              98,
+              51,
+              99,
+              50,
+              52,
               53,
               97,
-              101,
-              56,
-              98,
-              48,
-              49,
-              98,
-              55,
-              50,
-              54,
-              51,
-              55,
-              100,
-              57,
-              97,
+              53,
               52,
+              100,
+              51,
+              98,
+              100,
+              52,
+              50,
               34,
               44,
               34,
@@ -1169,17 +1219,17 @@
               54,
               84,
               48,
-              52,
-              58,
-              51,
-              56,
-              58,
-              50,
-              57,
-              46,
               53,
+              58,
+              48,
+              51,
+              58,
               50,
-              55,
+              52,
+              46,
+              52,
+              57,
+              52,
               90,
               34,
               44,
@@ -1194,10 +1244,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 9,
+          "responseTime": 7,
           "responseSize": 157
         },
-        "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+        "id": "c0b188e1-85c1-4481-bc60-0c6ea42c2c8f",
         "assertions": [
           {
             "assertion": "Status code is 201 Created or 200 OK",
@@ -1207,15 +1257,15 @@
       },
       {
         "cursor": {
-          "ref": "0cec72ba-f586-42db-9b7d-5dfa1b18e604",
+          "ref": "8c5bcc10-3655-4684-9bee-29c1a6f9cd09",
           "length": 6,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "71f99335-6d7e-4491-8ac8-753d76948201"
+          "httpRequestId": "752ef4d0-a7cd-4e16-b0e5-cac10c13bb4a"
         },
         "item": {
-          "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+          "id": "87b55c4d-3a4b-45c0-acd3-8ab1403cd8dc",
           "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
           "request": {
             "url": {
@@ -1246,14 +1296,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                "id": "8c438b01-e237-4e08-8093-2a61f2dedee7",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                "_lastExecutionId": "850de0f4-4ff3-4483-8ee7-3e3864d44ab1"
               }
             }
           ]
@@ -1295,7 +1345,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "2b6340d5-f455-49fb-995e-afa84d28f0b3",
+              "value": "d2a01d35-faf7-42eb-ac8d-d16bf07556df",
               "system": true
             },
             {
@@ -1331,7 +1381,7 @@
           }
         },
         "response": {
-          "id": "f67dfb0b-8214-4c0b-92cc-2dcd107c927d",
+          "id": "20223d20-9813-4876-8409-6f126f9619af",
           "status": "Internal Server Error",
           "code": 500,
           "header": [
@@ -1405,7 +1455,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:24 GMT"
             },
             {
               "key": "Connection",
@@ -1456,10 +1506,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 8,
+          "responseTime": 9,
           "responseSize": 34
         },
-        "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+        "id": "87b55c4d-3a4b-45c0-acd3-8ab1403cd8dc",
         "assertions": [
           {
             "assertion": "Status code is 200 OK",
@@ -1476,15 +1526,15 @@
       },
       {
         "cursor": {
-          "ref": "6c7be90d-34c0-424c-93fe-f8612fb0069f",
+          "ref": "ce006811-7fdc-440f-94b0-9b54096ed3e1",
           "length": 6,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "73503ff4-9731-4227-9b3d-a6ab9acfe4f8"
+          "httpRequestId": "4aa2d9d3-37c4-4143-8b9a-27455db97bb4"
         },
         "item": {
-          "id": "623b173e-286f-4273-8926-21992971a489",
+          "id": "40b0df41-21d0-4285-b677-51797fefaec8",
           "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
           "request": {
             "url": {
@@ -1515,14 +1565,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                "id": "4a797bf6-fc37-40c0-9789-82dc9c70cf87",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
                   "    pm.expect([200, 400]).to.include(pm.response.code);\r",
                   "});"
                 ],
-                "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                "_lastExecutionId": "79cfba83-35bd-4aa6-bef3-11f438fd3457"
               }
             }
           ]
@@ -1564,7 +1614,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "395c57a2-568e-4283-8898-76a6f9acadf9",
+              "value": "1b816324-3dc2-45c4-9840-ee30738f0909",
               "system": true
             },
             {
@@ -1600,7 +1650,7 @@
           }
         },
         "response": {
-          "id": "20cb10cc-41a7-421f-aa4a-2e3a4524a96e",
+          "id": "86acd174-3506-406c-976b-7483a61b9ec0",
           "status": "Internal Server Error",
           "code": 500,
           "header": [
@@ -1674,7 +1724,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:24 GMT"
             },
             {
               "key": "Connection",
@@ -1728,7 +1778,7 @@
           "responseTime": 4,
           "responseSize": 34
         },
-        "id": "623b173e-286f-4273-8926-21992971a489",
+        "id": "40b0df41-21d0-4285-b677-51797fefaec8",
         "assertions": [
           {
             "assertion": "Status code is 200 OK or 400 Bad Request",
@@ -1745,15 +1795,15 @@
       },
       {
         "cursor": {
-          "ref": "6b829191-f835-4a5e-b050-c8728ddc1624",
+          "ref": "d9a70f14-f78e-4ef1-85b9-8b61479e0231",
           "length": 6,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "7d064e30-4eef-4b83-90ca-d00d32f72233"
+          "httpRequestId": "356d3d4a-fa1f-4862-b6e3-5fd9f345e4bc"
         },
         "item": {
-          "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+          "id": "c13fdcae-29b8-4583-950c-401c37bdaa9a",
           "name": "TC-MSG-DEL-001-Delete Message (Author)",
           "request": {
             "url": {
@@ -1784,14 +1834,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                "id": "26c838df-4086-4345-b8ee-03cac0d7b1d4",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
                   "    pm.expect([200, 204]).to.include(pm.response.code);\r",
                   "});"
                 ],
-                "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                "_lastExecutionId": "e3839ef6-083c-4a29-ab1e-1dcab902f01e"
               }
             }
           ]
@@ -1833,7 +1883,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "72e7fd6d-ad5b-4f50-aec0-bb7da3990bf2",
+              "value": "332043ab-e36a-495d-8fbe-f1c122540b5a",
               "system": true
             },
             {
@@ -1869,7 +1919,7 @@
           }
         },
         "response": {
-          "id": "533b807b-a2ed-4444-be58-773966fe3c64",
+          "id": "36bd9d57-e536-4a91-b2ef-f0199c4d39a2",
           "status": "Internal Server Error",
           "code": 500,
           "header": [
@@ -1943,7 +1993,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:24 GMT"
             },
             {
               "key": "Connection",
@@ -1999,7 +2049,7 @@
           "responseTime": 4,
           "responseSize": 36
         },
-        "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+        "id": "c13fdcae-29b8-4583-950c-401c37bdaa9a",
         "assertions": [
           {
             "assertion": "Status code is 200 OK or 204 No Content",
@@ -2016,15 +2066,15 @@
       },
       {
         "cursor": {
-          "ref": "9512fdd1-2c67-49d2-87ec-ae7d808a6e06",
+          "ref": "a2605bda-6be9-42d8-9dfd-b4e3d0ccd205",
           "length": 6,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "03d0ba41-4b5e-4ecf-8eeb-81ad55e97581"
+          "httpRequestId": "13c6dfe4-b1b7-4330-a241-71a5a1ae6aa8"
         },
         "item": {
-          "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+          "id": "803542da-e322-4f14-84f2-3826d715a8d9",
           "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
           "request": {
             "url": {
@@ -2058,14 +2108,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                "id": "af1e3e9f-c06d-44fc-9c73-9f20f00f2569",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
                   "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                   "});"
                 ],
-                "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+                "_lastExecutionId": "4539d36f-b576-4dc8-8ffe-f959862e977f"
               }
             }
           ]
@@ -2106,7 +2156,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "85a913f2-3c9c-4a19-a2f3-6b09f6433598",
+              "value": "3aa34952-2c77-4512-ac37-3c1757992bdb",
               "system": true
             },
             {
@@ -2146,7 +2196,7 @@
           }
         },
         "response": {
-          "id": "291c4c27-37e6-4a32-82da-159358e37d3b",
+          "id": "2aaa087a-f9d2-4623-8aff-d06c9cbcd4f3",
           "status": "OK",
           "code": 200,
           "header": [
@@ -2216,11 +2266,11 @@
             },
             {
               "key": "ETag",
-              "value": "W/\"a2-OnF/kCFh73ANRpfg8TRccCaUiVI\""
+              "value": "W/\"a2-Ew0zKj61ZFLO8YM4SjaINUUGRa4\""
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:24 GMT"
             },
             {
               "key": "Connection",
@@ -2328,25 +2378,25 @@
               54,
               57,
               99,
-              48,
+              54,
+              57,
               99,
+              100,
+              98,
+              51,
+              99,
+              50,
+              52,
               53,
               97,
-              101,
-              56,
-              98,
-              48,
-              49,
-              98,
-              55,
-              50,
-              54,
-              51,
-              55,
+              53,
+              52,
               100,
-              57,
-              97,
-              54,
+              51,
+              98,
+              100,
+              52,
+              52,
               34,
               44,
               34,
@@ -2374,17 +2424,17 @@
               54,
               84,
               48,
-              52,
+              53,
               58,
+              48,
               51,
-              56,
               58,
               50,
-              57,
+              52,
               46,
-              54,
-              49,
-              54,
+              53,
+              56,
+              57,
               90,
               34,
               44,
@@ -2402,7 +2452,7 @@
           "responseTime": 6,
           "responseSize": 162
         },
-        "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+        "id": "803542da-e322-4f14-84f2-3826d715a8d9",
         "assertions": [
           {
             "assertion": "Status code is 200 OK or 201 Created",
@@ -2423,8 +2473,8 @@
           "message": "expected response to have status code 200 but got 500",
           "stack": "AssertionError: expected response to have status code 200 but got 500\n   at Object.eval sandbox-script.js:1:3)",
           "checksum": "f261c54c1851ef736f3d0ae564b2587b",
-          "id": "90adf6fa-6293-4d52-99fe-d48d261dfc17",
-          "timestamp": 1768538309565,
+          "id": "21ecef76-a29f-4337-abe1-0357dac2599e",
+          "timestamp": 1768539804532,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2439,7 +2489,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+          "id": "87b55c4d-3a4b-45c0-acd3-8ab1403cd8dc",
           "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
           "request": {
             "url": {
@@ -2470,14 +2520,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                "id": "8c438b01-e237-4e08-8093-2a61f2dedee7",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                "_lastExecutionId": "850de0f4-4ff3-4483-8ee7-3e3864d44ab1"
               }
             }
           ]
@@ -2489,7 +2539,7 @@
           },
           "item": [
             {
-              "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+              "id": "60959566-66ed-40ea-aef6-73cb87f24bd3",
               "name": "TC-MSG-POST-001-Send Message (Guest)",
               "request": {
                 "url": {
@@ -2519,20 +2569,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                    "id": "b10fcba1-6ba2-4875-9ea3-c33a6fc543f5",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+                    "_lastExecutionId": "3bf6a36c-2512-4c9b-b163-7204c41f568f"
                   }
                 }
               ]
             },
             {
-              "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+              "id": "c0b188e1-85c1-4481-bc60-0c6ea42c2c8f",
               "name": "TC-MSG-POST-002-Send Message (Logged-in)",
               "request": {
                 "url": {
@@ -2572,20 +2622,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                    "id": "ed1aad3f-cfa4-41c8-90d1-68faba3d13db",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+                    "_lastExecutionId": "fa1abb15-f4e5-44be-ac5a-9447bdbbc4c1"
                   }
                 }
               ]
             },
             {
-              "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+              "id": "87b55c4d-3a4b-45c0-acd3-8ab1403cd8dc",
               "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
               "request": {
                 "url": {
@@ -2616,20 +2666,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                    "id": "8c438b01-e237-4e08-8093-2a61f2dedee7",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                    "_lastExecutionId": "850de0f4-4ff3-4483-8ee7-3e3864d44ab1"
                   }
                 }
               ]
             },
             {
-              "id": "623b173e-286f-4273-8926-21992971a489",
+              "id": "40b0df41-21d0-4285-b677-51797fefaec8",
               "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
               "request": {
                 "url": {
@@ -2660,20 +2710,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                    "id": "4a797bf6-fc37-40c0-9789-82dc9c70cf87",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
                       "    pm.expect([200, 400]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                    "_lastExecutionId": "79cfba83-35bd-4aa6-bef3-11f438fd3457"
                   }
                 }
               ]
             },
             {
-              "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+              "id": "c13fdcae-29b8-4583-950c-401c37bdaa9a",
               "name": "TC-MSG-DEL-001-Delete Message (Author)",
               "request": {
                 "url": {
@@ -2704,20 +2754,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                    "id": "26c838df-4086-4345-b8ee-03cac0d7b1d4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
                       "    pm.expect([200, 204]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                    "_lastExecutionId": "e3839ef6-083c-4a29-ab1e-1dcab902f01e"
                   }
                 }
               ]
             },
             {
-              "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+              "id": "803542da-e322-4f14-84f2-3826d715a8d9",
               "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
               "request": {
                 "url": {
@@ -2751,14 +2801,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                    "id": "af1e3e9f-c06d-44fc-9c73-9f20f00f2569",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+                    "_lastExecutionId": "4539d36f-b576-4dc8-8ffe-f959862e977f"
                   }
                 }
               ]
@@ -2773,14 +2823,14 @@
           }
         },
         "cursor": {
-          "ref": "0cec72ba-f586-42db-9b7d-5dfa1b18e604",
+          "ref": "8c5bcc10-3655-4684-9bee-29c1a6f9cd09",
           "length": 6,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "71f99335-6d7e-4491-8ac8-753d76948201",
-          "scriptId": "c4060146-6ce7-4960-b63b-a5306f3509f7",
-          "execution": "12893128-ab8f-4406-aee6-0fc986971d47"
+          "httpRequestId": "752ef4d0-a7cd-4e16-b0e5-cac10c13bb4a",
+          "scriptId": "8c438b01-e237-4e08-8093-2a61f2dedee7",
+          "execution": "850de0f4-4ff3-4483-8ee7-3e3864d44ab1"
         }
       },
       {
@@ -2791,8 +2841,8 @@
           "message": "expected [ 200, 400 ] to include 500",
           "stack": "AssertionError: expected [ 200, 400 ] to include 500\n   at Object.eval sandbox-script.js:1:4)",
           "checksum": "f6b6ffccc21d1ad3a77db416a28f8725",
-          "id": "4c796400-0df9-457b-8af0-1818fc1cb7e6",
-          "timestamp": 1768538309586,
+          "id": "a38bb32c-7305-4511-b580-7c19e7077230",
+          "timestamp": 1768539804557,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2807,7 +2857,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "623b173e-286f-4273-8926-21992971a489",
+          "id": "40b0df41-21d0-4285-b677-51797fefaec8",
           "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
           "request": {
             "url": {
@@ -2838,14 +2888,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                "id": "4a797bf6-fc37-40c0-9789-82dc9c70cf87",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
                   "    pm.expect([200, 400]).to.include(pm.response.code);\r",
                   "});"
                 ],
-                "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                "_lastExecutionId": "79cfba83-35bd-4aa6-bef3-11f438fd3457"
               }
             }
           ]
@@ -2857,7 +2907,7 @@
           },
           "item": [
             {
-              "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+              "id": "60959566-66ed-40ea-aef6-73cb87f24bd3",
               "name": "TC-MSG-POST-001-Send Message (Guest)",
               "request": {
                 "url": {
@@ -2887,20 +2937,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                    "id": "b10fcba1-6ba2-4875-9ea3-c33a6fc543f5",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+                    "_lastExecutionId": "3bf6a36c-2512-4c9b-b163-7204c41f568f"
                   }
                 }
               ]
             },
             {
-              "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+              "id": "c0b188e1-85c1-4481-bc60-0c6ea42c2c8f",
               "name": "TC-MSG-POST-002-Send Message (Logged-in)",
               "request": {
                 "url": {
@@ -2940,20 +2990,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                    "id": "ed1aad3f-cfa4-41c8-90d1-68faba3d13db",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+                    "_lastExecutionId": "fa1abb15-f4e5-44be-ac5a-9447bdbbc4c1"
                   }
                 }
               ]
             },
             {
-              "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+              "id": "87b55c4d-3a4b-45c0-acd3-8ab1403cd8dc",
               "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
               "request": {
                 "url": {
@@ -2984,20 +3034,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                    "id": "8c438b01-e237-4e08-8093-2a61f2dedee7",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                    "_lastExecutionId": "850de0f4-4ff3-4483-8ee7-3e3864d44ab1"
                   }
                 }
               ]
             },
             {
-              "id": "623b173e-286f-4273-8926-21992971a489",
+              "id": "40b0df41-21d0-4285-b677-51797fefaec8",
               "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
               "request": {
                 "url": {
@@ -3028,20 +3078,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                    "id": "4a797bf6-fc37-40c0-9789-82dc9c70cf87",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
                       "    pm.expect([200, 400]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                    "_lastExecutionId": "79cfba83-35bd-4aa6-bef3-11f438fd3457"
                   }
                 }
               ]
             },
             {
-              "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+              "id": "c13fdcae-29b8-4583-950c-401c37bdaa9a",
               "name": "TC-MSG-DEL-001-Delete Message (Author)",
               "request": {
                 "url": {
@@ -3072,20 +3122,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                    "id": "26c838df-4086-4345-b8ee-03cac0d7b1d4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
                       "    pm.expect([200, 204]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                    "_lastExecutionId": "e3839ef6-083c-4a29-ab1e-1dcab902f01e"
                   }
                 }
               ]
             },
             {
-              "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+              "id": "803542da-e322-4f14-84f2-3826d715a8d9",
               "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
               "request": {
                 "url": {
@@ -3119,14 +3169,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                    "id": "af1e3e9f-c06d-44fc-9c73-9f20f00f2569",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+                    "_lastExecutionId": "4539d36f-b576-4dc8-8ffe-f959862e977f"
                   }
                 }
               ]
@@ -3141,14 +3191,14 @@
           }
         },
         "cursor": {
-          "ref": "6c7be90d-34c0-424c-93fe-f8612fb0069f",
+          "ref": "ce006811-7fdc-440f-94b0-9b54096ed3e1",
           "length": 6,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "73503ff4-9731-4227-9b3d-a6ab9acfe4f8",
-          "scriptId": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
-          "execution": "d685f130-266f-43fe-8849-d04c61a656a1"
+          "httpRequestId": "4aa2d9d3-37c4-4143-8b9a-27455db97bb4",
+          "scriptId": "4a797bf6-fc37-40c0-9789-82dc9c70cf87",
+          "execution": "79cfba83-35bd-4aa6-bef3-11f438fd3457"
         }
       },
       {
@@ -3159,8 +3209,8 @@
           "message": "expected [ 200, 204 ] to include 500",
           "stack": "AssertionError: expected [ 200, 204 ] to include 500\n   at Object.eval sandbox-script.js:1:5)",
           "checksum": "7a1d61bf40bb7dcc214e3bffc1339bb6",
-          "id": "8dac64a9-a715-4f2f-bb62-c4b1edc99862",
-          "timestamp": 1768538309605,
+          "id": "4c814a16-6140-40a4-accb-4df3ed2562c9",
+          "timestamp": 1768539804578,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3175,7 +3225,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+          "id": "c13fdcae-29b8-4583-950c-401c37bdaa9a",
           "name": "TC-MSG-DEL-001-Delete Message (Author)",
           "request": {
             "url": {
@@ -3206,14 +3256,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                "id": "26c838df-4086-4345-b8ee-03cac0d7b1d4",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
                   "    pm.expect([200, 204]).to.include(pm.response.code);\r",
                   "});"
                 ],
-                "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                "_lastExecutionId": "e3839ef6-083c-4a29-ab1e-1dcab902f01e"
               }
             }
           ]
@@ -3225,7 +3275,7 @@
           },
           "item": [
             {
-              "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+              "id": "60959566-66ed-40ea-aef6-73cb87f24bd3",
               "name": "TC-MSG-POST-001-Send Message (Guest)",
               "request": {
                 "url": {
@@ -3255,20 +3305,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                    "id": "b10fcba1-6ba2-4875-9ea3-c33a6fc543f5",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+                    "_lastExecutionId": "3bf6a36c-2512-4c9b-b163-7204c41f568f"
                   }
                 }
               ]
             },
             {
-              "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+              "id": "c0b188e1-85c1-4481-bc60-0c6ea42c2c8f",
               "name": "TC-MSG-POST-002-Send Message (Logged-in)",
               "request": {
                 "url": {
@@ -3308,20 +3358,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                    "id": "ed1aad3f-cfa4-41c8-90d1-68faba3d13db",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+                    "_lastExecutionId": "fa1abb15-f4e5-44be-ac5a-9447bdbbc4c1"
                   }
                 }
               ]
             },
             {
-              "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+              "id": "87b55c4d-3a4b-45c0-acd3-8ab1403cd8dc",
               "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
               "request": {
                 "url": {
@@ -3352,20 +3402,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                    "id": "8c438b01-e237-4e08-8093-2a61f2dedee7",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                    "_lastExecutionId": "850de0f4-4ff3-4483-8ee7-3e3864d44ab1"
                   }
                 }
               ]
             },
             {
-              "id": "623b173e-286f-4273-8926-21992971a489",
+              "id": "40b0df41-21d0-4285-b677-51797fefaec8",
               "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
               "request": {
                 "url": {
@@ -3396,20 +3446,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                    "id": "4a797bf6-fc37-40c0-9789-82dc9c70cf87",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
                       "    pm.expect([200, 400]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                    "_lastExecutionId": "79cfba83-35bd-4aa6-bef3-11f438fd3457"
                   }
                 }
               ]
             },
             {
-              "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+              "id": "c13fdcae-29b8-4583-950c-401c37bdaa9a",
               "name": "TC-MSG-DEL-001-Delete Message (Author)",
               "request": {
                 "url": {
@@ -3440,20 +3490,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                    "id": "26c838df-4086-4345-b8ee-03cac0d7b1d4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
                       "    pm.expect([200, 204]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                    "_lastExecutionId": "e3839ef6-083c-4a29-ab1e-1dcab902f01e"
                   }
                 }
               ]
             },
             {
-              "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+              "id": "803542da-e322-4f14-84f2-3826d715a8d9",
               "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
               "request": {
                 "url": {
@@ -3487,14 +3537,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                    "id": "af1e3e9f-c06d-44fc-9c73-9f20f00f2569",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
                       "    pm.expect([200, 201]).to.include(pm.response.code);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+                    "_lastExecutionId": "4539d36f-b576-4dc8-8ffe-f959862e977f"
                   }
                 }
               ]
@@ -3509,14 +3559,14 @@
           }
         },
         "cursor": {
-          "ref": "6b829191-f835-4a5e-b050-c8728ddc1624",
+          "ref": "d9a70f14-f78e-4ef1-85b9-8b61479e0231",
           "length": 6,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "7d064e30-4eef-4b83-90ca-d00d32f72233",
-          "scriptId": "25da56ec-846f-4d9a-821c-25c2f6527fff",
-          "execution": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+          "httpRequestId": "356d3d4a-fa1f-4862-b6e3-5fd9f345e4bc",
+          "scriptId": "26c838df-4086-4345-b8ee-03cac0d7b1d4",
+          "execution": "e3839ef6-083c-4a29-ab1e-1dcab902f01e"
         }
       }
     ],

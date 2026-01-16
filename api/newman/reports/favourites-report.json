@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+        "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
         "name": "TC-FAV-ADD-001(U001)",
         "request": {
           "url": {
@@ -47,20 +47,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+              "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 201 Created\", () => {\r",
                 "    pm.response.to.have.status(201);\r",
                 "});"
               ],
-              "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+              "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
             }
           }
         ]
       },
       {
-        "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+        "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
         "name": "TC-FAV-ADD-002(U002)",
         "request": {
           "url": {
@@ -101,20 +101,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+              "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 201 Created\", () => {\r",
                 "    pm.response.to.have.status(201);\r",
                 "});"
               ],
-              "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+              "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
             }
           }
         ]
       },
       {
-        "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+        "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
         "name": "TC-FAV-ADD-003(Duplicate)",
         "request": {
           "url": {
@@ -155,20 +155,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+              "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 409 Conflict\", () => {\r",
                 "    pm.response.to.have.status(409);\r",
                 "});\r"
               ],
-              "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+              "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
             }
           }
         ]
       },
       {
-        "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+        "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
         "name": "TC-FAV-EDIT-001(Owner)",
         "request": {
           "url": {
@@ -211,20 +211,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+              "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 200 OK\", () => {\r",
                 "    pm.response.to.have.status(200);\r",
                 "});"
               ],
-              "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+              "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
             }
           }
         ]
       },
       {
-        "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+        "id": "854fe610-4995-4d45-892a-4813dde9973d",
         "name": "TC-FAV-DEL-001(Owner)",
         "request": {
           "url": {
@@ -267,20 +267,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+              "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 204 No Content\", () => {\r",
                 "    pm.response.to.have.status(204);\r",
                 "});"
               ],
-              "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+              "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
             }
           }
         ]
       },
       {
-        "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+        "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
         "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
         "request": {
           "url": {
@@ -315,7 +315,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+              "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -323,7 +323,7 @@
                 "});\r",
                 "\r"
               ],
-              "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+              "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
             }
           }
         ]
@@ -353,26 +353,6 @@
       },
       {
         "type": "any",
-        "value": "manager@pokemania.com",
-        "key": "TEST_ADMIN_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "manager",
-        "key": "TEST_ADMIN_PASSWORD"
-      },
-      {
-        "type": "any",
-        "value": "jayden98@gmail.com",
-        "key": "TEST_USER_EMAIL"
-      },
-      {
-        "type": "any",
-        "value": "jayden123!",
-        "key": "TEST_USER_PASSWORD"
-      },
-      {
-        "type": "any",
         "value": "",
         "key": "TOKEN_ADMIN"
       },
@@ -390,11 +370,86 @@
         "type": "any",
         "value": "",
         "key": "USER_ID_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_U004"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U001"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U002"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_U003"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_SET_TARGET"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U001"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U002"
+      },
+      {
+        "type": "any",
+        "value": "testuser@example.com",
+        "key": "EMAIL_U003"
+      },
+      {
+        "type": "any",
+        "value": "testmanager",
+        "key": "PASSWORD_AUTH001"
+      },
+      {
+        "type": "any",
+        "value": "invalid_password_12345",
+        "key": "PASSWORD_AUTH002_INVALID"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH003"
+      },
+      {
+        "type": "any",
+        "value": "testuser",
+        "key": "PASSWORD_AUTH004"
       }
     ]
   },
   "globals": {
-    "id": "fcf5577f-cc9a-4a8d-85ec-40f7e7b14e90",
+    "id": "6935313d-4fd0-4624-8f65-4862be098e65",
     "values": []
   },
   "run": {
@@ -446,10 +501,10 @@
       }
     },
     "timings": {
-      "responseAverage": 13.333333333333334,
+      "responseAverage": 12.166666666666666,
       "responseMin": 4,
-      "responseMax": 45,
-      "responseSd": 14.395215254459456,
+      "responseMax": 51,
+      "responseSd": 17.38214281637591,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -458,8 +513,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768538305315,
-      "completed": 1768538305532
+      "started": 1768539800250,
+      "completed": 1768539800442
     },
     "executions": [
       {
@@ -472,11 +527,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "1664a047-4843-461d-ace0-623c48169c7b",
-          "httpRequestId": "10e8e594-347f-42cb-9530-c24cd8232785"
+          "ref": "d6a50f92-ee1b-4d4b-a0f0-68e5a2e2abcf",
+          "httpRequestId": "5aeebda8-ffa1-473b-9fc8-8b58000c1e2d"
         },
         "item": {
-          "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+          "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
           "name": "TC-FAV-ADD-001(U001)",
           "request": {
             "url": {
@@ -517,14 +572,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
               }
             }
           ]
@@ -550,11 +605,6 @@
               "system": true
             },
             {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U001}}",
-              "system": true
-            },
-            {
               "key": "User-Agent",
               "value": "PostmanRuntime/7.39.1",
               "system": true
@@ -571,7 +621,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "73912037-0b9e-41d1-86ef-e3abd1620e37",
+              "value": "3c77b9d1-0021-490b-b186-d55da2446af9",
               "system": true
             },
             {
@@ -591,14 +641,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "83",
+              "value": "67",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "raw": "{\r\n  \"user\": \"\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -610,14 +660,14 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U001}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "74777d82-47d2-4a26-b539-a5e815d6ec34",
+          "id": "d20a25c7-739d-4c78-974e-a03d5710ec7b",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -691,7 +741,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
             },
             {
               "key": "Connection",
@@ -710,10 +760,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 45,
+          "responseTime": 51,
           "responseSize": 2
         },
-        "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+        "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
         "assertions": [
           {
             "assertion": "Status is 201 Created",
@@ -730,15 +780,15 @@
       },
       {
         "cursor": {
-          "ref": "34e6f17b-edd3-4b5a-b44a-b887bf1678cb",
+          "ref": "a14b2da0-510d-4b89-a245-9fbb13f52f93",
           "length": 6,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "f3cfec59-8858-4bb1-b8f4-cb69f3190241"
+          "httpRequestId": "b397f6e7-06ce-46d1-ab3f-c02794a08f68"
         },
         "item": {
-          "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+          "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
           "name": "TC-FAV-ADD-002(U002)",
           "request": {
             "url": {
@@ -779,14 +829,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
               }
             }
           ]
@@ -812,11 +862,6 @@
               "system": true
             },
             {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U002}}",
-              "system": true
-            },
-            {
               "key": "User-Agent",
               "value": "PostmanRuntime/7.39.1",
               "system": true
@@ -833,7 +878,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "3b8c6dac-ab31-4eb7-a52c-10b84a0e780e",
+              "value": "ffebe70d-2dfd-49ff-b36a-8eec1d7ef111",
               "system": true
             },
             {
@@ -853,14 +898,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "71",
+              "value": "55",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+            "raw": "{\r\n  \"user\": \"\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -872,14 +917,14 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U002}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "c0e06f77-9cc2-4b0b-b7dd-40401e88712f",
+          "id": "79642cce-30f3-4aa1-a6ed-76416b98eb0b",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -953,7 +998,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
             },
             {
               "key": "Connection",
@@ -975,7 +1020,7 @@
           "responseTime": 6,
           "responseSize": 2
         },
-        "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+        "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
         "assertions": [
           {
             "assertion": "Status is 201 Created",
@@ -992,15 +1037,15 @@
       },
       {
         "cursor": {
-          "ref": "793e6ea7-14f2-428d-a8b6-dacfa4484fab",
+          "ref": "ce8107ac-95b1-459f-b7f1-3f9204e308cf",
           "length": 6,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "f6320e94-de13-4a3d-bd66-feb61cadb8e3"
+          "httpRequestId": "2ad250b9-2b97-4a6f-a717-c11a80dc3a84"
         },
         "item": {
-          "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+          "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
           "name": "TC-FAV-ADD-003(Duplicate)",
           "request": {
             "url": {
@@ -1041,14 +1086,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 409 Conflict\", () => {\r",
                   "    pm.response.to.have.status(409);\r",
                   "});\r"
                 ],
-                "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
               }
             }
           ]
@@ -1074,11 +1119,6 @@
               "system": true
             },
             {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U001}}",
-              "system": true
-            },
-            {
               "key": "User-Agent",
               "value": "PostmanRuntime/7.39.1",
               "system": true
@@ -1095,7 +1135,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "314c1a48-35a1-4378-8e36-ac19f858e3e0",
+              "value": "05f8ffac-b2c4-4934-b785-cf0dbef08a4f",
               "system": true
             },
             {
@@ -1115,14 +1155,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "82",
+              "value": "66",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "raw": "{\r\n  \"user\": \"\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -1134,14 +1174,14 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U001}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "155e662d-ad0c-4226-8f57-3ea30465d646",
+          "id": "19ab6a7a-a693-4abd-b95b-f344df2e2022",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -1215,7 +1255,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
             },
             {
               "key": "Connection",
@@ -1234,10 +1274,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 5,
+          "responseTime": 4,
           "responseSize": 2
         },
-        "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+        "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
         "assertions": [
           {
             "assertion": "Status is 409 Conflict",
@@ -1254,15 +1294,15 @@
       },
       {
         "cursor": {
-          "ref": "d66fa749-2c5e-4de3-ad1d-4f4b1eca6061",
+          "ref": "b057ef51-287a-40d3-a432-0945d062c402",
           "length": 6,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "b3892511-4e5d-41a6-96fb-3a5e54b9a3bf"
+          "httpRequestId": "34028958-16b6-4307-8cb9-ffcb9721b771"
         },
         "item": {
-          "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+          "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
           "name": "TC-FAV-EDIT-001(Owner)",
           "request": {
             "url": {
@@ -1305,14 +1345,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
               }
             }
           ]
@@ -1324,7 +1364,7 @@
             "path": [
               "api",
               "favourites",
-              "%7B%7BUSER_ID_U001%7D%7D",
+              "",
               "25"
             ],
             "host": [
@@ -1337,11 +1377,6 @@
             {
               "key": "Content-Type",
               "value": "application/json",
-              "system": true
-            },
-            {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U001}}",
               "system": true
             },
             {
@@ -1361,7 +1396,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5335ff2e-979f-4ddf-94c0-148d35079d25",
+              "value": "cc6252c1-af2f-4d6b-818e-0e6fef0d2984",
               "system": true
             },
             {
@@ -1400,16 +1435,16 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U001}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "d6d05843-b4f3-4010-bee9-a4e41c6af6c6",
-          "status": "Bad Request",
-          "code": 400,
+          "id": "e8680e04-bdbe-40a0-a9b6-4f91c4a60c2f",
+          "status": "Not Found",
+          "code": 404,
           "header": [
             {
               "key": "Vary",
@@ -1421,7 +1456,7 @@
             },
             {
               "key": "Content-Security-Policy",
-              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+              "value": "default-src 'none'"
             },
             {
               "key": "Cross-Origin-Opener-Policy",
@@ -1469,19 +1504,15 @@
             },
             {
               "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
+              "value": "text/html; charset=utf-8"
             },
             {
               "key": "Content-Length",
-              "value": "2"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+              "value": "157"
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
             },
             {
               "key": "Connection",
@@ -1495,15 +1526,170 @@
           "stream": {
             "type": "Buffer",
             "data": [
-              123,
-              125
+              60,
+              33,
+              68,
+              79,
+              67,
+              84,
+              89,
+              80,
+              69,
+              32,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10,
+              60,
+              104,
+              116,
+              109,
+              108,
+              32,
+              108,
+              97,
+              110,
+              103,
+              61,
+              34,
+              101,
+              110,
+              34,
+              62,
+              10,
+              60,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              109,
+              101,
+              116,
+              97,
+              32,
+              99,
+              104,
+              97,
+              114,
+              115,
+              101,
+              116,
+              61,
+              34,
+              117,
+              116,
+              102,
+              45,
+              56,
+              34,
+              62,
+              10,
+              60,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              69,
+              114,
+              114,
+              111,
+              114,
+              60,
+              47,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              10,
+              60,
+              47,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              112,
+              114,
+              101,
+              62,
+              67,
+              97,
+              110,
+              110,
+              111,
+              116,
+              32,
+              80,
+              85,
+              84,
+              32,
+              47,
+              97,
+              112,
+              105,
+              47,
+              102,
+              97,
+              118,
+              111,
+              117,
+              114,
+              105,
+              116,
+              101,
+              115,
+              47,
+              47,
+              50,
+              53,
+              60,
+              47,
+              112,
+              114,
+              101,
+              62,
+              10,
+              60,
+              47,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              47,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10
             ]
           },
           "cookie": [],
-          "responseTime": 8,
-          "responseSize": 2
+          "responseTime": 4,
+          "responseSize": 157
         },
-        "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+        "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
         "assertions": [
           {
             "assertion": "Status is 200 OK",
@@ -1512,23 +1698,23 @@
               "name": "AssertionError",
               "index": 0,
               "test": "Status is 200 OK",
-              "message": "expected response to have status code 200 but got 400",
-              "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:4)"
+              "message": "expected response to have status code 200 but got 404",
+              "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:4)"
             }
           }
         ]
       },
       {
         "cursor": {
-          "ref": "d09a085a-4465-4069-bbb2-85f35bffd3b7",
+          "ref": "6beb9f9b-ec85-4b55-83fa-2f1186007329",
           "length": 6,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "4a6f7abf-9380-482c-a45d-8cd98fa0ef90"
+          "httpRequestId": "fd7638f7-baf9-4289-a310-0d14a60dc6f4"
         },
         "item": {
-          "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+          "id": "854fe610-4995-4d45-892a-4813dde9973d",
           "name": "TC-FAV-DEL-001(Owner)",
           "request": {
             "url": {
@@ -1571,14 +1757,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 204 No Content\", () => {\r",
                   "    pm.response.to.have.status(204);\r",
                   "});"
                 ],
-                "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
               }
             }
           ]
@@ -1590,7 +1776,7 @@
             "path": [
               "api",
               "favourites",
-              "%7B%7BUSER_ID_U002%7D%7D",
+              "",
               "%7B%7BFAV-DEL-001%7D%7D"
             ],
             "host": [
@@ -1600,11 +1786,6 @@
             "variable": []
           },
           "header": [
-            {
-              "key": "Authorization",
-              "value": "Bearer {{TOKEN_U002}}",
-              "system": true
-            },
             {
               "key": "User-Agent",
               "value": "PostmanRuntime/7.39.1",
@@ -1622,7 +1803,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "2caeb476-49cd-485e-8f94-a968c7eb03cf",
+              "value": "5923768f-416c-4d21-939b-8ccc18139507",
               "system": true
             },
             {
@@ -1656,16 +1837,16 @@
             "bearer": [
               {
                 "type": "string",
-                "value": "{{TOKEN_U002}}",
+                "value": "",
                 "key": "token"
               }
             ]
           }
         },
         "response": {
-          "id": "e3880b7a-34e2-42ca-b626-9bfe19134857",
-          "status": "Bad Request",
-          "code": 400,
+          "id": "966508d1-bffa-4fc6-9f24-c905f3ea8985",
+          "status": "Not Found",
+          "code": 404,
           "header": [
             {
               "key": "Vary",
@@ -1677,7 +1858,7 @@
             },
             {
               "key": "Content-Security-Policy",
-              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+              "value": "default-src 'none'"
             },
             {
               "key": "Cross-Origin-Opener-Policy",
@@ -1725,19 +1906,15 @@
             },
             {
               "key": "Content-Type",
-              "value": "application/json; charset=utf-8"
+              "value": "text/html; charset=utf-8"
             },
             {
               "key": "Content-Length",
-              "value": "2"
-            },
-            {
-              "key": "ETag",
-              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+              "value": "181"
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
             },
             {
               "key": "Connection",
@@ -1751,15 +1928,194 @@
           "stream": {
             "type": "Buffer",
             "data": [
-              123,
-              125
+              60,
+              33,
+              68,
+              79,
+              67,
+              84,
+              89,
+              80,
+              69,
+              32,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10,
+              60,
+              104,
+              116,
+              109,
+              108,
+              32,
+              108,
+              97,
+              110,
+              103,
+              61,
+              34,
+              101,
+              110,
+              34,
+              62,
+              10,
+              60,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              109,
+              101,
+              116,
+              97,
+              32,
+              99,
+              104,
+              97,
+              114,
+              115,
+              101,
+              116,
+              61,
+              34,
+              117,
+              116,
+              102,
+              45,
+              56,
+              34,
+              62,
+              10,
+              60,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              69,
+              114,
+              114,
+              111,
+              114,
+              60,
+              47,
+              116,
+              105,
+              116,
+              108,
+              101,
+              62,
+              10,
+              60,
+              47,
+              104,
+              101,
+              97,
+              100,
+              62,
+              10,
+              60,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              112,
+              114,
+              101,
+              62,
+              67,
+              97,
+              110,
+              110,
+              111,
+              116,
+              32,
+              68,
+              69,
+              76,
+              69,
+              84,
+              69,
+              32,
+              47,
+              97,
+              112,
+              105,
+              47,
+              102,
+              97,
+              118,
+              111,
+              117,
+              114,
+              105,
+              116,
+              101,
+              115,
+              47,
+              47,
+              37,
+              55,
+              66,
+              37,
+              55,
+              66,
+              70,
+              65,
+              86,
+              45,
+              68,
+              69,
+              76,
+              45,
+              48,
+              48,
+              49,
+              37,
+              55,
+              68,
+              37,
+              55,
+              68,
+              60,
+              47,
+              112,
+              114,
+              101,
+              62,
+              10,
+              60,
+              47,
+              98,
+              111,
+              100,
+              121,
+              62,
+              10,
+              60,
+              47,
+              104,
+              116,
+              109,
+              108,
+              62,
+              10
             ]
           },
           "cookie": [],
-          "responseTime": 12,
-          "responseSize": 2
+          "responseTime": 4,
+          "responseSize": 181
         },
-        "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+        "id": "854fe610-4995-4d45-892a-4813dde9973d",
         "assertions": [
           {
             "assertion": "Status is 204 No Content",
@@ -1768,23 +2124,23 @@
               "name": "AssertionError",
               "index": 0,
               "test": "Status is 204 No Content",
-              "message": "expected response to have status code 204 but got 400",
-              "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:5)"
+              "message": "expected response to have status code 204 but got 404",
+              "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:1:5)"
             }
           }
         ]
       },
       {
         "cursor": {
-          "ref": "9930430d-763f-4be1-9c9a-963af5f16e7e",
+          "ref": "9aec9e99-3abb-4b2e-bd04-4233eb55d524",
           "length": 6,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "721275ab-9868-490d-a6b2-2ee088641206"
+          "httpRequestId": "ad1874d3-607a-4d83-9dd7-0dfe3ca677f6"
         },
         "item": {
-          "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+          "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
           "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
           "request": {
             "url": {
@@ -1819,7 +2175,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -1827,7 +2183,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
               }
             }
           ]
@@ -1869,7 +2225,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "042c467c-84b0-4374-b5aa-2b2bf71cdbe8",
+              "value": "a9fd1460-383b-48ee-9d2a-f0320a471906",
               "system": true
             },
             {
@@ -1909,7 +2265,7 @@
           }
         },
         "response": {
-          "id": "bf1cef79-d592-4bc4-9a80-ca5f16a29043",
+          "id": "03301a5b-57e7-4ba7-be71-467ce05868ff",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -1983,7 +2339,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
             },
             {
               "key": "Connection",
@@ -2005,7 +2361,7 @@
           "responseTime": 4,
           "responseSize": 2
         },
-        "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+        "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
         "assertions": [
           {
             "assertion": "Status is 401 Unauthorized",
@@ -2015,7 +2371,7 @@
       }
     ],
     "transfers": {
-      "responseTotal": 12
+      "responseTotal": 346
     },
     "failures": [
       {
@@ -2026,8 +2382,8 @@
           "message": "expected response to have status code 201 but got 401",
           "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:1)",
           "checksum": "ae18d2fe95145603cfa536016d4a689b",
-          "id": "a231ece1-a069-4bbc-ae18-0dd12c169543",
-          "timestamp": 1768538305397,
+          "id": "0f59e5ac-41d1-4de9-b5e4-2c5be8b32bc9",
+          "timestamp": 1768539800335,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2042,7 +2398,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+          "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
           "name": "TC-FAV-ADD-001(U001)",
           "request": {
             "url": {
@@ -2083,14 +2439,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
               }
             }
           ]
@@ -2102,7 +2458,7 @@
           },
           "item": [
             {
-              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -2143,20 +2499,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
                   }
                 }
               ]
             },
             {
-              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -2197,20 +2553,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
                   }
                 }
               ]
             },
             {
-              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -2251,20 +2607,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
                   }
                 }
               ]
             },
             {
-              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -2307,20 +2663,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
                   }
                 }
               ]
             },
             {
-              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "id": "854fe610-4995-4d45-892a-4813dde9973d",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -2363,20 +2719,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
                   }
                 }
               ]
             },
             {
-              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -2411,7 +2767,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -2419,7 +2775,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
                   }
                 }
               ]
@@ -2442,10 +2798,10 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "1664a047-4843-461d-ace0-623c48169c7b",
-          "httpRequestId": "10e8e594-347f-42cb-9530-c24cd8232785",
-          "scriptId": "93eed209-eb2c-48ba-a890-f50396c4421e",
-          "execution": "11586fba-2d57-4737-9200-00ba5ad699cc"
+          "ref": "d6a50f92-ee1b-4d4b-a0f0-68e5a2e2abcf",
+          "httpRequestId": "5aeebda8-ffa1-473b-9fc8-8b58000c1e2d",
+          "scriptId": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+          "execution": "34323d46-0924-4181-80e7-2bd5f8722d0f"
         }
       },
       {
@@ -2456,8 +2812,8 @@
           "message": "expected response to have status code 201 but got 401",
           "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:2)",
           "checksum": "d58a597e2b61bd932df9242f4f60337a",
-          "id": "bcd4550b-94e3-45b4-a158-6731a9f3b534",
-          "timestamp": 1768538305428,
+          "id": "1832c191-4d1e-4133-84b3-b3f936503569",
+          "timestamp": 1768539800361,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2472,7 +2828,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+          "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
           "name": "TC-FAV-ADD-002(U002)",
           "request": {
             "url": {
@@ -2513,14 +2869,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
               }
             }
           ]
@@ -2532,7 +2888,7 @@
           },
           "item": [
             {
-              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -2573,20 +2929,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
                   }
                 }
               ]
             },
             {
-              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -2627,20 +2983,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
                   }
                 }
               ]
             },
             {
-              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -2681,20 +3037,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
                   }
                 }
               ]
             },
             {
-              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -2737,20 +3093,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
                   }
                 }
               ]
             },
             {
-              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "id": "854fe610-4995-4d45-892a-4813dde9973d",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -2793,20 +3149,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
                   }
                 }
               ]
             },
             {
-              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -2841,7 +3197,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -2849,7 +3205,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
                   }
                 }
               ]
@@ -2864,14 +3220,14 @@
           }
         },
         "cursor": {
-          "ref": "34e6f17b-edd3-4b5a-b44a-b887bf1678cb",
+          "ref": "a14b2da0-510d-4b89-a245-9fbb13f52f93",
           "length": 6,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "f3cfec59-8858-4bb1-b8f4-cb69f3190241",
-          "scriptId": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
-          "execution": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+          "httpRequestId": "b397f6e7-06ce-46d1-ab3f-c02794a08f68",
+          "scriptId": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+          "execution": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
         }
       },
       {
@@ -2882,8 +3238,8 @@
           "message": "expected response to have status code 409 but got 401",
           "stack": "AssertionError: expected response to have status code 409 but got 401\n   at Object.eval sandbox-script.js:1:3)",
           "checksum": "8421f85b3d1223e27c96cedde1393d12",
-          "id": "7474d9da-56e7-4867-9142-a7622cec6b9f",
-          "timestamp": 1768538305452,
+          "id": "0aefdf2e-cc8d-4efe-b844-0f1fb0f9196f",
+          "timestamp": 1768539800381,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2898,7 +3254,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+          "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
           "name": "TC-FAV-ADD-003(Duplicate)",
           "request": {
             "url": {
@@ -2939,14 +3295,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 409 Conflict\", () => {\r",
                   "    pm.response.to.have.status(409);\r",
                   "});\r"
                 ],
-                "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
               }
             }
           ]
@@ -2958,7 +3314,7 @@
           },
           "item": [
             {
-              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -2999,20 +3355,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
                   }
                 }
               ]
             },
             {
-              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -3053,20 +3409,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
                   }
                 }
               ]
             },
             {
-              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -3107,20 +3463,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
                   }
                 }
               ]
             },
             {
-              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -3163,20 +3519,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
                   }
                 }
               ]
             },
             {
-              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "id": "854fe610-4995-4d45-892a-4813dde9973d",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -3219,20 +3575,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
                   }
                 }
               ]
             },
             {
-              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -3267,7 +3623,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -3275,7 +3631,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
                   }
                 }
               ]
@@ -3290,14 +3646,14 @@
           }
         },
         "cursor": {
-          "ref": "793e6ea7-14f2-428d-a8b6-dacfa4484fab",
+          "ref": "ce8107ac-95b1-459f-b7f1-3f9204e308cf",
           "length": 6,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "f6320e94-de13-4a3d-bd66-feb61cadb8e3",
-          "scriptId": "90042a56-b92a-47c2-bcb2-92639efc4bec",
-          "execution": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+          "httpRequestId": "2ad250b9-2b97-4a6f-a717-c11a80dc3a84",
+          "scriptId": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+          "execution": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
         }
       },
       {
@@ -3305,11 +3661,11 @@
           "name": "AssertionError",
           "index": 0,
           "test": "Status is 200 OK",
-          "message": "expected response to have status code 200 but got 400",
-          "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:4)",
-          "checksum": "b7f85db0ae95a2b7e501cb97546b163a",
-          "id": "78c71c29-49e1-499e-bac9-a0badd53ad97",
-          "timestamp": 1768538305480,
+          "message": "expected response to have status code 200 but got 404",
+          "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:4)",
+          "checksum": "932ae1abaedbbd8c4953f36e124e1896",
+          "id": "35c08d71-f0b4-4c9f-a616-50e56fbc0113",
+          "timestamp": 1768539800401,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3324,7 +3680,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+          "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
           "name": "TC-FAV-EDIT-001(Owner)",
           "request": {
             "url": {
@@ -3367,14 +3723,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
               }
             }
           ]
@@ -3386,7 +3742,7 @@
           },
           "item": [
             {
-              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -3427,20 +3783,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
                   }
                 }
               ]
             },
             {
-              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -3481,20 +3837,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
                   }
                 }
               ]
             },
             {
-              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -3535,20 +3891,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
                   }
                 }
               ]
             },
             {
-              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -3591,20 +3947,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
                   }
                 }
               ]
             },
             {
-              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "id": "854fe610-4995-4d45-892a-4813dde9973d",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -3647,20 +4003,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
                   }
                 }
               ]
             },
             {
-              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -3695,7 +4051,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -3703,7 +4059,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
                   }
                 }
               ]
@@ -3718,14 +4074,14 @@
           }
         },
         "cursor": {
-          "ref": "d66fa749-2c5e-4de3-ad1d-4f4b1eca6061",
+          "ref": "b057ef51-287a-40d3-a432-0945d062c402",
           "length": 6,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "b3892511-4e5d-41a6-96fb-3a5e54b9a3bf",
-          "scriptId": "c1a9e7b6-0944-4d87-a074-7929783852ac",
-          "execution": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+          "httpRequestId": "34028958-16b6-4307-8cb9-ffcb9721b771",
+          "scriptId": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+          "execution": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
         }
       },
       {
@@ -3733,11 +4089,11 @@
           "name": "AssertionError",
           "index": 0,
           "test": "Status is 204 No Content",
-          "message": "expected response to have status code 204 but got 400",
-          "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:5)",
-          "checksum": "1629fcca08eb89c5546e4c23d4fbf634",
-          "id": "5328d551-5748-4605-b536-0f52bcf0d475",
-          "timestamp": 1768538305509,
+          "message": "expected response to have status code 204 but got 404",
+          "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:1:5)",
+          "checksum": "f7a5cbedcd29155b7a442532e2d8d6e0",
+          "id": "73b56823-dd8d-43e4-a60b-62f88dfa0afe",
+          "timestamp": 1768539800418,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3752,7 +4108,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+          "id": "854fe610-4995-4d45-892a-4813dde9973d",
           "name": "TC-FAV-DEL-001(Owner)",
           "request": {
             "url": {
@@ -3795,14 +4151,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 204 No Content\", () => {\r",
                   "    pm.response.to.have.status(204);\r",
                   "});"
                 ],
-                "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
               }
             }
           ]
@@ -3814,7 +4170,7 @@
           },
           "item": [
             {
-              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -3855,20 +4211,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
                   }
                 }
               ]
             },
             {
-              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -3909,20 +4265,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
                   }
                 }
               ]
             },
             {
-              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -3963,20 +4319,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
                   }
                 }
               ]
             },
             {
-              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -4019,20 +4375,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
                   }
                 }
               ]
             },
             {
-              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "id": "854fe610-4995-4d45-892a-4813dde9973d",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -4075,20 +4431,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
                   }
                 }
               ]
             },
             {
-              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -4123,7 +4479,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -4131,7 +4487,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
                   }
                 }
               ]
@@ -4146,14 +4502,14 @@
           }
         },
         "cursor": {
-          "ref": "d09a085a-4465-4069-bbb2-85f35bffd3b7",
+          "ref": "6beb9f9b-ec85-4b55-83fa-2f1186007329",
           "length": 6,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "4a6f7abf-9380-482c-a45d-8cd98fa0ef90",
-          "scriptId": "6839206d-7a37-4595-95b3-16ddfd1cc848",
-          "execution": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+          "httpRequestId": "fd7638f7-baf9-4289-a310-0d14a60dc6f4",
+          "scriptId": "ab1039b0-f03c-44f5-845a-0827267c951c",
+          "execution": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
         }
       }
     ],
