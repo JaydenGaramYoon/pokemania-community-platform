@@ -84,14 +84,19 @@ const remove = async (req, res) => {
 }
 
 export const changePassword = async (req, res) => {
-  const { userId } = req.params;
   const { new_password } = req.body;
+  
+  // 본인의 비밀번호만 변경 가능 (req.profile는 middleware에서 세팅됨)
+  if (!req.profile) {
+    return res.status(404).json({ error: 'User not found' });
+  }
+
   if (!new_password || new_password.length < 6) {
     return res.status(400).json({ error: 'Password too short' });
   }
+  
   try {
-    const user = await User.findById(userId);
-    if (!user) return res.status(404).json({ error: 'User not found' });
+    const user = req.profile;
 
     // virtual password 활용!
     user.password = new_password; // 이 한 줄로 salt와 hashed_password가 자동 생성됨

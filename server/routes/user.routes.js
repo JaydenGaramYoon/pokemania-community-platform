@@ -52,13 +52,7 @@ router.route('/api/users/:userId')
 
 // 비밀번호 변경 (관리자 또는 본인 가능)
 router.route('/api/users/:userId/password')
-  .put(authCtrl.requireSignin, (req, res, next) => {
-    // 본인 또는 관리자만 접근 가능
-    if (req.auth._id === req.params.userId || req.auth.role === 'admin') {
-      return next();
-    }
-    return res.status(403).json({ error: 'Access denied' });
-  }, userCtrl.changePassword);
+  .put(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.changePassword);
   
 // 역할 변경 (관리자만 가능)
 router.route('/api/users/:userId/role')
