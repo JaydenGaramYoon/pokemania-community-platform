@@ -15,6 +15,11 @@ dist/
 dist-ssr/
 *.local
 
+# Test Reports & Sensitive Data
+api/newman/reports/
+api/postman/environments/ci.postman_environment.json
+*.json.bak
+.env.local
 
 # Editor directories and files
 .vscode/*

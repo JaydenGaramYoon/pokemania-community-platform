@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "91420f72-a7ad-4b22-bc80-4e4ba5b39369",
+        "id": "c1a14a3f-6a00-4065-82cf-8038eb48f8b9",
         "name": "TC-ADMIN-ROLE-SET-001",
         "request": {
           "url": {
@@ -49,20 +49,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "9ef137d1-eccf-45ec-b77f-84ea45d186df",
+              "id": "d3cbc704-c600-44ac-9a3d-9911c1e31c15",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 200 OK\", () => {\r",
                 "    pm.response.to.have.status(200);\r",
                 "});"
               ],
-              "_lastExecutionId": "9a8aba75-29a6-4b6e-a972-05f542d1e60a"
+              "_lastExecutionId": "bbf02f98-cc3c-48ab-854d-338e054619af"
             }
           }
         ]
       },
       {
-        "id": "2fa50958-217b-4b7c-a5e6-60f9ddfe177c",
+        "id": "45ba13d5-3b87-4fcd-95ac-a14e82c71c8d",
         "name": "TC-ADMIN-ROLE-SET-NA-001",
         "request": {
           "url": {
@@ -105,7 +105,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "acd8b888-5dcd-453c-a5c2-cee882307cd4",
+              "id": "6abfa51c-c888-4ca7-9f89-1c6091ae6eee",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 403 Forbidden\", () => {\r",
@@ -113,13 +113,13 @@
                 "});\r",
                 "\r"
               ],
-              "_lastExecutionId": "fd773ebd-1a42-44de-ac2f-6b0d25c2abf8"
+              "_lastExecutionId": "c6a3f4c2-9096-4553-a86b-e875f9b4c201"
             }
           }
         ]
       },
       {
-        "id": "0d75fb52-5c04-4f5c-8560-0e624507f972",
+        "id": "32fd08cd-64cf-4e2e-a004-5df9e2f0d6c5",
         "name": "TC-ADMIN-ROLE-SET-VAL-001",
         "request": {
           "url": {
@@ -162,7 +162,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "d32b18ad-9512-4f48-b3e0-0c6dbf4e6fd3",
+              "id": "ab1ce583-9032-42fc-af74-6e25df5aa052",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -170,7 +170,7 @@
                 "});\r",
                 "\r"
               ],
-              "_lastExecutionId": "5e10bb7b-8e0b-4a02-89f8-11cf6b5c9f5c"
+              "_lastExecutionId": "c4e0b93e-d9d8-4f44-9811-91be3532d619"
             }
           }
         ]
@@ -292,11 +292,26 @@
         "type": "any",
         "value": "testuser",
         "key": "PASSWORD_AUTH004"
+      },
+      {
+        "type": "any",
+        "value": "TestPassword123!",
+        "key": "PASSWORD_AUTH_SIGNUP001"
+      },
+      {
+        "type": "any",
+        "value": "123",
+        "key": "PASSWORD_AUTH_SIGNUP003_SHORT"
+      },
+      {
+        "type": "any",
+        "value": "shortpw.test@pokemania.local",
+        "key": "EMAIL_TEST_SHORT"
       }
     ]
   },
   "globals": {
-    "id": "a999c96a-00e3-4b7a-8ae2-be03d8a2b2e6",
+    "id": "0b788603-81ed-47c8-94d1-0ead7cfe92d2",
     "values": []
   },
   "run": {
@@ -348,10 +363,10 @@
       }
     },
     "timings": {
-      "responseAverage": 14.333333333333334,
-      "responseMin": 3,
-      "responseMax": 35,
-      "responseSd": 14.636332266733433,
+      "responseAverage": 17.666666666666668,
+      "responseMin": 4,
+      "responseMax": 44,
+      "responseSd": 18.624953392931992,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -360,8 +375,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768539805715,
-      "completed": 1768539805838
+      "started": 1768540107071,
+      "completed": 1768540107202
     },
     "executions": [
       {
@@ -374,11 +389,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "aa039347-f0eb-40fe-ac2e-fdb56a20117c",
-          "httpRequestId": "28b262c3-da60-4c91-b719-abcac7ce6117"
+          "ref": "b46d5fb6-036e-4901-8e5c-e6f6705ed72e",
+          "httpRequestId": "5b3b334c-202a-446e-888e-dad8ed3a0291"
         },
         "item": {
-          "id": "91420f72-a7ad-4b22-bc80-4e4ba5b39369",
+          "id": "c1a14a3f-6a00-4065-82cf-8038eb48f8b9",
           "name": "TC-ADMIN-ROLE-SET-001",
           "request": {
             "url": {
@@ -421,14 +436,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "9ef137d1-eccf-45ec-b77f-84ea45d186df",
+                "id": "d3cbc704-c600-44ac-9a3d-9911c1e31c15",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "9a8aba75-29a6-4b6e-a972-05f542d1e60a"
+                "_lastExecutionId": "bbf02f98-cc3c-48ab-854d-338e054619af"
               }
             }
           ]
@@ -472,7 +487,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "74671c22-3257-4188-97a6-e201725f42ed",
+              "value": "4e268cf4-3545-4cfe-a8e5-24a95b3ecb7c",
               "system": true
             },
             {
@@ -518,7 +533,7 @@
           }
         },
         "response": {
-          "id": "f9f63042-8027-4fce-a4e5-bc253eeeb9fb",
+          "id": "dc97aef2-e072-4614-ab10-a5f24b287139",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -588,7 +603,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:27 GMT"
             },
             {
               "key": "Connection",
@@ -759,10 +774,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 35,
+          "responseTime": 44,
           "responseSize": 154
         },
-        "id": "91420f72-a7ad-4b22-bc80-4e4ba5b39369",
+        "id": "c1a14a3f-6a00-4065-82cf-8038eb48f8b9",
         "assertions": [
           {
             "assertion": "Status is 200 OK",
@@ -779,15 +794,15 @@
       },
       {
         "cursor": {
-          "ref": "02bc20fa-faa6-480b-a9d3-d5ccd6b5b23d",
+          "ref": "fe3b9e6a-700e-4cca-8daa-2d117dba41a6",
           "length": 3,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "d9eb6395-fdc6-49fa-a325-ab5e0698f21c"
+          "httpRequestId": "f3fc97f5-b4d3-4f18-afc7-0864bc635cc3"
         },
         "item": {
-          "id": "2fa50958-217b-4b7c-a5e6-60f9ddfe177c",
+          "id": "45ba13d5-3b87-4fcd-95ac-a14e82c71c8d",
           "name": "TC-ADMIN-ROLE-SET-NA-001",
           "request": {
             "url": {
@@ -830,7 +845,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "acd8b888-5dcd-453c-a5c2-cee882307cd4",
+                "id": "6abfa51c-c888-4ca7-9f89-1c6091ae6eee",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 403 Forbidden\", () => {\r",
@@ -838,7 +853,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "fd773ebd-1a42-44de-ac2f-6b0d25c2abf8"
+                "_lastExecutionId": "c6a3f4c2-9096-4553-a86b-e875f9b4c201"
               }
             }
           ]
@@ -882,7 +897,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "6cc450f9-108b-4083-baee-ee5c3ace082a",
+              "value": "33ccd8ab-e8cd-42a2-a8dd-0caa3fbc69ab",
               "system": true
             },
             {
@@ -928,7 +943,7 @@
           }
         },
         "response": {
-          "id": "aa8c2e4b-be52-4bc8-9076-372a1cad19ee",
+          "id": "1fbe4384-6e2d-4b12-84f5-64fc435111dc",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -998,7 +1013,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:27 GMT"
             },
             {
               "key": "Connection",
@@ -1172,7 +1187,7 @@
           "responseTime": 5,
           "responseSize": 154
         },
-        "id": "2fa50958-217b-4b7c-a5e6-60f9ddfe177c",
+        "id": "45ba13d5-3b87-4fcd-95ac-a14e82c71c8d",
         "assertions": [
           {
             "assertion": "Status is 403 Forbidden",
@@ -1189,15 +1204,15 @@
       },
       {
         "cursor": {
-          "ref": "488f10f3-49fc-4ece-9922-0b8dae02fb81",
+          "ref": "22e0e975-40c6-43b4-8d16-81a37d4d3416",
           "length": 3,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "a9d88add-bef0-4f25-b1e6-21a54f0ca3fd"
+          "httpRequestId": "a853c28d-d9d6-4d78-869d-6bbaaf64895b"
         },
         "item": {
-          "id": "0d75fb52-5c04-4f5c-8560-0e624507f972",
+          "id": "32fd08cd-64cf-4e2e-a004-5df9e2f0d6c5",
           "name": "TC-ADMIN-ROLE-SET-VAL-001",
           "request": {
             "url": {
@@ -1240,7 +1255,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "d32b18ad-9512-4f48-b3e0-0c6dbf4e6fd3",
+                "id": "ab1ce583-9032-42fc-af74-6e25df5aa052",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -1248,7 +1263,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "5e10bb7b-8e0b-4a02-89f8-11cf6b5c9f5c"
+                "_lastExecutionId": "c4e0b93e-d9d8-4f44-9811-91be3532d619"
               }
             }
           ]
@@ -1292,7 +1307,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "14dd38ab-4064-4698-b6ee-24dcc34d0424",
+              "value": "f169ba8d-f0a4-41d5-987d-7c0c4b1b0aa0",
               "system": true
             },
             {
@@ -1338,7 +1353,7 @@
           }
         },
         "response": {
-          "id": "f53e958b-e579-4179-839d-a8b04952c460",
+          "id": "e7b7e47f-f056-4a54-8a27-b331c9f5338d",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -1408,7 +1423,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:25 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:27 GMT"
             },
             {
               "key": "Connection",
@@ -1579,10 +1594,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 4,
           "responseSize": 154
         },
-        "id": "0d75fb52-5c04-4f5c-8560-0e624507f972",
+        "id": "32fd08cd-64cf-4e2e-a004-5df9e2f0d6c5",
         "assertions": [
           {
             "assertion": "Status is 400 Bad Request",
@@ -1610,8 +1625,8 @@
           "message": "expected response to have status code 200 but got 404",
           "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:1)",
           "checksum": "a571ed4164a2a3176067a580f7030dbf",
-          "id": "d144acb8-22a7-449d-abbc-a2a5431368c7",
-          "timestamp": 1768539805786,
+          "id": "9c86538c-f162-4ac5-9009-57a7237a568e",
+          "timestamp": 1768540107150,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1626,7 +1641,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "91420f72-a7ad-4b22-bc80-4e4ba5b39369",
+          "id": "c1a14a3f-6a00-4065-82cf-8038eb48f8b9",
           "name": "TC-ADMIN-ROLE-SET-001",
           "request": {
             "url": {
@@ -1669,14 +1684,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "9ef137d1-eccf-45ec-b77f-84ea45d186df",
+                "id": "d3cbc704-c600-44ac-9a3d-9911c1e31c15",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "9a8aba75-29a6-4b6e-a972-05f542d1e60a"
+                "_lastExecutionId": "bbf02f98-cc3c-48ab-854d-338e054619af"
               }
             }
           ]
@@ -1688,7 +1703,7 @@
           },
           "item": [
             {
-              "id": "91420f72-a7ad-4b22-bc80-4e4ba5b39369",
+              "id": "c1a14a3f-6a00-4065-82cf-8038eb48f8b9",
               "name": "TC-ADMIN-ROLE-SET-001",
               "request": {
                 "url": {
@@ -1731,20 +1746,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "9ef137d1-eccf-45ec-b77f-84ea45d186df",
+                    "id": "d3cbc704-c600-44ac-9a3d-9911c1e31c15",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "9a8aba75-29a6-4b6e-a972-05f542d1e60a"
+                    "_lastExecutionId": "bbf02f98-cc3c-48ab-854d-338e054619af"
                   }
                 }
               ]
             },
             {
-              "id": "2fa50958-217b-4b7c-a5e6-60f9ddfe177c",
+              "id": "45ba13d5-3b87-4fcd-95ac-a14e82c71c8d",
               "name": "TC-ADMIN-ROLE-SET-NA-001",
               "request": {
                 "url": {
@@ -1787,7 +1802,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "acd8b888-5dcd-453c-a5c2-cee882307cd4",
+                    "id": "6abfa51c-c888-4ca7-9f89-1c6091ae6eee",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 403 Forbidden\", () => {\r",
@@ -1795,13 +1810,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "fd773ebd-1a42-44de-ac2f-6b0d25c2abf8"
+                    "_lastExecutionId": "c6a3f4c2-9096-4553-a86b-e875f9b4c201"
                   }
                 }
               ]
             },
             {
-              "id": "0d75fb52-5c04-4f5c-8560-0e624507f972",
+              "id": "32fd08cd-64cf-4e2e-a004-5df9e2f0d6c5",
               "name": "TC-ADMIN-ROLE-SET-VAL-001",
               "request": {
                 "url": {
@@ -1844,7 +1859,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "d32b18ad-9512-4f48-b3e0-0c6dbf4e6fd3",
+                    "id": "ab1ce583-9032-42fc-af74-6e25df5aa052",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -1852,7 +1867,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "5e10bb7b-8e0b-4a02-89f8-11cf6b5c9f5c"
+                    "_lastExecutionId": "c4e0b93e-d9d8-4f44-9811-91be3532d619"
                   }
                 }
               ]
@@ -1875,10 +1890,10 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "aa039347-f0eb-40fe-ac2e-fdb56a20117c",
-          "httpRequestId": "28b262c3-da60-4c91-b719-abcac7ce6117",
-          "scriptId": "9ef137d1-eccf-45ec-b77f-84ea45d186df",
-          "execution": "9a8aba75-29a6-4b6e-a972-05f542d1e60a"
+          "ref": "b46d5fb6-036e-4901-8e5c-e6f6705ed72e",
+          "httpRequestId": "5b3b334c-202a-446e-888e-dad8ed3a0291",
+          "scriptId": "d3cbc704-c600-44ac-9a3d-9911c1e31c15",
+          "execution": "bbf02f98-cc3c-48ab-854d-338e054619af"
         }
       },
       {
@@ -1889,8 +1904,8 @@
           "message": "expected response to have status code 403 but got 404",
           "stack": "AssertionError: expected response to have status code 403 but got 404\n   at Object.eval sandbox-script.js:1:2)",
           "checksum": "77e05b2421f59ba1cc5892017c140859",
-          "id": "4f6dae45-64ef-4800-9de4-bb48b2d1c9c0",
-          "timestamp": 1768539805810,
+          "id": "015d5a7b-1ffc-4551-b874-954e1382043a",
+          "timestamp": 1768540107176,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1905,7 +1920,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "2fa50958-217b-4b7c-a5e6-60f9ddfe177c",
+          "id": "45ba13d5-3b87-4fcd-95ac-a14e82c71c8d",
           "name": "TC-ADMIN-ROLE-SET-NA-001",
           "request": {
             "url": {
@@ -1948,7 +1963,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "acd8b888-5dcd-453c-a5c2-cee882307cd4",
+                "id": "6abfa51c-c888-4ca7-9f89-1c6091ae6eee",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 403 Forbidden\", () => {\r",
@@ -1956,7 +1971,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "fd773ebd-1a42-44de-ac2f-6b0d25c2abf8"
+                "_lastExecutionId": "c6a3f4c2-9096-4553-a86b-e875f9b4c201"
               }
             }
           ]
@@ -1968,7 +1983,7 @@
           },
           "item": [
             {
-              "id": "91420f72-a7ad-4b22-bc80-4e4ba5b39369",
+              "id": "c1a14a3f-6a00-4065-82cf-8038eb48f8b9",
               "name": "TC-ADMIN-ROLE-SET-001",
               "request": {
                 "url": {
@@ -2011,20 +2026,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "9ef137d1-eccf-45ec-b77f-84ea45d186df",
+                    "id": "d3cbc704-c600-44ac-9a3d-9911c1e31c15",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "9a8aba75-29a6-4b6e-a972-05f542d1e60a"
+                    "_lastExecutionId": "bbf02f98-cc3c-48ab-854d-338e054619af"
                   }
                 }
               ]
             },
             {
-              "id": "2fa50958-217b-4b7c-a5e6-60f9ddfe177c",
+              "id": "45ba13d5-3b87-4fcd-95ac-a14e82c71c8d",
               "name": "TC-ADMIN-ROLE-SET-NA-001",
               "request": {
                 "url": {
@@ -2067,7 +2082,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "acd8b888-5dcd-453c-a5c2-cee882307cd4",
+                    "id": "6abfa51c-c888-4ca7-9f89-1c6091ae6eee",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 403 Forbidden\", () => {\r",
@@ -2075,13 +2090,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "fd773ebd-1a42-44de-ac2f-6b0d25c2abf8"
+                    "_lastExecutionId": "c6a3f4c2-9096-4553-a86b-e875f9b4c201"
                   }
                 }
               ]
             },
             {
-              "id": "0d75fb52-5c04-4f5c-8560-0e624507f972",
+              "id": "32fd08cd-64cf-4e2e-a004-5df9e2f0d6c5",
               "name": "TC-ADMIN-ROLE-SET-VAL-001",
               "request": {
                 "url": {
@@ -2124,7 +2139,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "d32b18ad-9512-4f48-b3e0-0c6dbf4e6fd3",
+                    "id": "ab1ce583-9032-42fc-af74-6e25df5aa052",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -2132,7 +2147,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "5e10bb7b-8e0b-4a02-89f8-11cf6b5c9f5c"
+                    "_lastExecutionId": "c4e0b93e-d9d8-4f44-9811-91be3532d619"
                   }
                 }
               ]
@@ -2147,14 +2162,14 @@
           }
         },
         "cursor": {
-          "ref": "02bc20fa-faa6-480b-a9d3-d5ccd6b5b23d",
+          "ref": "fe3b9e6a-700e-4cca-8daa-2d117dba41a6",
           "length": 3,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "d9eb6395-fdc6-49fa-a325-ab5e0698f21c",
-          "scriptId": "acd8b888-5dcd-453c-a5c2-cee882307cd4",
-          "execution": "fd773ebd-1a42-44de-ac2f-6b0d25c2abf8"
+          "httpRequestId": "f3fc97f5-b4d3-4f18-afc7-0864bc635cc3",
+          "scriptId": "6abfa51c-c888-4ca7-9f89-1c6091ae6eee",
+          "execution": "c6a3f4c2-9096-4553-a86b-e875f9b4c201"
         }
       },
       {
@@ -2165,8 +2180,8 @@
           "message": "expected response to have status code 400 but got 404",
           "stack": "AssertionError: expected response to have status code 400 but got 404\n   at Object.eval sandbox-script.js:1:3)",
           "checksum": "72539e5e337f51c25b1d19db561bb571",
-          "id": "e73d52f4-62e5-4372-9b6b-f6c8d5641659",
-          "timestamp": 1768539805830,
+          "id": "d5387538-7eb7-4bf4-a047-bdc6f0dce523",
+          "timestamp": 1768540107197,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2181,7 +2196,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "0d75fb52-5c04-4f5c-8560-0e624507f972",
+          "id": "32fd08cd-64cf-4e2e-a004-5df9e2f0d6c5",
           "name": "TC-ADMIN-ROLE-SET-VAL-001",
           "request": {
             "url": {
@@ -2224,7 +2239,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "d32b18ad-9512-4f48-b3e0-0c6dbf4e6fd3",
+                "id": "ab1ce583-9032-42fc-af74-6e25df5aa052",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -2232,7 +2247,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "5e10bb7b-8e0b-4a02-89f8-11cf6b5c9f5c"
+                "_lastExecutionId": "c4e0b93e-d9d8-4f44-9811-91be3532d619"
               }
             }
           ]
@@ -2244,7 +2259,7 @@
           },
           "item": [
             {
-              "id": "91420f72-a7ad-4b22-bc80-4e4ba5b39369",
+              "id": "c1a14a3f-6a00-4065-82cf-8038eb48f8b9",
               "name": "TC-ADMIN-ROLE-SET-001",
               "request": {
                 "url": {
@@ -2287,20 +2302,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "9ef137d1-eccf-45ec-b77f-84ea45d186df",
+                    "id": "d3cbc704-c600-44ac-9a3d-9911c1e31c15",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "9a8aba75-29a6-4b6e-a972-05f542d1e60a"
+                    "_lastExecutionId": "bbf02f98-cc3c-48ab-854d-338e054619af"
                   }
                 }
               ]
             },
             {
-              "id": "2fa50958-217b-4b7c-a5e6-60f9ddfe177c",
+              "id": "45ba13d5-3b87-4fcd-95ac-a14e82c71c8d",
               "name": "TC-ADMIN-ROLE-SET-NA-001",
               "request": {
                 "url": {
@@ -2343,7 +2358,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "acd8b888-5dcd-453c-a5c2-cee882307cd4",
+                    "id": "6abfa51c-c888-4ca7-9f89-1c6091ae6eee",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 403 Forbidden\", () => {\r",
@@ -2351,13 +2366,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "fd773ebd-1a42-44de-ac2f-6b0d25c2abf8"
+                    "_lastExecutionId": "c6a3f4c2-9096-4553-a86b-e875f9b4c201"
                   }
                 }
               ]
             },
             {
-              "id": "0d75fb52-5c04-4f5c-8560-0e624507f972",
+              "id": "32fd08cd-64cf-4e2e-a004-5df9e2f0d6c5",
               "name": "TC-ADMIN-ROLE-SET-VAL-001",
               "request": {
                 "url": {
@@ -2400,7 +2415,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "d32b18ad-9512-4f48-b3e0-0c6dbf4e6fd3",
+                    "id": "ab1ce583-9032-42fc-af74-6e25df5aa052",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 400 Bad Request\", () => {\r",
@@ -2408,7 +2423,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "5e10bb7b-8e0b-4a02-89f8-11cf6b5c9f5c"
+                    "_lastExecutionId": "c4e0b93e-d9d8-4f44-9811-91be3532d619"
                   }
                 }
               ]
@@ -2423,14 +2438,14 @@
           }
         },
         "cursor": {
-          "ref": "488f10f3-49fc-4ece-9922-0b8dae02fb81",
+          "ref": "22e0e975-40c6-43b4-8d16-81a37d4d3416",
           "length": 3,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "a9d88add-bef0-4f25-b1e6-21a54f0ca3fd",
-          "scriptId": "d32b18ad-9512-4f48-b3e0-0c6dbf4e6fd3",
-          "execution": "5e10bb7b-8e0b-4a02-89f8-11cf6b5c9f5c"
+          "httpRequestId": "a853c28d-d9d6-4d78-869d-6bbaaf64895b",
+          "scriptId": "ab1ce583-9032-42fc-af74-6e25df5aa052",
+          "execution": "c4e0b93e-d9d8-4f44-9811-91be3532d619"
         }
       }
     ],

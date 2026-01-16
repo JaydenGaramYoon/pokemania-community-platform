@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+        "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
         "name": "TC-GAME-SAVE-001-Save Score (U001)",
         "request": {
           "url": {
@@ -47,20 +47,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+              "id": "359847db-9630-426f-9771-5a45674accc4",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 201 Created\", function () {",
                 "    pm.response.to.have.status(201);",
                 "});"
               ],
-              "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+              "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
             }
           }
         ]
       },
       {
-        "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+        "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
         "name": "TC-GAME-SAVE-002-Save Score (U002)",
         "request": {
           "url": {
@@ -101,20 +101,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+              "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 201 Created\", function () {",
                 "    pm.response.to.have.status(201);",
                 "});"
               ],
-              "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+              "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
             }
           }
         ]
       },
       {
-        "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+        "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
         "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
         "request": {
           "url": {
@@ -145,7 +145,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+              "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -153,13 +153,13 @@
                 "});\r",
                 "\r"
               ],
-              "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+              "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
             }
           }
         ]
       },
       {
-        "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+        "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
         "name": "TC-GAME-GET-001-Get Scores (Mine)",
         "request": {
           "url": {
@@ -202,14 +202,14 @@
           {
             "listen": "test",
             "script": {
-              "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+              "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK\", function () {",
                 "    pm.response.to.have.status(200);",
                 "});"
               ],
-              "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+              "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
             }
           }
         ],
@@ -218,7 +218,7 @@
         }
       },
       {
-        "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+        "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
         "name": "TC-GAME-PUT-001-Update Score (Mine)",
         "request": {
           "url": {
@@ -260,20 +260,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+              "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK\", function () {",
                 "    pm.response.to.have.status(200);",
                 "});"
               ],
-              "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+              "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
             }
           }
         ]
       },
       {
-        "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+        "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
         "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
         "request": {
           "url": {
@@ -309,20 +309,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+              "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                 "    pm.response.to.have.status(401);\r",
                 "});\r"
               ],
-              "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+              "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
             }
           }
         ]
       },
       {
-        "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+        "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
         "name": "TC-GAME-DEL-001-Delete Score (Mine)",
         "request": {
           "url": {
@@ -364,20 +364,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+              "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 204 No Content\", function () {",
                 "    pm.response.to.have.status(204);",
                 "});"
               ],
-              "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+              "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
             }
           }
         ]
       },
       {
-        "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+        "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
         "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
         "request": {
           "url": {
@@ -413,7 +413,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+              "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
               "type": "text/javascript",
               "exec": [
                 "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -421,7 +421,7 @@
                 "    pm.response.to.have.status(401);",
                 "});"
               ],
-              "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+              "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
             }
           }
         ]
@@ -543,11 +543,26 @@
         "type": "any",
         "value": "testuser",
         "key": "PASSWORD_AUTH004"
+      },
+      {
+        "type": "any",
+        "value": "TestPassword123!",
+        "key": "PASSWORD_AUTH_SIGNUP001"
+      },
+      {
+        "type": "any",
+        "value": "123",
+        "key": "PASSWORD_AUTH_SIGNUP003_SHORT"
+      },
+      {
+        "type": "any",
+        "value": "shortpw.test@pokemania.local",
+        "key": "EMAIL_TEST_SHORT"
       }
     ]
   },
   "globals": {
-    "id": "45ef33d8-fe95-4c10-abb6-201e9241b708",
+    "id": "21e32af0-2420-45c3-b52b-475b4cba65e0",
     "values": []
   },
   "run": {
@@ -599,10 +614,10 @@
       }
     },
     "timings": {
-      "responseAverage": 9.125,
+      "responseAverage": 12.75,
       "responseMin": 3,
-      "responseMax": 42,
-      "responseSd": 12.494373733805148,
+      "responseMax": 65,
+      "responseSd": 19.81003533565753,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -611,8 +626,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768539801774,
-      "completed": 1768539802001
+      "started": 1768540103021,
+      "completed": 1768540103288
     },
     "executions": [
       {
@@ -625,11 +640,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "5a6aa7c0-ce6a-4dd4-af5a-5a25c943d9ed",
-          "httpRequestId": "f241a362-d8fd-423a-ad78-54ea1602a320"
+          "ref": "a9365196-1c7f-43a6-8477-798e384b994c",
+          "httpRequestId": "3eb5d124-2482-48bb-bc69-080e38963254"
         },
         "item": {
-          "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+          "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
           "name": "TC-GAME-SAVE-001-Save Score (U001)",
           "request": {
             "url": {
@@ -670,14 +685,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                "id": "359847db-9630-426f-9771-5a45674accc4",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
               }
             }
           ]
@@ -719,7 +734,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "9a89f3f8-ef44-42dc-8d4b-b52816342268",
+              "value": "cbb0be42-b307-4238-946f-69566bc66fb8",
               "system": true
             },
             {
@@ -765,7 +780,7 @@
           }
         },
         "response": {
-          "id": "5985a7d6-bbf2-4d35-8816-f90e1a26d6b2",
+          "id": "ef75a734-60f1-4e4c-9ef7-9dc3a2fb313d",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -839,7 +854,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -858,10 +873,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 42,
+          "responseTime": 65,
           "responseSize": 2
         },
-        "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+        "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
         "assertions": [
           {
             "assertion": "Status code is 201 Created",
@@ -878,15 +893,15 @@
       },
       {
         "cursor": {
-          "ref": "bd60c0a1-f0e7-4167-82e2-17f2ba26a2c2",
+          "ref": "3e3f7f6b-752c-4e99-8417-9f2d642d7cab",
           "length": 8,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "adce1747-1881-44ad-8df1-67c2f8f7b554"
+          "httpRequestId": "dfe624dc-23fa-4824-b2c1-4ca6175bb822"
         },
         "item": {
-          "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+          "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
           "name": "TC-GAME-SAVE-002-Save Score (U002)",
           "request": {
             "url": {
@@ -927,14 +942,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
               }
             }
           ]
@@ -976,7 +991,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "e119faf6-8110-4307-8756-3ca15522354d",
+              "value": "bbd7f892-b1b2-42bb-90d1-1b2fc76b5e0f",
               "system": true
             },
             {
@@ -1022,7 +1037,7 @@
           }
         },
         "response": {
-          "id": "9075a57d-0f34-416a-a0ee-c60b73053362",
+          "id": "6d2cff16-46c0-433f-92a5-28dccc6157a1",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -1096,7 +1111,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -1118,7 +1133,7 @@
           "responseTime": 6,
           "responseSize": 2
         },
-        "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+        "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
         "assertions": [
           {
             "assertion": "Status code is 201 Created",
@@ -1135,15 +1150,15 @@
       },
       {
         "cursor": {
-          "ref": "1dab38bf-0147-4427-b164-3431c147530c",
+          "ref": "99cf67f7-ccea-4ff5-8de8-bc26e20f5993",
           "length": 8,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "d49d7cd6-e9c4-4ac8-961c-541d26afcf5c"
+          "httpRequestId": "60988e3e-a1d0-43fc-b40f-12613b151127"
         },
         "item": {
-          "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+          "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
           "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
           "request": {
             "url": {
@@ -1174,7 +1189,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -1182,7 +1197,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
               }
             }
           ]
@@ -1224,7 +1239,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5ced2e90-a7e5-4142-b5ee-8233b9762e7b",
+              "value": "51ce174a-abb5-4950-946a-a27aef7c33c0",
               "system": true
             },
             {
@@ -1260,7 +1275,7 @@
           }
         },
         "response": {
-          "id": "9116e8bd-09df-4e06-a754-d6624ccee07a",
+          "id": "7682d0c9-790e-488e-8491-69acaef8db3a",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -1334,7 +1349,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -1353,10 +1368,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 5,
           "responseSize": 2
         },
-        "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+        "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
         "assertions": [
           {
             "assertion": "Status code is 401 Unauthorized",
@@ -1373,15 +1388,15 @@
       },
       {
         "cursor": {
-          "ref": "77aa8609-b39f-4dc9-88bb-7b52d48f2294",
+          "ref": "638b5687-1fcd-4426-bc0a-0d007fbf0bb9",
           "length": 8,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "6b5539db-6c21-4f4e-8c47-8db7329e1724"
+          "httpRequestId": "81d2632e-9aeb-4845-b1f6-92f94c0b3daa"
         },
         "item": {
-          "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+          "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
           "name": "TC-GAME-GET-001-Get Scores (Mine)",
           "request": {
             "url": {
@@ -1424,14 +1439,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
               }
             }
           ],
@@ -1473,7 +1488,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "6a1ff315-3fae-4c41-adb7-5b9f4b5b41c3",
+              "value": "12331a7d-33e4-493e-9f6f-6726b44edefe",
               "system": true
             },
             {
@@ -1514,7 +1529,7 @@
           }
         },
         "response": {
-          "id": "65fe9ed9-cdba-4fed-b581-1c5ad2c36948",
+          "id": "b53ab2a9-90a5-4318-9f71-49b50977d2ba",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -1584,7 +1599,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -1754,10 +1769,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 6,
+          "responseTime": 7,
           "responseSize": 153
         },
-        "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+        "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
         "assertions": [
           {
             "assertion": "Status code is 200 OK",
@@ -1774,15 +1789,15 @@
       },
       {
         "cursor": {
-          "ref": "e42548b2-84b8-4cda-b193-5e9ac4636280",
+          "ref": "53d39d72-fda3-4d5d-b23c-efc642e63097",
           "length": 8,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "e4da7bc0-d071-4cb9-bea4-6101e01bcf40"
+          "httpRequestId": "ad859549-3216-44dc-8e56-799af8e8f294"
         },
         "item": {
-          "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+          "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
           "name": "TC-GAME-PUT-001-Update Score (Mine)",
           "request": {
             "url": {
@@ -1824,14 +1839,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
               }
             }
           ]
@@ -1874,7 +1889,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "2bdb24db-68d8-45a5-8e6b-3ed656ed46ab",
+              "value": "9306a3c4-9546-40e9-aac9-6a41b2da92ae",
               "system": true
             },
             {
@@ -1920,7 +1935,7 @@
           }
         },
         "response": {
-          "id": "0558ed0a-afc4-4d85-b335-84e5ccdb9d35",
+          "id": "750e1089-7e8b-4b19-8da0-5926fd7b994d",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -1994,7 +2009,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -2013,10 +2028,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 6,
+          "responseTime": 8,
           "responseSize": 2
         },
-        "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+        "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
         "assertions": [
           {
             "assertion": "Status code is 200 OK",
@@ -2033,15 +2048,15 @@
       },
       {
         "cursor": {
-          "ref": "20215586-6ba1-4d76-984f-7ccbf883d169",
+          "ref": "b730007b-a567-4341-b016-dd4f8aafd57f",
           "length": 8,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "3383eca5-f97a-4d04-866c-027bd8a20320"
+          "httpRequestId": "e0ef8230-a04f-4092-a41d-38b5b616fcce"
         },
         "item": {
-          "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+          "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
           "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
           "request": {
             "url": {
@@ -2077,14 +2092,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                   "    pm.response.to.have.status(401);\r",
                   "});\r"
                 ],
-                "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
               }
             }
           ]
@@ -2127,7 +2142,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "1cbe486e-fb05-4b1c-8118-1ea319334118",
+              "value": "0ae37757-fb6b-4565-a046-aa4eb06f442a",
               "system": true
             },
             {
@@ -2167,7 +2182,7 @@
           }
         },
         "response": {
-          "id": "84f99a33-eb99-42b4-8f95-f79262fbba98",
+          "id": "0cd26793-deef-477c-a386-748af16e2793",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -2241,7 +2256,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -2263,7 +2278,7 @@
           "responseTime": 4,
           "responseSize": 2
         },
-        "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+        "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
         "assertions": [
           {
             "assertion": "Status code is 401 Unauthorized",
@@ -2280,15 +2295,15 @@
       },
       {
         "cursor": {
-          "ref": "0e727210-973c-40df-833a-892aa2301bfd",
+          "ref": "784a73a9-18e1-47f5-a0ae-f01736c1f79e",
           "length": 8,
           "cycles": 1,
           "position": 6,
           "iteration": 0,
-          "httpRequestId": "6dd7aac0-6618-46f4-a338-753ca878d47b"
+          "httpRequestId": "7175c7a6-5041-4979-b90c-84262926f385"
         },
         "item": {
-          "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+          "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
           "name": "TC-GAME-DEL-001-Delete Score (Mine)",
           "request": {
             "url": {
@@ -2330,14 +2345,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 204 No Content\", function () {",
                   "    pm.response.to.have.status(204);",
                   "});"
                 ],
-                "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
               }
             }
           ]
@@ -2375,7 +2390,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "3d3ebc7d-b07d-4e54-b1bd-1df00069c573",
+              "value": "8c19698c-7f66-4a8d-a342-8359873aca83",
               "system": true
             },
             {
@@ -2416,7 +2431,7 @@
           }
         },
         "response": {
-          "id": "a6975484-914a-49b3-bdea-c30db966068f",
+          "id": "1a989392-10f0-47f3-b8d8-151d4d23d19a",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -2490,7 +2505,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -2509,10 +2524,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 3,
+          "responseTime": 4,
           "responseSize": 2
         },
-        "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+        "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
         "assertions": [
           {
             "assertion": "Status code is 204 No Content",
@@ -2529,15 +2544,15 @@
       },
       {
         "cursor": {
-          "ref": "cdd30ef6-de66-402c-b62b-3685a3ef8ee7",
+          "ref": "ada7381c-7205-471b-87cb-d013f7fb92e2",
           "length": 8,
           "cycles": 1,
           "position": 7,
           "iteration": 0,
-          "httpRequestId": "116bda5d-e7e7-4681-ac7b-71657a5e2843"
+          "httpRequestId": "55c905cd-3d56-4495-b879-9f2eaf7e423a"
         },
         "item": {
-          "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+          "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
           "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
           "request": {
             "url": {
@@ -2573,7 +2588,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                 "type": "text/javascript",
                 "exec": [
                   "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -2581,7 +2596,7 @@
                   "    pm.response.to.have.status(401);",
                   "});"
                 ],
-                "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
               }
             }
           ]
@@ -2619,7 +2634,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "86c2e01f-0bb9-4815-9147-0cc0f6a2a0e0",
+              "value": "34695615-6b1a-4fc0-9dac-bc02fb6ccbe3",
               "system": true
             },
             {
@@ -2654,7 +2669,7 @@
           }
         },
         "response": {
-          "id": "7d2267ac-1b03-430f-b3b5-4f2a80f4072b",
+          "id": "29bf4f71-913e-4677-8b8b-8415e881e908",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -2728,7 +2743,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:21 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:23 GMT"
             },
             {
               "key": "Connection",
@@ -2750,7 +2765,7 @@
           "responseTime": 3,
           "responseSize": 2
         },
-        "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+        "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
         "assertions": [
           {
             "assertion": "Status code is 401 Unauthorized",
@@ -2778,8 +2793,8 @@
           "message": "expected response to have status code 201 but got 400",
           "stack": "AssertionError: expected response to have status code 201 but got 400\n   at Object.eval sandbox-script.js:1:1)",
           "checksum": "9b9e638975d2be642466fe45eb02a208",
-          "id": "8a844b88-a0eb-4660-9385-8ca4ab883b35",
-          "timestamp": 1768539801851,
+          "id": "f4985026-994d-4f58-8f06-6fa5fada2b35",
+          "timestamp": 1768540103127,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2794,7 +2809,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+          "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
           "name": "TC-GAME-SAVE-001-Save Score (U001)",
           "request": {
             "url": {
@@ -2835,14 +2850,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                "id": "359847db-9630-426f-9771-5a45674accc4",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
               }
             }
           ]
@@ -2854,7 +2869,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -2895,20 +2910,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -2949,20 +2964,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -2993,7 +3008,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -3001,13 +3016,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -3050,14 +3065,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -3066,7 +3081,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -3108,20 +3123,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -3157,20 +3172,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -3212,20 +3227,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -3261,7 +3276,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -3269,7 +3284,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -3292,10 +3307,10 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "5a6aa7c0-ce6a-4dd4-af5a-5a25c943d9ed",
-          "httpRequestId": "f241a362-d8fd-423a-ad78-54ea1602a320",
-          "scriptId": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
-          "execution": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+          "ref": "a9365196-1c7f-43a6-8477-798e384b994c",
+          "httpRequestId": "3eb5d124-2482-48bb-bc69-080e38963254",
+          "scriptId": "359847db-9630-426f-9771-5a45674accc4",
+          "execution": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
         }
       },
       {
@@ -3306,8 +3321,8 @@
           "message": "expected response to have status code 201 but got 400",
           "stack": "AssertionError: expected response to have status code 201 but got 400\n   at Object.eval sandbox-script.js:1:2)",
           "checksum": "cb4ca566881130fb1fc07579c987e009",
-          "id": "8f90f03f-bde6-4d80-98a5-426b7d8460f7",
-          "timestamp": 1768539801880,
+          "id": "923b7a40-1893-4605-a4ad-afca1014067b",
+          "timestamp": 1768540103154,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3322,7 +3337,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+          "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
           "name": "TC-GAME-SAVE-002-Save Score (U002)",
           "request": {
             "url": {
@@ -3363,14 +3378,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
               }
             }
           ]
@@ -3382,7 +3397,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -3423,20 +3438,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -3477,20 +3492,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -3521,7 +3536,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -3529,13 +3544,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -3578,14 +3593,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -3594,7 +3609,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -3636,20 +3651,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -3685,20 +3700,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -3740,20 +3755,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -3789,7 +3804,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -3797,7 +3812,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -3812,14 +3827,14 @@
           }
         },
         "cursor": {
-          "ref": "bd60c0a1-f0e7-4167-82e2-17f2ba26a2c2",
+          "ref": "3e3f7f6b-752c-4e99-8417-9f2d642d7cab",
           "length": 8,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "adce1747-1881-44ad-8df1-67c2f8f7b554",
-          "scriptId": "0977ab9c-8113-4add-a40e-ac69c575776b",
-          "execution": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+          "httpRequestId": "dfe624dc-23fa-4824-b2c1-4ca6175bb822",
+          "scriptId": "e4454dee-a638-4165-a2fe-1c64e513a093",
+          "execution": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
         }
       },
       {
@@ -3830,8 +3845,8 @@
           "message": "expected response to have status code 401 but got 400",
           "stack": "AssertionError: expected response to have status code 401 but got 400\n   at Object.eval sandbox-script.js:1:3)",
           "checksum": "b3738ff7d60908cdf11f17eca4d1432a",
-          "id": "8de37485-70f0-41e6-a84e-1e6135e82149",
-          "timestamp": 1768539801898,
+          "id": "bc87556c-f1bb-4fbe-b697-96f720ec9855",
+          "timestamp": 1768540103176,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3846,7 +3861,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+          "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
           "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
           "request": {
             "url": {
@@ -3877,7 +3892,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -3885,7 +3900,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
               }
             }
           ]
@@ -3897,7 +3912,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -3938,20 +3953,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -3992,20 +4007,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -4036,7 +4051,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -4044,13 +4059,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -4093,14 +4108,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -4109,7 +4124,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -4151,20 +4166,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -4200,20 +4215,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -4255,20 +4270,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -4304,7 +4319,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -4312,7 +4327,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -4327,14 +4342,14 @@
           }
         },
         "cursor": {
-          "ref": "1dab38bf-0147-4427-b164-3431c147530c",
+          "ref": "99cf67f7-ccea-4ff5-8de8-bc26e20f5993",
           "length": 8,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "d49d7cd6-e9c4-4ac8-961c-541d26afcf5c",
-          "scriptId": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
-          "execution": "8179d5d8-e450-498b-8db2-9adec6b25755"
+          "httpRequestId": "60988e3e-a1d0-43fc-b40f-12613b151127",
+          "scriptId": "33eb1adf-7a40-4ae5-9621-676bc4007753",
+          "execution": "aaff2412-6883-4613-b7ac-d63634a69250"
         }
       },
       {
@@ -4345,8 +4360,8 @@
           "message": "expected response to have status code 200 but got 404",
           "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:4)",
           "checksum": "d3c733eb5a86166dc26e39b979e6d3b4",
-          "id": "e228f9d2-4dcd-4d96-ba04-d15e1fe50761",
-          "timestamp": 1768539801918,
+          "id": "a8407a8d-1d68-4a35-a9e7-4aa5e28bd3b6",
+          "timestamp": 1768540103201,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -4361,7 +4376,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+          "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
           "name": "TC-GAME-GET-001-Get Scores (Mine)",
           "request": {
             "url": {
@@ -4404,14 +4419,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
               }
             }
           ],
@@ -4426,7 +4441,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -4467,20 +4482,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -4521,20 +4536,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -4565,7 +4580,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -4573,13 +4588,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -4622,14 +4637,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -4638,7 +4653,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -4680,20 +4695,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -4729,20 +4744,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -4784,20 +4799,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -4833,7 +4848,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -4841,7 +4856,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -4856,14 +4871,14 @@
           }
         },
         "cursor": {
-          "ref": "77aa8609-b39f-4dc9-88bb-7b52d48f2294",
+          "ref": "638b5687-1fcd-4426-bc0a-0d007fbf0bb9",
           "length": 8,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "6b5539db-6c21-4f4e-8c47-8db7329e1724",
-          "scriptId": "56de4831-f5cf-4498-8c10-2e50ee89a788",
-          "execution": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+          "httpRequestId": "81d2632e-9aeb-4845-b1f6-92f94c0b3daa",
+          "scriptId": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
+          "execution": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
         }
       },
       {
@@ -4874,8 +4889,8 @@
           "message": "expected response to have status code 200 but got 400",
           "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:5)",
           "checksum": "f917e560452df68d4e751e89bfda0f01",
-          "id": "344ddaa5-270c-4b40-8007-c3f9ea409bb8",
-          "timestamp": 1768539801941,
+          "id": "28e2dedc-8920-4000-ab8b-55f0b39ba954",
+          "timestamp": 1768540103223,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -4890,7 +4905,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+          "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
           "name": "TC-GAME-PUT-001-Update Score (Mine)",
           "request": {
             "url": {
@@ -4932,14 +4947,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
               }
             }
           ]
@@ -4951,7 +4966,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -4992,20 +5007,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -5046,20 +5061,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -5090,7 +5105,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -5098,13 +5113,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -5147,14 +5162,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -5163,7 +5178,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -5205,20 +5220,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -5254,20 +5269,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -5309,20 +5324,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -5358,7 +5373,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -5366,7 +5381,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -5381,14 +5396,14 @@
           }
         },
         "cursor": {
-          "ref": "e42548b2-84b8-4cda-b193-5e9ac4636280",
+          "ref": "53d39d72-fda3-4d5d-b23c-efc642e63097",
           "length": 8,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "e4da7bc0-d071-4cb9-bea4-6101e01bcf40",
-          "scriptId": "8f420aa1-d14d-4686-ab49-5772de15e67d",
-          "execution": "bc141f97-a94b-4499-a455-d307c563c5c0"
+          "httpRequestId": "ad859549-3216-44dc-8e56-799af8e8f294",
+          "scriptId": "ef0574c5-42cb-42d6-a919-b4da81271734",
+          "execution": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
         }
       },
       {
@@ -5399,8 +5414,8 @@
           "message": "expected response to have status code 401 but got 400",
           "stack": "AssertionError: expected response to have status code 401 but got 400\n   at Object.eval sandbox-script.js:1:6)",
           "checksum": "3695503aa11552b7129d08f07757ad79",
-          "id": "a025397e-bfad-47d4-8334-3fab982d1d2f",
-          "timestamp": 1768539801959,
+          "id": "7bfd47cb-0041-44e5-a17a-99e063275333",
+          "timestamp": 1768540103245,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -5415,7 +5430,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+          "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
           "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
           "request": {
             "url": {
@@ -5451,14 +5466,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                   "    pm.response.to.have.status(401);\r",
                   "});\r"
                 ],
-                "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
               }
             }
           ]
@@ -5470,7 +5485,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -5511,20 +5526,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -5565,20 +5580,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -5609,7 +5624,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -5617,13 +5632,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -5666,14 +5681,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -5682,7 +5697,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -5724,20 +5739,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -5773,20 +5788,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -5828,20 +5843,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -5877,7 +5892,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -5885,7 +5900,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -5900,14 +5915,14 @@
           }
         },
         "cursor": {
-          "ref": "20215586-6ba1-4d76-984f-7ccbf883d169",
+          "ref": "b730007b-a567-4341-b016-dd4f8aafd57f",
           "length": 8,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "3383eca5-f97a-4d04-866c-027bd8a20320",
-          "scriptId": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
-          "execution": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+          "httpRequestId": "e0ef8230-a04f-4092-a41d-38b5b616fcce",
+          "scriptId": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
+          "execution": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
         }
       },
       {
@@ -5918,8 +5933,8 @@
           "message": "expected response to have status code 204 but got 400",
           "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:7)",
           "checksum": "9673a82b7661566f08df9d32645c4f42",
-          "id": "96e60024-2991-472e-b7a2-1e640aa9250a",
-          "timestamp": 1768539801978,
+          "id": "84f30a59-9af2-483f-9bb9-e8e00c73d407",
+          "timestamp": 1768540103264,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -5934,7 +5949,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+          "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
           "name": "TC-GAME-DEL-001-Delete Score (Mine)",
           "request": {
             "url": {
@@ -5976,14 +5991,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 204 No Content\", function () {",
                   "    pm.response.to.have.status(204);",
                   "});"
                 ],
-                "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
               }
             }
           ]
@@ -5995,7 +6010,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -6036,20 +6051,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -6090,20 +6105,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -6134,7 +6149,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -6142,13 +6157,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -6191,14 +6206,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -6207,7 +6222,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -6249,20 +6264,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -6298,20 +6313,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -6353,20 +6368,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -6402,7 +6417,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -6410,7 +6425,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -6425,14 +6440,14 @@
           }
         },
         "cursor": {
-          "ref": "0e727210-973c-40df-833a-892aa2301bfd",
+          "ref": "784a73a9-18e1-47f5-a0ae-f01736c1f79e",
           "length": 8,
           "cycles": 1,
           "position": 6,
           "iteration": 0,
-          "httpRequestId": "6dd7aac0-6618-46f4-a338-753ca878d47b",
-          "scriptId": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
-          "execution": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+          "httpRequestId": "7175c7a6-5041-4979-b90c-84262926f385",
+          "scriptId": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
+          "execution": "2b19283b-ebc3-47ef-a699-8b425dfac037"
         }
       },
       {
@@ -6443,8 +6458,8 @@
           "message": "expected response to have status code 401 but got 400",
           "stack": "AssertionError: expected response to have status code 401 but got 400\n   at Object.eval sandbox-script.js:1:8)",
           "checksum": "d2865f73c2b85d2dc3b2b3e6fd650617",
-          "id": "761440ba-432c-42e2-92c4-f0d516f35eb1",
-          "timestamp": 1768539801996,
+          "id": "e81348cf-64c7-46cd-9857-1c08be199c82",
+          "timestamp": 1768540103283,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -6459,7 +6474,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+          "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
           "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
           "request": {
             "url": {
@@ -6495,7 +6510,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                 "type": "text/javascript",
                 "exec": [
                   "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -6503,7 +6518,7 @@
                   "    pm.response.to.have.status(401);",
                   "});"
                 ],
-                "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
               }
             }
           ]
@@ -6515,7 +6530,7 @@
           },
           "item": [
             {
-              "id": "fbd17d6a-64f4-4aba-943b-4b76272388f3",
+              "id": "28186a88-431c-4b1f-acde-785e508bd5b1",
               "name": "TC-GAME-SAVE-001-Save Score (U001)",
               "request": {
                 "url": {
@@ -6556,20 +6571,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5701ba2e-2db5-4ff9-bd55-46e01e0b1c2e",
+                    "id": "359847db-9630-426f-9771-5a45674accc4",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "44a2a089-9539-41d1-997f-d5e356fe0ec1"
+                    "_lastExecutionId": "5ff2fea0-d6a4-4ad8-bb46-7908274eeb1f"
                   }
                 }
               ]
             },
             {
-              "id": "d4a07b9b-e39a-4be4-8d9b-d90bea91ac49",
+              "id": "416c39d5-d20f-4eab-a3c6-c44e9df7de67",
               "name": "TC-GAME-SAVE-002-Save Score (U002)",
               "request": {
                 "url": {
@@ -6610,20 +6625,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "0977ab9c-8113-4add-a40e-ac69c575776b",
+                    "id": "e4454dee-a638-4165-a2fe-1c64e513a093",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "26e3e623-8dd9-43ca-a528-cb2feba942ae"
+                    "_lastExecutionId": "e70eb6fc-696e-4f62-bb8e-700f35b384a1"
                   }
                 }
               ]
             },
             {
-              "id": "3fd47755-d0f0-4365-aa4c-0a4597822fc8",
+              "id": "a018c809-dc79-4ac4-9041-1fd5e1bf5767",
               "name": "TC-GAME-SAVE-003-Save Score (Unauthorized)",
               "request": {
                 "url": {
@@ -6654,7 +6669,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "716a3c17-5e0d-4b44-a517-708c861cd0b9",
+                    "id": "33eb1adf-7a40-4ae5-9621-676bc4007753",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
@@ -6662,13 +6677,13 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "8179d5d8-e450-498b-8db2-9adec6b25755"
+                    "_lastExecutionId": "aaff2412-6883-4613-b7ac-d63634a69250"
                   }
                 }
               ]
             },
             {
-              "id": "2ac85337-67bc-403d-ad50-91e8a9b3c24a",
+              "id": "7addeef8-cca4-4278-b079-a3f339075cf9",
               "name": "TC-GAME-GET-001-Get Scores (Mine)",
               "request": {
                 "url": {
@@ -6711,14 +6726,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "56de4831-f5cf-4498-8c10-2e50ee89a788",
+                    "id": "efecfdcc-a989-4b0b-897f-ea4878fa31e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "d0839e10-964a-4cf8-ae16-26a417c8a1ba"
+                    "_lastExecutionId": "e7adb0ba-2e51-49a6-bc43-171e60cc3ebd"
                   }
                 }
               ],
@@ -6727,7 +6742,7 @@
               }
             },
             {
-              "id": "517f06ce-a92d-4ef0-8311-2cd16f216672",
+              "id": "d4d90d6a-45e7-4e05-8e94-60ca21d88508",
               "name": "TC-GAME-PUT-001-Update Score (Mine)",
               "request": {
                 "url": {
@@ -6769,20 +6784,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "8f420aa1-d14d-4686-ab49-5772de15e67d",
+                    "id": "ef0574c5-42cb-42d6-a919-b4da81271734",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "bc141f97-a94b-4499-a455-d307c563c5c0"
+                    "_lastExecutionId": "367ee562-b7f5-4442-9a7b-5bc6727c13d1"
                   }
                 }
               ]
             },
             {
-              "id": "2d2c9acf-cb8e-423f-9e95-0e0de945d7da",
+              "id": "6fb84740-374f-4e3e-a9fe-473bb7d9b6c7",
               "name": "TC-GAME-PUT-002-Update Score (Unauthorized)",
               "request": {
                 "url": {
@@ -6818,20 +6833,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "a1fe1977-6aa5-4cc4-ae1b-1b6739ccc355",
+                    "id": "47f7acdc-4ccc-4765-a6c6-5d60f853d4b6",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 401 Unauthorized\", function () {\r",
                       "    pm.response.to.have.status(401);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "e2d9fe52-c97d-4618-b905-2f5d11cd2f50"
+                    "_lastExecutionId": "dd1c659c-5018-4e2b-bec7-6b5e1de40685"
                   }
                 }
               ]
             },
             {
-              "id": "8e33af14-8a70-4cec-a018-3719fa84ecfc",
+              "id": "5a68b1f9-b616-4fa1-97b6-41d095db4cf1",
               "name": "TC-GAME-DEL-001-Delete Score (Mine)",
               "request": {
                 "url": {
@@ -6873,20 +6888,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ed5da7b0-888e-4776-8d4e-9e4b71efd7f3",
+                    "id": "426d21d2-7d2e-4943-8e3c-5f80d965118f",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "6ebbb557-6117-4551-ad6d-5e374f9e83c4"
+                    "_lastExecutionId": "2b19283b-ebc3-47ef-a699-8b425dfac037"
                   }
                 }
               ]
             },
             {
-              "id": "79c654d1-ceb5-4daf-8fd7-3b1eb84aa0d2",
+              "id": "b2ae765e-8cf5-474a-aa59-06f8607eb105",
               "name": "TC-GAME-DEL-002-Delete Score (Unauthorized)",
               "request": {
                 "url": {
@@ -6922,7 +6937,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
+                    "id": "5883798f-b27e-4071-b2a5-59e358f26ad9",
                     "type": "text/javascript",
                     "exec": [
                       "// REQ-API-SEC-001; REQ-API-GAME-003: 401 Unauthorized",
@@ -6930,7 +6945,7 @@
                       "    pm.response.to.have.status(401);",
                       "});"
                     ],
-                    "_lastExecutionId": "87e06fca-68fa-433d-8332-addd1997987a"
+                    "_lastExecutionId": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
                   }
                 }
               ]
@@ -6945,14 +6960,14 @@
           }
         },
         "cursor": {
-          "ref": "cdd30ef6-de66-402c-b62b-3685a3ef8ee7",
+          "ref": "ada7381c-7205-471b-87cb-d013f7fb92e2",
           "length": 8,
           "cycles": 1,
           "position": 7,
           "iteration": 0,
-          "httpRequestId": "116bda5d-e7e7-4681-ac7b-71657a5e2843",
-          "scriptId": "71b7277e-1c02-4381-a6c4-14f461b2f09f",
-          "execution": "87e06fca-68fa-433d-8332-addd1997987a"
+          "httpRequestId": "55c905cd-3d56-4495-b879-9f2eaf7e423a",
+          "scriptId": "5883798f-b27e-4071-b2a5-59e358f26ad9",
+          "execution": "53fb7e3b-7eec-4ddc-9253-44d8fbfd2e09"
         }
       }
     ],

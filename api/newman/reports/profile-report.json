@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "cba9802c-a7d8-43f8-8031-b06076442196",
+        "id": "c7960388-a37b-451a-9975-edef868e74ba",
         "name": "TC-PROF-POST-001-Create Profile(U001)",
         "request": {
           "url": {
@@ -47,20 +47,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
+              "id": "47b86fd2-4d91-4aea-94f8-7cf8fa96c6fa",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 201 Created\", function () {",
                 "    pm.response.to.have.status(201);",
                 "});"
               ],
-              "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
+              "_lastExecutionId": "eb5354de-9ea7-498c-b740-929f925d3c50"
             }
           }
         ]
       },
       {
-        "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
+        "id": "a5981ac5-d5aa-4aef-90db-3e50745b7dff",
         "name": "TC-PROF-UPD-001-Update Profile (U001)",
         "request": {
           "url": {
@@ -103,20 +103,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
+              "id": "38f22075-b865-431d-a8aa-9feeb7c9e827",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 200 OK\", function () {",
                 "    pm.response.to.have.status(200);",
                 "});"
               ],
-              "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
+              "_lastExecutionId": "fdb2e856-9591-40be-abd8-0c9ed2b7f39b"
             }
           }
         ]
       },
       {
-        "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
+        "id": "0671666b-db79-407a-8fa0-1abb8064de5a",
         "name": "TC-PROF-DEL-001-Delete Account",
         "request": {
           "url": {
@@ -140,14 +140,14 @@
           {
             "listen": "test",
             "script": {
-              "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
+              "id": "0a2f578a-1aa0-41d5-be5b-124ee4bd9478",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status code is 204 No Content\", function () {",
                 "    pm.response.to.have.status(204);",
                 "});"
               ],
-              "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
+              "_lastExecutionId": "17402145-e763-4e59-a37c-41b14551f7bf"
             }
           }
         ]
@@ -269,11 +269,26 @@
         "type": "any",
         "value": "testuser",
         "key": "PASSWORD_AUTH004"
+      },
+      {
+        "type": "any",
+        "value": "TestPassword123!",
+        "key": "PASSWORD_AUTH_SIGNUP001"
+      },
+      {
+        "type": "any",
+        "value": "123",
+        "key": "PASSWORD_AUTH_SIGNUP003_SHORT"
+      },
+      {
+        "type": "any",
+        "value": "shortpw.test@pokemania.local",
+        "key": "EMAIL_TEST_SHORT"
       }
     ]
   },
   "globals": {
-    "id": "5a92b452-4170-4be2-b5ae-be60b0eaa0aa",
+    "id": "06698284-ff01-4212-996a-cc2749a1ce3a",
     "values": []
   },
   "run": {
@@ -325,10 +340,10 @@
       }
     },
     "timings": {
-      "responseAverage": 21,
-      "responseMin": 4,
-      "responseMax": 52,
-      "responseSd": 21.95449840010015,
+      "responseAverage": 22.333333333333332,
+      "responseMin": 5,
+      "responseMax": 56,
+      "responseSd": 23.809428571238094,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -337,8 +352,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768539803141,
-      "completed": 1768539803282
+      "started": 1768540104450,
+      "completed": 1768540104598
     },
     "executions": [
       {
@@ -351,11 +366,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "cabb8b30-7045-40b5-93a8-903e3fbd0207",
-          "httpRequestId": "ee19a853-d1f3-4b77-89ff-73eb27d67d82"
+          "ref": "28a121ff-4e05-4bfa-8254-ab6dedeb7165",
+          "httpRequestId": "65b3cc97-8dcb-4a0c-a3ba-81917f762280"
         },
         "item": {
-          "id": "cba9802c-a7d8-43f8-8031-b06076442196",
+          "id": "c7960388-a37b-451a-9975-edef868e74ba",
           "name": "TC-PROF-POST-001-Create Profile(U001)",
           "request": {
             "url": {
@@ -396,14 +411,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
+                "id": "47b86fd2-4d91-4aea-94f8-7cf8fa96c6fa",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
+                "_lastExecutionId": "eb5354de-9ea7-498c-b740-929f925d3c50"
               }
             }
           ]
@@ -445,7 +460,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "45f2b9ca-8ca2-414c-82a0-9d169b301a6e",
+              "value": "0c73ad91-6c61-4b73-9e9e-6db6b5247708",
               "system": true
             },
             {
@@ -491,7 +506,7 @@
           }
         },
         "response": {
-          "id": "80fa6d22-51c0-4dfc-b47a-9d381cd10de8",
+          "id": "ab50f286-7b00-463d-9722-c40332138591",
           "status": "Bad Request",
           "code": 400,
           "header": [
@@ -565,7 +580,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:23 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:24 GMT"
             },
             {
               "key": "Connection",
@@ -584,10 +599,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 52,
+          "responseTime": 56,
           "responseSize": 2
         },
-        "id": "cba9802c-a7d8-43f8-8031-b06076442196",
+        "id": "c7960388-a37b-451a-9975-edef868e74ba",
         "assertions": [
           {
             "assertion": "Status code is 201 Created",
@@ -604,15 +619,15 @@
       },
       {
         "cursor": {
-          "ref": "7f36059f-1322-4764-ad48-bfa77f942785",
+          "ref": "b8562206-7f41-4260-bd73-57a7762ae203",
           "length": 3,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "dcd4b8e9-0dce-4475-9927-fc029d3f8b78"
+          "httpRequestId": "8bf6844b-0f0c-4f4c-a232-3ddf20c84f41"
         },
         "item": {
-          "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
+          "id": "a5981ac5-d5aa-4aef-90db-3e50745b7dff",
           "name": "TC-PROF-UPD-001-Update Profile (U001)",
           "request": {
             "url": {
@@ -655,14 +670,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
+                "id": "38f22075-b865-431d-a8aa-9feeb7c9e827",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
+                "_lastExecutionId": "fdb2e856-9591-40be-abd8-0c9ed2b7f39b"
               }
             }
           ]
@@ -706,7 +721,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "cccedc0d-7541-40b1-8f7a-2454ee6fda7d",
+              "value": "750b48dd-56c8-49eb-882d-33a4efa87515",
               "system": true
             },
             {
@@ -752,7 +767,7 @@
           }
         },
         "response": {
-          "id": "569fcea1-e0af-4535-be8f-df0ca3daa1c3",
+          "id": "73cae639-ea99-4689-ac32-91eed57294a5",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -822,7 +837,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:23 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:24 GMT"
             },
             {
               "key": "Connection",
@@ -996,10 +1011,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 7,
+          "responseTime": 6,
           "responseSize": 157
         },
-        "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
+        "id": "a5981ac5-d5aa-4aef-90db-3e50745b7dff",
         "assertions": [
           {
             "assertion": "Status code is 200 OK",
@@ -1016,15 +1031,15 @@
       },
       {
         "cursor": {
-          "ref": "43ac8dbc-93f0-472f-a77d-a220b7392b57",
+          "ref": "642fba2e-c0cd-4a9c-bfe6-eb26780b42ed",
           "length": 3,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "68321806-1c6f-4ed1-8472-73b8abe0d34f"
+          "httpRequestId": "42e61eb3-6933-4b31-9982-a670244afdcc"
         },
         "item": {
-          "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
+          "id": "0671666b-db79-407a-8fa0-1abb8064de5a",
           "name": "TC-PROF-DEL-001-Delete Account",
           "request": {
             "url": {
@@ -1048,14 +1063,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
+                "id": "0a2f578a-1aa0-41d5-be5b-124ee4bd9478",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 204 No Content\", function () {",
                   "    pm.response.to.have.status(204);",
                   "});"
                 ],
-                "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
+                "_lastExecutionId": "17402145-e763-4e59-a37c-41b14551f7bf"
               }
             }
           ]
@@ -1094,7 +1109,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "d7cdbf33-a203-490e-b442-798e49183277",
+              "value": "924cca2b-e9fc-4739-97cd-257492139681",
               "system": true
             },
             {
@@ -1116,7 +1131,7 @@
           "method": "DELETE"
         },
         "response": {
-          "id": "acf64218-919e-48cb-b4c2-6f3203d47df8",
+          "id": "c7d89def-20cd-4ab4-85f0-9c3ce2362712",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -1186,7 +1201,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:23 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:24 GMT"
             },
             {
               "key": "Connection",
@@ -1363,10 +1378,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 5,
           "responseSize": 160
         },
-        "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
+        "id": "0671666b-db79-407a-8fa0-1abb8064de5a",
         "assertions": [
           {
             "assertion": "Status code is 204 No Content",
@@ -1394,8 +1409,8 @@
           "message": "expected response to have status code 201 but got 400",
           "stack": "AssertionError: expected response to have status code 201 but got 400\n   at Object.eval sandbox-script.js:1:1)",
           "checksum": "9b9e638975d2be642466fe45eb02a208",
-          "id": "947df826-7f89-47ff-a1ed-337e72b1c394",
-          "timestamp": 1768539803228,
+          "id": "2c8802d9-1baa-462b-a59a-69a963fabd0b",
+          "timestamp": 1768540104544,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1410,7 +1425,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "cba9802c-a7d8-43f8-8031-b06076442196",
+          "id": "c7960388-a37b-451a-9975-edef868e74ba",
           "name": "TC-PROF-POST-001-Create Profile(U001)",
           "request": {
             "url": {
@@ -1451,14 +1466,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
+                "id": "47b86fd2-4d91-4aea-94f8-7cf8fa96c6fa",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 201 Created\", function () {",
                   "    pm.response.to.have.status(201);",
                   "});"
                 ],
-                "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
+                "_lastExecutionId": "eb5354de-9ea7-498c-b740-929f925d3c50"
               }
             }
           ]
@@ -1470,7 +1485,7 @@
           },
           "item": [
             {
-              "id": "cba9802c-a7d8-43f8-8031-b06076442196",
+              "id": "c7960388-a37b-451a-9975-edef868e74ba",
               "name": "TC-PROF-POST-001-Create Profile(U001)",
               "request": {
                 "url": {
@@ -1511,20 +1526,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
+                    "id": "47b86fd2-4d91-4aea-94f8-7cf8fa96c6fa",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
+                    "_lastExecutionId": "eb5354de-9ea7-498c-b740-929f925d3c50"
                   }
                 }
               ]
             },
             {
-              "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
+              "id": "a5981ac5-d5aa-4aef-90db-3e50745b7dff",
               "name": "TC-PROF-UPD-001-Update Profile (U001)",
               "request": {
                 "url": {
@@ -1567,20 +1582,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
+                    "id": "38f22075-b865-431d-a8aa-9feeb7c9e827",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
+                    "_lastExecutionId": "fdb2e856-9591-40be-abd8-0c9ed2b7f39b"
                   }
                 }
               ]
             },
             {
-              "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
+              "id": "0671666b-db79-407a-8fa0-1abb8064de5a",
               "name": "TC-PROF-DEL-001-Delete Account",
               "request": {
                 "url": {
@@ -1604,14 +1619,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
+                    "id": "0a2f578a-1aa0-41d5-be5b-124ee4bd9478",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
+                    "_lastExecutionId": "17402145-e763-4e59-a37c-41b14551f7bf"
                   }
                 }
               ]
@@ -1634,10 +1649,10 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "cabb8b30-7045-40b5-93a8-903e3fbd0207",
-          "httpRequestId": "ee19a853-d1f3-4b77-89ff-73eb27d67d82",
-          "scriptId": "71d76d09-e7f3-47b0-94d6-4080150533f6",
-          "execution": "f33a0cb0-251b-4763-807f-92e9457187c2"
+          "ref": "28a121ff-4e05-4bfa-8254-ab6dedeb7165",
+          "httpRequestId": "65b3cc97-8dcb-4a0c-a3ba-81917f762280",
+          "scriptId": "47b86fd2-4d91-4aea-94f8-7cf8fa96c6fa",
+          "execution": "eb5354de-9ea7-498c-b740-929f925d3c50"
         }
       },
       {
@@ -1648,8 +1663,8 @@
           "message": "expected response to have status code 200 but got 404",
           "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:2)",
           "checksum": "e4a71791d200de7065fbd76aa6379122",
-          "id": "999e1214-b78b-4a2e-84f8-8783c12591b6",
-          "timestamp": 1768539803258,
+          "id": "5a12ff61-67dd-4aa7-a06f-b25da854dd27",
+          "timestamp": 1768540104572,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1664,7 +1679,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
+          "id": "a5981ac5-d5aa-4aef-90db-3e50745b7dff",
           "name": "TC-PROF-UPD-001-Update Profile (U001)",
           "request": {
             "url": {
@@ -1707,14 +1722,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
+                "id": "38f22075-b865-431d-a8aa-9feeb7c9e827",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 200 OK\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});"
                 ],
-                "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
+                "_lastExecutionId": "fdb2e856-9591-40be-abd8-0c9ed2b7f39b"
               }
             }
           ]
@@ -1726,7 +1741,7 @@
           },
           "item": [
             {
-              "id": "cba9802c-a7d8-43f8-8031-b06076442196",
+              "id": "c7960388-a37b-451a-9975-edef868e74ba",
               "name": "TC-PROF-POST-001-Create Profile(U001)",
               "request": {
                 "url": {
@@ -1767,20 +1782,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
+                    "id": "47b86fd2-4d91-4aea-94f8-7cf8fa96c6fa",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
+                    "_lastExecutionId": "eb5354de-9ea7-498c-b740-929f925d3c50"
                   }
                 }
               ]
             },
             {
-              "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
+              "id": "a5981ac5-d5aa-4aef-90db-3e50745b7dff",
               "name": "TC-PROF-UPD-001-Update Profile (U001)",
               "request": {
                 "url": {
@@ -1823,20 +1838,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
+                    "id": "38f22075-b865-431d-a8aa-9feeb7c9e827",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
+                    "_lastExecutionId": "fdb2e856-9591-40be-abd8-0c9ed2b7f39b"
                   }
                 }
               ]
             },
             {
-              "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
+              "id": "0671666b-db79-407a-8fa0-1abb8064de5a",
               "name": "TC-PROF-DEL-001-Delete Account",
               "request": {
                 "url": {
@@ -1860,14 +1875,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
+                    "id": "0a2f578a-1aa0-41d5-be5b-124ee4bd9478",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
+                    "_lastExecutionId": "17402145-e763-4e59-a37c-41b14551f7bf"
                   }
                 }
               ]
@@ -1882,14 +1897,14 @@
           }
         },
         "cursor": {
-          "ref": "7f36059f-1322-4764-ad48-bfa77f942785",
+          "ref": "b8562206-7f41-4260-bd73-57a7762ae203",
           "length": 3,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "dcd4b8e9-0dce-4475-9927-fc029d3f8b78",
-          "scriptId": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
-          "execution": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
+          "httpRequestId": "8bf6844b-0f0c-4f4c-a232-3ddf20c84f41",
+          "scriptId": "38f22075-b865-431d-a8aa-9feeb7c9e827",
+          "execution": "fdb2e856-9591-40be-abd8-0c9ed2b7f39b"
         }
       },
       {
@@ -1900,8 +1915,8 @@
           "message": "expected response to have status code 204 but got 404",
           "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:1:3)",
           "checksum": "c4b471d3984b57cc04481a61d83d29c0",
-          "id": "79631173-5173-4a72-bb1a-9b329ea970e6",
-          "timestamp": 1768539803278,
+          "id": "be6cf3b9-de04-47c6-b4f4-732646465d1f",
+          "timestamp": 1768540104593,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -1916,7 +1931,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
+          "id": "0671666b-db79-407a-8fa0-1abb8064de5a",
           "name": "TC-PROF-DEL-001-Delete Account",
           "request": {
             "url": {
@@ -1940,14 +1955,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
+                "id": "0a2f578a-1aa0-41d5-be5b-124ee4bd9478",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status code is 204 No Content\", function () {",
                   "    pm.response.to.have.status(204);",
                   "});"
                 ],
-                "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
+                "_lastExecutionId": "17402145-e763-4e59-a37c-41b14551f7bf"
               }
             }
           ]
@@ -1959,7 +1974,7 @@
           },
           "item": [
             {
-              "id": "cba9802c-a7d8-43f8-8031-b06076442196",
+              "id": "c7960388-a37b-451a-9975-edef868e74ba",
               "name": "TC-PROF-POST-001-Create Profile(U001)",
               "request": {
                 "url": {
@@ -2000,20 +2015,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "71d76d09-e7f3-47b0-94d6-4080150533f6",
+                    "id": "47b86fd2-4d91-4aea-94f8-7cf8fa96c6fa",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 201 Created\", function () {",
                       "    pm.response.to.have.status(201);",
                       "});"
                     ],
-                    "_lastExecutionId": "f33a0cb0-251b-4763-807f-92e9457187c2"
+                    "_lastExecutionId": "eb5354de-9ea7-498c-b740-929f925d3c50"
                   }
                 }
               ]
             },
             {
-              "id": "4878e6c8-9469-4ffc-8e61-33d47064bafa",
+              "id": "a5981ac5-d5aa-4aef-90db-3e50745b7dff",
               "name": "TC-PROF-UPD-001-Update Profile (U001)",
               "request": {
                 "url": {
@@ -2056,20 +2071,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1f5c479a-d01c-4d5e-8634-bf1eeaa64dbc",
+                    "id": "38f22075-b865-431d-a8aa-9feeb7c9e827",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 200 OK\", function () {",
                       "    pm.response.to.have.status(200);",
                       "});"
                     ],
-                    "_lastExecutionId": "18ddc8e2-2ee4-41f8-bc8e-492de75a1618"
+                    "_lastExecutionId": "fdb2e856-9591-40be-abd8-0c9ed2b7f39b"
                   }
                 }
               ]
             },
             {
-              "id": "b36a8510-887c-438d-ab5b-8e80a85d6a1e",
+              "id": "0671666b-db79-407a-8fa0-1abb8064de5a",
               "name": "TC-PROF-DEL-001-Delete Account",
               "request": {
                 "url": {
@@ -2093,14 +2108,14 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
+                    "id": "0a2f578a-1aa0-41d5-be5b-124ee4bd9478",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status code is 204 No Content\", function () {",
                       "    pm.response.to.have.status(204);",
                       "});"
                     ],
-                    "_lastExecutionId": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
+                    "_lastExecutionId": "17402145-e763-4e59-a37c-41b14551f7bf"
                   }
                 }
               ]
@@ -2115,14 +2130,14 @@
           }
         },
         "cursor": {
-          "ref": "43ac8dbc-93f0-472f-a77d-a220b7392b57",
+          "ref": "642fba2e-c0cd-4a9c-bfe6-eb26780b42ed",
           "length": 3,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "68321806-1c6f-4ed1-8472-73b8abe0d34f",
-          "scriptId": "7214603a-46d3-4d24-9aa9-cd95497dafc8",
-          "execution": "3255b07c-1756-4c94-ac9c-2f9b012909b1"
+          "httpRequestId": "42e61eb3-6933-4b31-9982-a670244afdcc",
+          "scriptId": "0a2f578a-1aa0-41d5-be5b-124ee4bd9478",
+          "execution": "17402145-e763-4e59-a37c-41b14551f7bf"
         }
       }
     ],

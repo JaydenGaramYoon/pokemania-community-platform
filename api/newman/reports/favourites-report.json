@@ -6,7 +6,7 @@
     },
     "item": [
       {
-        "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+        "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
         "name": "TC-FAV-ADD-001(U001)",
         "request": {
           "url": {
@@ -47,20 +47,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+              "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 201 Created\", () => {\r",
                 "    pm.response.to.have.status(201);\r",
                 "});"
               ],
-              "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+              "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
             }
           }
         ]
       },
       {
-        "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+        "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
         "name": "TC-FAV-ADD-002(U002)",
         "request": {
           "url": {
@@ -101,20 +101,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+              "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 201 Created\", () => {\r",
                 "    pm.response.to.have.status(201);\r",
                 "});"
               ],
-              "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+              "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
             }
           }
         ]
       },
       {
-        "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+        "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
         "name": "TC-FAV-ADD-003(Duplicate)",
         "request": {
           "url": {
@@ -155,20 +155,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+              "id": "70da30a7-8d14-499c-b49a-336586abd054",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 409 Conflict\", () => {\r",
                 "    pm.response.to.have.status(409);\r",
                 "});\r"
               ],
-              "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+              "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
             }
           }
         ]
       },
       {
-        "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+        "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
         "name": "TC-FAV-EDIT-001(Owner)",
         "request": {
           "url": {
@@ -211,20 +211,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+              "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 200 OK\", () => {\r",
                 "    pm.response.to.have.status(200);\r",
                 "});"
               ],
-              "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+              "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
             }
           }
         ]
       },
       {
-        "id": "854fe610-4995-4d45-892a-4813dde9973d",
+        "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
         "name": "TC-FAV-DEL-001(Owner)",
         "request": {
           "url": {
@@ -267,20 +267,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+              "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 204 No Content\", () => {\r",
                 "    pm.response.to.have.status(204);\r",
                 "});"
               ],
-              "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+              "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
             }
           }
         ]
       },
       {
-        "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+        "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
         "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
         "request": {
           "url": {
@@ -315,7 +315,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
+              "id": "f542aa6e-5830-4de3-9d31-ccdf5edaa220",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -323,7 +323,7 @@
                 "});\r",
                 "\r"
               ],
-              "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
+              "_lastExecutionId": "723763af-b387-4762-be5f-3a1343026c5a"
             }
           }
         ]
@@ -445,11 +445,26 @@
         "type": "any",
         "value": "testuser",
         "key": "PASSWORD_AUTH004"
+      },
+      {
+        "type": "any",
+        "value": "TestPassword123!",
+        "key": "PASSWORD_AUTH_SIGNUP001"
+      },
+      {
+        "type": "any",
+        "value": "123",
+        "key": "PASSWORD_AUTH_SIGNUP003_SHORT"
+      },
+      {
+        "type": "any",
+        "value": "shortpw.test@pokemania.local",
+        "key": "EMAIL_TEST_SHORT"
       }
     ]
   },
   "globals": {
-    "id": "6935313d-4fd0-4624-8f65-4862be098e65",
+    "id": "6b23d83f-4807-4a10-a1c8-6ee64b839583",
     "values": []
   },
   "run": {
@@ -501,10 +516,10 @@
       }
     },
     "timings": {
-      "responseAverage": 12.166666666666666,
+      "responseAverage": 11.5,
       "responseMin": 4,
-      "responseMax": 51,
-      "responseSd": 17.38214281637591,
+      "responseMax": 45,
+      "responseSd": 15.019431857874427,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -513,8 +528,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1768539800250,
-      "completed": 1768539800442
+      "started": 1768540101492,
+      "completed": 1768540101694
     },
     "executions": [
       {
@@ -527,11 +542,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "d6a50f92-ee1b-4d4b-a0f0-68e5a2e2abcf",
-          "httpRequestId": "5aeebda8-ffa1-473b-9fc8-8b58000c1e2d"
+          "ref": "8fcd209e-b6cd-4216-89fc-3a4347c7bfd3",
+          "httpRequestId": "6afc81ea-bbf4-4035-87c8-43486bb450ab"
         },
         "item": {
-          "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+          "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
           "name": "TC-FAV-ADD-001(U001)",
           "request": {
             "url": {
@@ -572,14 +587,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+                "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+                "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
               }
             }
           ]
@@ -621,7 +636,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "3c77b9d1-0021-490b-b186-d55da2446af9",
+              "value": "b8bf492f-f31f-4a75-83cb-7c67e852a6b5",
               "system": true
             },
             {
@@ -667,7 +682,7 @@
           }
         },
         "response": {
-          "id": "d20a25c7-739d-4c78-974e-a03d5710ec7b",
+          "id": "0c164458-3123-452d-b100-610959d2dfcb",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -741,7 +756,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:21 GMT"
             },
             {
               "key": "Connection",
@@ -760,10 +775,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 51,
+          "responseTime": 45,
           "responseSize": 2
         },
-        "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+        "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
         "assertions": [
           {
             "assertion": "Status is 201 Created",
@@ -780,15 +795,15 @@
       },
       {
         "cursor": {
-          "ref": "a14b2da0-510d-4b89-a245-9fbb13f52f93",
+          "ref": "edeccfbe-60ee-44ed-a341-40100defdacd",
           "length": 6,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "b397f6e7-06ce-46d1-ab3f-c02794a08f68"
+          "httpRequestId": "a96ff54a-195a-488b-99ea-02a4a946fb77"
         },
         "item": {
-          "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+          "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
           "name": "TC-FAV-ADD-002(U002)",
           "request": {
             "url": {
@@ -829,14 +844,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+                "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+                "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
               }
             }
           ]
@@ -878,7 +893,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "ffebe70d-2dfd-49ff-b36a-8eec1d7ef111",
+              "value": "0bc14274-219f-4811-9c12-f811793db7d3",
               "system": true
             },
             {
@@ -924,7 +939,7 @@
           }
         },
         "response": {
-          "id": "79642cce-30f3-4aa1-a6ed-76416b98eb0b",
+          "id": "cad29763-a9c8-44ce-86b6-f58580e94d14",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -998,7 +1013,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:21 GMT"
             },
             {
               "key": "Connection",
@@ -1017,10 +1032,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 6,
+          "responseTime": 7,
           "responseSize": 2
         },
-        "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+        "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
         "assertions": [
           {
             "assertion": "Status is 201 Created",
@@ -1037,15 +1052,15 @@
       },
       {
         "cursor": {
-          "ref": "ce8107ac-95b1-459f-b7f1-3f9204e308cf",
+          "ref": "c371d77d-400e-47a9-8e0c-3571fb5374d6",
           "length": 6,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "2ad250b9-2b97-4a6f-a717-c11a80dc3a84"
+          "httpRequestId": "e56079a3-1bf4-4e2d-93ee-da7d3bf6e5df"
         },
         "item": {
-          "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+          "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
           "name": "TC-FAV-ADD-003(Duplicate)",
           "request": {
             "url": {
@@ -1086,14 +1101,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+                "id": "70da30a7-8d14-499c-b49a-336586abd054",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 409 Conflict\", () => {\r",
                   "    pm.response.to.have.status(409);\r",
                   "});\r"
                 ],
-                "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+                "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
               }
             }
           ]
@@ -1135,7 +1150,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "05f8ffac-b2c4-4934-b785-cf0dbef08a4f",
+              "value": "024fc288-fa69-4470-b5b5-5367f226b435",
               "system": true
             },
             {
@@ -1181,7 +1196,7 @@
           }
         },
         "response": {
-          "id": "19ab6a7a-a693-4abd-b95b-f344df2e2022",
+          "id": "7f511945-261b-4b61-9ba8-d49c27d55015",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -1255,7 +1270,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:21 GMT"
             },
             {
               "key": "Connection",
@@ -1277,7 +1292,7 @@
           "responseTime": 4,
           "responseSize": 2
         },
-        "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+        "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
         "assertions": [
           {
             "assertion": "Status is 409 Conflict",
@@ -1294,15 +1309,15 @@
       },
       {
         "cursor": {
-          "ref": "b057ef51-287a-40d3-a432-0945d062c402",
+          "ref": "e935ede7-6d09-4474-9b51-b83d73c0893d",
           "length": 6,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "34028958-16b6-4307-8cb9-ffcb9721b771"
+          "httpRequestId": "16b30ca3-c28e-4c9a-a197-20d8053c4310"
         },
         "item": {
-          "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+          "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
           "name": "TC-FAV-EDIT-001(Owner)",
           "request": {
             "url": {
@@ -1345,14 +1360,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+                "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+                "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
               }
             }
           ]
@@ -1396,7 +1411,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "cc6252c1-af2f-4d6b-818e-0e6fef0d2984",
+              "value": "d5773bef-3fc0-4a21-9346-1608b23d2b32",
               "system": true
             },
             {
@@ -1442,7 +1457,7 @@
           }
         },
         "response": {
-          "id": "e8680e04-bdbe-40a0-a9b6-4f91c4a60c2f",
+          "id": "fdf63bd3-f542-4d91-ab48-25d1019b0754",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -1512,7 +1527,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:21 GMT"
             },
             {
               "key": "Connection",
@@ -1686,10 +1701,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 4,
+          "responseTime": 5,
           "responseSize": 157
         },
-        "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+        "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
         "assertions": [
           {
             "assertion": "Status is 200 OK",
@@ -1706,15 +1721,15 @@
       },
       {
         "cursor": {
-          "ref": "6beb9f9b-ec85-4b55-83fa-2f1186007329",
+          "ref": "0067ebf0-1b86-4e3a-b4b3-f61dba47af51",
           "length": 6,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "fd7638f7-baf9-4289-a310-0d14a60dc6f4"
+          "httpRequestId": "34e9fa62-62f2-4c67-a5c5-41600d1481b8"
         },
         "item": {
-          "id": "854fe610-4995-4d45-892a-4813dde9973d",
+          "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
           "name": "TC-FAV-DEL-001(Owner)",
           "request": {
             "url": {
@@ -1757,14 +1772,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+                "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 204 No Content\", () => {\r",
                   "    pm.response.to.have.status(204);\r",
                   "});"
                 ],
-                "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+                "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
               }
             }
           ]
@@ -1803,7 +1818,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "5923768f-416c-4d21-939b-8ccc18139507",
+              "value": "84542a66-e87a-4e64-82fd-4f7196de1ea7",
               "system": true
             },
             {
@@ -1844,7 +1859,7 @@
           }
         },
         "response": {
-          "id": "966508d1-bffa-4fc6-9f24-c905f3ea8985",
+          "id": "93cec275-492f-4d30-b2e5-f851e019c8d6",
           "status": "Not Found",
           "code": 404,
           "header": [
@@ -1914,7 +1929,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:21 GMT"
             },
             {
               "key": "Connection",
@@ -2115,7 +2130,7 @@
           "responseTime": 4,
           "responseSize": 181
         },
-        "id": "854fe610-4995-4d45-892a-4813dde9973d",
+        "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
         "assertions": [
           {
             "assertion": "Status is 204 No Content",
@@ -2132,15 +2147,15 @@
       },
       {
         "cursor": {
-          "ref": "9aec9e99-3abb-4b2e-bd04-4233eb55d524",
+          "ref": "18c03b90-7019-4017-b34d-314e1f5e3b84",
           "length": 6,
           "cycles": 1,
           "position": 5,
           "iteration": 0,
-          "httpRequestId": "ad1874d3-607a-4d83-9dd7-0dfe3ca677f6"
+          "httpRequestId": "1b37b3b0-dc01-4354-9514-ece95e972c0a"
         },
         "item": {
-          "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+          "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
           "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
           "request": {
             "url": {
@@ -2175,7 +2190,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
+                "id": "f542aa6e-5830-4de3-9d31-ccdf5edaa220",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -2183,7 +2198,7 @@
                   "});\r",
                   "\r"
                 ],
-                "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
+                "_lastExecutionId": "723763af-b387-4762-be5f-3a1343026c5a"
               }
             }
           ]
@@ -2225,7 +2240,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "a9fd1460-383b-48ee-9d2a-f0320a471906",
+              "value": "5bbee74b-b5d6-4eab-a3c1-7c31c77e80c5",
               "system": true
             },
             {
@@ -2265,7 +2280,7 @@
           }
         },
         "response": {
-          "id": "03301a5b-57e7-4ba7-be71-467ce05868ff",
+          "id": "a76038a3-3cbf-4ec1-94d3-6569783e5844",
           "status": "Unauthorized",
           "code": 401,
           "header": [
@@ -2339,7 +2354,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 16 Jan 2026 05:03:20 GMT"
+              "value": "Fri, 16 Jan 2026 05:08:21 GMT"
             },
             {
               "key": "Connection",
@@ -2361,7 +2376,7 @@
           "responseTime": 4,
           "responseSize": 2
         },
-        "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+        "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
         "assertions": [
           {
             "assertion": "Status is 401 Unauthorized",
@@ -2382,8 +2397,8 @@
           "message": "expected response to have status code 201 but got 401",
           "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:1)",
           "checksum": "ae18d2fe95145603cfa536016d4a689b",
-          "id": "0f59e5ac-41d1-4de9-b5e4-2c5be8b32bc9",
-          "timestamp": 1768539800335,
+          "id": "7e736b4e-d95c-4c44-8ee7-0f67d1beea4b",
+          "timestamp": 1768540101574,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2398,7 +2413,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+          "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
           "name": "TC-FAV-ADD-001(U001)",
           "request": {
             "url": {
@@ -2439,14 +2454,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+                "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+                "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
               }
             }
           ]
@@ -2458,7 +2473,7 @@
           },
           "item": [
             {
-              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+              "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -2499,20 +2514,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+                    "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+                    "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
                   }
                 }
               ]
             },
             {
-              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+              "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -2553,20 +2568,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+                    "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+                    "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
                   }
                 }
               ]
             },
             {
-              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+              "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -2607,20 +2622,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+                    "id": "70da30a7-8d14-499c-b49a-336586abd054",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+                    "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
                   }
                 }
               ]
             },
             {
-              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+              "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -2663,20 +2678,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+                    "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+                    "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
                   }
                 }
               ]
             },
             {
-              "id": "854fe610-4995-4d45-892a-4813dde9973d",
+              "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -2719,20 +2734,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+                    "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+                    "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
                   }
                 }
               ]
             },
             {
-              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+              "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -2767,7 +2782,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
+                    "id": "f542aa6e-5830-4de3-9d31-ccdf5edaa220",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -2775,7 +2790,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
+                    "_lastExecutionId": "723763af-b387-4762-be5f-3a1343026c5a"
                   }
                 }
               ]
@@ -2798,10 +2813,10 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "d6a50f92-ee1b-4d4b-a0f0-68e5a2e2abcf",
-          "httpRequestId": "5aeebda8-ffa1-473b-9fc8-8b58000c1e2d",
-          "scriptId": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
-          "execution": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+          "ref": "8fcd209e-b6cd-4216-89fc-3a4347c7bfd3",
+          "httpRequestId": "6afc81ea-bbf4-4035-87c8-43486bb450ab",
+          "scriptId": "b5c03414-3af9-4751-9d38-74ecb038cd60",
+          "execution": "ed471824-50af-42b2-92cb-23823e1cd419"
         }
       },
       {
@@ -2812,8 +2827,8 @@
           "message": "expected response to have status code 201 but got 401",
           "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:2)",
           "checksum": "d58a597e2b61bd932df9242f4f60337a",
-          "id": "1832c191-4d1e-4133-84b3-b3f936503569",
-          "timestamp": 1768539800361,
+          "id": "d040132e-9705-488a-bb70-6edaea764a9b",
+          "timestamp": 1768540101604,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -2828,7 +2843,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+          "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
           "name": "TC-FAV-ADD-002(U002)",
           "request": {
             "url": {
@@ -2869,14 +2884,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+                "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 201 Created\", () => {\r",
                   "    pm.response.to.have.status(201);\r",
                   "});"
                 ],
-                "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+                "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
               }
             }
           ]
@@ -2888,7 +2903,7 @@
           },
           "item": [
             {
-              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+              "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -2929,20 +2944,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+                    "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+                    "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
                   }
                 }
               ]
             },
             {
-              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+              "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -2983,20 +2998,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+                    "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+                    "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
                   }
                 }
               ]
             },
             {
-              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+              "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -3037,20 +3052,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+                    "id": "70da30a7-8d14-499c-b49a-336586abd054",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+                    "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
                   }
                 }
               ]
             },
             {
-              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+              "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -3093,20 +3108,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+                    "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+                    "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
                   }
                 }
               ]
             },
             {
-              "id": "854fe610-4995-4d45-892a-4813dde9973d",
+              "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -3149,20 +3164,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+                    "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+                    "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
                   }
                 }
               ]
             },
             {
-              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+              "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -3197,7 +3212,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
+                    "id": "f542aa6e-5830-4de3-9d31-ccdf5edaa220",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -3205,7 +3220,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
+                    "_lastExecutionId": "723763af-b387-4762-be5f-3a1343026c5a"
                   }
                 }
               ]
@@ -3220,14 +3235,14 @@
           }
         },
         "cursor": {
-          "ref": "a14b2da0-510d-4b89-a245-9fbb13f52f93",
+          "ref": "edeccfbe-60ee-44ed-a341-40100defdacd",
           "length": 6,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "b397f6e7-06ce-46d1-ab3f-c02794a08f68",
-          "scriptId": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
-          "execution": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+          "httpRequestId": "a96ff54a-195a-488b-99ea-02a4a946fb77",
+          "scriptId": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
+          "execution": "c740a7c9-6030-43a2-811a-40e1b6195815"
         }
       },
       {
@@ -3238,8 +3253,8 @@
           "message": "expected response to have status code 409 but got 401",
           "stack": "AssertionError: expected response to have status code 409 but got 401\n   at Object.eval sandbox-script.js:1:3)",
           "checksum": "8421f85b3d1223e27c96cedde1393d12",
-          "id": "0aefdf2e-cc8d-4efe-b844-0f1fb0f9196f",
-          "timestamp": 1768539800381,
+          "id": "e20e570b-5775-4b6e-8042-8ae9a23535d6",
+          "timestamp": 1768540101626,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3254,7 +3269,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+          "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
           "name": "TC-FAV-ADD-003(Duplicate)",
           "request": {
             "url": {
@@ -3295,14 +3310,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+                "id": "70da30a7-8d14-499c-b49a-336586abd054",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 409 Conflict\", () => {\r",
                   "    pm.response.to.have.status(409);\r",
                   "});\r"
                 ],
-                "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+                "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
               }
             }
           ]
@@ -3314,7 +3329,7 @@
           },
           "item": [
             {
-              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+              "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -3355,20 +3370,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+                    "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+                    "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
                   }
                 }
               ]
             },
             {
-              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+              "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -3409,20 +3424,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+                    "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+                    "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
                   }
                 }
               ]
             },
             {
-              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+              "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -3463,20 +3478,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+                    "id": "70da30a7-8d14-499c-b49a-336586abd054",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+                    "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
                   }
                 }
               ]
             },
             {
-              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+              "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -3519,20 +3534,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+                    "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+                    "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
                   }
                 }
               ]
             },
             {
-              "id": "854fe610-4995-4d45-892a-4813dde9973d",
+              "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -3575,20 +3590,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+                    "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+                    "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
                   }
                 }
               ]
             },
             {
-              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+              "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -3623,7 +3638,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
+                    "id": "f542aa6e-5830-4de3-9d31-ccdf5edaa220",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -3631,7 +3646,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
+                    "_lastExecutionId": "723763af-b387-4762-be5f-3a1343026c5a"
                   }
                 }
               ]
@@ -3646,14 +3661,14 @@
           }
         },
         "cursor": {
-          "ref": "ce8107ac-95b1-459f-b7f1-3f9204e308cf",
+          "ref": "c371d77d-400e-47a9-8e0c-3571fb5374d6",
           "length": 6,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "2ad250b9-2b97-4a6f-a717-c11a80dc3a84",
-          "scriptId": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
-          "execution": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+          "httpRequestId": "e56079a3-1bf4-4e2d-93ee-da7d3bf6e5df",
+          "scriptId": "70da30a7-8d14-499c-b49a-336586abd054",
+          "execution": "393c7ce6-2fe7-4721-880c-90feeac062e7"
         }
       },
       {
@@ -3664,8 +3679,8 @@
           "message": "expected response to have status code 200 but got 404",
           "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:4)",
           "checksum": "932ae1abaedbbd8c4953f36e124e1896",
-          "id": "35c08d71-f0b4-4c9f-a616-50e56fbc0113",
-          "timestamp": 1768539800401,
+          "id": "0e2495c4-33d8-4dd0-968d-b74e261e40d8",
+          "timestamp": 1768540101651,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -3680,7 +3695,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+          "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
           "name": "TC-FAV-EDIT-001(Owner)",
           "request": {
             "url": {
@@ -3723,14 +3738,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+                "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 200 OK\", () => {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});"
                 ],
-                "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+                "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
               }
             }
           ]
@@ -3742,7 +3757,7 @@
           },
           "item": [
             {
-              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+              "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -3783,20 +3798,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+                    "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+                    "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
                   }
                 }
               ]
             },
             {
-              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+              "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -3837,20 +3852,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+                    "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+                    "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
                   }
                 }
               ]
             },
             {
-              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+              "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -3891,20 +3906,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+                    "id": "70da30a7-8d14-499c-b49a-336586abd054",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+                    "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
                   }
                 }
               ]
             },
             {
-              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+              "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -3947,20 +3962,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+                    "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+                    "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
                   }
                 }
               ]
             },
             {
-              "id": "854fe610-4995-4d45-892a-4813dde9973d",
+              "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -4003,20 +4018,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+                    "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+                    "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
                   }
                 }
               ]
             },
             {
-              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+              "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -4051,7 +4066,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
+                    "id": "f542aa6e-5830-4de3-9d31-ccdf5edaa220",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -4059,7 +4074,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
+                    "_lastExecutionId": "723763af-b387-4762-be5f-3a1343026c5a"
                   }
                 }
               ]
@@ -4074,14 +4089,14 @@
           }
         },
         "cursor": {
-          "ref": "b057ef51-287a-40d3-a432-0945d062c402",
+          "ref": "e935ede7-6d09-4474-9b51-b83d73c0893d",
           "length": 6,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "34028958-16b6-4307-8cb9-ffcb9721b771",
-          "scriptId": "62583bca-4441-4286-b8e1-d832cffd5eb4",
-          "execution": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+          "httpRequestId": "16b30ca3-c28e-4c9a-a197-20d8053c4310",
+          "scriptId": "963b1894-97cc-4878-b063-dfa827d0d9e8",
+          "execution": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
         }
       },
       {
@@ -4092,8 +4107,8 @@
           "message": "expected response to have status code 204 but got 404",
           "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:1:5)",
           "checksum": "f7a5cbedcd29155b7a442532e2d8d6e0",
-          "id": "73b56823-dd8d-43e4-a60b-62f88dfa0afe",
-          "timestamp": 1768539800418,
+          "id": "976a00d1-8707-4337-a0d5-50932854e3d1",
+          "timestamp": 1768540101671,
           "stacktrace": [
             {
               "fileName": "sandbox-script.js",
@@ -4108,7 +4123,7 @@
         },
         "at": "assertion:0 in test-script",
         "source": {
-          "id": "854fe610-4995-4d45-892a-4813dde9973d",
+          "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
           "name": "TC-FAV-DEL-001(Owner)",
           "request": {
             "url": {
@@ -4151,14 +4166,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+                "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status is 204 No Content\", () => {\r",
                   "    pm.response.to.have.status(204);\r",
                   "});"
                 ],
-                "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+                "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
               }
             }
           ]
@@ -4170,7 +4185,7 @@
           },
           "item": [
             {
-              "id": "c7ac7148-d237-4ac6-86ef-b2c98bab0cb1",
+              "id": "f908d545-7ac3-4e5b-80ad-b225d49595e6",
               "name": "TC-FAV-ADD-001(U001)",
               "request": {
                 "url": {
@@ -4211,20 +4226,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "5ebdcef3-8649-4c41-aa4a-1487f71507cc",
+                    "id": "b5c03414-3af9-4751-9d38-74ecb038cd60",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "34323d46-0924-4181-80e7-2bd5f8722d0f"
+                    "_lastExecutionId": "ed471824-50af-42b2-92cb-23823e1cd419"
                   }
                 }
               ]
             },
             {
-              "id": "e33d8eb0-1d56-4e56-9e38-bc9af2df8c7f",
+              "id": "c01b6fb6-fbd1-4893-8be3-ea33847d857a",
               "name": "TC-FAV-ADD-002(U002)",
               "request": {
                 "url": {
@@ -4265,20 +4280,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "b6666aaa-56ce-4303-bed9-c4045e3db49b",
+                    "id": "05cea486-5d3c-48f1-bb1b-5e19d49d2738",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 201 Created\", () => {\r",
                       "    pm.response.to.have.status(201);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "c6eba604-a81f-4a49-b4a0-928bfbc255a5"
+                    "_lastExecutionId": "c740a7c9-6030-43a2-811a-40e1b6195815"
                   }
                 }
               ]
             },
             {
-              "id": "74397f83-dfdf-4f18-b8b3-e8744c25a6b9",
+              "id": "2ada542b-dde4-4cab-b6af-d2df2a686025",
               "name": "TC-FAV-ADD-003(Duplicate)",
               "request": {
                 "url": {
@@ -4319,20 +4334,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "1dc92ee3-41b7-491a-a3e7-6bacc7676a27",
+                    "id": "70da30a7-8d14-499c-b49a-336586abd054",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 409 Conflict\", () => {\r",
                       "    pm.response.to.have.status(409);\r",
                       "});\r"
                     ],
-                    "_lastExecutionId": "9df70ca2-b2c2-43bd-85a6-3baaa873943e"
+                    "_lastExecutionId": "393c7ce6-2fe7-4721-880c-90feeac062e7"
                   }
                 }
               ]
             },
             {
-              "id": "ea7255a5-fa30-43ee-8950-3f11ce1c6c3b",
+              "id": "d7b53015-e705-416e-8640-4e0d73d1b2af",
               "name": "TC-FAV-EDIT-001(Owner)",
               "request": {
                 "url": {
@@ -4375,20 +4390,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "62583bca-4441-4286-b8e1-d832cffd5eb4",
+                    "id": "963b1894-97cc-4878-b063-dfa827d0d9e8",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 200 OK\", () => {\r",
                       "    pm.response.to.have.status(200);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "683cd795-bbb7-4519-99eb-e314dafc1c9d"
+                    "_lastExecutionId": "3edc479f-1157-4dae-8d0a-5b6576ff1b1d"
                   }
                 }
               ]
             },
             {
-              "id": "854fe610-4995-4d45-892a-4813dde9973d",
+              "id": "e589491e-b021-47ea-9632-1bbd6887bf8b",
               "name": "TC-FAV-DEL-001(Owner)",
               "request": {
                 "url": {
@@ -4431,20 +4446,20 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "ab1039b0-f03c-44f5-845a-0827267c951c",
+                    "id": "57dab5a6-1c62-406b-8836-1e4102056e0c",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 204 No Content\", () => {\r",
                       "    pm.response.to.have.status(204);\r",
                       "});"
                     ],
-                    "_lastExecutionId": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+                    "_lastExecutionId": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
                   }
                 }
               ]
             },
             {
-              "id": "89fd5908-a9ee-4d2a-a039-cce04cd18da1",
+              "id": "fb8b0a9e-d908-4520-bb2c-e8d784cc9167",
               "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
               "request": {
                 "url": {
@@ -4479,7 +4494,7 @@
                 {
                   "listen": "test",
                   "script": {
-                    "id": "e834eb40-7e20-4b48-bdff-079484845b5d",
+                    "id": "f542aa6e-5830-4de3-9d31-ccdf5edaa220",
                     "type": "text/javascript",
                     "exec": [
                       "pm.test(\"Status is 401 Unauthorized\", () => {\r",
@@ -4487,7 +4502,7 @@
                       "});\r",
                       "\r"
                     ],
-                    "_lastExecutionId": "0981a674-6edf-4bfe-a500-e3fe31a94919"
+                    "_lastExecutionId": "723763af-b387-4762-be5f-3a1343026c5a"
                   }
                 }
               ]
@@ -4502,14 +4517,14 @@
           }
         },
         "cursor": {
-          "ref": "6beb9f9b-ec85-4b55-83fa-2f1186007329",
+          "ref": "0067ebf0-1b86-4e3a-b4b3-f61dba47af51",
           "length": 6,
           "cycles": 1,
           "position": 4,
           "iteration": 0,
-          "httpRequestId": "fd7638f7-baf9-4289-a310-0d14a60dc6f4",
-          "scriptId": "ab1039b0-f03c-44f5-845a-0827267c951c",
-          "execution": "a54068c0-68a4-4f5a-8d34-cd83c8d1bdd3"
+          "httpRequestId": "34e9fa62-62f2-4c67-a5c5-41600d1481b8",
+          "scriptId": "57dab5a6-1c62-406b-8836-1e4102056e0c",
+          "execution": "088db9eb-7b5a-406c-b190-f86c8b679d8f"
         }
       }
     ],
