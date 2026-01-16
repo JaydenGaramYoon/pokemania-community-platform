@@ -1,0 +1,4162 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+      "exporter_id": "43737297"
+    },
+    "item": [
+      {
+        "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+        "name": "TC-FAV-ADD-001(U001)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 201 Created\", () => {\r",
+                "    pm.response.to.have.status(201);\r",
+                "});"
+              ],
+              "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+            }
+          }
+        ]
+      },
+      {
+        "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+        "name": "TC-FAV-ADD-002(U002)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U002}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 201 Created\", () => {\r",
+                "    pm.response.to.have.status(201);\r",
+                "});"
+              ],
+              "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+            }
+          }
+        ]
+      },
+      {
+        "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+        "name": "TC-FAV-ADD-003(Duplicate)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 409 Conflict\", () => {\r",
+                "    pm.response.to.have.status(409);\r",
+                "});\r"
+              ],
+              "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+        "name": "TC-FAV-EDIT-001(Owner)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "favourites",
+              "{{USER_ID_U001}}",
+              "25"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 200 OK\", () => {\r",
+                "    pm.response.to.have.status(200);\r",
+                "});"
+              ],
+              "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+            }
+          }
+        ]
+      },
+      {
+        "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+        "name": "TC-FAV-DEL-001(Owner)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "favourites",
+              "{{USER_ID_U002}}",
+              "{{FAV-DEL-001}}"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "DELETE",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U002}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 204 No Content\", () => {\r",
+                "    pm.response.to.have.status(204);\r",
+                "});"
+              ],
+              "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+            }
+          }
+        ]
+      },
+      {
+        "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+        "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 401 Unauthorized\", () => {\r",
+                "    pm.response.to.have.status(401);\r",
+                "});\r",
+                "\r"
+              ],
+              "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+      "name": "Pokemania - Favourites API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2025-12-30T00:00:00.000Z",
+      "postman_exported_using": "Postman/latest"
+    },
+    "id": "pokemania-ci-env",
+    "name": "CI",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://localhost:3000",
+        "key": "BASE_URL"
+      },
+      {
+        "type": "any",
+        "value": "manager@pokemania.com",
+        "key": "TEST_ADMIN_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "manager",
+        "key": "TEST_ADMIN_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "jayden98@gmail.com",
+        "key": "TEST_USER_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "jayden123!",
+        "key": "TEST_USER_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_USER"
+      }
+    ]
+  },
+  "globals": {
+    "id": "fcf5577f-cc9a-4a8d-85ec-40f7e7b14e90",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 6,
+        "pending": 0,
+        "failed": 5
+      },
+      "testScripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 13.333333333333334,
+      "responseMin": 4,
+      "responseMax": 45,
+      "responseSd": 14.395215254459456,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1768538305315,
+      "completed": 1768538305532
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 6,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "1664a047-4843-461d-ace0-623c48169c7b",
+          "httpRequestId": "10e8e594-347f-42cb-9530-c24cd8232785"
+        },
+        "item": {
+          "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+          "name": "TC-FAV-ADD-001(U001)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201 Created\", () => {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U001}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "73912037-0b9e-41d1-86ef-e3abd1620e37",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "83",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "74777d82-47d2-4a26-b539-a5e815d6ec34",
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 45,
+          "responseSize": 2
+        },
+        "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+        "assertions": [
+          {
+            "assertion": "Status is 201 Created",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status is 201 Created",
+              "message": "expected response to have status code 201 but got 401",
+              "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:1)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "34e6f17b-edd3-4b5a-b44a-b887bf1678cb",
+          "length": 6,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "f3cfec59-8858-4bb1-b8f4-cb69f3190241"
+        },
+        "item": {
+          "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+          "name": "TC-FAV-ADD-002(U002)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U002}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201 Created\", () => {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U002}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "3b8c6dac-ab31-4eb7-a52c-10b84a0e780e",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "71",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U002}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "c0e06f77-9cc2-4b0b-b7dd-40401e88712f",
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 6,
+          "responseSize": 2
+        },
+        "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+        "assertions": [
+          {
+            "assertion": "Status is 201 Created",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status is 201 Created",
+              "message": "expected response to have status code 201 but got 401",
+              "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:2)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "793e6ea7-14f2-428d-a8b6-dacfa4484fab",
+          "length": 6,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "f6320e94-de13-4a3d-bd66-feb61cadb8e3"
+        },
+        "item": {
+          "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+          "name": "TC-FAV-ADD-003(Duplicate)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409 Conflict\", () => {\r",
+                  "    pm.response.to.have.status(409);\r",
+                  "});\r"
+                ],
+                "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U001}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "314c1a48-35a1-4378-8e36-ac19f858e3e0",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "82",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "155e662d-ad0c-4226-8f57-3ea30465d646",
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 5,
+          "responseSize": 2
+        },
+        "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+        "assertions": [
+          {
+            "assertion": "Status is 409 Conflict",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status is 409 Conflict",
+              "message": "expected response to have status code 409 but got 401",
+              "stack": "AssertionError: expected response to have status code 409 but got 401\n   at Object.eval sandbox-script.js:1:3)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "d66fa749-2c5e-4de3-ad1d-4f4b1eca6061",
+          "length": 6,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "b3892511-4e5d-41a6-96fb-3a5e54b9a3bf"
+        },
+        "item": {
+          "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+          "name": "TC-FAV-EDIT-001(Owner)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites",
+                "{{USER_ID_U001}}",
+                "25"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200 OK\", () => {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "favourites",
+              "%7B%7BUSER_ID_U001%7D%7D",
+              "25"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U001}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "5335ff2e-979f-4ddf-94c0-148d35079d25",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "30",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "d6d05843-b4f3-4010-bee9-a4e41c6af6c6",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 8,
+          "responseSize": 2
+        },
+        "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+        "assertions": [
+          {
+            "assertion": "Status is 200 OK",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status is 200 OK",
+              "message": "expected response to have status code 200 but got 400",
+              "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:4)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "d09a085a-4465-4069-bbb2-85f35bffd3b7",
+          "length": 6,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "4a6f7abf-9380-482c-a45d-8cd98fa0ef90"
+        },
+        "item": {
+          "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+          "name": "TC-FAV-DEL-001(Owner)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites",
+                "{{USER_ID_U002}}",
+                "{{FAV-DEL-001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U002}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 204 No Content\", () => {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "favourites",
+              "%7B%7BUSER_ID_U002%7D%7D",
+              "%7B%7BFAV-DEL-001%7D%7D"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U002}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "2caeb476-49cd-485e-8f94-a968c7eb03cf",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE",
+          "body": {
+            "mode": "raw",
+            "raw": "",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U002}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "e3880b7a-34e2-42ca-b626-9bfe19134857",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 12,
+          "responseSize": 2
+        },
+        "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+        "assertions": [
+          {
+            "assertion": "Status is 204 No Content",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status is 204 No Content",
+              "message": "expected response to have status code 204 but got 400",
+              "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:5)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "9930430d-763f-4be1-9c9a-963af5f16e7e",
+          "length": 6,
+          "cycles": 1,
+          "position": 5,
+          "iteration": 0,
+          "httpRequestId": "721275ab-9868-490d-a6b2-2ee088641206"
+        },
+        "item": {
+          "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+          "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 401 Unauthorized\", () => {\r",
+                  "    pm.response.to.have.status(401);\r",
+                  "});\r",
+                  "\r"
+                ],
+                "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "favourites"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "042c467c-84b0-4374-b5aa-2b2bf71cdbe8",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "75",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "bf1cef79-d592-4bc4-9a80-ca5f16a29043",
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 4,
+          "responseSize": 2
+        },
+        "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+        "assertions": [
+          {
+            "assertion": "Status is 401 Unauthorized",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 12
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status is 201 Created",
+          "message": "expected response to have status code 201 but got 401",
+          "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:1)",
+          "checksum": "ae18d2fe95145603cfa536016d4a689b",
+          "id": "a231ece1-a069-4bbc-ae18-0dd12c169543",
+          "timestamp": 1768538305397,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+          "name": "TC-FAV-ADD-001(U001)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201 Created\", () => {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "name": "TC-FAV-ADD-001(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "name": "TC-FAV-ADD-002(U002)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "name": "TC-FAV-ADD-003(Duplicate)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 409 Conflict\", () => {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "});\r"
+                    ],
+                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "name": "TC-FAV-EDIT-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U001}}",
+                    "25"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 200 OK\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "name": "TC-FAV-DEL-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U002}}",
+                    "{{FAV-DEL-001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 204 No Content\", () => {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
+                      "    pm.response.to.have.status(401);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "name": "Pokemania - Favourites API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 6,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "1664a047-4843-461d-ace0-623c48169c7b",
+          "httpRequestId": "10e8e594-347f-42cb-9530-c24cd8232785",
+          "scriptId": "93eed209-eb2c-48ba-a890-f50396c4421e",
+          "execution": "11586fba-2d57-4737-9200-00ba5ad699cc"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status is 201 Created",
+          "message": "expected response to have status code 201 but got 401",
+          "stack": "AssertionError: expected response to have status code 201 but got 401\n   at Object.eval sandbox-script.js:1:2)",
+          "checksum": "d58a597e2b61bd932df9242f4f60337a",
+          "id": "bcd4550b-94e3-45b4-a158-6731a9f3b534",
+          "timestamp": 1768538305428,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 2,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+          "name": "TC-FAV-ADD-002(U002)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U002}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 201 Created\", () => {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "name": "TC-FAV-ADD-001(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "name": "TC-FAV-ADD-002(U002)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "name": "TC-FAV-ADD-003(Duplicate)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 409 Conflict\", () => {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "});\r"
+                    ],
+                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "name": "TC-FAV-EDIT-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U001}}",
+                    "25"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 200 OK\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "name": "TC-FAV-DEL-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U002}}",
+                    "{{FAV-DEL-001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 204 No Content\", () => {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
+                      "    pm.response.to.have.status(401);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "name": "Pokemania - Favourites API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "34e6f17b-edd3-4b5a-b44a-b887bf1678cb",
+          "length": 6,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "f3cfec59-8858-4bb1-b8f4-cb69f3190241",
+          "scriptId": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+          "execution": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status is 409 Conflict",
+          "message": "expected response to have status code 409 but got 401",
+          "stack": "AssertionError: expected response to have status code 409 but got 401\n   at Object.eval sandbox-script.js:1:3)",
+          "checksum": "8421f85b3d1223e27c96cedde1393d12",
+          "id": "7474d9da-56e7-4867-9142-a7622cec6b9f",
+          "timestamp": 1768538305452,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 3,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+          "name": "TC-FAV-ADD-003(Duplicate)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 409 Conflict\", () => {\r",
+                  "    pm.response.to.have.status(409);\r",
+                  "});\r"
+                ],
+                "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "name": "TC-FAV-ADD-001(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "name": "TC-FAV-ADD-002(U002)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "name": "TC-FAV-ADD-003(Duplicate)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 409 Conflict\", () => {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "});\r"
+                    ],
+                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "name": "TC-FAV-EDIT-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U001}}",
+                    "25"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 200 OK\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "name": "TC-FAV-DEL-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U002}}",
+                    "{{FAV-DEL-001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 204 No Content\", () => {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
+                      "    pm.response.to.have.status(401);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "name": "Pokemania - Favourites API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "793e6ea7-14f2-428d-a8b6-dacfa4484fab",
+          "length": 6,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "f6320e94-de13-4a3d-bd66-feb61cadb8e3",
+          "scriptId": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+          "execution": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status is 200 OK",
+          "message": "expected response to have status code 200 but got 400",
+          "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:4)",
+          "checksum": "b7f85db0ae95a2b7e501cb97546b163a",
+          "id": "78c71c29-49e1-499e-bac9-a0badd53ad97",
+          "timestamp": 1768538305480,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 4,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+          "name": "TC-FAV-EDIT-001(Owner)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites",
+                "{{USER_ID_U001}}",
+                "25"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200 OK\", () => {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "name": "TC-FAV-ADD-001(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "name": "TC-FAV-ADD-002(U002)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "name": "TC-FAV-ADD-003(Duplicate)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 409 Conflict\", () => {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "});\r"
+                    ],
+                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "name": "TC-FAV-EDIT-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U001}}",
+                    "25"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 200 OK\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "name": "TC-FAV-DEL-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U002}}",
+                    "{{FAV-DEL-001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 204 No Content\", () => {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
+                      "    pm.response.to.have.status(401);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "name": "Pokemania - Favourites API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "d66fa749-2c5e-4de3-ad1d-4f4b1eca6061",
+          "length": 6,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "b3892511-4e5d-41a6-96fb-3a5e54b9a3bf",
+          "scriptId": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+          "execution": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status is 204 No Content",
+          "message": "expected response to have status code 204 but got 400",
+          "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:5)",
+          "checksum": "1629fcca08eb89c5546e4c23d4fbf634",
+          "id": "5328d551-5748-4605-b536-0f52bcf0d475",
+          "timestamp": 1768538305509,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 5,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+          "name": "TC-FAV-DEL-001(Owner)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "favourites",
+                "{{USER_ID_U002}}",
+                "{{FAV-DEL-001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U002}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 204 No Content\", () => {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "92b1b226-b1ae-4781-906d-febd26a76e36",
+              "name": "TC-FAV-ADD-001(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 100,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "93eed209-eb2c-48ba-a890-f50396c4421e",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "11586fba-2d57-4737-9200-00ba5ad699cc"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "7c477ce3-ff57-4a21-824c-5730e76ccf1f",
+              "name": "TC-FAV-ADD-002(U002)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U002}}\",\r\n  \"pokemonId\": 1000,\r\n  \"memo\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "1d397c31-b43f-4eb7-9f62-446fd4741fad",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 201 Created\", () => {\r",
+                      "    pm.response.to.have.status(201);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "e33f28bd-8fac-4380-9e4f-a4d494ecc273"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "9920e69b-c57f-44e3-aa4d-f91b1a290b33",
+              "name": "TC-FAV-ADD-003(Duplicate)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"{{USER_ID_U001}}\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "90042a56-b92a-47c2-bcb2-92639efc4bec",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 409 Conflict\", () => {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "});\r"
+                    ],
+                    "_lastExecutionId": "a6c638f7-7c18-4cf6-8f79-1edd96d3e134"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ba43f060-0b6f-44d8-89a6-a899b8d45087",
+              "name": "TC-FAV-EDIT-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U001}}",
+                    "25"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"memo\": \"updated note\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c1a9e7b6-0944-4d87-a074-7929783852ac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 200 OK\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3dc624e5-0334-40b9-8795-8de98a2faddf"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "53e70152-51bd-4ece-b05d-3ecbbcb39c72",
+              "name": "TC-FAV-DEL-001(Owner)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites",
+                    "{{USER_ID_U002}}",
+                    "{{FAV-DEL-001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U002}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 204 No Content\", () => {\r",
+                      "    pm.response.to.have.status(204);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "8557f3b9-d49b-40c6-ab25-fbec165783f8",
+              "name": "TC-FAV-SEC-001-Add Favourite (Unauthorized)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "favourites"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"user\": \"anonymous\",\r\n  \"pokemonId\": 25,\r\n  \"memo\": \"fast attacker\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "94366e2b-13cc-498d-9a73-2a69d60da8a4",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 401 Unauthorized\", () => {\r",
+                      "    pm.response.to.have.status(401);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "d2eded87-6a1d-4eaf-ab59-6453618a9480"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "e2f50061-de1c-45e2-b282-4a0aba2f6d30",
+            "name": "Pokemania - Favourites API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "d09a085a-4465-4069-bbb2-85f35bffd3b7",
+          "length": 6,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "4a6f7abf-9380-482c-a45d-8cd98fa0ef90",
+          "scriptId": "6839206d-7a37-4595-95b3-16ddfd1cc848",
+          "execution": "7effc079-55d7-408a-9d42-33e4e2cf8039"
+        }
+      }
+    ],
+    "error": null
+  }
+}

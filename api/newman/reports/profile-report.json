@@ -1,0 +1,1781 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+      "exporter_id": "43737297"
+    },
+    "item": [
+      {
+        "id": "d2daed36-7784-470f-a280-9a8242663096",
+        "name": "TC-PROF-POST-001-Create Profile(U001)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "profile"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 201 Created\", function () {",
+                "    pm.response.to.have.status(201);",
+                "});"
+              ],
+              "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+            }
+          }
+        ]
+      },
+      {
+        "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+        "name": "TC-PROF-UPD-001-Update Profile (U001)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "profile",
+              "users",
+              "{{USER_ID_U001}}"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200 OK\", function () {",
+                "    pm.response.to.have.status(200);",
+                "});"
+              ],
+              "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+        "name": "TC-PROF-DEL-001-Delete Account",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "profile",
+              "users",
+              "{{USER_ID_U001}}"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "DELETE"
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 204 No Content\", function () {",
+                "    pm.response.to.have.status(204);",
+                "});"
+              ],
+              "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+      "name": "Pokemania - Profile API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2025-12-30T00:00:00.000Z",
+      "postman_exported_using": "Postman/latest"
+    },
+    "id": "pokemania-ci-env",
+    "name": "CI",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://localhost:3000",
+        "key": "BASE_URL"
+      },
+      {
+        "type": "any",
+        "value": "manager@pokemania.com",
+        "key": "TEST_ADMIN_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "manager",
+        "key": "TEST_ADMIN_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "jayden98@gmail.com",
+        "key": "TEST_USER_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "jayden123!",
+        "key": "TEST_USER_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_USER"
+      }
+    ]
+  },
+  "globals": {
+    "id": "a4a91195-737c-4a0a-b88a-f7f02a26d503",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 3,
+        "pending": 0,
+        "failed": 3
+      },
+      "testScripts": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 22.666666666666668,
+      "responseMin": 4,
+      "responseMax": 54,
+      "responseSd": 22.29100466306732,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1768538308119,
+      "completed": 1768538308261
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 3,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "b404e856-9843-42b5-8af1-fe14fbe094a4",
+          "httpRequestId": "63b6e45f-d586-49e5-bc36-b82b3359482e"
+        },
+        "item": {
+          "id": "d2daed36-7784-470f-a280-9a8242663096",
+          "name": "TC-PROF-POST-001-Create Profile(U001)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "profile"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201 Created\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});"
+                ],
+                "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "profile"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U001}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "00303d83-f36e-44a8-9efb-281424cfea88",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "550",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "58cc760b-47ec-4603-ad4e-c864cf5d5e39",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:28 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 54,
+          "responseSize": 2
+        },
+        "id": "d2daed36-7784-470f-a280-9a8242663096",
+        "assertions": [
+          {
+            "assertion": "Status code is 201 Created",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 201 Created",
+              "message": "expected response to have status code 201 but got 400",
+              "stack": "AssertionError: expected response to have status code 201 but got 400\n   at Object.eval sandbox-script.js:1:1)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "8491c709-e614-45ab-b5c5-0a8850db10b8",
+          "length": 3,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "961ab4d0-478f-46fb-8b51-edc7ff6c69cd"
+        },
+        "item": {
+          "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+          "name": "TC-PROF-UPD-001-Update Profile (U001)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "profile",
+                "users",
+                "{{USER_ID_U001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "profile",
+              "users",
+              "%7B%7BUSER_ID_U001%7D%7D"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U001}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "f1c2f1ee-a9aa-4520-9a6c-c3f20337b82d",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "552",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "d5f4bbb1-4360-46af-a8a7-46338b68fd5b",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:28 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 10,
+          "responseSize": 2
+        },
+        "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+        "assertions": [
+          {
+            "assertion": "Status code is 200 OK",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 200 OK",
+              "message": "expected response to have status code 200 but got 400",
+              "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:2)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "c3c31cc2-8c3b-4067-9e29-f971679eec97",
+          "length": 3,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "0601dc0b-de49-47c7-8e49-5a795a4adfa2"
+        },
+        "item": {
+          "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+          "name": "TC-PROF-DEL-001-Delete Account",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "profile",
+                "users",
+                "{{USER_ID_U001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 204 No Content\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "profile",
+              "users",
+              "%7B%7BUSER_ID_U001%7D%7D"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "99cf0bc8-cbbf-4999-be49-bfca8f9b7b98",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE"
+        },
+        "response": {
+          "id": "56d4f83f-5e57-4a06-8be4-7201a65a91c2",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:28 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 4,
+          "responseSize": 2
+        },
+        "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+        "assertions": [
+          {
+            "assertion": "Status code is 204 No Content",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 204 No Content",
+              "message": "expected response to have status code 204 but got 400",
+              "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:3)"
+            }
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 6
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 201 Created",
+          "message": "expected response to have status code 201 but got 400",
+          "stack": "AssertionError: expected response to have status code 201 but got 400\n   at Object.eval sandbox-script.js:1:1)",
+          "checksum": "9b9e638975d2be642466fe45eb02a208",
+          "id": "725b2336-711b-468c-90a0-4b802b8042b1",
+          "timestamp": 1768538308208,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "d2daed36-7784-470f-a280-9a8242663096",
+          "name": "TC-PROF-POST-001-Create Profile(U001)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "profile"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201 Created\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});"
+                ],
+                "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "d2daed36-7784-470f-a280-9a8242663096",
+              "name": "TC-PROF-POST-001-Create Profile(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created\", function () {",
+                      "    pm.response.to.have.status(201);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+              "name": "TC-PROF-UPD-001-Update Profile (U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile",
+                    "users",
+                    "{{USER_ID_U001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+              "name": "TC-PROF-DEL-001-Delete Account",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile",
+                    "users",
+                    "{{USER_ID_U001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 204 No Content\", function () {",
+                      "    pm.response.to.have.status(204);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+            "name": "Pokemania - Profile API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 3,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "b404e856-9843-42b5-8af1-fe14fbe094a4",
+          "httpRequestId": "63b6e45f-d586-49e5-bc36-b82b3359482e",
+          "scriptId": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+          "execution": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 200 OK",
+          "message": "expected response to have status code 200 but got 400",
+          "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:2)",
+          "checksum": "57f08ad5a8a49993623f54fca4bc04d9",
+          "id": "266b4e6c-7456-4124-ab7e-6d281b1c5388",
+          "timestamp": 1768538308238,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 2,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+          "name": "TC-PROF-UPD-001-Update Profile (U001)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "profile",
+                "users",
+                "{{USER_ID_U001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "d2daed36-7784-470f-a280-9a8242663096",
+              "name": "TC-PROF-POST-001-Create Profile(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created\", function () {",
+                      "    pm.response.to.have.status(201);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+              "name": "TC-PROF-UPD-001-Update Profile (U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile",
+                    "users",
+                    "{{USER_ID_U001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+              "name": "TC-PROF-DEL-001-Delete Account",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile",
+                    "users",
+                    "{{USER_ID_U001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 204 No Content\", function () {",
+                      "    pm.response.to.have.status(204);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+            "name": "Pokemania - Profile API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "8491c709-e614-45ab-b5c5-0a8850db10b8",
+          "length": 3,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "961ab4d0-478f-46fb-8b51-edc7ff6c69cd",
+          "scriptId": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+          "execution": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 204 No Content",
+          "message": "expected response to have status code 204 but got 400",
+          "stack": "AssertionError: expected response to have status code 204 but got 400\n   at Object.eval sandbox-script.js:1:3)",
+          "checksum": "220b1be3e79de7845c4bff55961e9aa8",
+          "id": "f75ebd09-1840-4ce5-a80c-d682ed4d704a",
+          "timestamp": 1768538308256,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 3,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+          "name": "TC-PROF-DEL-001-Delete Account",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "profile",
+                "users",
+                "{{USER_ID_U001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 204 No Content\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "d2daed36-7784-470f-a280-9a8242663096",
+              "name": "TC-PROF-POST-001-Create Profile(U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "a296d236-ab85-41f9-9307-50ceaa0805a2",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created\", function () {",
+                      "    pm.response.to.have.status(201);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "5392220f-8c8d-41bd-b202-31b9ef48c8aa"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "431c609f-dbbd-4efe-808f-5fff918b3aa0",
+              "name": "TC-PROF-UPD-001-Update Profile (U001)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile",
+                    "users",
+                    "{{USER_ID_U001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"userId\": \"{{USER_ID_U001}}\",\r\n  \"bannerUrl\": \"https://cdn.pokemania.com/banners/misty_banner.png\",\r\n  \"iconUrl\": \"https://cdn.pokemania.com/icons/misty_icon.png\",\r\n  \"name\": \"Misty.Q\",\r\n  \"title\": \"Cerulean Gym Leader\",\r\n  \"location\": \"Cerulean City, Kanto\",\r\n  \"summary\": \"Experienced Water-type trainer and QA tester passionate about battle strategies and product quality.\",\r\n  \"types\": [\"Water\", \"Ice\"],\r\n  \"details\": [\r\n    \"Loves to train Starmie and Psyduck.\",\r\n    \"Currently developing automated battle test cases for PokéAPI.\"\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "dccb0ae2-5755-4de1-a45f-cc0fb2d43a4b",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK\", function () {",
+                      "    pm.response.to.have.status(200);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "022166fd-dddc-4ce5-baa5-5d68dc753067"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2d5ead48-1fef-41eb-89ea-6f967ed87512",
+              "name": "TC-PROF-DEL-001-Delete Account",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "profile",
+                    "users",
+                    "{{USER_ID_U001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 204 No Content\", function () {",
+                      "    pm.response.to.have.status(204);",
+                      "});"
+                    ],
+                    "_lastExecutionId": "68665967-a229-4163-9363-c6d3c591fbc4"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "84a2d11e-bd66-4a74-9430-50da583fddc6",
+            "name": "Pokemania - Profile API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "c3c31cc2-8c3b-4067-9e29-f971679eec97",
+          "length": 3,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "0601dc0b-de49-47c7-8e49-5a795a4adfa2",
+          "scriptId": "c44a0b6e-1a89-4fbf-b4bd-8553686ed3f7",
+          "execution": "68665967-a229-4163-9363-c6d3c591fbc4"
+        }
+      }
+    ],
+    "error": null
+  }
+}

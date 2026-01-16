@@ -1,0 +1,3525 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+      "exporter_id": "43737297"
+    },
+    "item": [
+      {
+        "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+        "name": "TC-MSG-POST-001-Send Message (Guest)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "messages"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"section\": \"General\",\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"message\": \"hello world\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                "});"
+              ],
+              "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+            }
+          }
+        ]
+      },
+      {
+        "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+        "name": "TC-MSG-POST-002-Send Message (Logged-in)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "messages"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"section\":\"Guides\",\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"use thunder shock\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                "});"
+              ],
+              "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+            }
+          }
+        ]
+      },
+      {
+        "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+        "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "messages",
+              "{{MESSAGE_ID_EDIT_001}}"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200 OK\", function () {\r",
+                "    pm.response.to.have.status(200);\r",
+                "});"
+              ],
+              "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+            }
+          }
+        ]
+      },
+      {
+        "id": "623b173e-286f-4273-8926-21992971a489",
+        "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "messages",
+              "{{MESSAGE_ID_EDIT_001}}"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
+                "    pm.expect([200, 400]).to.include(pm.response.code);\r",
+                "});"
+              ],
+              "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+        "name": "TC-MSG-DEL-001-Delete Message (Author)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "messages",
+              "{{MESSAGE_ID_DEL_001}}"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "DELETE",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
+                "    pm.expect([200, 204]).to.include(pm.response.code);\r",
+                "});"
+              ],
+              "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+            }
+          }
+        ]
+      },
+      {
+        "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+        "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "messages"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"section\": \"General\",\r\n    \"message\": \"<script>bad</script>\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
+                "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                "});"
+              ],
+              "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+      "name": "Pokemania - TalkTalk API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2025-12-30T00:00:00.000Z",
+      "postman_exported_using": "Postman/latest"
+    },
+    "id": "pokemania-ci-env",
+    "name": "CI",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://localhost:3000",
+        "key": "BASE_URL"
+      },
+      {
+        "type": "any",
+        "value": "manager@pokemania.com",
+        "key": "TEST_ADMIN_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "manager",
+        "key": "TEST_ADMIN_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "jayden98@gmail.com",
+        "key": "TEST_USER_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "jayden123!",
+        "key": "TEST_USER_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_USER"
+      }
+    ]
+  },
+  "globals": {
+    "id": "083be291-c49c-4fd3-891f-01d776fabbda",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 6,
+        "pending": 0,
+        "failed": 3
+      },
+      "testScripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 14,
+      "responseMin": 4,
+      "responseMax": 53,
+      "responseSd": 17.54042948923049,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1768538309424,
+      "completed": 1768538309629
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 6,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "ae61c003-0064-4feb-bace-c81970759005",
+          "httpRequestId": "993fe5bc-f41f-46c9-8a2d-b221844c02e2"
+        },
+        "item": {
+          "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+          "name": "TC-MSG-POST-001-Send Message (Guest)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"section\": \"General\",\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"message\": \"hello world\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                  "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "messages"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "f458ea54-6f34-4aaf-bb3f-a88c6764bf37",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "96",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"section\": \"General\",\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"message\": \"hello world\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "75a0c120-0a83-49df-b9f1-55844d12aab0",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "153"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"99-rUAQ3bJdfLaKYHfs9SSAw2ivo3o\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              101,
+              99,
+              116,
+              105,
+              111,
+              110,
+              34,
+              58,
+              34,
+              71,
+              101,
+              110,
+              101,
+              114,
+              97,
+              108,
+              34,
+              44,
+              34,
+              115,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              123,
+              123,
+              83,
+              69,
+              78,
+              68,
+              69,
+              82,
+              95,
+              71,
+              85,
+              69,
+              83,
+              84,
+              125,
+              125,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              104,
+              101,
+              108,
+              108,
+              111,
+              32,
+              119,
+              111,
+              114,
+              108,
+              100,
+              34,
+              44,
+              34,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              54,
+              57,
+              54,
+              57,
+              99,
+              48,
+              99,
+              53,
+              97,
+              101,
+              56,
+              98,
+              48,
+              49,
+              98,
+              55,
+              50,
+              54,
+              51,
+              55,
+              100,
+              57,
+              97,
+              50,
+              34,
+              44,
+              34,
+              116,
+              105,
+              109,
+              101,
+              115,
+              116,
+              97,
+              109,
+              112,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              54,
+              45,
+              48,
+              49,
+              45,
+              49,
+              54,
+              84,
+              48,
+              52,
+              58,
+              51,
+              56,
+              58,
+              50,
+              57,
+              46,
+              52,
+              55,
+              50,
+              90,
+              34,
+              44,
+              34,
+              95,
+              95,
+              118,
+              34,
+              58,
+              48,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 53,
+          "responseSize": 153
+        },
+        "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+        "assertions": [
+          {
+            "assertion": "Status code is 201 Created or 200 OK",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "1ead9281-4bee-436e-8e78-903d3184a2f5",
+          "length": 6,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "58b19666-e7c6-4121-ba4a-aeab127d84fb"
+        },
+        "item": {
+          "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+          "name": "TC-MSG-POST-002-Send Message (Logged-in)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"section\":\"Guides\",\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"use thunder shock\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                  "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "messages"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U001}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "5e84cfd8-9bb9-425d-8d35-09e2ac354f42",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "99",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"section\":\"Guides\",\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"use thunder shock\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "5abaf5c0-f545-4a6b-a8d3-43a3e21af0be",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "157"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"9d-ir6T3b38G21rVxQNahBM1Zhzf8k\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              101,
+              99,
+              116,
+              105,
+              111,
+              110,
+              34,
+              58,
+              34,
+              71,
+              117,
+              105,
+              100,
+              101,
+              115,
+              34,
+              44,
+              34,
+              115,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              123,
+              123,
+              83,
+              69,
+              78,
+              68,
+              69,
+              82,
+              95,
+              85,
+              48,
+              48,
+              49,
+              125,
+              125,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              117,
+              115,
+              101,
+              32,
+              116,
+              104,
+              117,
+              110,
+              100,
+              101,
+              114,
+              32,
+              115,
+              104,
+              111,
+              99,
+              107,
+              34,
+              44,
+              34,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              54,
+              57,
+              54,
+              57,
+              99,
+              48,
+              99,
+              53,
+              97,
+              101,
+              56,
+              98,
+              48,
+              49,
+              98,
+              55,
+              50,
+              54,
+              51,
+              55,
+              100,
+              57,
+              97,
+              52,
+              34,
+              44,
+              34,
+              116,
+              105,
+              109,
+              101,
+              115,
+              116,
+              97,
+              109,
+              112,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              54,
+              45,
+              48,
+              49,
+              45,
+              49,
+              54,
+              84,
+              48,
+              52,
+              58,
+              51,
+              56,
+              58,
+              50,
+              57,
+              46,
+              53,
+              50,
+              55,
+              90,
+              34,
+              44,
+              34,
+              95,
+              95,
+              118,
+              34,
+              58,
+              48,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 9,
+          "responseSize": 157
+        },
+        "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+        "assertions": [
+          {
+            "assertion": "Status code is 201 Created or 200 OK",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "0cec72ba-f586-42db-9b7d-5dfa1b18e604",
+          "length": 6,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "71f99335-6d7e-4491-8ac8-753d76948201"
+        },
+        "item": {
+          "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+          "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages",
+                "{{MESSAGE_ID_EDIT_001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "messages",
+              "%7B%7BMESSAGE_ID_EDIT_001%7D%7D"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "2b6340d5-f455-49fb-995e-afa84d28f0b3",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "98",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "f67dfb0b-8214-4c0b-92cc-2dcd107c927d",
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "34"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"22-OzXgmEhU8C4BDf2ObXHKRva1tqI\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              70,
+              97,
+              105,
+              108,
+              101,
+              100,
+              32,
+              116,
+              111,
+              32,
+              101,
+              100,
+              105,
+              116,
+              32,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 8,
+          "responseSize": 34
+        },
+        "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+        "assertions": [
+          {
+            "assertion": "Status code is 200 OK",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 200 OK",
+              "message": "expected response to have status code 200 but got 500",
+              "stack": "AssertionError: expected response to have status code 200 but got 500\n   at Object.eval sandbox-script.js:1:3)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "6c7be90d-34c0-424c-93fe-f8612fb0069f",
+          "length": 6,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "73503ff4-9731-4227-9b3d-a6ab9acfe4f8"
+        },
+        "item": {
+          "id": "623b173e-286f-4273-8926-21992971a489",
+          "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages",
+                "{{MESSAGE_ID_EDIT_001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
+                  "    pm.expect([200, 400]).to.include(pm.response.code);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "messages",
+              "%7B%7BMESSAGE_ID_EDIT_001%7D%7D"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "395c57a2-568e-4283-8898-76a6f9acadf9",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "70",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "20cb10cc-41a7-421f-aa4a-2e3a4524a96e",
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "34"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"22-OzXgmEhU8C4BDf2ObXHKRva1tqI\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              70,
+              97,
+              105,
+              108,
+              101,
+              100,
+              32,
+              116,
+              111,
+              32,
+              101,
+              100,
+              105,
+              116,
+              32,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 4,
+          "responseSize": 34
+        },
+        "id": "623b173e-286f-4273-8926-21992971a489",
+        "assertions": [
+          {
+            "assertion": "Status code is 200 OK or 400 Bad Request",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 200 OK or 400 Bad Request",
+              "message": "expected [ 200, 400 ] to include 500",
+              "stack": "AssertionError: expected [ 200, 400 ] to include 500\n   at Object.eval sandbox-script.js:1:4)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "6b829191-f835-4a5e-b050-c8728ddc1624",
+          "length": 6,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "7d064e30-4eef-4b83-90ca-d00d32f72233"
+        },
+        "item": {
+          "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+          "name": "TC-MSG-DEL-001-Delete Message (Author)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages",
+                "{{MESSAGE_ID_DEL_001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
+                  "    pm.expect([200, 204]).to.include(pm.response.code);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "messages",
+              "%7B%7BMESSAGE_ID_DEL_001%7D%7D"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "72e7fd6d-ad5b-4f50-aec0-bb7da3990bf2",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "37",
+              "system": true
+            }
+          ],
+          "method": "DELETE",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          }
+        },
+        "response": {
+          "id": "533b807b-a2ed-4444-be58-773966fe3c64",
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "36"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"24-bhhE3gQfVAab0D4qbQDOV3U8lxE\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              70,
+              97,
+              105,
+              108,
+              101,
+              100,
+              32,
+              116,
+              111,
+              32,
+              100,
+              101,
+              108,
+              101,
+              116,
+              101,
+              32,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 4,
+          "responseSize": 36
+        },
+        "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+        "assertions": [
+          {
+            "assertion": "Status code is 200 OK or 204 No Content",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 200 OK or 204 No Content",
+              "message": "expected [ 200, 204 ] to include 500",
+              "stack": "AssertionError: expected [ 200, 204 ] to include 500\n   at Object.eval sandbox-script.js:1:5)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "9512fdd1-2c67-49d2-87ec-ae7d808a6e06",
+          "length": 6,
+          "cycles": 1,
+          "position": 5,
+          "iteration": 0,
+          "httpRequestId": "03d0ba41-4b5e-4ecf-8eeb-81ad55e97581"
+        },
+        "item": {
+          "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+          "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"section\": \"General\",\r\n    \"message\": \"<script>bad</script>\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
+                  "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "messages"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "85a913f2-3c9c-4a19-a2f3-6b09f6433598",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "105",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"section\": \"General\",\r\n    \"message\": \"<script>bad</script>\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "noauth",
+            "noauth": []
+          }
+        },
+        "response": {
+          "id": "291c4c27-37e6-4a32-82da-159358e37d3b",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "162"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"a2-OnF/kCFh73ANRpfg8TRccCaUiVI\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              101,
+              99,
+              116,
+              105,
+              111,
+              110,
+              34,
+              58,
+              34,
+              71,
+              101,
+              110,
+              101,
+              114,
+              97,
+              108,
+              34,
+              44,
+              34,
+              115,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              123,
+              123,
+              83,
+              69,
+              78,
+              68,
+              69,
+              82,
+              95,
+              71,
+              85,
+              69,
+              83,
+              84,
+              125,
+              125,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              60,
+              115,
+              99,
+              114,
+              105,
+              112,
+              116,
+              62,
+              98,
+              97,
+              100,
+              60,
+              47,
+              115,
+              99,
+              114,
+              105,
+              112,
+              116,
+              62,
+              34,
+              44,
+              34,
+              95,
+              105,
+              100,
+              34,
+              58,
+              34,
+              54,
+              57,
+              54,
+              57,
+              99,
+              48,
+              99,
+              53,
+              97,
+              101,
+              56,
+              98,
+              48,
+              49,
+              98,
+              55,
+              50,
+              54,
+              51,
+              55,
+              100,
+              57,
+              97,
+              54,
+              34,
+              44,
+              34,
+              116,
+              105,
+              109,
+              101,
+              115,
+              116,
+              97,
+              109,
+              112,
+              34,
+              58,
+              34,
+              50,
+              48,
+              50,
+              54,
+              45,
+              48,
+              49,
+              45,
+              49,
+              54,
+              84,
+              48,
+              52,
+              58,
+              51,
+              56,
+              58,
+              50,
+              57,
+              46,
+              54,
+              49,
+              54,
+              90,
+              34,
+              44,
+              34,
+              95,
+              95,
+              118,
+              34,
+              58,
+              48,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 6,
+          "responseSize": 162
+        },
+        "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+        "assertions": [
+          {
+            "assertion": "Status code is 200 OK or 201 Created",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 576
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 200 OK",
+          "message": "expected response to have status code 200 but got 500",
+          "stack": "AssertionError: expected response to have status code 200 but got 500\n   at Object.eval sandbox-script.js:1:3)",
+          "checksum": "f261c54c1851ef736f3d0ae564b2587b",
+          "id": "90adf6fa-6293-4d52-99fe-d48d261dfc17",
+          "timestamp": 1768538309565,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 3,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+          "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages",
+                "{{MESSAGE_ID_EDIT_001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+              "name": "TC-MSG-POST-001-Send Message (Guest)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"section\": \"General\",\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"message\": \"hello world\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+              "name": "TC-MSG-POST-002-Send Message (Logged-in)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"section\":\"Guides\",\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"use thunder shock\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+              "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_EDIT_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "623b173e-286f-4273-8926-21992971a489",
+              "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_EDIT_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
+                      "    pm.expect([200, 400]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+              "name": "TC-MSG-DEL-001-Delete Message (Author)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_DEL_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
+                      "    pm.expect([200, 204]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+              "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"section\": \"General\",\r\n    \"message\": \"<script>bad</script>\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+            "name": "Pokemania - TalkTalk API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "0cec72ba-f586-42db-9b7d-5dfa1b18e604",
+          "length": 6,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "71f99335-6d7e-4491-8ac8-753d76948201",
+          "scriptId": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+          "execution": "12893128-ab8f-4406-aee6-0fc986971d47"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 200 OK or 400 Bad Request",
+          "message": "expected [ 200, 400 ] to include 500",
+          "stack": "AssertionError: expected [ 200, 400 ] to include 500\n   at Object.eval sandbox-script.js:1:4)",
+          "checksum": "f6b6ffccc21d1ad3a77db416a28f8725",
+          "id": "4c796400-0df9-457b-8af0-1818fc1cb7e6",
+          "timestamp": 1768538309586,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 4,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "623b173e-286f-4273-8926-21992971a489",
+          "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages",
+                "{{MESSAGE_ID_EDIT_001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
+                  "    pm.expect([200, 400]).to.include(pm.response.code);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+              "name": "TC-MSG-POST-001-Send Message (Guest)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"section\": \"General\",\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"message\": \"hello world\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+              "name": "TC-MSG-POST-002-Send Message (Logged-in)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"section\":\"Guides\",\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"use thunder shock\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+              "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_EDIT_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "623b173e-286f-4273-8926-21992971a489",
+              "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_EDIT_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
+                      "    pm.expect([200, 400]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+              "name": "TC-MSG-DEL-001-Delete Message (Author)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_DEL_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
+                      "    pm.expect([200, 204]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+              "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"section\": \"General\",\r\n    \"message\": \"<script>bad</script>\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+            "name": "Pokemania - TalkTalk API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "6c7be90d-34c0-424c-93fe-f8612fb0069f",
+          "length": 6,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "73503ff4-9731-4227-9b3d-a6ab9acfe4f8",
+          "scriptId": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+          "execution": "d685f130-266f-43fe-8849-d04c61a656a1"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 200 OK or 204 No Content",
+          "message": "expected [ 200, 204 ] to include 500",
+          "stack": "AssertionError: expected [ 200, 204 ] to include 500\n   at Object.eval sandbox-script.js:1:5)",
+          "checksum": "7a1d61bf40bb7dcc214e3bffc1339bb6",
+          "id": "8dac64a9-a715-4f2f-bb62-c4b1edc99862",
+          "timestamp": 1768538309605,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 5,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+          "name": "TC-MSG-DEL-001-Delete Message (Author)",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "messages",
+                "{{MESSAGE_ID_DEL_001}}"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
+                  "    pm.expect([200, 204]).to.include(pm.response.code);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "cb887303-f1ff-49f4-9fa9-f21963663408",
+              "name": "TC-MSG-POST-001-Send Message (Guest)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"section\": \"General\",\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"message\": \"hello world\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "f6ffa189-ec84-4e07-a9d2-ea71f61a2df1",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "a464d965-3124-4c90-af7a-5e2be82780de"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "618db126-d503-4fb6-a2af-00cf3ed09f84",
+              "name": "TC-MSG-POST-002-Send Message (Logged-in)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"section\":\"Guides\",\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"use thunder shock\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "aac0f7e6-44ab-431e-b17a-9e635a9dd803",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 Created or 200 OK\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "3f863d26-ac80-4a44-b7a8-82b3138aa492"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "5bbd1564-3d99-40b1-a2d7-88b699877277",
+              "name": "TC-MSG-EDIT-001-Edit Message (Within Window)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_EDIT_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"section\": \"Fanart\",\r\n    \"message\": \"Within 1 minute\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "c4060146-6ce7-4960-b63b-a5306f3509f7",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "12893128-ab8f-4406-aee6-0fc986971d47"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "623b173e-286f-4273-8926-21992971a489",
+              "name": "TC-MSG-EDIT-002-Edit Message (Over Window)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_EDIT_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\",\r\n    \"message\": \"Over 1 minute\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "195c0f26-b411-43a7-ba6f-ad2b00a2dc02",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 400 Bad Request\", function () {\r",
+                      "    pm.expect([200, 400]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "d685f130-266f-43fe-8849-d04c61a656a1"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "bac7f47d-2da0-4b4e-853f-3dc23dc9ffd2",
+              "name": "TC-MSG-DEL-001-Delete Message (Author)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages",
+                    "{{MESSAGE_ID_DEL_001}}"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_U001}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 204 No Content\", function () {\r",
+                      "    pm.expect([200, 204]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "19d36dc8-ab0e-4dee-af1d-d85c7a1dc466",
+              "name": "TC-MSG-VAL-001-Send Message (Sanitization Test)",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sender\": \"{{SENDER_GUEST}}\",\r\n    \"section\": \"General\",\r\n    \"message\": \"<script>bad</script>\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "6ef68132-edf0-474e-b6c9-4007b01b8dac",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 200 OK or 201 Created\", function () {\r",
+                      "    pm.expect([200, 201]).to.include(pm.response.code);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "9901a8c9-f304-4b1a-a286-3ac617164d71"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "328313a0-6f6d-4c31-8342-e6552d1c5291",
+            "name": "Pokemania - TalkTalk API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "6b829191-f835-4a5e-b050-c8728ddc1624",
+          "length": 6,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "7d064e30-4eef-4b83-90ca-d00d32f72233",
+          "scriptId": "25da56ec-846f-4d9a-821c-25c2f6527fff",
+          "execution": "0e3c139c-b5b8-490f-9211-7ea10344e198"
+        }
+      }
+    ],
+    "error": null
+  }
+}

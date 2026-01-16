@@ -1,0 +1,1771 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "13c3a89b-7731-4eaf-a79c-621f24b678f9",
+      "exporter_id": "43737297"
+    },
+    "item": [
+      {
+        "id": "16f49ada-c210-477c-b4e4-28c5313f6236",
+        "name": "TC-ADMIN-ROLE-SET-001",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "users",
+              "{{USER_ID_SET_TARGET}}",
+              "role"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U004}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "b9344579-a89f-422e-a082-1f3f3b26879c",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 200 OK\", () => {\r",
+                "    pm.response.to.have.status(200);\r",
+                "});"
+              ],
+              "_lastExecutionId": "0b367a7d-2e38-4258-b770-02669e90d943"
+            }
+          }
+        ]
+      },
+      {
+        "id": "df2ec72b-9681-4c69-b45e-42878463757f",
+        "name": "TC-ADMIN-ROLE-SET-NA-001",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "users",
+              "{{USER_ID_SET_TARGET}}",
+              "role"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "9a275da7-8ce4-4d3c-8239-e51c73f49c7d",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 403 Forbidden\", () => {\r",
+                "    pm.response.to.have.status(403);\r",
+                "});\r",
+                "\r"
+              ],
+              "_lastExecutionId": "14a47c6d-de0d-4e91-b1ff-86ed8f704664"
+            }
+          }
+        ]
+      },
+      {
+        "id": "848349ab-6fa4-4b19-bdee-9ec39b6c2118",
+        "name": "TC-ADMIN-ROLE-SET-VAL-001",
+        "request": {
+          "url": {
+            "protocol": "http",
+            "path": [
+              "api",
+              "users",
+              "{{USER_ID_SET_TARGET}}",
+              "role"
+            ],
+            "host": [
+              "localhost:3000"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"role\":\"superuser\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U004}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "90c79b91-6aec-4d44-abc6-f9921f912ff6",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test(\"Status is 400 Bad Request\", () => {\r",
+                "    pm.response.to.have.status(400);\r",
+                "});\r",
+                "\r"
+              ],
+              "_lastExecutionId": "7972eecf-9ab8-4614-8bc9-c1f543409f79"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [],
+    "info": {
+      "_postman_id": "13c3a89b-7731-4eaf-a79c-621f24b678f9",
+      "name": "Pokemania - Admin API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2025-12-30T00:00:00.000Z",
+      "postman_exported_using": "Postman/latest"
+    },
+    "id": "pokemania-ci-env",
+    "name": "CI",
+    "values": [
+      {
+        "type": "any",
+        "value": "http://localhost:3000",
+        "key": "BASE_URL"
+      },
+      {
+        "type": "any",
+        "value": "manager@pokemania.com",
+        "key": "TEST_ADMIN_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "manager",
+        "key": "TEST_ADMIN_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "jayden98@gmail.com",
+        "key": "TEST_USER_EMAIL"
+      },
+      {
+        "type": "any",
+        "value": "jayden123!",
+        "key": "TEST_USER_PASSWORD"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "TOKEN_USER"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_ADMIN"
+      },
+      {
+        "type": "any",
+        "value": "",
+        "key": "USER_ID_USER"
+      }
+    ]
+  },
+  "globals": {
+    "id": "76bc14e1-0a15-44b4-a05c-ce497e701c08",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 3,
+        "pending": 0,
+        "failed": 2
+      },
+      "testScripts": {
+        "total": 3,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 18.333333333333332,
+      "responseMin": 3,
+      "responseMax": 47,
+      "responseSd": 20.28683207293725,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1768538310774,
+      "completed": 1768538310906
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 3,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "a39953ce-d6d3-4dcb-87c7-7ecd9b9d7f30",
+          "httpRequestId": "589a65a3-6092-4430-9fe2-6431832b42aa"
+        },
+        "item": {
+          "id": "16f49ada-c210-477c-b4e4-28c5313f6236",
+          "name": "TC-ADMIN-ROLE-SET-001",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "users",
+                "{{USER_ID_SET_TARGET}}",
+                "role"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U004}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "b9344579-a89f-422e-a082-1f3f3b26879c",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200 OK\", () => {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "0b367a7d-2e38-4258-b770-02669e90d943"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "users",
+              "%7B%7BUSER_ID_SET_TARGET%7D%7D",
+              "role"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U004}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "c2adc819-2fc9-46f2-863a-8c36d191a72e",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "24",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U004}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "a11bfd32-bf97-4a87-94f6-e57f38621ac1",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "35"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"23-CUnMFpQhq2CGFr+8Abdk14p/90o\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:30 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              67,
+              111,
+              117,
+              108,
+              100,
+              32,
+              110,
+              111,
+              116,
+              32,
+              114,
+              101,
+              116,
+              114,
+              105,
+              101,
+              118,
+              101,
+              32,
+              117,
+              115,
+              101,
+              114,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 47,
+          "responseSize": 35
+        },
+        "id": "16f49ada-c210-477c-b4e4-28c5313f6236",
+        "assertions": [
+          {
+            "assertion": "Status is 200 OK",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status is 200 OK",
+              "message": "expected response to have status code 200 but got 400",
+              "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:1)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "0944565f-e7a2-4839-bd08-0a863ba39665",
+          "length": 3,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "715e58e7-452a-4336-94e9-15e5e501823f"
+        },
+        "item": {
+          "id": "df2ec72b-9681-4c69-b45e-42878463757f",
+          "name": "TC-ADMIN-ROLE-SET-NA-001",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "users",
+                "{{USER_ID_SET_TARGET}}",
+                "role"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "9a275da7-8ce4-4d3c-8239-e51c73f49c7d",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403 Forbidden\", () => {\r",
+                  "    pm.response.to.have.status(403);\r",
+                  "});\r",
+                  "\r"
+                ],
+                "_lastExecutionId": "14a47c6d-de0d-4e91-b1ff-86ed8f704664"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "users",
+              "%7B%7BUSER_ID_SET_TARGET%7D%7D",
+              "role"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U001}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "f0d5d0d4-4450-4d5b-859d-2cd34b7bb46b",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "24",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U001}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "ca478d90-8557-4f04-8295-3d2e9516aabb",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "35"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"23-CUnMFpQhq2CGFr+8Abdk14p/90o\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:30 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              67,
+              111,
+              117,
+              108,
+              100,
+              32,
+              110,
+              111,
+              116,
+              32,
+              114,
+              101,
+              116,
+              114,
+              105,
+              101,
+              118,
+              101,
+              32,
+              117,
+              115,
+              101,
+              114,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 5,
+          "responseSize": 35
+        },
+        "id": "df2ec72b-9681-4c69-b45e-42878463757f",
+        "assertions": [
+          {
+            "assertion": "Status is 403 Forbidden",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status is 403 Forbidden",
+              "message": "expected response to have status code 403 but got 400",
+              "stack": "AssertionError: expected response to have status code 403 but got 400\n   at Object.eval sandbox-script.js:1:2)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "2b14d2bf-8a97-43db-a825-baea33ef9ed4",
+          "length": 3,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "c54cf0aa-5234-4328-a06f-9204fd8a5280"
+        },
+        "item": {
+          "id": "848349ab-6fa4-4b19-bdee-9ec39b6c2118",
+          "name": "TC-ADMIN-ROLE-SET-VAL-001",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "users",
+                "{{USER_ID_SET_TARGET}}",
+                "role"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\":\"superuser\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U004}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "90c79b91-6aec-4d44-abc6-f9921f912ff6",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 400 Bad Request\", () => {\r",
+                  "    pm.response.to.have.status(400);\r",
+                  "});\r",
+                  "\r"
+                ],
+                "_lastExecutionId": "7972eecf-9ab8-4614-8bc9-c1f543409f79"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "http",
+            "port": "3000",
+            "path": [
+              "api",
+              "users",
+              "%7B%7BUSER_ID_SET_TARGET%7D%7D",
+              "role"
+            ],
+            "host": [
+              "localhost"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer {{TOKEN_U004}}",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "41387ee9-96eb-415d-9e47-af0b7d8022a5",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "localhost:3000",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "28",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"role\":\"superuser\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "{{TOKEN_U004}}",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "36022909-62d4-47a4-9ce2-2dda5649b1b7",
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Security-Policy",
+              "value": "default-src 'self';connect-src 'self' https://pokeapi.co https://pokemania-wvyd.onrender.com;img-src 'self' data: https://raw.githubusercontent.com https://pokeapi.co https://wallpapercave.com https://images.seeklogo.com;script-src 'self' https://pokemania-wvyd.onrender.com 'unsafe-inline';style-src 'self' https://pokemania-wvyd.onrender.com https://fonts.googleapis.com https://fonts.cdnfonts.com 'unsafe-inline';font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com;base-uri 'self';form-action 'self';frame-ancestors 'self';object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Resource-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Origin-Agent-Cluster",
+              "value": "?1"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-DNS-Prefetch-Control",
+              "value": "off"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "35"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"23-CUnMFpQhq2CGFr+8Abdk14p/90o\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 16 Jan 2026 04:38:30 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              101,
+              114,
+              114,
+              111,
+              114,
+              34,
+              58,
+              34,
+              67,
+              111,
+              117,
+              108,
+              100,
+              32,
+              110,
+              111,
+              116,
+              32,
+              114,
+              101,
+              116,
+              114,
+              105,
+              101,
+              118,
+              101,
+              32,
+              117,
+              115,
+              101,
+              114,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 3,
+          "responseSize": 35
+        },
+        "id": "848349ab-6fa4-4b19-bdee-9ec39b6c2118",
+        "assertions": [
+          {
+            "assertion": "Status is 400 Bad Request",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 105
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status is 200 OK",
+          "message": "expected response to have status code 200 but got 400",
+          "stack": "AssertionError: expected response to have status code 200 but got 400\n   at Object.eval sandbox-script.js:1:1)",
+          "checksum": "09823a99257d08eb1326fc93e3475bf7",
+          "id": "dd684f31-a59a-4f55-bc52-3ec69a0b3332",
+          "timestamp": 1768538310857,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "16f49ada-c210-477c-b4e4-28c5313f6236",
+          "name": "TC-ADMIN-ROLE-SET-001",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "users",
+                "{{USER_ID_SET_TARGET}}",
+                "role"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U004}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "b9344579-a89f-422e-a082-1f3f3b26879c",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 200 OK\", () => {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "_lastExecutionId": "0b367a7d-2e38-4258-b770-02669e90d943"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "13c3a89b-7731-4eaf-a79c-621f24b678f9",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "16f49ada-c210-477c-b4e4-28c5313f6236",
+              "name": "TC-ADMIN-ROLE-SET-001",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "users",
+                    "{{USER_ID_SET_TARGET}}",
+                    "role"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U004}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "b9344579-a89f-422e-a082-1f3f3b26879c",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 200 OK\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "0b367a7d-2e38-4258-b770-02669e90d943"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "df2ec72b-9681-4c69-b45e-42878463757f",
+              "name": "TC-ADMIN-ROLE-SET-NA-001",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "users",
+                    "{{USER_ID_SET_TARGET}}",
+                    "role"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "9a275da7-8ce4-4d3c-8239-e51c73f49c7d",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 403 Forbidden\", () => {\r",
+                      "    pm.response.to.have.status(403);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "14a47c6d-de0d-4e91-b1ff-86ed8f704664"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "848349ab-6fa4-4b19-bdee-9ec39b6c2118",
+              "name": "TC-ADMIN-ROLE-SET-VAL-001",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "users",
+                    "{{USER_ID_SET_TARGET}}",
+                    "role"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"role\":\"superuser\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U004}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "90c79b91-6aec-4d44-abc6-f9921f912ff6",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 400 Bad Request\", () => {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "7972eecf-9ab8-4614-8bc9-c1f543409f79"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "13c3a89b-7731-4eaf-a79c-621f24b678f9",
+            "name": "Pokemania - Admin API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 3,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "a39953ce-d6d3-4dcb-87c7-7ecd9b9d7f30",
+          "httpRequestId": "589a65a3-6092-4430-9fe2-6431832b42aa",
+          "scriptId": "b9344579-a89f-422e-a082-1f3f3b26879c",
+          "execution": "0b367a7d-2e38-4258-b770-02669e90d943"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status is 403 Forbidden",
+          "message": "expected response to have status code 403 but got 400",
+          "stack": "AssertionError: expected response to have status code 403 but got 400\n   at Object.eval sandbox-script.js:1:2)",
+          "checksum": "d26fa3cee1cbd8617591c19f17e9b930",
+          "id": "21f28e7b-9d7d-4900-8232-c1572b871fe3",
+          "timestamp": 1768538310883,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 2,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "df2ec72b-9681-4c69-b45e-42878463757f",
+          "name": "TC-ADMIN-ROLE-SET-NA-001",
+          "request": {
+            "url": {
+              "protocol": "http",
+              "path": [
+                "api",
+                "users",
+                "{{USER_ID_SET_TARGET}}",
+                "role"
+              ],
+              "host": [
+                "localhost:3000"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "type": "string",
+                  "value": "{{TOKEN_U001}}",
+                  "key": "token"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "9a275da7-8ce4-4d3c-8239-e51c73f49c7d",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status is 403 Forbidden\", () => {\r",
+                  "    pm.response.to.have.status(403);\r",
+                  "});\r",
+                  "\r"
+                ],
+                "_lastExecutionId": "14a47c6d-de0d-4e91-b1ff-86ed8f704664"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "13c3a89b-7731-4eaf-a79c-621f24b678f9",
+            "exporter_id": "43737297"
+          },
+          "item": [
+            {
+              "id": "16f49ada-c210-477c-b4e4-28c5313f6236",
+              "name": "TC-ADMIN-ROLE-SET-001",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "users",
+                    "{{USER_ID_SET_TARGET}}",
+                    "role"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U004}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "b9344579-a89f-422e-a082-1f3f3b26879c",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 200 OK\", () => {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "0b367a7d-2e38-4258-b770-02669e90d943"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "df2ec72b-9681-4c69-b45e-42878463757f",
+              "name": "TC-ADMIN-ROLE-SET-NA-001",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "users",
+                    "{{USER_ID_SET_TARGET}}",
+                    "role"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"role\":\"admin\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U001}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "9a275da7-8ce4-4d3c-8239-e51c73f49c7d",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 403 Forbidden\", () => {\r",
+                      "    pm.response.to.have.status(403);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "14a47c6d-de0d-4e91-b1ff-86ed8f704664"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "848349ab-6fa4-4b19-bdee-9ec39b6c2118",
+              "name": "TC-ADMIN-ROLE-SET-VAL-001",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "path": [
+                    "api",
+                    "users",
+                    "{{USER_ID_SET_TARGET}}",
+                    "role"
+                  ],
+                  "host": [
+                    "localhost:3000"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"role\":\"superuser\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "type": "string",
+                      "value": "{{TOKEN_U004}}",
+                      "key": "token"
+                    }
+                  ]
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "90c79b91-6aec-4d44-abc6-f9921f912ff6",
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status is 400 Bad Request\", () => {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "});\r",
+                      "\r"
+                    ],
+                    "_lastExecutionId": "7972eecf-9ab8-4614-8bc9-c1f543409f79"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "13c3a89b-7731-4eaf-a79c-621f24b678f9",
+            "name": "Pokemania - Admin API",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "0944565f-e7a2-4839-bd08-0a863ba39665",
+          "length": 3,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "715e58e7-452a-4336-94e9-15e5e501823f",
+          "scriptId": "9a275da7-8ce4-4d3c-8239-e51c73f49c7d",
+          "execution": "14a47c6d-de0d-4e91-b1ff-86ed8f704664"
+        }
+      }
+    ],
+    "error": null
+  }
+}
