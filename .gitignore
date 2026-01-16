@@ -22,6 +22,7 @@ api/postman/environments/ci.postman_environment.json
 .env.local
 .env
 analyze*
+debug_report.py
 
 # Editor directories and files
 .vscode/*
