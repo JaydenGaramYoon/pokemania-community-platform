@@ -24,6 +24,7 @@ api/postman/environments/ci.postman_environment.json
 analyze*
 debug_report.py
 README.md
+cypress*
 
 # Editor directories and files
 .vscode/*
