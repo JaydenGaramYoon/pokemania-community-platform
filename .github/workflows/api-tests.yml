@@ -40,214 +40,141 @@ jobs:
             "name": "CI",
             "values": [
               {
-                "key": "___BASE_CONFIG___",
-                "value": "",
-                "enabled": false
-              },
-              {
                 "key": "BASE_URL",
                 "value": "http://localhost:3000",
                 "enabled": true
               },
               {
-                "key": "TOKEN_PUBLIC",
+                "key": "TEST_ADMIN_EMAIL",
+                "value": "${{ secrets.TEST_ADMIN_EMAIL }}",
+                "enabled": true
+              },
+              {
+                "key": "TEST_ADMIN_PASSWORD",
+                "value": "${{ secrets.TEST_ADMIN_PASSWORD }}",
+                "enabled": true
+              },
+              {
+                "key": "TEST_USER_EMAIL",
+                "value": "${{ secrets.TEST_USER_EMAIL }}",
+                "enabled": true
+              },
+              {
+                "key": "TEST_USER_PASSWORD",
+                "value": "${{ secrets.TEST_USER_PASSWORD }}",
+                "enabled": true
+              },
+              {
+                "key": "TOKEN_ADMIN",
                 "value": "",
                 "enabled": true
               },
               {
-                "key": "TOKEN_U001",
-                "value": "${{ secrets.TOKEN_U001 }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U002",
-                "value": "${{ secrets.TOKEN_U002 }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U003",
-                "value": "${{ secrets.TOKEN_U003 }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U004",
-                "value": "${{ secrets.TOKEN_U004 }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U005",
-                "value": "${{ secrets.TOKEN_U005 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_U001",
-                "value": "${{ secrets.PASSWORD_U001 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_U002",
-                "value": "${{ secrets.PASSWORD_U002 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_U003",
-                "value": "${{ secrets.PASSWORD_U003 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_TEST_SHORT",
-                "value": "${{ secrets.PASSWORD_TEST_SHORT }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_U001",
-                "value": "${{ secrets.EMAIL_U001 }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_U002",
-                "value": "${{ secrets.EMAIL_U002 }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_U003",
-                "value": "${{ secrets.EMAIL_U003 }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_TEST_DUPLICATE",
-                "value": "${{ secrets.EMAIL_TEST_DUPLICATE }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_TEST_NOTFOUND",
-                "value": "${{ secrets.EMAIL_TEST_NOTFOUND }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_TEST_SHORT",
-                "value": "${{ secrets.EMAIL_TEST_SHORT }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH001",
-                "value": "${{ secrets.PASSWORD_AUTH001 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH002_INVALID",
-                "value": "${{ secrets.PASSWORD_AUTH002_INVALID }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH004",
-                "value": "${{ secrets.PASSWORD_AUTH004 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH_SIGNUP001",
-                "value": "${{ secrets.PASSWORD_AUTH_SIGNUP001 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH_SIGNUP002",
-                "value": "${{ secrets.PASSWORD_AUTH_SIGNUP002 }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH_SIGNUP003_SHORT",
-                "value": "${{ secrets.PASSWORD_AUTH_SIGNUP003_SHORT }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_U001",
-                "value": "${{ secrets.USER_ID_U001 }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_U002",
-                "value": "${{ secrets.USER_ID_U002 }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_U003",
-                "value": "${{ secrets.USER_ID_U003 }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_SET_TARGET",
-                "value": "${{ secrets.USER_ID_SET_TARGET }}",
-                "enabled": true
-              },
-              {
-                "key": "GAME_ID_PUT_001",
+                "key": "TOKEN_USER",
                 "value": "",
                 "enabled": true
               },
               {
-                "key": "GAME_ID_PUT_002",
+                "key": "USER_ID_ADMIN",
                 "value": "",
                 "enabled": true
               },
               {
-                "key": "GAME_ID_DEL_001",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "GAME_ID_DEL_002",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "MESSAGE_ID_EDIT_001",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "MESSAGE_ID_DEL_001",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "SENDER_U001",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "SENDER_GUEST",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "FAV-DEL-001",
+                "key": "USER_ID_USER",
                 "value": "",
                 "enabled": true
               }
             ],
             "_postman_variable_scope": "environment",
-            "._postman_exported_at": "2025-12-30T00:00:00.000Z",
+            "_postman_exported_at": "2025-12-30T00:00:00.000Z",
             "_postman_exported_using": "Postman/latest"
           }
           EOF
 
       - name: Start server
-        run: npm run dev &
+        run: npm run dev > server.log 2>&1 &
         env:
           MONGODB_URI: mongodb://localhost:27017/BBproject
+        timeout-minutes: 5
 
-      - name: Wait for server
-        run: sleep 3
+      - name: Wait for server to be ready
+        run: |
+          for i in {1..30}; do
+            if curl -s http://localhost:3000 > /dev/null 2>&1; then
+              echo "✅ Server is ready!"
+              exit 0
+            fi
+            echo "⏳ Waiting for server... ($i/30)"
+            sleep 1
+          done
+          echo "❌ Server failed to start"
+          cat server.log
+          exit 1
 
-      - name: Run API Tests
-        run: npx newman run "api/postman/Public API (Search).postman_collection.json" -e "api/postman/environments/ci.postman_environment.json" -r html,json --reporter-html-export=newman-report.html --reporter-json-export=newman-report.json
+      - name: Run All API Tests
+        run: |
+          mkdir -p api/newman/reports
+          
+          echo "Running Auth API Tests..."
+          npx newman run "api/postman/Auth API.postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/auth-report.html \
+            --reporter-json-export api/newman/reports/auth-report.json || true
+          
+          echo "Running User API Tests..."
+          npx newman run "api/postman/User API.postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/user-report.html \
+            --reporter-json-export api/newman/reports/user-report.json || true
+          
+          echo "Running Favourites API Tests..."
+          npx newman run "api/postman/Favourites API.postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/favourites-report.html \
+            --reporter-json-export api/newman/reports/favourites-report.json || true
+          
+          echo "Running Game API Tests..."
+          npx newman run "api/postman/Game API.postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/game-report.html \
+            --reporter-json-export api/newman/reports/game-report.json || true
+          
+          echo "Running Profile API Tests..."
+          npx newman run "api/postman/Profile API.postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/profile-report.html \
+            --reporter-json-export api/newman/reports/profile-report.json || true
+          
+          echo "Running TalkTalk API Tests..."
+          npx newman run "api/postman/TalkTalk API.postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/talktalk-report.html \
+            --reporter-json-export api/newman/reports/talktalk-report.json || true
+          
+          echo "Running Admin API Tests..."
+          npx newman run "api/postman/Admin API.postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/admin-report.html \
+            --reporter-json-export api/newman/reports/admin-report.json || true
+          
+          echo "Running Public API Tests..."
+          npx newman run "api/postman/Public API (Search).postman_collection.json" \
+            -e "api/postman/environments/ci.postman_environment.json" \
+            -r html,json \
+            --reporter-html-export api/newman/reports/public-report.html \
+            --reporter-json-export api/newman/reports/public-report.json || true
 
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: api-test-reports
-          path: |
-            newman-report.html
-            newman-report.json
+          path: api/newman/reports/
           retention-days: 30

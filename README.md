@@ -1,272 +1,148 @@
-"# Pokemania - Full Stack Application
+# API Automation & Quality Analysis | PokeMania
 
-A comprehensive Pokemon game platform with full QA testing coverage using Postman collections.
+## Important Links 🔗
 
-## Overview
+- **System & DB Design:** [GitHub Repository](https://github.com/JaydenGaramYoon/pokemania-community-platform)
+- **QA Testing Branch:** [qa-testing branch](https://github.com/JaydenGaramYoon/pokemania-community-platform/tree/qa-testing)
+- **API Testing Guide:** [API README](./api/README.md)
+- **GitHub Secrets Setup:** [SECRETS Guide](./.github/SECRETS.md)
+- **PokéAPI Documentation:** [PokéAPI Docs](https://pokeapi.co/docs/v2)
 
-Pokemania is a full-stack web application that enables users to:
-- Sign up and authenticate with JWT tokens
-- Play Pokemon games and track scores
-- Manage favorite Pokemon
-- Send and receive messages
-- View personal profiles
-- Search Pokemon via integrated PokeAPI
+---
 
-**Key Feature**: 51 comprehensive Postman test cases covering Auth, User, Game, Profile, Favorites, Messaging, Admin, and Public APIs.
+## API Automation Overview
 
-## Tech Stack
+This project includes a dedicated **API automation suite** implemented with **Postman and Newman**, designed to validate backend functionality independently from the UI.
 
-**Frontend**
-- React 18 with Vite
-- CSS Modules
-- Responsive UI components
+The automation covers **49 API test cases across 8 Postman collections**, targeting real-world QA scenarios such as functional validation, negative testing, authorization control, and edge case handling.
 
-**Backend**
-- Express.js
-- MongoDB
-- JWT Authentication
-- Error handling middleware
+### Coverage Highlights
+- JWT-based authentication and token lifecycle handling
+- Role-based authorization (user vs admin)
+- Core business logic validation (games, profiles, favourites, messaging)
+- Negative scenarios and boundary conditions
+- CLI-based automated execution using Newman
+- CI-ready structure with secure environment variable management
 
-**Testing**
-- Postman Collections (8 APIs)
-- Newman CLI support
-- 51 test cases (Positive, Negative, Authorization, Edge cases)
+> Note: All environment variables are committed with empty values.  
+> Tokens and sensitive data are generated and injected only at runtime.
+
+---
 
 ## Project Structure
 
+This repository is organised to clearly separate application code from QA automation artifacts.
+
 ```
-BBProject/
-├── client/                    # React frontend
-│   ├── src/components/        # Reusable components
-│   ├── public/                # Static assets
-│   └── package.json
-│
-├── server/                    # Express backend
-│   ├── controllers/           # Business logic
-│   ├── models/                # MongoDB schemas
-│   ├── routes/                # API endpoints
-│   └── config/                # Configuration
-│
-├── api/postman/              # QA Test Collections
-│   ├── *.postman_collection.json  # 8 API collections
-│   └── environments/          # Test environment variables
-│
-└── package.json              # Root dependencies
+.
+├── client/            # Frontend application
+├── server/            # Backend application
+├── api/               # API automation and QA artifacts
+│   ├── postman/       # Postman collections and environments
+│   └── README.md      # Detailed API testing documentation
+└── README.md          # Project overview and quality analysis
 ```
 
-## Installation
+### API Automation Directory (/api)
 
-```bash
-# Install dependencies
-npm install
+The /api directory contains all resources related to API automated testing and quality validation.
+It is intentionally separated from the application source code to clearly distinguish test definitions from implementation logic.
 
-# Setup environment variables
-cp .env.example .env
-# Edit .env with your configuration
+This directory serves as the primary entry point for reviewing the QA scope of this project.
 
-# Install frontend dependencies
-cd client
-npm install
-cd ..
-```
+---
 
-## Running the Application
+## API Test & Quality Analysis Report (v1.0)
 
-**Full Stack Development**
-```bash
-npm run dev
-```
-Runs Vite frontend (port 5173) and Express backend (port 3000) concurrently.
+In addition to automated execution, this project includes a **formal API test and quality analysis report** that evaluates the effectiveness and reliability of the test suite beyond simple pass or fail results.
 
-**Backend Only**
-```bash
-npm run server
-# or
-node server.js
-```
-Starts Express server on port 3000.
-
-**Frontend Only**
-```bash
-cd client
-npm run dev
-```
-
-## API Testing with Postman
-
-### Quick Start
-1. Import environment: `api/postman/environments/dev.postman_environment.json`
-2. Import collections from `api/postman/` directory
-3. Populate variables at runtime (tokens, credentials)
-4. Run tests via Postman UI or Newman CLI
-
-### Newman CLI
-```bash
-newman run "api/postman/Auth API.postman_collection.json" \
-  -e "api/postman/environments/dev.postman_environment.json"
-```
-
-For detailed testing guide, see [api/README.md](api/README.md)
-
-## API Testing Strategy
-
-### Test Scope
-- **Auth API**: Login, signup, JWT validation, token-based access
-- **User API**: CRUD operations, user permissions, password management
-- **Game API**: Score save/retrieve, update, delete operations
-- **Profile API**: User profile management
-- **Favorites API**: Pokemon favorites management with conflict handling
-- **TalkTalk API**: Messaging system with edit/delete windows and XSS prevention
-- **Admin API**: Role management and admin-only operations
-- **Public API**: Pokemon search without authentication
-
-### Test Case Types
-- **Positive Cases**: Valid requests with expected successful responses
-- **Negative Cases**: Invalid inputs, missing data, validation failures (400 errors)
-- **Authorization Cases**: Missing/invalid tokens, insufficient permissions (401/403 errors)
-- **Edge Cases**: Boundary conditions (e.g., message edit window expiration, duplicate entries)
-
-### Validation Strategy
-- **Status Code**: All tests verify HTTP status codes as the primary contract signal
-- **Response Body**: Validated selectively when meaningful:
-  - Authorization checks (token presence, role verification)
-  - Error messages (ensuring correct error communication)
-  - API dependencies (capturing data for subsequent test operations)
-- **Minimal Assertions**: Unnecessary response validation avoided to reduce test fragility and maintenance burden
-
-This approach follows real-world QA practices where tests focus on meaningful validations rather than comprehensive field-by-field comparisons.
-
-## Environment Variable Management
-
-### Policy
-- **Variables are committed with empty values** in `api/postman/environments/dev.postman_environment.json`
-- **Sensitive data (tokens, credentials) are set at runtime only**
-- Never commit real tokens, passwords, or authentication values
-
-### Variable Categories
-- `BASE_URL`: Backend server address
-- `TOKEN_U001-U005`: JWT authentication tokens (populated after login)
-- `USER_ID_U001-U005`: User identifiers (populated after signup)
-- Email/Password: Test credentials for authentication scenarios
-- `GAME_ID_*`, `MESSAGE_ID_*`: Dynamic IDs captured from API responses
-
-### Security
-All sensitive values must be configured locally before testing or managed through secure CI/CD secret management systems. This approach ensures credentials never leak through version control.
+The analysis focuses on identifying defect patterns, assessing test depth, and evaluating overall release readiness based on observed test outcomes.
 
 
 
-## Test Design
+### Sample API Test Cases
 
-**Test Categories**
-- **Positive**: Valid requests and successful responses
-- **Negative**: Invalid inputs and error handling
-- **Security**: Authorization and authentication checks
-- **Edge Cases**: Boundary conditions and special scenarios
+The following table presents a curated subset of representative API test cases from the full test suite.  
 
-**Validation Strategy**
-- Status code verification (all tests)
-- Response body validation (authorization, errors, and dependencies only)
-- Minimal unnecessary assertions to reduce maintenance burden
+<img width="1373" height="747" alt="image" src="https://github.com/user-attachments/assets/3769b3df-9192-422e-bc8a-22c491d6d71a" />
 
-See [api/README.md](api/README.md) for complete testing documentation.
+These cases were selected to demonstrate coverage across **negative scenarios, edge conditions, authorization control, and core business rules**.
 
-## Environment Variables
-
-### Required for Backend
-```
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-PORT=3000
-NODE_ENV=development
-```
-
-### Required for Testing
-Environment variables are configured in `api/postman/environments/dev.postman_environment.json`
-
-**Security**: Sensitive values (tokens, credentials) are not committed. Set at runtime.
-
-## Running API Tests
-
-### Postman UI
-1. Import environment: `api/postman/environments/dev.postman_environment.json`
-2. Import collection files from `api/postman/` directory
-3. Set environment to "Dev"
-4. Click "Send" to run individual tests
-
-### Newman CLI (Recommended for CI/CD)
-Run all tests for a specific API:
-```bash
-cd api/postman
-newman run "Auth API.postman_collection.json" \
-  -e "environments/dev.postman_environment.json"
-```
-
-Run all collections with a report:
-```bash
-newman run "*.postman_collection.json" \
-  -e "environments/dev.postman_environment.json" \
-  --reporters cli,json \
-  --reporter-json-export results.json
-```
-
-### Test Results
-Test results are generated at runtime via Newman and are not stored in the repository. Each run produces fresh results based on current API state. This allows tests to remain version-controlled definitions while results remain environment-specific.
-
-## Why Postman for API Testing
-
-- **Fast API Validation**: Instant feedback on endpoint contracts and response structures
-- **CI/CD Integration**: Newman CLI enables seamless automation in build pipelines
-- **Maintainability**: Human-readable JSON format and UI-based test creation reduces friction
-- **Environment Management**: Built-in variable system supports multi-environment testing without code changes
+The samples reflect how test cases were designed at both unit and integration levels, with clear traceability to requirements and explicit validation of expected system behaviour.
 
 
 
-## Key Features
+### Test Metrics Summary
 
-- User authentication with JWT tokens
-- Game score tracking and history
-- Favorites management system
-- Real-time messaging with edit/delete windows
-- User profile management
-- Admin role management
-- Pokemon search integration
-- Input validation and XSS prevention
-- Comprehensive error handling
+<p align="center">
+  <img width="958" height="555" alt="API Test Metrics Summary"
+       src="https://github.com/user-attachments/assets/55dd23b8-0c0f-4655-93e2-1cf97ae15a6a" />
+</p>
+<p align="center">
+  <em>Figure 1. API test execution results based on 49 automated test cases</em>
+</p>
 
-## Security
+These results indicate full requirement and execution coverage, with failures concentrated in specific high-risk areas rather than widespread functional gaps.
 
-- JWT tokens for authentication
-- Password hashing
-- Input validation on all endpoints
-- CORS configuration
-- XSS prevention in message system
-- No credentials committed to repository
+---
 
-## Testing Coverage
+### Defect Workflow and Severity Overview
 
-51 test cases covering:
-- Happy path scenarios
-- Error handling (400, 401, 403, 404)
-- Authorization checks
-- Data validation
-- Edge cases
-- Security vulnerabilities (XSS)
+<p align="center">
+  <img width="648" height="530" alt="Defect Workflow and Severity Distribution"
+       src="https://github.com/user-attachments/assets/407fd813-d45f-4ef7-9529-17226668f2b8" />
+</p>
+<p align="center">
+  <em>Figure 2. Defect workflow status and severity distribution</em>
+</p>
 
-## Future Enhancements
+High-severity defects were primarily related to authentication failures, token validation, and backend synchronization issues that directly impacted session stability and core functionality.
 
-- WebSocket integration for real-time messaging
-- Advanced Pokemon filtering options
-- User leaderboard system
-- Game replay functionality
-- Mobile app version
+---
 
-## License
+### Quality Insights
 
-This project is part of COMP229 coursework and has been extended as a personal project for portfolio development. Includes comprehensive API testing practices and full-stack application architecture.
+- **Requirement Coverage**: Full alignment between requirements and executed test cases was maintained.
+- **Reliability**: Core features such as login, messaging, and data retrieval demonstrated stable behavior after fixes.
+- **Performance**: Average API response time remained under 300ms, although concurrent requests exposed synchronization risks.
+- **Traceability**: All defects were mapped to originating test cases and documented through a requirements traceability matrix (RTM).
 
-## Contact
+---
 
-- **Email**: garam.yoon.tech@gmail.com
-- **LinkedIn**: https://www.linkedin.com/in/garam-yoon/
+### Lessons Learned and Improvement Areas
 
-For questions or issues, please reach out via the contact information above." 
+- Additional negative testing is required for token refresh and multi-user session scenarios.
+- Isolating backend dependencies through mock API environments could reduce defect density.
+- Expanding regression automation within a CI/CD pipeline is recommended to ensure consistent retesting after each fix.
+
+---
+
+### Conclusion
+
+The QA phase confirmed **100% requirement and execution coverage**, identifying **13 defects** prior to release.  
+With a **73.47% test pass rate** and **26.53% defect density**, the application is in a **stable pre-release (v1.0)** state, pending verification of remaining open issues.
+
+The results provide a clear baseline for regression verification in subsequent sprint cycles and support informed release-readiness decisions.
+
+---
+
+## Tools and Technologies
+
+- **API Testing**: Postman, Newman
+- **Automation Execution**: CLI-based Newman runs
+- **Defect Tracking**: Jira
+- **Test Management**: Google Sheets, RTM
+
+---
+
+## Author
+
+**Garam Yoon**  
+Junior QA Engineer  
+
+📩 Email: garam.yoon.tech@gmail.com  
+🔗 LinkedIn: https://www.linkedin.com/in/garam-yoon/
+
+---
+
+This project was developed as part of academic coursework and extended as a personal QA portfolio, with a strong emphasis on practical API automation, defect analysis, and quality-focused decision making.
