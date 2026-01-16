@@ -20,6 +20,8 @@ api/newman/reports/
 api/postman/environments/ci.postman_environment.json
 *.json.bak
 .env.local
+.env
+analyze*
 
 # Editor directories and files
 .vscode/*
