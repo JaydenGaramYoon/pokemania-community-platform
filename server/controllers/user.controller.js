@@ -139,6 +139,13 @@ export const updateRole = async (req, res) => {
   try {
     const user = await User.findById(userId);
     if (!user) return res.status(404).json({ error: 'User not found' });
+    
+    // 본인의 role은 변경 가능 (초기 admin 설정용), admin은 다른 user의 role도 변경 가능
+    const isOwnProfile = user._id.toString() === req.auth?._id?.toString();
+    if (!isOwnProfile && req.auth?.role !== 'admin') {
+      console.error('updateRole: not authorized');
+      return res.status(403).json({ error: 'Admin resource! Access denied.' });
+    }
 
     user.role = role;
     user.updated = Date.now();

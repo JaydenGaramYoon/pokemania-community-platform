@@ -56,8 +56,8 @@ router.route('/api/users/:userId')
 router.route('/api/users/:userId/password')
   .put(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.changePassword);
   
-// 역할 변경 (관리자만 가능)
+// 역할 변경 (본인 또는 관리자만 가능)
 router.route('/api/users/:userId/role')
-    .put(authCtrl.requireSignin, authCtrl.isAdmin, userCtrl.updateRole)
+    .put(authCtrl.requireSignin, userCtrl.updateRole)
 
 export default router
