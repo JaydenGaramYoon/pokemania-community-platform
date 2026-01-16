@@ -86,6 +86,13 @@ const remove = async (req, res) => {
 export const changePassword = async (req, res) => {
   const { new_password } = req.body;
   
+  console.log('changePassword called:', {
+    new_password,
+    hasProfile: !!req.profile,
+    profileId: req.profile?._id,
+    authId: req.auth?._id
+  });
+  
   // 본인의 비밀번호만 변경 가능 (req.profile는 middleware에서 세팅됨)
   if (!req.profile) {
     return res.status(404).json({ error: 'User not found' });
@@ -106,7 +113,8 @@ export const changePassword = async (req, res) => {
 
     res.json({ message: 'Password updated' });
   } catch (err) {
-    res.status(500).json({ error: 'Server error' });
+    console.error('changePassword error:', err.message);
+    res.status(500).json({ error: 'Server error', details: err.message });
   }
 };
 
