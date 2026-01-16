@@ -242,11 +242,3 @@ jobs:
           name: api-test-reports
           path: api/newman/reports/
           retention-days: 30
-
-      - name: Deploy Test Reports to GitHub Pages
-        if: always() && github.ref == 'refs/heads/qa-testing' && hashFiles('api/newman/reports/*.json') != ''
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./api/newman/reports
-          destination_dir: test-reports/${{ github.run_number }}
