@@ -122,8 +122,9 @@ const hasAuthorization = (req, res, next) => {
         idMatch: req.profile?._id?.toString() === req.auth?._id?.toString()
     });
     const authorized = req.profile && req.auth
-        && (req.profile._id == req.auth._id || req.auth.role === 'admin')
+        && (req.profile._id.toString() === req.auth._id.toString() || req.auth.role === 'admin')
     if (!(authorized)) {
+        console.error('hasAuthorization: not authorized');
         return res.status(403).json({
             error: "User is not authorized"
         })

@@ -23,7 +23,9 @@ const create = async (req, res) => {
 }
 const list = async (req, res) => {
     try {
+        console.log('list called:', { authRole: req.auth?.role, hasAuth: !!req.auth });
         let users = await User.find().select('name email role updated created')
+        console.log('list success:', { count: users.length });
         res.json(users)
     } catch (err) {
         return res.status(400).json({
@@ -68,7 +70,15 @@ const update = async (req, res) => {
 }
 const remove = async (req, res) => {
     try {
-        if (req.auth._id !== req.profile._id.toString() && req.auth.role !== 'admin') {
+        console.log('remove called:', {
+            authId: req.auth?._id?.toString(),
+            profileId: req.profile?._id?.toString(),
+            authRole: req.auth?.role,
+            idMatch: req.auth?._id?.toString() === req.profile?._id?.toString()
+        });
+        
+        if (req.auth?._id?.toString() !== req.profile?._id?.toString() && req.auth?.role !== 'admin') {
+            console.error('remove: not authorized');
             return res.status(403).json({ error: 'User is not authorized' });
         }
         let user = req.profile
