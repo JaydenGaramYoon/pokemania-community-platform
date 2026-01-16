@@ -116,8 +116,6 @@ jobs:
           USER_ID=$(echo "$USER_RESPONSE" | jq -r '.user._id // empty')
           
           if [ -z "$TOKEN_ADMIN" ] || [ -z "$TOKEN_USER" ]; then
-            echo "❌ Failed to authenticate test accounts"
-          if [ -z "$TOKEN_ADMIN" ] || [ -z "$TOKEN_USER" ]; then
             echo "Error: Failed to authenticate test accounts"
             exit 1
           fi
