@@ -34,56 +34,21 @@ jobs:
 
       - name: Create CI Postman Environment
         run: |
+          mkdir -p api/postman/environments
           cat > api/postman/environments/ci.postman_environment.json << 'EOF'
           {
             "id": "pokemania-ci-env",
             "name": "CI",
             "values": [
-              {
-                "key": "BASE_URL",
-                "value": "http://localhost:3000",
-                "enabled": true
-              },
-              {
-                "key": "TEST_ADMIN_EMAIL",
-                "value": "${{ secrets.TEST_ADMIN_EMAIL }}",
-                "enabled": true
-              },
-              {
-                "key": "TEST_ADMIN_PASSWORD",
-                "value": "${{ secrets.TEST_ADMIN_PASSWORD }}",
-                "enabled": true
-              },
-              {
-                "key": "TEST_USER_EMAIL",
-                "value": "${{ secrets.TEST_USER_EMAIL }}",
-                "enabled": true
-              },
-              {
-                "key": "TEST_USER_PASSWORD",
-                "value": "${{ secrets.TEST_USER_PASSWORD }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_ADMIN",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_USER",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_ADMIN",
-                "value": "",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_USER",
-                "value": "",
-                "enabled": true
-              }
+              {"key": "BASE_URL", "value": "http://localhost:3000", "enabled": true},
+              {"key": "TEST_ADMIN_EMAIL", "value": "${{ secrets.TEST_ADMIN_EMAIL }}", "enabled": true},
+              {"key": "TEST_ADMIN_PASSWORD", "value": "${{ secrets.TEST_ADMIN_PASSWORD }}", "enabled": true},
+              {"key": "TEST_USER_EMAIL", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
+              {"key": "TEST_USER_PASSWORD", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
+              {"key": "TOKEN_ADMIN", "value": "", "enabled": true},
+              {"key": "TOKEN_USER", "value": "", "enabled": true},
+              {"key": "USER_ID_ADMIN", "value": "", "enabled": true},
+              {"key": "USER_ID_USER", "value": "", "enabled": true}
             ],
             "_postman_variable_scope": "environment",
             "_postman_exported_at": "2025-12-30T00:00:00.000Z",
@@ -110,6 +75,71 @@ jobs:
           echo "❌ Server failed to start"
           cat server.log
           exit 1
+
+      - name: Setup Dynamic Test Data
+        run: |
+          echo "Logging in test accounts..."
+          
+          # Admin login
+          ADMIN_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
+            -H "Content-Type: application/json" \
+            -d "{\"email\": \"${{ secrets.TEST_ADMIN_EMAIL }}\", \"password\": \"${{ secrets.TEST_ADMIN_PASSWORD }}\"}")
+          
+          TOKEN_ADMIN=$(echo "$ADMIN_RESPONSE" | jq -r '.token // empty')
+          ADMIN_ID=$(echo "$ADMIN_RESPONSE" | jq -r '.user._id // empty')
+          
+          # User login  
+          USER_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
+            -H "Content-Type: application/json" \
+            -d "{\"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
+          
+          TOKEN_USER=$(echo "$USER_RESPONSE" | jq -r '.token // empty')
+          USER_ID=$(echo "$USER_RESPONSE" | jq -r '.user._id // empty')
+          
+          if [ -z "$TOKEN_ADMIN" ] || [ -z "$TOKEN_USER" ]; then
+            echo "❌ Failed to authenticate test accounts"
+            exit 1
+          fi
+          
+          echo "✅ Test accounts authenticated"
+          echo "token_admin_value=$TOKEN_ADMIN" >> $GITHUB_ENV
+          echo "admin_id_value=$ADMIN_ID" >> $GITHUB_ENV
+          echo "token_user_value=$TOKEN_USER" >> $GITHUB_ENV
+          echo "user_id_value=$USER_ID" >> $GITHUB_ENV
+
+      - name: Update Environment with Dynamic Data
+        run: |
+          cat > api/postman/environments/ci.postman_environment.json << 'EOF'
+          {
+            "id": "pokemania-ci-env",
+            "name": "CI",
+            "values": [
+              {"key": "BASE_URL", "value": "http://localhost:3000", "enabled": true},
+              {"key": "TOKEN_ADMIN", "value": "${{ env.token_admin_value }}", "enabled": true},
+              {"key": "TOKEN_USER", "value": "${{ env.token_user_value }}", "enabled": true},
+              {"key": "USER_ID_ADMIN", "value": "${{ env.admin_id_value }}", "enabled": true},
+              {"key": "USER_ID_USER", "value": "${{ env.user_id_value }}", "enabled": true},
+              {"key": "TOKEN_U001", "value": "${{ env.token_user_value }}", "enabled": true},
+              {"key": "TOKEN_U002", "value": "${{ env.token_user_value }}", "enabled": true},
+              {"key": "TOKEN_U003", "value": "${{ env.token_user_value }}", "enabled": true},
+              {"key": "TOKEN_U004", "value": "${{ env.token_admin_value }}", "enabled": true},
+              {"key": "USER_ID_U001", "value": "${{ env.user_id_value }}", "enabled": true},
+              {"key": "USER_ID_U002", "value": "${{ env.user_id_value }}", "enabled": true},
+              {"key": "USER_ID_U003", "value": "${{ env.user_id_value }}", "enabled": true},
+              {"key": "USER_ID_SET_TARGET", "value": "${{ env.user_id_value }}", "enabled": true},
+              {"key": "EMAIL_U001", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
+              {"key": "EMAIL_U002", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
+              {"key": "EMAIL_U003", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
+              {"key": "PASSWORD_AUTH001", "value": "${{ secrets.TEST_ADMIN_PASSWORD }}", "enabled": true},
+              {"key": "PASSWORD_AUTH002_INVALID", "value": "wrong_password_123", "enabled": true},
+              {"key": "PASSWORD_AUTH003", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
+              {"key": "PASSWORD_AUTH004", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true}
+            ],
+            "_postman_variable_scope": "environment",
+            "_postman_exported_at": "2025-12-30T00:00:00.000Z",
+            "_postman_exported_using": "Postman/latest"
+          }
+          EOF
 
       - name: Setup Test Data
         run: |
