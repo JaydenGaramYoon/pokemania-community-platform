@@ -20,16 +20,15 @@ if (fs.existsSync(reportsDir)) {
       
       if (data.run && data.run.stats) {
         const stats = data.run.stats;
-        const totalAssertions = stats.assertions?.total || 0;
-        const failedAssertions = stats.assertions?.failed || 0;
-        const passedAssertions = totalAssertions - failedAssertions;
+        const totalTests = stats.requests?.total || 0;
+        const failureCount = (data.run.failures || []).length;
+        const passedTests = totalTests - failureCount;
         
         results[apiName] = {
-          requests: stats.requests?.total || 0,
-          passed: passedAssertions,
-          failed: failedAssertions,
-          total: totalAssertions,
-          failures: (data.run.failures || []).length
+          total: totalTests,
+          passed: passedTests,
+          failed: failureCount,
+          failures: failureCount
         };
       }
     });
@@ -52,7 +51,7 @@ Object.entries(results)
     
     const status = result.failed === 0 ? 'PASS' : 'FAIL';
     
-    tableRows += `| ${api.toUpperCase()} | ${result.requests} | ${result.passed}/${result.total} | ${passRate}% | ${status} |\n`;
+    tableRows += `| ${api.toUpperCase()} | ${result.total} | ${result.passed}/${result.total} | ${passRate}% | ${status} |\n`;
   });
 
 const summary = `## API Test Results Summary
