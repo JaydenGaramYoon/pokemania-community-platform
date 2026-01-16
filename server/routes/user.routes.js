@@ -34,6 +34,9 @@ import { isAdmin } from '../controllers/user.controller.js'
 
 const router = express.Router()
 
+// userId param resolver - 모든 :userId 라우트 전에 실행
+router.param('userId', userCtrl.userByID)
+
 // 전체 유저 목록 조회 및 회원가입
 router.route('/api/users')
     .get(authCtrl.requireSignin, isAdmin, userCtrl.list)  // 관리자인 경우만 전체 목록 조회 가능
@@ -57,8 +60,5 @@ router.route('/api/users/:userId/password')
 // 역할 변경 (관리자만 가능)
 router.route('/api/users/:userId/role')
     .put(authCtrl.requireSignin, isAdmin, userCtrl.updateRole)
-
-// userId param resolver
-router.param('userId', userCtrl.userByID)
 
 export default router

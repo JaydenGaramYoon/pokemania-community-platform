@@ -99,6 +99,9 @@ jobs:
         run: |
           echo "Logging in test accounts..."
           
+          # Generate unique signup email using timestamp
+          SIGNUP_EMAIL="signup-test-$(date +%s)@test.local"
+          
           # Admin login
           ADMIN_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
             -H "Content-Type: application/json" \
@@ -139,6 +142,7 @@ jobs:
           echo "ADMIN_ID=$ADMIN_ID" >> $GITHUB_ENV
           echo "TOKEN_USER=$TOKEN_USER" >> $GITHUB_ENV
           echo "USER_ID=$USER_ID" >> $GITHUB_ENV
+          echo "SIGNUP_EMAIL=$SIGNUP_EMAIL" >> $GITHUB_ENV
 
       - name: Update Postman Environment with Tokens
         run: |
@@ -162,7 +166,7 @@ jobs:
               {"key": "USER_ID_SET_TARGET", "value": "${{ env.USER_ID }}", "enabled": true},
               {"key": "EMAIL_U001", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
               {"key": "EMAIL_U002", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
-              {"key": "EMAIL_U003", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
+              {"key": "EMAIL_U003", "value": "${{ env.SIGNUP_EMAIL }}", "enabled": true},
               {"key": "PASSWORD_AUTH001", "value": "${{ secrets.TEST_ADMIN_PASSWORD }}", "enabled": true},
               {"key": "PASSWORD_AUTH002_INVALID", "value": "invalid_password_12345", "enabled": true},
               {"key": "PASSWORD_AUTH003", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
