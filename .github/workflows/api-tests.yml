@@ -80,6 +80,11 @@ jobs:
         run: |
           echo "Creating test accounts..."
           
+          # Generate unique emails with consistent timestamps
+          TS=$(date +%s)
+          USER2_EMAIL="testuser002-${TS}@example.com"
+          USER3_EMAIL="testuser003-${TS}@example.com"
+          
           # Create admin account
           curl -s -X POST http://localhost:3000/api/users \
             -H "Content-Type: application/json" \
@@ -93,19 +98,19 @@ jobs:
             > /dev/null 2>&1 || true
           
           # Create user account (U002) - for password change and delete tests
-          USER2_EMAIL="testuser002-$(date +%s)@example.com"
           curl -s -X POST http://localhost:3000/api/users \
             -H "Content-Type: application/json" \
             -d "{\"name\": \"Test User 002\", \"email\": \"$USER2_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
             > /dev/null 2>&1 || true
           
           # Create user account (U003) - for additional tests
-          USER3_EMAIL="testuser003-$(date +%s)@example.com"
           curl -s -X POST http://localhost:3000/api/users \
             -H "Content-Type: application/json" \
             -d "{\"name\": \"Test User 003\", \"email\": \"$USER3_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
             > /dev/null 2>&1 || true
           
+          echo "USER2_EMAIL=$USER2_EMAIL" >> $GITHUB_ENV
+          echo "USER3_EMAIL=$USER3_EMAIL" >> $GITHUB_ENV
           echo "✅ Test accounts created (or already exist)"
           sleep 2
 
@@ -135,20 +140,18 @@ jobs:
           TOKEN_U001=$(echo "$USER1_RESPONSE" | jq -r '.token // empty')
           USER_ID_U001=$(echo "$USER1_RESPONSE" | jq -r '.user._id // empty')
           
-          # User U002 login (for password/delete tests)
-          USER2_EMAIL="testuser002-$(date +%s -d '1 second ago')@example.com"
+          # User U002 login (for password/delete tests) - use env variable
           USER2_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
             -H "Content-Type: application/json" \
-            -d "{\"email\": \"$USER2_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
+            -d "{\"email\": \"${{ env.USER2_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
           
           TOKEN_U002=$(echo "$USER2_RESPONSE" | jq -r '.token // empty')
           USER_ID_U002=$(echo "$USER2_RESPONSE" | jq -r '.user._id // empty')
           
-          # User U003 login
-          USER3_EMAIL="testuser003-$(date +%s -d '2 seconds ago')@example.com"
+          # User U003 login - use env variable
           USER3_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
             -H "Content-Type: application/json" \
-            -d "{\"email\": \"$USER3_EMAIL\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
+            -d "{\"email\": \"${{ env.USER3_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
           
           TOKEN_U003=$(echo "$USER3_RESPONSE" | jq -r '.token // empty')
           USER_ID_U003=$(echo "$USER3_RESPONSE" | jq -r '.user._id // empty')
