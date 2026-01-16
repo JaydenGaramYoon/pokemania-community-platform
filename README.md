@@ -127,6 +127,7 @@ High-severity defects were primarily related to authentication failures, token v
 
 ### Conclusion
 
+<<<<<<< HEAD
 The QA phase has validated core API functionality with a **75.5% test pass rate** across 49 comprehensive test cases.
 
 **Key Findings:**
@@ -135,6 +136,12 @@ The QA phase has validated core API functionality with a **75.5% test pass rate*
 - **Defect categorization** shows 12 failures across ADMIN, AUTH, FAVOURITES, GAME, PROFILE, and USER APIs
 
 The application is currently in **active QA remediation** status. All identified defects have been logged and prioritized for the next development sprint. Continued monitoring of authorization flows and token lifecycle management is critical for release readiness.
+=======
+The QA phase confirmed **100% requirement and execution coverage**, identifying **13 defects** prior to release.  
+With a **73.47% test pass rate** and **26.53% defect density**, the application is in a **stable pre-release (v1.0)** state, pending verification of remaining open issues.
+
+The results provide a clear baseline for regression verification in subsequent sprint cycles and support informed release-readiness decisions.
+>>>>>>> 7f8b241b737ba4ecdd493f6fe07175f7021e843d
 
 ---
 
