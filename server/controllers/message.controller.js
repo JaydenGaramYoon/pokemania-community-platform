@@ -189,8 +189,14 @@ export const deleteMessage = async (req, res) => {
     }
 
     // Get the user making the request to check their role
-    const requestingUser = await User.findOne({ name: sender });
-    const isAdmin = requestingUser && requestingUser.role === 'admin';
+    let isAdmin = false;
+    try {
+      const requestingUser = await User.findOne({ name: sender });
+      isAdmin = requestingUser && requestingUser.role === 'admin';
+    } catch (userErr) {
+      // User lookup failed, treat as non-admin
+      console.warn('User lookup failed for sender:', sender, userErr.message);
+    }
 
     // Admin can delete any message, regular users can only delete their own messages
     if (!isAdmin && message.sender !== sender) {
@@ -236,8 +242,14 @@ export const editMessage = async (req, res) => {
     }
 
     // Get the user making the request to check their role
-    const requestingUser = await User.findOne({ name: sender });
-    const isAdmin = requestingUser && requestingUser.role === 'admin';
+    let isAdmin = false;
+    try {
+      const requestingUser = await User.findOne({ name: sender });
+      isAdmin = requestingUser && requestingUser.role === 'admin';
+    } catch (userErr) {
+      // User lookup failed, treat as non-admin
+      console.warn('User lookup failed for sender:', sender, userErr.message);
+    }
 
     // Admin can edit any message, regular users can only edit their own messages
     if (!isAdmin && message.sender !== sender) {
