@@ -220,8 +220,8 @@ export const deleteMessage = async (req, res) => {
     
     res.status(200).json({ message: 'Message deleted successfully' });
   } catch (err) {
-    console.error('Message delete error:', err);
-    res.status(500).json({ error: 'Failed to delete message' });
+    console.error('Message delete error:', err.message, err.stack);
+    res.status(500).json({ error: 'Failed to delete message', details: err.message });
   }
 };
 
@@ -277,8 +277,8 @@ export const editMessage = async (req, res) => {
     
     res.status(200).json(updatedMessage);
   } catch (err) {
-    console.error('Message edit error:', err);
-    res.status(500).json({ error: 'Failed to edit message' });
+    console.error('Message edit error:', err.message, err.stack);
+    res.status(500).json({ error: 'Failed to edit message', details: err.message });
   }
 };
 
