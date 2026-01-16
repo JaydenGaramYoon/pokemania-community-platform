@@ -120,7 +120,21 @@ jobs:
             exit 1
           fi
           
-          echo "✅ Test accounts authenticated"
+          # Set admin role for admin account
+          echo "Setting admin role..."
+          curl -s -X PUT "http://localhost:3000/api/users/$ADMIN_ID/role" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $TOKEN_ADMIN" \
+            -d '{"role": "admin"}' > /dev/null 2>&1 || true
+          
+          # Re-login to get token with admin role
+          ADMIN_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
+            -H "Content-Type: application/json" \
+            -d "{\"email\": \"${{ secrets.TEST_ADMIN_EMAIL }}\", \"password\": \"${{ secrets.TEST_ADMIN_PASSWORD }}\"}")
+          
+          TOKEN_ADMIN=$(echo "$ADMIN_RESPONSE" | jq -r '.token // empty')
+          
+          echo "✅ Test accounts authenticated and admin role set"
           echo "TOKEN_ADMIN=$TOKEN_ADMIN" >> $GITHUB_ENV
           echo "ADMIN_ID=$ADMIN_ID" >> $GITHUB_ENV
           echo "TOKEN_USER=$TOKEN_USER" >> $GITHUB_ENV
@@ -155,6 +169,7 @@ jobs:
               {"key": "PASSWORD_AUTH004", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
               {"key": "PASSWORD_AUTH_SIGNUP001", "value": "TestPassword123!", "enabled": true},
               {"key": "PASSWORD_AUTH_SIGNUP003_SHORT", "value": "123", "enabled": true},
+              {"key": "PASSWORD_TEST_SHORT", "value": "123", "enabled": true},
               {"key": "EMAIL_TEST_SHORT", "value": "shortpw.test@pokemania.local", "enabled": true}
             ],
             "_postman_variable_scope": "environment",

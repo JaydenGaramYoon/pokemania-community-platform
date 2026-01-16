@@ -48,7 +48,7 @@ router.get('/api/users/me', authCtrl.requireSignin, (req, res) => {
 router.route('/api/users/:userId')
     .get(authCtrl.requireSignin, userCtrl.read)
     .put(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.update)
-    .delete(authCtrl.requireSignin, isAdmin, userCtrl.remove)
+    .delete(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.remove)
 
 // 비밀번호 변경 (관리자 또는 본인 가능)
 router.route('/api/users/:userId/password')

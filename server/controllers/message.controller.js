@@ -275,6 +275,10 @@ export const editMessage = async (req, res) => {
       { new: true }
     );
     
+    if (!updatedMessage) {
+      return res.status(404).json({ error: 'Message not found' });
+    }
+    
     res.status(200).json(updatedMessage);
   } catch (err) {
     console.error('Message edit error:', err.message, err.stack);
