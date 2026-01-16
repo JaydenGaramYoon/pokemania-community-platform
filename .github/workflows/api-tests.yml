@@ -132,7 +132,7 @@ jobs:
           echo "token_user_value=$TOKEN_USER" >> $GITHUB_ENV
           echo "user_id_value=$USER_ID" >> $GITHUB_ENV
 
-      - name: Update Environment with Dynamic Data
+      - name: Update Postman Environment with Tokens
         run: |
           cat > api/postman/environments/ci.postman_environment.json << 'EOF'
           {
@@ -140,187 +140,25 @@ jobs:
             "name": "CI",
             "values": [
               {"key": "BASE_URL", "value": "http://localhost:3000", "enabled": true},
-              {"key": "TOKEN_ADMIN", "value": "${{ env.token_admin_value }}", "enabled": true},
-              {"key": "TOKEN_USER", "value": "${{ env.token_user_value }}", "enabled": true},
-              {"key": "USER_ID_ADMIN", "value": "${{ env.admin_id_value }}", "enabled": true},
-              {"key": "USER_ID_USER", "value": "${{ env.user_id_value }}", "enabled": true},
-              {"key": "TOKEN_U001", "value": "${{ env.token_user_value }}", "enabled": true},
-              {"key": "TOKEN_U002", "value": "${{ env.token_user_value }}", "enabled": true},
-              {"key": "TOKEN_U003", "value": "${{ env.token_user_value }}", "enabled": true},
-              {"key": "TOKEN_U004", "value": "${{ env.token_admin_value }}", "enabled": true},
-              {"key": "USER_ID_U001", "value": "${{ env.user_id_value }}", "enabled": true},
-              {"key": "USER_ID_U002", "value": "${{ env.user_id_value }}", "enabled": true},
-              {"key": "USER_ID_U003", "value": "${{ env.user_id_value }}", "enabled": true},
-              {"key": "USER_ID_SET_TARGET", "value": "${{ env.user_id_value }}", "enabled": true},
+              {"key": "TOKEN_ADMIN", "value": "${{ env.TOKEN_ADMIN }}", "enabled": true},
+              {"key": "TOKEN_USER", "value": "${{ env.TOKEN_USER }}", "enabled": true},
+              {"key": "USER_ID_ADMIN", "value": "${{ env.ADMIN_ID }}", "enabled": true},
+              {"key": "USER_ID_USER", "value": "${{ env.USER_ID }}", "enabled": true},
+              {"key": "TOKEN_U001", "value": "${{ env.TOKEN_USER }}", "enabled": true},
+              {"key": "TOKEN_U002", "value": "${{ env.TOKEN_USER }}", "enabled": true},
+              {"key": "TOKEN_U003", "value": "${{ env.TOKEN_USER }}", "enabled": true},
+              {"key": "TOKEN_U004", "value": "${{ env.TOKEN_ADMIN }}", "enabled": true},
+              {"key": "USER_ID_U001", "value": "${{ env.USER_ID }}", "enabled": true},
+              {"key": "USER_ID_U002", "value": "${{ env.USER_ID }}", "enabled": true},
+              {"key": "USER_ID_U003", "value": "${{ env.USER_ID }}", "enabled": true},
+              {"key": "USER_ID_SET_TARGET", "value": "${{ env.USER_ID }}", "enabled": true},
               {"key": "EMAIL_U001", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
               {"key": "EMAIL_U002", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
               {"key": "EMAIL_U003", "value": "${{ secrets.TEST_USER_EMAIL }}", "enabled": true},
               {"key": "PASSWORD_AUTH001", "value": "${{ secrets.TEST_ADMIN_PASSWORD }}", "enabled": true},
-              {"key": "PASSWORD_AUTH002_INVALID", "value": "wrong_password_123", "enabled": true},
+              {"key": "PASSWORD_AUTH002_INVALID", "value": "invalid_password_12345", "enabled": true},
               {"key": "PASSWORD_AUTH003", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true},
               {"key": "PASSWORD_AUTH004", "value": "${{ secrets.TEST_USER_PASSWORD }}", "enabled": true}
-            ],
-            "_postman_variable_scope": "environment",
-            "_postman_exported_at": "2025-12-30T00:00:00.000Z",
-            "_postman_exported_using": "Postman/latest"
-          }
-          EOF
-
-      - name: Setup Test Data
-        run: |
-          # Login as admin and capture token
-          ADMIN_LOGIN=$(curl -s -X POST http://localhost:3000/auth/signin \
-            -H "Content-Type: application/json" \
-            -d "{\"email\": \"${{ secrets.TEST_ADMIN_EMAIL }}\", \"password\": \"${{ secrets.TEST_ADMIN_PASSWORD }}\"}")
-          
-          TOKEN_ADMIN=$(echo $ADMIN_LOGIN | jq -r '.token')
-          ADMIN_ID=$(echo $ADMIN_LOGIN | jq -r '.user._id')
-          
-          echo "TOKEN_ADMIN=$TOKEN_ADMIN" >> $GITHUB_ENV
-          echo "ADMIN_ID=$ADMIN_ID" >> $GITHUB_ENV
-          
-          # Login as regular user and capture token
-          USER_LOGIN=$(curl -s -X POST http://localhost:3000/auth/signin \
-            -H "Content-Type: application/json" \
-            -d "{\"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
-          
-          TOKEN_USER=$(echo $USER_LOGIN | jq -r '.token')
-          USER_ID=$(echo $USER_LOGIN | jq -r '.user._id')
-          
-          echo "TOKEN_USER=$TOKEN_USER" >> $GITHUB_ENV
-          echo "USER_ID=$USER_ID" >> $GITHUB_ENV
-          
-          echo "✅ Test data setup complete"
-          echo "Admin Token: ${TOKEN_ADMIN:0:20}..."
-          echo "User Token: ${TOKEN_USER:0:20}..."
-
-      - name: Update CI Environment with Test Data
-        run: |
-          cat > api/postman/environments/ci.postman_environment.json << 'EOF'
-          {
-            "id": "pokemania-ci-env",
-            "name": "CI",
-            "values": [
-              {
-                "key": "BASE_URL",
-                "value": "http://localhost:3000",
-                "enabled": true
-              },
-              {
-                "key": "TEST_ADMIN_EMAIL",
-                "value": "${{ secrets.TEST_ADMIN_EMAIL }}",
-                "enabled": true
-              },
-              {
-                "key": "TEST_ADMIN_PASSWORD",
-                "value": "${{ secrets.TEST_ADMIN_PASSWORD }}",
-                "enabled": true
-              },
-              {
-                "key": "TEST_USER_EMAIL",
-                "value": "${{ secrets.TEST_USER_EMAIL }}",
-                "enabled": true
-              },
-              {
-                "key": "TEST_USER_PASSWORD",
-                "value": "${{ secrets.TEST_USER_PASSWORD }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_ADMIN",
-                "value": "${{ env.TOKEN_ADMIN }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_USER",
-                "value": "${{ env.TOKEN_USER }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_ADMIN",
-                "value": "${{ env.ADMIN_ID }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_USER",
-                "value": "${{ env.USER_ID }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U001",
-                "value": "${{ env.TOKEN_USER }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U002",
-                "value": "${{ env.TOKEN_USER }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U003",
-                "value": "${{ env.TOKEN_USER }}",
-                "enabled": true
-              },
-              {
-                "key": "TOKEN_U004",
-                "value": "${{ env.TOKEN_ADMIN }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_U001",
-                "value": "${{ env.USER_ID }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_U002",
-                "value": "${{ env.USER_ID }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_U003",
-                "value": "${{ env.USER_ID }}",
-                "enabled": true
-              },
-              {
-                "key": "USER_ID_SET_TARGET",
-                "value": "${{ env.USER_ID }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_U001",
-                "value": "${{ secrets.TEST_USER_EMAIL }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_U002",
-                "value": "${{ secrets.TEST_USER_EMAIL }}",
-                "enabled": true
-              },
-              {
-                "key": "EMAIL_U003",
-                "value": "${{ secrets.TEST_USER_EMAIL }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH001",
-                "value": "${{ secrets.TEST_ADMIN_PASSWORD }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH002_INVALID",
-                "value": "invalid_password_12345",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH003",
-                "value": "${{ secrets.TEST_USER_PASSWORD }}",
-                "enabled": true
-              },
-              {
-                "key": "PASSWORD_AUTH004",
-                "value": "${{ secrets.TEST_USER_PASSWORD }}",
-                "enabled": true
-              }
             ],
             "_postman_variable_scope": "environment",
             "_postman_exported_at": "2025-12-30T00:00:00.000Z",
