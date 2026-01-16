@@ -1,20 +1,25 @@
 import express from 'express';
 import favouritesController from '../controllers/favourites.controller.js';
+import authCtrl from '../controllers/auth.controller.js';
 
 const router = express.Router();
 
-router.post('/api/favourites', favouritesController.createFavourite); // POST /api/favourites
+// POST - Create favourite (requires authentication)
+router.post('/api/favourites', authCtrl.requireSignin, favouritesController.createFavourite); // POST /api/favourites
 
-// GET /api/favourites
+// GET - List all favourites (public)
 router.get('/api/favourites', favouritesController.listFavourites); // GET /api/favourites
 
+// GET - Get favourite by ID (public)
 router.get('/api/favourites/:favouriteId', favouritesController.getFavouritesById); // GET /api/favourites/:favouriteId
 
-// GET /api/favourites/:userId
+// GET - Get favourites by user (public)
 router.get('/api/favourites/users/:userId', favouritesController.getFavouritesByUser);
 
-router.delete('/api/favourites/:userId/:pokemonId', favouritesController.removeFavouriteById);
+// DELETE - Remove favourite (requires authentication)
+router.delete('/api/favourites/:userId/:pokemonId', authCtrl.requireSignin, favouritesController.removeFavouriteById);
 
-router.put('/api/favourites/:userId/:pokemonId', favouritesController.updateFavourite);
+// PUT - Update favourite (requires authentication)
+router.put('/api/favourites/:userId/:pokemonId', authCtrl.requireSignin, favouritesController.updateFavourite);
 
 export default router;
