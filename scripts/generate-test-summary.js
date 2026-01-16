@@ -1,7 +1,11 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const reportsDir = 'api/newman/reports';
 const results = {};
@@ -46,7 +50,7 @@ Object.entries(results)
       ? ((result.passed / result.total) * 100).toFixed(1) 
       : 'N/A';
     
-    const status = result.failed === 0 ? '✅' : '❌';
+    const status = result.failed === 0 ? 'PASS' : 'FAIL';
     
     tableRows += `| ${api.toUpperCase()} | ${result.requests} | ${result.passed}/${result.total} | ${passRate}% | ${status} |\n`;
   });
@@ -61,7 +65,7 @@ ${tableRows}
 
 **Overall:** ${totalPassed}/${totalPassed + totalFailed} tests passed (${((totalPassed / (totalPassed + totalFailed)) * 100).toFixed(1)}%)
 
-📊 [View Detailed Reports](https://jaydengaramyoon.github.io/pokemania-community-platform/test-reports/)
+[View Detailed Reports](../test-reports/)
 `;
 
 console.log(summary);

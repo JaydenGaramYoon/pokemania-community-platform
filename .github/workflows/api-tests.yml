@@ -231,7 +231,9 @@ jobs:
 
       - name: Generate Test Summary
         if: always()
-        run: node scripts/generate-test-summary.js
+        run: |
+          mkdir -p api/newman/reports
+          node scripts/generate-test-summary.js || true
 
       - name: Upload Test Results
         if: always()
@@ -242,7 +244,7 @@ jobs:
           retention-days: 30
 
       - name: Deploy Test Reports to GitHub Pages
-        if: always() && github.ref == 'refs/heads/qa-testing'
+        if: always() && github.ref == 'refs/heads/qa-testing' && hashFiles('api/newman/reports/*.json') != ''
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
