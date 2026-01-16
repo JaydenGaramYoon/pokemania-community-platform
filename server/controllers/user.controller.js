@@ -84,22 +84,30 @@ const remove = async (req, res) => {
 }
 
 export const changePassword = async (req, res) => {
-  const { new_password } = req.body;
+  const { new_password, currentPassword } = req.body;
   
   console.log('changePassword called:', {
-    new_password,
+    newPasswordLength: new_password?.length,
+    hasCurrentPassword: !!currentPassword,
     hasProfile: !!req.profile,
-    profileId: req.profile?._id,
-    authId: req.auth?._id
+    profileId: req.profile?._id?.toString(),
+    authId: req.auth?._id?.toString()
   });
   
   // 본인의 비밀번호만 변경 가능 (req.profile는 middleware에서 세팅됨)
   if (!req.profile) {
+    console.error('changePassword: no profile');
     return res.status(404).json({ error: 'User not found' });
   }
 
   if (!new_password || new_password.length < 6) {
+    console.error('changePassword: password too short', { length: new_password?.length });
     return res.status(400).json({ error: 'Password too short' });
+  }
+  
+  if (currentPassword && !req.profile.authenticate(currentPassword)) {
+    console.error('changePassword: current password incorrect');
+    return res.status(403).json({ error: 'Current password is incorrect' });
   }
   
   try {
@@ -122,6 +130,8 @@ export const updateRole = async (req, res) => {
   const { userId } = req.params;
   const { role } = req.body;
   
+  console.log('updateRole called:', { userId, role, authId: req.auth?._id?.toString(), authRole: req.auth?.role });
+  
   if (!role || !['user', 'admin'].includes(role)) {
     return res.status(400).json({ error: 'Invalid role. Must be "user" or "admin"' });
   }
@@ -134,6 +144,8 @@ export const updateRole = async (req, res) => {
     user.updated = Date.now();
 
     await user.save();
+    
+    console.log('updateRole success:', { userId, newRole: role });
 
     // Return user without sensitive data
     user.hashed_password = undefined;
@@ -145,12 +157,5 @@ export const updateRole = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
-// 관리자 권한 미들웨어
-export const isAdmin = (req, res, next) => {
-  if (req.auth && req.auth.role === 'admin') {
-    return next();
-  }
-  return res.status(403).json({ error: 'Admin resource! Access denied.' });
-};
 
-export default { create, userByID, read, list, remove, update, changePassword, updateRole, isAdmin }
+export default { create, userByID, read, list, remove, update, changePassword, updateRole }

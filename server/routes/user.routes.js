@@ -30,7 +30,6 @@
 import express from 'express'
 import userCtrl from '../controllers/user.controller.js'
 import authCtrl from '../controllers/auth.controller.js'
-import { isAdmin } from '../controllers/user.controller.js'
 
 const router = express.Router()
 
@@ -39,7 +38,7 @@ router.param('userId', userCtrl.userByID)
 
 // 전체 유저 목록 조회 및 회원가입
 router.route('/api/users')
-    .get(authCtrl.requireSignin, isAdmin, userCtrl.list)  // 관리자인 경우만 전체 목록 조회 가능
+    .get(authCtrl.requireSignin, authCtrl.isAdmin, userCtrl.list)  // 관리자인 경우만 전체 목록 조회 가능
     .post(userCtrl.create)
 
 // 현재 로그인된 유저 정보 조회
@@ -59,6 +58,6 @@ router.route('/api/users/:userId/password')
   
 // 역할 변경 (관리자만 가능)
 router.route('/api/users/:userId/role')
-    .put(authCtrl.requireSignin, isAdmin, userCtrl.updateRole)
+    .put(authCtrl.requireSignin, authCtrl.isAdmin, userCtrl.updateRole)
 
 export default router

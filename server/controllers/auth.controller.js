@@ -113,6 +113,14 @@ const requireSignin = expressjwt({
     }
 })
 const hasAuthorization = (req, res, next) => {
+    console.log('hasAuthorization check:', {
+        hasProfile: !!req.profile,
+        hasAuth: !!req.auth,
+        profileId: req.profile?._id?.toString(),
+        authId: req.auth?._id?.toString(),
+        authRole: req.auth?.role,
+        idMatch: req.profile?._id?.toString() === req.auth?._id?.toString()
+    });
     const authorized = req.profile && req.auth
         && (req.profile._id == req.auth._id || req.auth.role === 'admin')
     if (!(authorized)) {
@@ -122,5 +130,14 @@ const hasAuthorization = (req, res, next) => {
     }
     next()
 }
-export default { signin, signout, requireSignin, hasAuthorization }
+
+const isAdmin = (req, res, next) => {
+    console.log('isAdmin check:', { hasAuth: !!req.auth, authRole: req.auth?.role });
+    if (req.auth && req.auth.role === 'admin') {
+        return next();
+    }
+    return res.status(403).json({ error: 'Admin resource! Access denied.' });
+};
+
+export default { signin, signout, requireSignin, hasAuthorization, isAdmin }
 
