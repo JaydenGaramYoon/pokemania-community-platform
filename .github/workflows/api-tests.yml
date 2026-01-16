@@ -127,10 +127,10 @@ jobs:
           fi
           
           echo "✅ Test accounts authenticated"
-          echo "token_admin_value=$TOKEN_ADMIN" >> $GITHUB_ENV
-          echo "admin_id_value=$ADMIN_ID" >> $GITHUB_ENV
-          echo "token_user_value=$TOKEN_USER" >> $GITHUB_ENV
-          echo "user_id_value=$USER_ID" >> $GITHUB_ENV
+          echo "TOKEN_ADMIN=$TOKEN_ADMIN" >> $GITHUB_ENV
+          echo "ADMIN_ID=$ADMIN_ID" >> $GITHUB_ENV
+          echo "TOKEN_USER=$TOKEN_USER" >> $GITHUB_ENV
+          echo "USER_ID=$USER_ID" >> $GITHUB_ENV
 
       - name: Update Postman Environment with Tokens
         run: |
@@ -229,6 +229,10 @@ jobs:
             --reporter-html-export api/newman/reports/public-report.html \
             --reporter-json-export api/newman/reports/public-report.json || true
 
+      - name: Generate Test Summary
+        if: always()
+        run: node scripts/generate-test-summary.js
+
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4
@@ -236,3 +240,11 @@ jobs:
           name: api-test-reports
           path: api/newman/reports/
           retention-days: 30
+
+      - name: Deploy Test Reports to GitHub Pages
+        if: always() && github.ref == 'refs/heads/qa-testing'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./api/newman/reports
+          destination_dir: test-reports/${{ github.run_number }}
