@@ -76,6 +76,25 @@ jobs:
           cat server.log
           exit 1
 
+      - name: Create Test Accounts
+        run: |
+          echo "Creating test accounts..."
+          
+          # Create admin account
+          curl -s -X POST http://localhost:3000/api/users \
+            -H "Content-Type: application/json" \
+            -d "{\"name\": \"Admin User\", \"email\": \"${{ secrets.TEST_ADMIN_EMAIL }}\", \"password\": \"${{ secrets.TEST_ADMIN_PASSWORD }}\"}" \
+            > /dev/null 2>&1 || true
+          
+          # Create user account
+          curl -s -X POST http://localhost:3000/api/users \
+            -H "Content-Type: application/json" \
+            -d "{\"name\": \"Test User\", \"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
+            > /dev/null 2>&1 || true
+          
+          echo "✅ Test accounts created (or already exist)"
+          sleep 2
+
       - name: Setup Dynamic Test Data
         run: |
           echo "Logging in test accounts..."
@@ -85,6 +104,8 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"email\": \"${{ secrets.TEST_ADMIN_EMAIL }}\", \"password\": \"${{ secrets.TEST_ADMIN_PASSWORD }}\"}")
           
+          echo "Admin response: $ADMIN_RESPONSE"
+          
           TOKEN_ADMIN=$(echo "$ADMIN_RESPONSE" | jq -r '.token // empty')
           ADMIN_ID=$(echo "$ADMIN_RESPONSE" | jq -r '.user._id // empty')
           
@@ -93,11 +114,15 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
           
+          echo "User response: $USER_RESPONSE"
+          
           TOKEN_USER=$(echo "$USER_RESPONSE" | jq -r '.token // empty')
           USER_ID=$(echo "$USER_RESPONSE" | jq -r '.user._id // empty')
           
           if [ -z "$TOKEN_ADMIN" ] || [ -z "$TOKEN_USER" ]; then
             echo "❌ Failed to authenticate test accounts"
+            echo "ADMIN_RESPONSE: $ADMIN_RESPONSE"
+            echo "USER_RESPONSE: $USER_RESPONSE"
             exit 1
           fi
           
