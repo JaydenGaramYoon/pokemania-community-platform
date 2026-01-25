@@ -418,7 +418,7 @@ import './Talktalk.css';
 const categories = ['General', 'Guides', 'FanArt', 'Events'];
 
 // API base URL configuration
-const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
+const API_BASE = '/api';
 
 // const TalkTalk = () => {
 //   const [activeCategory, setActiveCategory] = useState('General');
@@ -987,7 +987,7 @@ const TalkTalk = () => {
     if (!userId) {
       const confirmed = window.confirm('Login is required. Do you want to go to the login page?');
       if (confirmed) {
-        window.location.href = '/login';
+        navigate('/login');
       }
       return;
     }

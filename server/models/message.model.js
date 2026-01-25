@@ -2,11 +2,9 @@ import mongoose from 'mongoose';
 
 const messageSchema = new mongoose.Schema({
   section: String,
-  sender: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  },
+<<<<<<< HEAD
+  sender: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+>>>>>>> 7956e01 (Fix sender field to use ObjectId FK to User model)
   message: String,
   timestamp: { type: Date, default: Date.now }
 });
