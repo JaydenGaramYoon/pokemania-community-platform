@@ -22,12 +22,12 @@ const optionalAuth = (req, res, next) => {
   }
 };
 
-router.route('/messages')
+router.route('/api/messages')
   .get(messageCtrl.getMessagesBySection)
   .post(optionalAuth, messageCtrl.createMessage);
 
 
-router.route('/messages/:messageId')
+router.route('/api/messages/:messageId')
   .delete(messageCtrl.deleteMessage)
   .put(messageCtrl.editMessage);
 

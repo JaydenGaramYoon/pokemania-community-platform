@@ -143,13 +143,11 @@ export const createMessage = async (req, res) => {
   }
 
   try {
-    // let sender = 'Guest';
-    // if (req.auth && req.auth.name) {
-    //   sender = req.auth.name;
-    // }
+    console.log('=== createMessage ===');
+    console.log('Received sender:', sender);
+    console.log('Sender type:', typeof sender);
 
-    console.log('Creating message with sender:', sender, 'Auth info:', req.auth);
-
+    // Create message with sender as ObjectId FK
     const newMessage = new Message({
       section,
       message,
@@ -157,28 +155,47 @@ export const createMessage = async (req, res) => {
     });
 
     const savedMessage = await newMessage.save();
-    res.status(200).json(savedMessage);
+    
+    // Populate sender details before responding
+    const populatedMessage = await Message.findById(savedMessage._id)
+      .populate('sender', 'name email role');
+    
+    console.log('Saved message sender:', populatedMessage.sender, 'Type:', typeof populatedMessage.sender);
+    res.status(200).json(populatedMessage);
   } catch (err) {
-    console.error('Message save error:', err);
-    res.status(500).json({ error: 'Failed to save message' });
+    console.error('Message save error:', err.message);
+    res.status(500).json({ error: 'Failed to save message', details: err.message });
   }
 };
 
 export const getMessagesBySection = async (req, res) => {
   const section = req.query.section;
-  if (!section) return res.status(400).json({ error: 'Missing section parameter' });
+  console.log('=== getMessagesBySection ===');
+  console.log('Section query param:', section);
+  
+  if (!section) {
+    console.error('Missing section parameter');
+    return res.status(400).json({ error: 'Missing section parameter' });
+  }
 
   try {
-    const messages = await Message.find({ section }).sort({ timestamp: 1 });
+    // Fetch messages with populated sender (User details)
+    const messages = await Message.find({ section })
+      .populate('sender', 'name email role')
+      .sort({ timestamp: 1 });
+    
+    console.log(`Found ${messages.length} messages for section: ${section}`);
+    console.log('Returning messages with populated sender');
     res.status(200).json(messages);
   } catch (err) {
+    console.error('Error fetching messages:', err);
     res.status(500).json({ error: 'Failed to retrieve messages' });
   }
 };
 
 export const deleteMessage = async (req, res) => {
   const { messageId } = req.params;
-  const { sender } = req.body; // get information from request body
+  const { sender } = req.body; // sender is userId (ObjectId)
 
   try {
     // search for the message
@@ -191,15 +208,18 @@ export const deleteMessage = async (req, res) => {
     // Get the user making the request to check their role
     let isAdmin = false;
     try {
-      const requestingUser = await User.findOne({ name: sender });
+      const requestingUser = await User.findById(sender);
       isAdmin = requestingUser && requestingUser.role === 'admin';
+      console.log('User lookup result:', { sender, isAdmin, role: requestingUser?.role });
     } catch (userErr) {
-      // User lookup failed, treat as non-admin
-      console.warn('User lookup failed for sender:', sender, userErr.message);
+      console.warn('User lookup failed for sender:', sender);
     }
 
     // Admin can delete any message, regular users can only delete their own messages
-    if (!isAdmin && message.sender !== sender) {
+    const messageSender = message.sender.toString();
+    const isSameUser = messageSender === sender;
+    
+    if (!isAdmin && !isSameUser) {
       return res.status(403).json({ error: 'You can only delete your own messages' });
     }
 
@@ -244,15 +264,17 @@ export const editMessage = async (req, res) => {
     // Get the user making the request to check their role
     let isAdmin = false;
     try {
-      const requestingUser = await User.findOne({ name: sender });
+      const requestingUser = await User.findById(sender);
       isAdmin = requestingUser && requestingUser.role === 'admin';
     } catch (userErr) {
-      // User lookup failed, treat as non-admin
-      console.warn('User lookup failed for sender:', sender, userErr.message);
+      console.warn('User lookup failed for sender:', sender);
     }
 
     // Admin can edit any message, regular users can only edit their own messages
-    if (!isAdmin && message.sender !== sender) {
+    const messageSender = message.sender.toString();
+    const isSameUser = messageSender === sender;
+    
+    if (!isAdmin && !isSameUser) {
       return res.status(403).json({ error: 'You can only edit your own messages' });
     }
 
@@ -273,16 +295,12 @@ export const editMessage = async (req, res) => {
       messageId,
       { message: newMessage },
       { new: true }
-    );
-    
-    if (!updatedMessage) {
-      return res.status(404).json({ error: 'Message not found' });
-    }
+    ).populate('sender', 'name email role');
     
     res.status(200).json(updatedMessage);
   } catch (err) {
-    console.error('Message edit error:', err.message, err.stack);
-    res.status(500).json({ error: 'Failed to edit message', details: err.message });
+    console.error('Message edit error:', err);
+    res.status(500).json({ error: 'Failed to edit message' });
   }
 };
 

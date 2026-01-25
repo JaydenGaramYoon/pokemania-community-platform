@@ -17,7 +17,7 @@ const Login = () => {
   });
 
   // 환경에 따라 API 주소 자동 설정
-  const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+  const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -46,7 +46,7 @@ const Login = () => {
 
   const handleSignup = async () => {
     try {
-      const res = await fetch(`${API_BASE}/api/users`, {
+      const res = await fetch(`${API_BASE}/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(signupData)

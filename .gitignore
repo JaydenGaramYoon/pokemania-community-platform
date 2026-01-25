@@ -15,13 +15,13 @@ dist/
 dist-ssr/
 *.local
 
-# Test Reports & Sensitive Data
+
+# Editor directo# Test Reports & Sensitive Data
 api/newman/reports/
 api/postman/environments/ci.postman_environment.json
 *.json.bak
 .env.local
-
-# Editor directories and files
+ries and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -31,3 +31,5 @@ api/postman/environments/ci.postman_environment.json
 *.njsproj
 *.sln
 *.sw?
+.github/SECRETS.md
+/Doc2.docx

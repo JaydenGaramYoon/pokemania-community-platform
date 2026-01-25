@@ -413,12 +413,13 @@
 
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Talktalk.css';
 
 const categories = ['General', 'Guides', 'FanArt', 'Events'];
 
 // API base URL configuration
-const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
 
 // const TalkTalk = () => {
 //   const [activeCategory, setActiveCategory] = useState('General');
@@ -843,10 +844,12 @@ const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:30
 
 
 const TalkTalk = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('General');
   const [messages, setMessages] = useState({});
   const [input, setInput] = useState('');
   const [username, setUsername] = useState('Guest');
+  const [userId, setUserId] = useState(null);
   const [userRole, setUserRole] = useState('user'); // track current user's role
   const [recentMessages, setRecentMessages] = useState([]); // record recently sent messages
   const [editingMessage, setEditingMessage] = useState(null); // track which message is being edited
@@ -872,10 +875,12 @@ const TalkTalk = () => {
         const user = localStorage.getItem('user');
         const userData = user ? JSON.parse(user) : null;
         const userName = userData?.name || 'Guest';
+        const userId = userData?._id || null;
         const role = userData?.role || 'user';
         
-        console.log('Current user:', userName, 'Role:', role);
+        console.log('Current user:', userName, 'User ID:', userId, 'Role:', role);
         setUsername(userName);
+        setUserId(userId);
         setUserRole(role);
       }
       catch (err) {
@@ -889,30 +894,44 @@ const TalkTalk = () => {
     const fetchMessages = async () => {
       try {
         const url = `${API_BASE}/messages?section=${activeCategory}`;
-        console.log('[fetchMessages] Fetching:', url);
+        console.log('[fetchMessages] API_BASE:', API_BASE, 'activeCategory:', activeCategory, 'url:', url);
         const res = await fetch(url);
+        
+        if (!res.ok) {
+          console.error('[fetchMessages] Response not ok:', res.status, res.statusText);
+          setMessages(prev => ({
+            ...prev,
+            [activeCategory]: []
+          }));
+          return;
+        }
+
         let data;
         try {
           data = await res.json();
         } catch (jsonErr) {
-          const text = await res.text();
-          console.error('[fetchMessages] Response is not JSON.', {
+          console.error('[fetchMessages] Response is not valid JSON.', {
             url,
             status: res.status,
-            statusText: res.statusText,
-            headers: Array.from(res.headers.entries()),
-            text
+            statusText: res.statusText
           });
-          throw jsonErr;
+          setMessages(prev => ({
+            ...prev,
+            [activeCategory]: []
+          }));
+          return;
         }
+        
+        console.log('[fetchMessages] Received data:', data);
         setMessages(prev => ({
           ...prev,
-          [activeCategory]: data
+          [activeCategory]: Array.isArray(data) ? data : []
         }));
         setMessageCount(prev => ({
           ...prev,
-          [activeCategory]: data.length
+          [activeCategory]: Array.isArray(data) ? data.length : 0
         }));
+        console.log('[fetchMessages] Successfully set messages for', activeCategory);
       } catch (err) {
         console.error('[fetchMessages] Failed to fetch messages:', err);
       }
@@ -924,14 +943,21 @@ const TalkTalk = () => {
   useEffect(() => {
     const checkForUpdates = async () => {
       try {
+        console.log('[checkForUpdates] API_BASE:', API_BASE, 'section:', activeCategory);
         const res = await fetch(`${API_BASE}/messages?section=${activeCategory}`);
 
         if (!res.ok) {
-          const text = await res.text(); // ← 응답이 JSON이 아닐 경우 대비
-          throw new Error(`Unexpected response: ${text}`);
+          console.error(`Failed to fetch updates: ${res.status} ${res.statusText}`);
+          return;
         }
 
-        const data = await res.json();
+        let data;
+        try {
+          data = await res.json();
+        } catch (jsonError) {
+          console.error('Failed to parse response as JSON:', jsonError);
+          return;
+        }
         const currentMessages = messages[activeCategory] || [];
         const currentCount = messageCount[activeCategory] || 0;
 
@@ -963,7 +989,7 @@ const TalkTalk = () => {
           }));
         }
       } catch (err) {
-        console.error('Failed to check for updates:', err);
+        console.error('Failed to check for updates:', err.message || err);
       }
     };
 
@@ -977,14 +1003,25 @@ const TalkTalk = () => {
 
   const handleSend = async () => {
     if (!input.trim()) return;
-    const user = localStorage.getItem('user');
-    const userName = user ? JSON.parse(user).name : 'Guest';
-    console.log(userName);
+    
+    const user = JSON.parse(localStorage.getItem('user'));
+    const userId = user ? user._id : null;
+    console.log('Current user ID:', userId);
+
+    // Check if user is logged in
+    if (!userId) {
+      if (window.confirm('Login is required. Do you want to go to the login page?')) {
+        navigate('/login');
+      }
+      return;
+    }
+
     const newMessage = {
       section: activeCategory,
       message: input,
-      sender: userName   // Added sender field
+      sender: userId
     };
+    console.log('Sending message with sender:', newMessage.sender);
 
     try {
       const res = await fetch(`${API_BASE}/messages`, {
@@ -1009,9 +1046,8 @@ const TalkTalk = () => {
 
         setInput('');
       } else {
-        const errorData = await res.json();
-        console.error('Failed to send message:', errorData);
-        alert('Fail to send information: ' + (errorData.error || 'unknown error'));
+        console.error('Failed to send message, status:', res.status);
+        alert('Failed to send message: ' + res.status + ' ' + res.statusText);
       }
     } catch (err) {
       console.error('Error:', err);
@@ -1026,14 +1062,20 @@ const TalkTalk = () => {
     }
 
     const user = localStorage.getItem('user');
-    const userName = user ? JSON.parse(user).name : 'Guest';
+    const userData = user ? JSON.parse(user) : null;
+    const userId = userData?._id || null;
+
+    if (!userId) {
+      alert('User ID not found. Please log in again.');
+      return;
+    }
 
     try {
       const res = await fetch(`${API_BASE}/messages/${messageId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ sender: userName })
+        body: JSON.stringify({ sender: userId })
       });
 
       if (res.ok) {
@@ -1048,8 +1090,8 @@ const TalkTalk = () => {
 
         alert('Message deleted successfully!');
       } else {
-        const errorData = await res.json();
-        alert('Failed to delete message: ' + (errorData.error || 'Unknown error'));
+        console.error('Failed to delete message, status:', res.status);
+        alert('Failed to delete message: ' + res.status + ' ' + res.statusText);
       }
     } catch (err) {
       console.error('Error deleting message:', err);
@@ -1065,7 +1107,13 @@ const TalkTalk = () => {
     }
 
     const user = localStorage.getItem('user');
-    const userName = user ? JSON.parse(user).name : 'Guest';
+    const userData = user ? JSON.parse(user) : null;
+    const userId = userData?._id || null;
+
+    if (!userId) {
+      alert('User ID not found. Please log in again.');
+      return;
+    }
 
     try {
       const res = await fetch(`${API_BASE}/messages/${messageId}`, {
@@ -1073,7 +1121,7 @@ const TalkTalk = () => {
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify({
-          sender: userName,
+          sender: userId,
           message: editInput
         })
       });
@@ -1094,8 +1142,8 @@ const TalkTalk = () => {
 
         alert('Message edited successfully!');
       } else {
-        const errorData = await res.json();
-        alert('Failed to edit message: ' + (errorData.error || 'Unknown error'));
+        console.error('Failed to edit message, status:', res.status);
+        alert('Failed to edit message: ' + res.status + ' ' + res.statusText);
       }
     } catch (err) {
       console.error('Error editing message:', err);
@@ -1119,16 +1167,27 @@ const TalkTalk = () => {
   const canEditMessage = (message) => {
     const user = localStorage.getItem('user');
     const userData = user ? JSON.parse(user) : null;
-    const userName = userData?.name || 'Guest';
+    const userId = userData?._id || null;
     const role = userData?.role || 'user';
-    console.log(user);
-    console.log('Checking edit permissions for:', userName, 'Role:', role, 'Message sender:', message.sender);
+    
+    console.log('canEditMessage - userData:', userData, 'role:', role, 'is admin?:', role === 'admin');
 
-    // Admin can edit any message
-    if (role === 'admin') return true;
+    // Guest users (not logged in) cannot edit messages
+    if (!userId) {
+      return false;
+    }
 
+    // Admin can edit any message without time limit
+    if (role === 'admin') {
+      console.log('Admin detected, allowing edit');
+      return true;
+    }
+
+    // For ObjectId sender, compare IDs
+    const messageSender = typeof message.sender === 'object' ? message.sender._id : message.sender;
+    
     // Only the sender can edit their own messages
-    if (message.sender !== userName) return false;
+    if (messageSender !== userId) return false;
 
     // Only messages in recentMessages can be edited
     if (!recentMessages.includes(message._id)) return false;
@@ -1146,14 +1205,27 @@ const TalkTalk = () => {
   const canDeleteMessage = (message) => {
     const user = localStorage.getItem('user');
     const userData = user ? JSON.parse(user) : null;
-    const userName = userData?.name || 'Guest';
+    const userId = userData?._id || null;
     const role = userData?.role || 'user';
 
-    // Admin can delete any message
-    if (role === 'admin') return true;
+    console.log('canDeleteMessage - userData:', userData, 'role:', role, 'is admin?:', role === 'admin');
 
+    // Guest users (not logged in) cannot delete messages
+    if (!userId) {
+      return false;
+    }
+
+    // Admin can delete any message without time limit
+    if (role === 'admin') {
+      console.log('Admin detected, allowing delete');
+      return true;
+    }
+
+    // For ObjectId sender, compare IDs
+    const messageSender = typeof message.sender === 'object' ? message.sender._id : message.sender;
+    
     // Only the sender can delete their own messages
-    if (message.sender !== userName) return false;
+    if (messageSender !== userId) return false;
 
     // Only messages in recentMessages can be deleted
     if (!recentMessages.includes(message._id)) return false;
@@ -1192,12 +1264,12 @@ const TalkTalk = () => {
       <div className="chat-body">
         <div className="chat-window">
           <div className="chat-messages">
-            {(messages[activeCategory] || []).map((msg, idx) => (
+            {Array.isArray(messages[activeCategory]) && messages[activeCategory].map((msg, idx) => (
               <div key={idx} className="message-card">
                 {editingMessage === msg._id ? (
                   // Edit mode
                   <>
-                    <strong className="username">{msg.sender}</strong>:
+                    <strong className="username">{typeof msg.sender === 'object' ? msg.sender.name : msg.sender}</strong>:
                     <input
                       type="text"
                       value={editInput}
@@ -1229,7 +1301,7 @@ const TalkTalk = () => {
                   // Display mode
                   <>
                     <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-                      <span><strong className="username">{msg.sender}</strong>: {msg.message}</span>
+                      <span><strong className="username">{typeof msg.sender === 'object' ? msg.sender.name : msg.sender}</strong>: {msg.message}</span>
                       <div className="timestamp">{formatTimestamp(msg.timestamp)}</div>
                     </div>
                     <div className="message-actions">
