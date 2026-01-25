@@ -1247,7 +1247,7 @@ const TalkTalk = () => {
                   // Display mode
                   <>
                     <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-                      <span><strong className="username">{msg.sender}</strong>: {msg.message}</span>
+                      <span><strong className="username">{typeof msg.sender === 'object' ? msg.sender.name : msg.sender}</strong>: {msg.message}</span>
                       <div className="timestamp">{formatTimestamp(msg.timestamp)}</div>
                     </div>
                     <div className="message-actions">
