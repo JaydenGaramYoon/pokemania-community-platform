@@ -418,7 +418,7 @@ import './Talktalk.css';
 const categories = ['General', 'Guides', 'FanArt', 'Events'];
 
 // API base URL configuration
-const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '/api';
 
 // const TalkTalk = () => {
 //   const [activeCategory, setActiveCategory] = useState('General');
@@ -977,8 +977,21 @@ const TalkTalk = () => {
 
   const handleSend = async () => {
     if (!input.trim()) return;
+    
     const user = localStorage.getItem('user');
-    const userName = user ? JSON.parse(user).name : 'Guest';
+    const userData = user ? JSON.parse(user) : null;
+    const userId = userData?._id;
+    const userName = userData?.name || 'Guest';
+    
+    // Check if user is guest
+    if (!userId) {
+      const confirmed = window.confirm('Login is required. Do you want to go to the login page?');
+      if (confirmed) {
+        window.location.href = '/login';
+      }
+      return;
+    }
+    
     console.log(userName);
     const newMessage = {
       section: activeCategory,
@@ -1009,9 +1022,14 @@ const TalkTalk = () => {
 
         setInput('');
       } else {
-        const errorData = await res.json();
-        console.error('Failed to send message:', errorData);
-        alert('Fail to send information: ' + (errorData.error || 'unknown error'));
+        try {
+          const errorData = await res.json();
+          console.error('Failed to send message:', errorData);
+          alert('Fail to send information: ' + (errorData.error || 'unknown error'));
+        } catch (e) {
+          console.error('Failed to send message - invalid response');
+          alert('Fail to send information: server error');
+        }
       }
     } catch (err) {
       console.error('Error:', err);
