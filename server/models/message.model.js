@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const messageSchema = new mongoose.Schema({
   section: String,
-  sender: String,
+  sender: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   message: String,
   timestamp: { type: Date, default: Date.now }
 });
