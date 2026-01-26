@@ -169,7 +169,9 @@ export const getMessagesBySection = async (req, res) => {
   if (!section) return res.status(400).json({ error: 'Missing section parameter' });
 
   try {
-    const messages = await Message.find({ section }).sort({ timestamp: 1 });
+    const messages = await Message.find({ section })
+      .populate('sender', 'name email role')
+      .sort({ timestamp: 1 });
     res.status(200).json(messages);
   } catch (err) {
     res.status(500).json({ error: 'Failed to retrieve messages' });
