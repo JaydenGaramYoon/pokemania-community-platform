@@ -11,7 +11,7 @@ const App = () => {
       }}>
         <div style={{ 
           minHeight: '100vh',
-          paddingBottom: '80px' // 为悬浮footer留出空间
+          paddingBottom: '80px' // add space for footer
         }}>
           <MainRouter />
         </div>

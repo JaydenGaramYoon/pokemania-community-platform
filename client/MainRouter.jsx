@@ -69,18 +69,9 @@ import ProtectedRoute from './ProtectedRoute';
 
 const MainRouter = () => {
   const location = useLocation();
-//  delete token and user from localStorage on page close/refresh
-  useEffect(() => {
-    const handleUnload = (event) => {
-      // 브라우저/탭 닫기일 때만 토큰 삭제 (새로고침은 삭제하지 않음)
-      if (event.type === 'unload') {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-      }
-    };
-    window.addEventListener('unload', handleUnload);
-    return () => window.removeEventListener('unload', handleUnload);
-  }, []);
+// 로그인 토큰은 새로고침시 유지되어야 하므로 unload 시 토큰을 제거하지 않습니다.
+  // (원래 구현은 페이지 언로드 시 token/user를 제거했으나 새로고침에서도 실행되어 로그인 유지가 불가능했습니다.)
+  // 필요하면 명시적 로그아웃 버튼에서 token을 삭제하도록 구현하세요.
 
 
   return (

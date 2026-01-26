@@ -3,6 +3,12 @@ import app from './server/express.js';
 import mongoose from 'mongoose';
 import cors from 'cors'; // ✅ added this line''
 
+// Silence console output only in production to avoid hiding dev-time errors
+if (process.env.NODE_ENV === 'production') {
+  const _noop = () => {};
+  console.log = console.info = console.warn = console.error = console.debug = _noop;
+}
+
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongoUri, {
   // useNewUrlParser: true,

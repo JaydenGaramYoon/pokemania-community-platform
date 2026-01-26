@@ -45,7 +45,7 @@
 }
 
 .logo .nav-link.active {
-  color: inherit; /* 로고는 색상 변경 없음 */
+  color: inherit; /* logo color does not change */
   transform: none; /* 기본 transform 제거 */
   background: none !important;
 }

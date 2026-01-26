@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const reportsDir = 'api/newman/reports';
 const results = {};
 
-// 각 리포트 분석
+// Analyze each report
 if (fs.existsSync(reportsDir)) {
   fs.readdirSync(reportsDir)
     .filter(f => f.endsWith('-report.json'))
@@ -34,7 +34,7 @@ if (fs.existsSync(reportsDir)) {
     });
 }
 
-// 요약 생성
+// Generate summary
 let totalPassed = 0;
 let totalFailed = 0;
 let tableRows = '';
@@ -69,6 +69,6 @@ ${tableRows}
 
 console.log(summary);
 
-// 출력 파일에 쓰기
+// Write to output file
 fs.writeFileSync('TEST_RESULTS.md', summary);
 console.log('\n✅ Test summary saved to TEST_RESULTS.md');
