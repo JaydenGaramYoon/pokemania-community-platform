@@ -1,9 +1,9 @@
-/* 카드 컨테이너 설정 */
+/* Card container settings */
 .favourites-page .pokemon-card {
     position: relative;
-    /* 가상 요소 위치의 기준점 */
+    /* Position reference for pseudo element */
     overflow: visible;
-    /* 카드를 벗어나는 효과 표시 */
+    /* Show overflow effect for card */
     background-color: var(--card-bg, #ffffff);
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -22,13 +22,13 @@
 
 .pokemon-card h2{
     font-family: "Pokemon Solid", sans-serif;
-    /* 폰트 설정 */
+    /* Font settings */
     font-size: 2rem;
-    /* 제목 크기 */
+    /* Title size */
     color: var(--dark-text);
-    /* 어두운 텍스트 색상 */
+    /* Dark text color */
     margin: 10px 0;
-    /* 제목 위아래 여백 */
+    /* Top and bottom margin for the title */
     letter-spacing: 3px;
 }
 
@@ -99,7 +99,7 @@
     margin-top: 50px;
 }
 
-/* 편집 폼 스타일 */
+/* Edit form styles */
 .edit-form {
     margin-top: 15px;
     padding: 15px;

@@ -12,7 +12,7 @@ const Home = () => {
     const [backgroundPokemons, setBackgroundPokemons] = useState([]);
 
     useEffect(() => {
-        // pokemon_으로 시작하는 키만 파싱
+        // Load favourites from localStorage on component mount
         const storedFavourites = Object.keys(localStorage)
             .filter(key => key.startsWith('pokemon_'))
             .map(key => {
@@ -31,7 +31,7 @@ const Home = () => {
 
     const loadBackgroundPokemons = async () => {
         try {
-            // 랜덤하게 20개의 포케몬 가져오기 (1-898 범위)
+            // Fetch random Pokémon images for background
             const randomIds = Array.from({ length: 20 }, () => Math.floor(Math.random() * 898) + 1);
             const promises = randomIds.map(id => 
                 fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -100,7 +100,7 @@ const Home = () => {
         const memo = prompt(`Enter a memo for ${pokemon.name} (optional):`);
 
         try {
-            console.log("[디버그] fetch POST /api/favourites 요청 시작");
+            console.log("Adding to favourites:", { user: userId, pokemonId: pokemon.id, memo });
 
             const response = await fetch(`/api/favourites`, {
                 method: 'POST',
@@ -126,7 +126,7 @@ const Home = () => {
                 } catch {
                     err = { error: "Failed to add favourites" };
                 }
-                console.error("[디버그] 서버 에러 응답:", err);
+                console.error("Server error response:", err);
 
                 throw new Error(err.error || "Failed to add favourites");
             }
@@ -228,7 +228,7 @@ const Home = () => {
             {showModal && modalContent && (
                 <div id="pokemon-modal" className="modal"
                     onClick={e => {
-                        // modal-content 바깥을 클릭하면 닫기
+                        // Close modal when clicking outside content
                         if (e.target.id === "pokemon-modal") handleModalClose();
                     }}
                 >

@@ -10,21 +10,21 @@ const Profile = () => {
   const userId = user ? user._id : null;
   console.log('User ID:', userId); // Debugging: Check if userId is retrieved correctly
 
-  // 🧠 Manage modal open state
+  // Manage modal open state
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // 📦 Initialize form data as null and wait for fetch
+  // Initialize form data as null and wait for fetch
   const [formData, setFormData] = useState(null);
-  // 🎯 Separate edit form data for temporary changes
+  // Separate edit form data for temporary changes
   const [editFormData, setEditFormData] = useState(null);
   const [pokemonTypes, setPokemonTypes] = useState([]);
 
 
-  // 🧑‍💻 User info state
+  // User info state
   const [userInfo, setUserInfo] = useState(null);
   const [isAccountModalOpen, setIsAccountModalOpen] = useState(false);
 
-  // 👥 All users list (for admin)
+  // All users list (for admin)
   const [users, setUsers] = useState([]);
 
   // Fetch all users if admin
@@ -38,7 +38,7 @@ const Profile = () => {
       });
       if (res.ok) {
         const data = await res.json();
-        console.log('Fetched users:', data); // 추가
+        console.log('Fetched users:', data); // Debugging: Check fetched users
         setUsers(data);
       }
     } catch (error) {
@@ -100,20 +100,20 @@ const Profile = () => {
   };
 
 
-  // 📥 Fetch profile data from backend
+  // Fetch profile data from backend
 
   // 1. Read profile (GET)
   const fetchProfile = async () => {
     if (!userId) return;
     try {
       const res = await fetch(`${API_BASE}/api/profile/users/${userId}`);
-      console.log('fetch response:', res); // 응답 객체 확인
+      console.log('fetch response:', res);
       if (res.ok) {
         const data = await res.json();
         setFormData(data);
         // console.log('Profile data fetched:', data);
       } else if (res.status === 404) {
-        // 프로필 없으면 기본값으로 초기화
+        // Initialize with default profile if not found
         console.log('Profile not found, initializing with default values');
         setFormData({
           bannerUrl: 'https://wallpapercave.com/wp/wp12045006.jpg',
@@ -142,7 +142,7 @@ const Profile = () => {
     fetchProfile();
   }, [userId]);
 
-  // 📝 Handle input changes (single or array fields) - Now uses editFormData
+  // Handle input changes (single or array fields) - Now uses editFormData
   const handleInputChange = (e, field, index) => {
     if (!editFormData) return;
     if (field === 'details') {
@@ -156,10 +156,10 @@ const Profile = () => {
     }
   };
 
-  // 💾 Save profile to backend (PUT) - Now commits editFormData to formData
+  // Save profile to backend (PUT) - Now commits editFormData to formData
   const handleSave = async () => {
     try {
-      // 프로필이 처음 저장되는 경우(즉, formData가 기본값이거나 새로 생성된 경우) POST 요청
+      // Use POST when saving profile for the first time (i.e., creating a new profile)
       const method = editFormData && editFormData._id ? 'PUT' : 'POST';
       const url = editFormData && editFormData._id
         ? `/api/profile/users/${userId}`
@@ -190,11 +190,27 @@ const Profile = () => {
   };
 
 
-  // 포켓몬 이름으로 타입 가져오기 (PokéAPI 사용)
+  // Fetch types by Pokémon name (using PokéAPI)
   useEffect(() => {
     const fetchTypes = async () => {
-      if (!formData || !formData.details || !formData.details[1]) return;
-      const pokemonName = formData.details[1].toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (!formData || !formData.details || !formData.details[1]) {
+        setPokemonTypes(['Unknown']);
+        return;
+      }
+
+      const rawBuddy = formData.details[1].trim();
+      // If the field is a placeholder or obviously not a Pokémon name, skip calling PokeAPI
+      if (/\bno\b|unknown|not selected|n\/a/i.test(rawBuddy)) {
+        setPokemonTypes(['Unknown']);
+        return;
+      }
+
+      const pokemonName = rawBuddy.toLowerCase().replace(/[^a-z0-9-]/g, '');
+      if (!pokemonName) {
+        setPokemonTypes(['Unknown']);
+        return;
+      }
+
       try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
         if (res.ok) {
@@ -202,9 +218,11 @@ const Profile = () => {
           const types = data.types.map(t => t.type.name);
           setPokemonTypes(types);
         } else {
+          // 404 or other non-OK responses -> unknown types
           setPokemonTypes(['Unknown']);
         }
-      } catch {
+      } catch (err) {
+        console.error('[Profile] fetchTypes error:', err);
         setPokemonTypes(['Unknown']);
       }
     };
@@ -212,7 +230,7 @@ const Profile = () => {
   }, [formData?.details]);
 
 
-  // 유저 정보 가져오기 (users 컬렉션)
+  // Fetch user info (users collection)
   useEffect(() => {
     console.log('Fetching user info for ID:', userId); // Debugging: Check userId
     const fetchUserInfo = async () => {
@@ -237,7 +255,7 @@ const Profile = () => {
     fetchUserInfo();
   }, [userId]);
 
-  // 계정 삭제
+  // Delete account
   const handleDeleteAccount = async () => {
     if (!window.confirm('Are you sure you want to delete your account?')) return;
     try {
@@ -245,14 +263,14 @@ const Profile = () => {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}` // 인증 필요시 추가
+          'Authorization': `Bearer ${token}` // add when auth required
         }
       });
       console.log('Delete account response:', res); // Debugging: Check delete response
       if (res.ok) {
         alert('Your account has been deleted successfully.');
         localStorage.removeItem('user');
-        window.location.href = '/'; // 홈으로 이동
+        window.location.href = '/'; // navigate to home
       } else {
         alert('Failed to delete account');
       }
@@ -299,7 +317,7 @@ const Profile = () => {
       alert('Error occurred while changing role');
     }
   };
-  // 비밀번호 변경
+  // Change password
   const handleChangePassword = async (newPassword) => {
     try {
       const res = await fetch(`${API_BASE}/api/users/${userId}/password`, {
@@ -323,27 +341,26 @@ const Profile = () => {
 
 
 
-  // ❌ Cancel edit - restore original data
+  // Cancel edit - restore original data
   const handleCancel = () => {
     setEditFormData(null); // Clear temporary edit data
     setIsModalOpen(false);
   };
 
-  // 🎯 Open edit modal - copy current data to edit state
+  // Open edit modal - copy current data to edit state
   const openEditModal = () => {
     setEditFormData(formData ? { ...formData } : null); // Copy current data for editing
     setIsModalOpen(true);
   };
 
 
-  // ⛔ Prevent rendering if profile not loaded
+  // Prevent rendering if profile not loaded
   if (!formData) return <div>Loading profile...</div>;
 
-  // 관리자(admin)라면 user list와 My Account만 보이게 (프로필 상세는 숨김)
+  // If admin, show user list and My Account only (hide profile details)
   if (user && user.role === 'admin') {
     return (
       <div className={styles.profilePage}>
-        {/* 관리자용 user list - 테이블로 변경 */}
         <div className={styles.card} style={{ marginTop: '2rem', maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', overflowX: 'auto' }}>
           <h3 style={{ textAlign: 'center', marginBottom: '1.5rem', fontWeight: 700, fontSize: '2.5rem', letterSpacing: '1px' }}>All Users</h3>
           <table className={styles.userTable} style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -427,7 +444,7 @@ const Profile = () => {
           </table>
         </div>
 
-        {/* My Account Modal (admin도 사용 가능) */}
+        {/* My Account Modal*/}
         {isAccountModalOpen && userInfo && (
           <div className={styles.modalOverlay}>
             <div className={styles.modal}>
@@ -467,10 +484,9 @@ const Profile = () => {
     );
   }
 
-  // 일반 유저는 기존 프로필 화면
   return (
     <div className={styles.profilePage}>
-      {/* 🎨 Profile Header Section */}
+      {/* Profile Header Section */}
       <div className={styles.profileHeader}>
         <img src={formData.bannerUrl} alt="banner" className={styles.profileBanner} />
         <div className={styles.profileHeaderContent}>
@@ -492,7 +508,7 @@ const Profile = () => {
         </div>
       </div>
 
-      {/* 🧾 Profile Main Body */}
+      {/* Profile Main Body */}
       <div className={styles.profileBody}>
         <div className={styles.profileMain}>
           <div className={styles.card}>
@@ -501,7 +517,7 @@ const Profile = () => {
           </div>
           <div className={styles.card}>
             <h3>Favorite Pokémon Types</h3>
-            {/* 포켓몬 API에서 가져온 타입 */}
+            {/* Pokémon types fetched from the Pokémon API */}
             {pokemonTypes.length > 0 && (
               <div>
                 {pokemonTypes.map(type => (
@@ -512,7 +528,7 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* 📌 Sidebar with Trainer Details */}
+        {/* Sidebar with Trainer Details */}
         <div className={styles.profileSidebar}>
           <div className={styles.card}>
             <div className={styles.cardHeader}><h3>Trainer Details</h3></div>
@@ -567,13 +583,13 @@ const Profile = () => {
       )}
 
 
-      {/* 🛠️ Edit Modal for Profile Editing */}
+      {/* Edit Modal for Profile Editing */}
       {isModalOpen && editFormData && (
         <div className={styles.modalOverlay}>
           <div className={styles.modal}>
             <h2>Edit Profile</h2>
             <div className={styles.modalContent}>
-              {/* 기존 프로필 수정 폼 */}
+              {/* Existing profile edit form */}
               <label>Profile Image URL:
                 <input type="text" value={editFormData.iconUrl} onChange={(e) => handleInputChange(e, 'iconUrl')} />
               </label>
@@ -628,7 +644,7 @@ const Profile = () => {
   );
 };
 
-// 비밀번호 변경 폼 컴포넌트
+// Password Change Form Component
 function ChangePasswordForm({ onChangePassword }) {
   const [newPassword, setNewPassword] = useState('');
   return (
@@ -650,7 +666,7 @@ function ChangePasswordForm({ onChangePassword }) {
           type="password"
           value={newPassword}
           onChange={e => setNewPassword(e.target.value)}
-          placeholder="Endter new password"
+          placeholder="Enter new password"
         />
       </label>
       <button type="submit" className={styles.button} style={{ marginTop: '0.5rem' }}>

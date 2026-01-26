@@ -16,8 +16,8 @@ const Login = () => {
     password: ''
   });
 
-  // 환경에 따라 API 주소 자동 설정
-  const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+  // Use relative API paths so behavior is consistent between local and production environments
+  const API_BASE = '/api';
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -30,9 +30,9 @@ const Login = () => {
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || 'Login failed');
-
-      // ✅ Login 시 저장 방식 변경
+      console.log('login fetch response:', data);
+      if (!res.ok) throw new Error(data.error || data.message || 'Login failed');
+      // Save auth info and navigate to home
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
       console.log('Token:', data.token);
@@ -46,7 +46,7 @@ const Login = () => {
 
   const handleSignup = async () => {
     try {
-      const res = await fetch(`${API_BASE}/api/users`, {
+      const res = await fetch(`${API_BASE}/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(signupData)
