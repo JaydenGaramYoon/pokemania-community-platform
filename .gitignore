@@ -11,6 +11,7 @@ node_modules/
 client/node_modules/
 client/dist-ssr/
 client/*.local
+client/package-lock.json
 dist/
 dist-ssr/
 *.local
