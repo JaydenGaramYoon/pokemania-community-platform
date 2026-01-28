@@ -113,7 +113,7 @@ jobs:
           echo "Logging in test accounts."
           
           # Admin login
-          ADMIN_RESPONSE=$(curl -s -X POST http://localhost:3000/api/auth/signin \
+          ADMIN_RESPONSE=$(curl -s -X POST http://localhost:3000/api/api/auth/signin \
             -H "Content-Type: application/json" \
             -d "{\"email\": \"${{ secrets.TEST_ADMIN_EMAIL }}\", \"password\": \"${{ secrets.TEST_ADMIN_PASSWORD }}\"}")
           
@@ -123,7 +123,7 @@ jobs:
           ADMIN_ID=$(echo "$ADMIN_RESPONSE" | jq -r '.user._id // empty')
           
           # User login  
-          USER_RESPONSE=$(curl -s -X POST http://localhost:3000/api/auth/signin \
+          USER_RESPONSE=$(curl -s -X POST http://localhost:3000/api/api/auth/signin \
             -H "Content-Type: application/json" \
             -d "{\"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}")
           
