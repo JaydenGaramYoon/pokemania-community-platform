@@ -8,12 +8,12 @@ Minimal credentials required for test execution are stored as GitHub Secrets and
 
 ## Security Philosophy
 
-**Tokens are NOT stored as secrets.** They are generated at runtime via authentication APIs and exist only in memory during test execution. This approach:
+Tokens are not stored as secrets. They are generated at runtime by authentication APIs and exist only in memory during test execution. This approach:
 
-- ✅ Aligns with industry best practices
-- ✅ Prevents token leakage across environments
-- ✅ Ensures tokens are never persisted
-- ✅ Simplifies credential rotation (happens automatically)
+- Follows industry best practices
+- Prevents token leakage across environments
+- Ensures tokens are never persisted
+- Simplifies credential rotation (automatic)
 
 ## Required Secrets (Minimal Set)
 
@@ -26,7 +26,7 @@ Only these secrets are required for CI/CD:
 | `TEST_USER_EMAIL` | String | Email for test regular user | Generate tokens via login API |
 | `TEST_USER_PASSWORD` | String | Password for test regular user | Generate tokens via login API |
 
-That's it. **No TOKEN_*, PASSWORD_*, USER_ID_* arrays.** Everything else is generated at runtime.
+That is all. No TOKEN_*, PASSWORD_*, USER_ID_* arrays. Everything else is generated at runtime.
 
 ## How Tokens Are Generated (Runtime)
 
@@ -131,11 +131,11 @@ These are captured from API responses during test execution:
 | `MESSAGE_ID_*` | Message API response | Message operations |
 | `FAVORITE_ID_*` | Favorites API response | Favorites operations |
 
-**No setup needed** - these are auto-populated by collection scripts.
+No setup needed. These are auto-populated by collection scripts.
 
 ## Token Rotation Policy
 
-**Automatic** - Tokens are generated on every workflow run, so rotation happens automatically.
+Tokens are generated on every workflow run, so rotation is automatic.
 
 If you need to rotate test credentials:
 
@@ -147,10 +147,11 @@ No token refresh needed.
 
 ## What NOT to Add as Secrets
 
-❌ Authentication tokens (TOKEN_*)
-❌ User IDs (USER_ID_*)
-❌ Test data IDs (GAME_ID_*, MESSAGE_ID_*)
-❌ Multiple password variants (PASSWORD_AUTH001, PASSWORD_AUTH002_INVALID, etc.)
+Do not add these as secrets:
+- Authentication tokens (TOKEN_*)
+- User IDs (USER_ID_*)
+- Test data IDs (GAME_ID_*, MESSAGE_ID_*)
+- Multiple password variants (PASSWORD_AUTH001, PASSWORD_AUTH002_INVALID, etc.)
 
 These are handled by:
 - Pre-request scripts (token generation)
@@ -161,13 +162,14 @@ These are handled by:
 
 ### Tests fail with 401 Unauthorized
 
-**Check:**
-- ✓ TEST_ADMIN_EMAIL and TEST_ADMIN_PASSWORD are correct
-- ✓ Test accounts exist in database
-- ✓ Pre-request scripts are present in Postman collection
-- ✓ Secrets are set for correct repository
 
-**Debug:**
+Check:
+- TEST_ADMIN_EMAIL and TEST_ADMIN_PASSWORD are correct
+- Test accounts exist in database
+- Pre-request scripts are present in Postman collection
+- Secrets are set for correct repository
+
+Debug:
 Add debug logging to pre-request script:
 ```javascript
 console.log("Login response status:", response.code);
@@ -177,15 +179,15 @@ console.log("Login response body:", response.text());
 ### Tests fail with 404 Not Found
 
 Check:
-- ✓ MongoDB is running in CI
-- ✓ Database has proper indexes
-- ✓ API endpoints exist
+- MongoDB is running in CI
+- Database has proper indexes
+- API endpoints exist
 
 ### Secret value not recognized
 
-- ✓ Check secret name matches **exactly** (case-sensitive)
-- ✓ Verify secrets are in correct repository (not organization level)
-- ✓ Try re-running workflow (GitHub may need moment to sync)
+- Check secret name matches exactly (case-sensitive)
+- Verify secrets are in correct repository (not organization level)
+- Try re-running workflow (GitHub may need a moment to sync)
 
 ## Local Testing
 
@@ -206,11 +208,11 @@ Or create local `.env` and load via collection setup script.
 
 Before committing:
 
-- ✅ No real tokens in code
-- ✅ No credentials in collection JSON
-- ✅ Test accounts are non-production only
-- ✅ Secrets are encrypted on GitHub
-- ✅ Only essential credentials stored
+- No real tokens in code
+- No credentials in collection JSON
+- Test accounts are non-production only
+- Secrets are encrypted on GitHub
+- Only essential credentials stored
 
 ## References
 
