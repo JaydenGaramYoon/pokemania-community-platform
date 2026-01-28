@@ -32,6 +32,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install client dependencies
+        run: npm install
+        working-directory: ./client
+
+      - name: Build client
+        run: npm run build
+        working-directory: ./client
+
       - name: Create CI Postman Environment
         run: |
           mkdir -p api/postman/environments
@@ -66,19 +74,19 @@ jobs:
         run: |
           for i in {1..30}; do
             if curl -s http://localhost:3000 > /dev/null 2>&1; then
-              echo "✅ Server is ready!"
+              echo "Server is ready."
               exit 0
             fi
-            echo "⏳ Waiting for server... ($i/30)"
+            echo "Waiting for server ($i/30)"
             sleep 1
           done
-          echo "❌ Server failed to start"
+          echo "Server failed to start."
           cat server.log
           exit 1
 
       - name: Create Test Accounts
         run: |
-          echo "Creating test accounts..."
+          echo "Creating test accounts."
           
           # Create admin account
           curl -s -X POST http://localhost:3000/api/users \
@@ -92,12 +100,12 @@ jobs:
             -d "{\"name\": \"Test User\", \"email\": \"${{ secrets.TEST_USER_EMAIL }}\", \"password\": \"${{ secrets.TEST_USER_PASSWORD }}\"}" \
             > /dev/null 2>&1 || true
           
-          echo "✅ Test accounts created (or already exist)"
+          echo "Test accounts created or already exist."
           sleep 2
 
       - name: Setup Dynamic Test Data
         run: |
-          echo "Logging in test accounts..."
+          echo "Logging in test accounts."
           
           # Admin login
           ADMIN_RESPONSE=$(curl -s -X POST http://localhost:3000/auth/signin \
@@ -120,13 +128,12 @@ jobs:
           USER_ID=$(echo "$USER_RESPONSE" | jq -r '.user._id // empty')
           
           if [ -z "$TOKEN_ADMIN" ] || [ -z "$TOKEN_USER" ]; then
-            echo "❌ Failed to authenticate test accounts"
+            echo "Failed to authenticate test accounts."
             echo "ADMIN_RESPONSE: $ADMIN_RESPONSE"
             echo "USER_RESPONSE: $USER_RESPONSE"
             exit 1
           fi
-          
-          echo "✅ Test accounts authenticated"
+          echo "Test accounts authenticated."
           echo "token_admin_value=$TOKEN_ADMIN" >> $GITHUB_ENV
           echo "admin_id_value=$ADMIN_ID" >> $GITHUB_ENV
           echo "token_user_value=$TOKEN_USER" >> $GITHUB_ENV
@@ -170,56 +177,56 @@ jobs:
         run: |
           mkdir -p api/newman/reports
           
-          echo "Running Auth API Tests..."
+          echo "Running Auth API Tests."
           npx newman run "api/postman/Auth API.postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
             --reporter-html-export api/newman/reports/auth-report.html \
             --reporter-json-export api/newman/reports/auth-report.json || true
           
-          echo "Running User API Tests..."
+          echo "Running User API Tests."
           npx newman run "api/postman/User API.postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
             --reporter-html-export api/newman/reports/user-report.html \
             --reporter-json-export api/newman/reports/user-report.json || true
           
-          echo "Running Favourites API Tests..."
+          echo "Running Favourites API Tests."
           npx newman run "api/postman/Favourites API.postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
             --reporter-html-export api/newman/reports/favourites-report.html \
             --reporter-json-export api/newman/reports/favourites-report.json || true
           
-          echo "Running Game API Tests..."
+          echo "Running Game API Tests."
           npx newman run "api/postman/Game API.postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
             --reporter-html-export api/newman/reports/game-report.html \
             --reporter-json-export api/newman/reports/game-report.json || true
           
-          echo "Running Profile API Tests..."
+          echo "Running Profile API Tests."
           npx newman run "api/postman/Profile API.postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
             --reporter-html-export api/newman/reports/profile-report.html \
             --reporter-json-export api/newman/reports/profile-report.json || true
           
-          echo "Running TalkTalk API Tests..."
+          echo "Running TalkTalk API Tests."
           npx newman run "api/postman/TalkTalk API.postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
             --reporter-html-export api/newman/reports/talktalk-report.html \
             --reporter-json-export api/newman/reports/talktalk-report.json || true
           
-          echo "Running Admin API Tests..."
+          echo "Running Admin API Tests."
           npx newman run "api/postman/Admin API.postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
             --reporter-html-export api/newman/reports/admin-report.html \
             --reporter-json-export api/newman/reports/admin-report.json || true
           
-          echo "Running Public API Tests..."
+          echo "Running Public API Tests."
           npx newman run "api/postman/Public API (Search).postman_collection.json" \
             -e "api/postman/environments/ci.postman_environment.json" \
             -r html,json \
