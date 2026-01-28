@@ -1,5 +1,4 @@
 name: API Tests
-
 on:
   push:
     branches: [main, qa-testing, develop]
@@ -29,8 +28,14 @@ jobs:
         with:
           node-version: '18'
 
+
       - name: Install dependencies
         run: npm install
+
+      - name: Remove client node_modules and lock file
+        run: |
+          rm -rf node_modules package-lock.json
+        working-directory: ./client
 
       - name: Install client dependencies
         run: npm install
